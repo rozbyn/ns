@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="reg.css" rel="stylesheet">
+   <title>Form Registration</title>
+</head>
+<body>
+<div style="float: right">
+   <a href="http://driver-uber.ru.com/reg" >http://driver-uber.ru.com/reg</a>
+</div>
+<div class="wrapper">
+   <form id="questions">
+      <div id="progress">
+         <div id="progress_bar">5%</div>
+      </div>
+      <div class="ques" id="questions1" style="display:block">
+         <h4>Регистрация нового водителя Uber</h4>
+         <div class="options">
+            <label><input name="what_user" type="radio" checked="checked">Новый водитель</label><br>
+            <label><input name="what_user" type="radio">Перевод от другого партнера</label><br>
+            <label><input name="what_user" type="radio">Предоставить реквизиты счета</label><br>
+         </div>
+      </div>
+      <div class="ques" id="questions2" style="display:none">
+            <h4>Список документов</h4>
+            <h6>Уважаемый водитель, для прохождения регистрации вам необходимо будет загрузить или сделать в процессе регистрации (прямо с телефона) фото следующих документов:</h6>
+            <ul>
+               <li>Паспорт (разворот и прописка)</li>
+               <li>Свидетельство о регистрации (2 стороны)</li>
+               <li>Водительское удостоверение (2 стороны)</li>
+               <li>Осаго (действующее)</li>
+               <li>Лицензия (если имеется)</li>
+               <li>Фото автомобиля спереди (виден номер и 2 двери), сзади по диагонали</li>
+               <li>Фото задних сидений</li>
+            </ul>
+      </div>
+      <div class="ques" id="questions3" style="display:none">
+         <h4>Данные о водителе</h4>
+         <h6>Водительский стаж по правам*</h6>
+         <div>
+            <label>
+               <input value="long" name="record" checked type="radio">Больше 3-х лет
+            </label>
+         </div>
+         <div>
+            <label>
+               <input value="short" name="record" type="radio">Меньше 3-х лет
+            </label>
+         </div>
+         <h6>Гражданство*</h6>
+         <div>
+            <label>
+               <input value="citizen" name="citizenship" checked="" type="radio">Гражданство РФ или СНГ
+            </label>
+         </div>
+         <div>
+            <label>
+               <input value="permit" name="citizenship" type="radio">Есть разрешение на работу в РФ
+            </label>
+         </div>
+         <div>
+            <label>
+               <input value="visa" name="citizenship" type="radio">Есть виза на нахождение в РФ
+            </label>
+         </div>
+         <div>
+            <label>
+               <input value="settle" name="citizenship" type="radio">Есть вид на жительство в РФ
+            </label>
+         </div>
+         <div>
+            <label>
+               <input value="other" name="citizenship" type="radio">Другое
+            </label>
+         </div>
+      </div>
+      <div class="ques" id="questions4" style="display:none">
+         Извините, но к сожалению по требованиям Uber, допускаются водители только с водительским cтажем более 3-х лет и с гражданством РФ/СНГ или с разрешением на работу / визой / видом на жительство (одно из трех).
+      </div>
+      <div class="ques" id="questions5" style="display:none">
+         У нас есть для вас и хороша новость!
+         Вы можете зарабатывать с Uber от 30 до 90 тыс.руб. в месяц привлекая водителей. Вам интересно?
+      </div>
+      <div class="ques" id="questions6" style="display:none">
+         <h4>Заполните ваши данные</h4>
+         <div>
+            <h6>Город*</h6>
+            <select class="form-ws required2" name="city">
+               <option disabled selected value="">Выберите город</option>
+               <option value="Волгоград">Волгоград</option>
+               <option value="Воронеж">Воронеж</option>
+               <option value="Екатеринбург">Екатеринбург</option>
+               <option value="Казань">Казань</option>
+               <option value="Краснодар">Краснодар</option>
+               <option value="Красноярск">Красноярск</option>
+               <option value="Москва">Москва</option>
+               <option value="Новосибирск">Новосибирск</option>
+               <option value="Нижний Новгород">Нижний Новгород</option>
+               <option value="Пермь">Пермь</option>
+               <option value="Ростов">Ростов-на-Дону</option>
+               <option value="Санкт-Петербург">Санкт-Петербург</option>
+               <option value="Самара">Самара</option>
+               <option value="Сочи">Сочи</option>
+               <option value="Омск">Омск</option>
+               <option value="Челябинск">Челябинск</option>
+               <option value="Тольятти">Тольятти</option>
+               <option value="Уфа">Уфа</option>
+            </select>
+         </div>
+         <div>
+            <h6>Фамилия*</h6>
+            <input class="form-ws required2" name="last_name" >
+         </div>
+         <div>
+            <h6>Имя*</h6>
+            <input class="form-ws required2" name="first_name" >
+         </div>
+         <div>
+            <h6>Отчество*</h6>
+            <input class="form-ws required2" name="middle_name">
+         </div>
+      </div>
+
+
+<!------------------------------------------------------------------------------------------>
+      <div id="button_next" style="display: block" >Далее
+         <span class="glyphicon_next">&#xE092</span>
+      </div>
+      <div id="button_more" style="display: none"><span class="glyphicon_next">&#xE092</span>
+         Узнать подробнее
+      </div>
+      <div id="button_thx" style="display: none"><span class="glyphicon_next">&#xE092</span>
+         Спасибо
+      </div>
+      <div id="button_back"><span class="glyphicon_back">&#xE091</span>
+         Назад
+      </div>
+      <div id="button_edit"style="display: none">Редактировать
+         <span class="glyphicon_back">&#x270f</span>
+      </div>
+      <div class="fixw"></div>
+   </form>
+   <div class="row">
+      <div class="row_header">
+         <span class="glyphicon_expand">&#xE258</span><span class="header_title">Что такое UBER?</span>
+      </div>
+      <div class="row_text">
+         <div class="row_text_text">
+         Uber, это самое популярное на сегодня мобильное приложение с помощью которого люди заказывают автомобиль. Мы предлагаем Вам зарабатывать деньги выполняя пассажирские перевозки на Вашем авто по городу в свободное для Вас время. Приложение работает в 507 городах мира, в том числе в 17 городах России.
+         </div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="row_header">
+         <span class="glyphicon_expand">&#xE258</span><span class="header_title">Как начать сотрудничество?</span>
+      </div>
+      <div class="row_text">
+         <div class="row_text_text">
+         <span class="text">Прежде всего Ваш стаж вождения должен быть больше 3-х лет, личный или арендованный автомобиль и устройство с интернетом.<br><br>Следующим шагом будет заполнение формы регистрации, после чего с Вами свяжется наш сотрудник для записи на активацию в учебный центр.<br><br>Активация займёт у Вас 30-40 минут, где Вас обучат работе с приложением.<br>После этого Вы можете работать!<br><br>Многие наши партнёры используют Uber, как дополнительный еженедельный заработок от 10000 до 20000 руб., но есть и те кто использует Uber как основной вид дохода, получая при этом от 30000 руб. в неделю.</span>
+            </div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="row_header">
+         <span class="glyphicon_expand">&#xE258</span><span class="header_title">Особенности работы?</span>
+      </div>
+      <div class="row_text">
+         <div class="row_text_text">
+         <span class="text">Компания Uber гарантирует Вам высокий уровень дохода с минимальными затратами, но всё же главным критерием для Вас является желание и время! При соблюдении этих рекомендаций Вы всегда можете рассчитывать, что заработаете хорошие деньги.<br><br>Как любой соискатель Вы прежде всего хотели бы знать сколько можно заработать с Uber, мы решили привести пример дохода одного из наших новых партнёров, который выходил на линию 6 дней в неделю и проработал 50 часов. Данный водитель выделен нами не случайно, он отработал одну неделю и сразу же добился высокого дохода в час, обычно он ниже на 8-10%, но всё же он новичёк!<img src="img/1.jpg" width="100%">Данный водитель выполнил 86 заказов за 50 часов, при этом на топливо у него ушло 14% от дохода, по его словам 4500 руб., что достаточно реально.<br><br>На картинке представлена выписка из его личного кабинета в программе:<img src="img/2.jpg" width="100%"><strong>Как видно из ведомости его суммарный доход за неделю составил 31829 руб.</strong><br><br>Доход от 83 поездок по тарифу составил 10323 руб. и по условиям начисления бонусов ему доплатили 21506 руб.<br><br>Данный водитель проработал 6 дней в неделю(50 час) и соблюдал наши рекомендации, тем самым сохранил для себя высокий доход 640 руб/час.<br><br>Обратите внимание, что на данный момент очень выгодно зарабатывать, т.к. компания Uber доплачивает водителям бонусы к каждой поездке, они отображаются в разделе бонусы и др.платежи и видны только в понедельник за предыдущую отработанную неделю.<br><br>Так и данный водитель в своей программе на неделе он видел только суточный заработок и поездки. Бонусы 21506 руб. у него отобразились только в понедельник! Об этом подробнее расскажут на активации, но всё же это надо иметь ввиду!<img src="img/3.jpg"  width="100%"><strong>Мы стараемся дать полную информацию нашим партнёрам и поэтому хотим, что-бы Вы тоже поняли, что Ваш доход всегда будет привязан к затраченному времени.</strong> Если бы данный водитель проработал ещё один день, например 8 часов, то его доход увеличился ровно на 5120 рублей, эти данные подтверждает наша статистика!</span>
+            </div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="row_header">
+         <span class="glyphicon_expand">&#xE258</span><span class="header_title">Общие вопросы!</span>
+      </div>
+      <div class="row_text">
+         <div class="row_text_text">
+         <span class="text">У нас нет графика, диспетчеров, шашек и брендирования. Вы работаете в свободное время, в режиме - появилось время, запустили приложение, заработали деньги. Приложение бесплатное и Вас никто ни к чему не обязывает. При перечислении средств с Вас списывается только комиссия. Перевод Вашего дохода происходит еженедельно по средам, за предыдущую календарную неделю.<br><br>Оплата от клиентов на 99% безналичная, происходит путём списания с привязанной у них банковской карты.<br><br>В приложении всё автоматизированно и вызов машины и расчёт стоимости и оплата от клиента, Вам остаётся лишь принимать заказы и зарабатывать. С нами сотрудничают десятки тысяч партнёров и мы уверены у Вас тоже всё получится, но если возникнут вопросы, свяжитесь с нами, мы Вам поможем!</span>
+            </div>
+      </div>
+   </div>
+</div>
+<script src="main.js"></script>
+
+
+</body>
+</html>

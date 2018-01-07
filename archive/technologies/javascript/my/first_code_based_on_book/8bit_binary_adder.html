@@ -1,0 +1,336 @@
+<html>
+    <head>
+        <title></title>
+		<meta charset="utf8">
+        <script>
+		var a,b,c,d,g,rp,rs;
+		
+		
+		function loadd()
+		{
+			a=parseInt(chislo_1.value,2);
+			g=parseInt(chislo_2.value,2);
+			poluSumm(a,g);
+					
+			rezul9.value=c;
+			rezul10.value=d;
+		}
+        function log_I(x,y)
+		{
+			var c;
+				c=(x&&y);
+				return c;
+		}
+		function log_ILI(x,y)
+		{
+			var c;
+				c=(x||y);
+				return c;
+		}
+		function log_inv(x)
+		{
+			var c;
+				c=(!x);
+				return c;
+		}
+		function log_NeILI(x,y)
+		{
+			var c;
+				c=!(x||y);
+				return c;
+		}
+		function log_NeI(x,y)
+		{
+			var c;
+				c=!(x&&y);
+				return c;
+		}
+		function log_IsklILI(x,y)
+		{
+			var c;
+			var b,d;
+			
+				b = log_ILI(x,y)
+				d = log_NeI(x,y)
+				
+				c=(b&&d);
+				return c;
+		}
+		function poluSumm(x,y)
+		{	
+			var rezyadsumm, rezyadperenos;
+				rezyadsumm = log_IsklILI(x,y);
+				rezyadperenos = log_I(x,y);
+				c = rezyadsumm;
+				d = rezyadperenos;
+				
+				
+		
+		}
+		
+		function Summator1(){
+		
+		Summator(0,a,g);
+		
+		}
+		function Summator(k,x,y)
+		{	
+			var rezyadsumm1, rezyadperenos1, rezyadsumm2, rezyadperenos2, rezyadperenos3;
+				rezyadsumm1 = log_IsklILI(x,y);
+				rezyadperenos1 = log_I(x,y);
+				rezyadsumm2 = log_IsklILI(k,rezyadsumm1);
+				rezyadperenos2 = log_I(k,rezyadsumm1); 
+				rezyadperenos3 = log_ILI(rezyadperenos1,rezyadperenos2)
+				rs=rezyadsumm2;
+				rp=rezyadperenos3;
+				rezul15.value=rezyadsumm2;
+				rezul16.value=rezyadperenos3;
+				
+				
+				//c = rezyadsumm;
+				//d = rezyadperenos;
+				
+				
+		
+		}
+
+		function sravn() 
+		{
+			n=document.getElementsByTagName("Select").item(0).options.selectedIndex
+			h=document.getElementsByTagName("Select").item(0).options[n].value
+			//a=parseInt(chislo_1.value);
+			//b=parseInt(chislo_2.value);
+			
+			switch(h) {
+				case "И": 
+					h = log_I(a,g) ;
+					break;
+				case "ИЛИ":     
+					h = log_ILI(a,g) ;
+					break;
+				case "НЕ": 
+					h = log_inv(a) ;    
+					break;
+				case "НеИЛИ": 
+					h = log_NeILI(a,g) ;    
+					break;
+				case "НеИ": 
+					h = log_NeI(a,g) ;    
+					break;
+				case "Искл.или": 
+					h = log_IsklILI(a,g) ;    
+					break;
+				default: 
+					h = log_I(a,g) ;
+				}
+
+
+			rezul.value= h;
+			rezul2.value= a;
+			rezul3.value= g;
+			rezul4.value= h;
+			
+
+		}
+		
+		function Summator2(ll){
+			var lt,lo,uo,ut,us;
+			uo=7;
+			ut=15;
+			us=24;
+			rp=false;
+			rs=false;
+			for (i=0;i<=7;i++){
+			lo = ll.elements[uo].checked;
+			lt = ll.elements[ut].checked;
+			Summator(rp,lo,lt);
+			ll.elements[us].checked = rs;
+			if (i==7) {
+			ll.elements[us-1].checked = rp;
+			rp=false;
+			rs=false;
+			
+			}
+			/*document.getElementById('test1').innerHTML += " "+i;
+			document.getElementById('test2').innerHTML += " "+uo;
+			document.getElementById('test3').innerHTML += " "+ut;
+			document.getElementById('test4').innerHTML += " "+us;*/
+			uo=uo-1;
+			ut=ut-1;
+			us=us-1;
+		}
+				
+	}
+        
+        
+        </script>
+        
+    </head>
+    <body>
+	<div align="center" style="border: 2px solid black; width: 100%; height: 100%;">
+		<br>
+		<a href="examples.html">Задачки</a>
+		<a href="div1.html">Div1</a>
+		<a href="3.html">OO00</a>
+		<a href="../project2/land1.html">land1</a>
+		<a href="../driverreg/reg.html">driverreg</a>
+		<a href="timers.rar">timers.rar</a>
+		<a href="ttre.html">phone_mask</a>
+	<div style="border: 2px solid black; width: 80%; height: 100%;" >
+		<div style="float: left; border: 2px solid black; width: 48%;">
+				<table border=1 >
+					
+					<tr align="center">
+						<td><input id=chislo_1 type="text" size="1"></td>
+						<td ><select name="znak" >
+								<option value="И">И</option>
+								<option value="ИЛИ">ИЛИ</option>
+								<option value="НЕ">НЕ</option>
+								<option value="НеИЛИ">НеИЛИ</option>
+								<option value="НеИ">НеИ</option>
+								<option value="Искл.или">Искл.или</option>
+							</select>
+						</td>
+						<td><input id=chislo_2 type="text" size="1"></td>
+						<td><input id=butto7 type="button" value="Сравнить">
+						<script>
+						butto7.addEventListener( "click",loadd, false);
+						butto7.addEventListener( "click",sravn, false);
+						</script>
+						</td>
+						
+					</tr>
+				</table>
+				</br>
+				<table border=1 >
+					<tr align="center">
+						<td>Результат</td>
+						<td>Число 1</td>
+						<td>Число 2</td>
+						<td>Результат</td>
+					</tr>
+					<tr align="center">
+						<td><input id="rezul" size="2" readonly></td>
+						<td><input id="rezul2" size="2" readonly></td>
+						<td><input id="rezul3" size="2" readonly></td>
+						<td><input id="rezul4" size="2" readonly></td>
+					</tr>
+				</table>
+				</br>
+				<span>
+				Полусумматор
+				</span>
+				<table border=1 >
+					<tr align="center">
+						<td>Разряд суммы</td>
+						<td>Разряд переноса</td>
+						<td><input id="rezul7" size="2" readonly></td>
+						<td><input id="rezul8" size="2" readonly></td>
+					</tr>
+					<tr align="center">
+						<td><input id="rezul9" size="2" readonly></td>
+						<td><input id="rezul10" size="2" readonly></td>
+						<td><input id="rezul11" size="2" readonly></td>
+						<td><input id="rezul12" size="2" readonly></td>
+					</tr>
+					
+					
+				</table>
+				</br>
+				<span>
+				Сумматор
+				</span>
+				<table border=1 >
+					<tr align="center">
+						<td>Разряд суммы</td>
+						<td>Разряд переноса</td>
+						<td><input id=butto8 type="button" value="GO">
+						<script>
+						butto8.addEventListener( "click",loadd, false);
+						butto8.addEventListener( "click",Summator1, false);
+						
+						</script>
+						</td>
+						<td><input id="rezul14" size="2" readonly></td>
+					</tr>
+					<tr align="center">
+						<td><input id="rezul15" size="2" readonly></td>
+						<td><input id="rezul16" size="2" readonly></td>
+						<td><input id="rezul17" size="2" readonly></td>
+						<td><input id="rezul18" size="2" readonly></td>
+					</tr>
+					
+				   
+				</table>
+		</div>
+		
+		<div  style="float: left; border: 2px solid black; width: 48%; ">
+		<form name="summator" onchange="Summator2(this)">
+			<table border=1>
+			
+				<tr>
+					<td rowspan="3" >9</td>
+					<td>8</td>
+					<td>7</td>
+					<td>6</td>
+					<td>5</td>
+					<td>4</td>
+					<td>3</td>
+					<td>2</td>
+					<td>1</td>
+					
+					
+				</tr>
+				<tr>
+					<td><input type="checkbox" ></td>
+					<td><input type="checkbox" ></td>
+					<td><input type="checkbox" ></td>
+					<td><input type="checkbox" ></td>
+					<td><input type="checkbox" ></td>
+					<td><input type="checkbox" ></td>
+					<td><input type="checkbox" ></td>
+					<td><input type="checkbox" ></td>
+					
+					
+				</tr>
+				<tr>
+					<td><input type="checkbox" ></td>
+					<td><input type="checkbox" ></td>
+					<td><input type="checkbox" ></td>
+					<td><input type="checkbox" ></td>
+					<td><input type="checkbox" ></td>
+					<td><input type="checkbox" ></td>
+					<td><input type="checkbox" ></td>
+					<td><input type="checkbox" ></td>
+				
+				</tr>
+				<tr>
+					<td><input id="rez9" type="checkbox" disabled></td>
+					<td><input id="rez8" type="checkbox" disabled></td>
+					<td><input id="rez7" type="checkbox" disabled></td>
+					<td><input id="rez6" type="checkbox" disabled></td>
+					<td><input id="rez5" type="checkbox" disabled></td>
+					<td><input id="rez4" type="checkbox" disabled></td>
+					<td><input id="rez3" type="checkbox" disabled></td>
+					<td><input id="rez2" type="checkbox" disabled></td>
+					<td><input id="rez1" type="checkbox" disabled></td>
+					
+				</tr>
+			</table>
+		</form>
+		
+		<span id="test1"></span>
+		</br>
+		<span id="test2"></span>
+		</br>
+		<span id="test3"></span>
+		</br>
+		<span id="test4"></span>
+		</div>
+		
+		
+	</div>
+	</div>
+    </body>
+    
+</html>

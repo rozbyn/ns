@@ -1,0 +1,3 @@
+https://docs.bitfinex.com/docs/introduction
+https://api.bitfinex.com/v1/symbols
+https://api.bitfinex.com/v1/pubticker/btcusd

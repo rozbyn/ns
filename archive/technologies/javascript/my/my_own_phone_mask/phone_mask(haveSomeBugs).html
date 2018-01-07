@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test22</title>
+</head>
+<body style="background: rgb(158, 187, 255); margin: 0">
+    <div style="width: 100%;height: 100%; ">
+        <div style="position: absolute; top: 50%; left: 50%">
+            <input id="jro" maxlength="50" >
+        </div>
+    </div>
+
+    <!--------------------------------------------------------------------------------->
+<script>
+
+    var g=document.getElementById("jro");
+    var kkode=-5;
+    g.addEventListener("input", check2 ,false);
+    g.value = "+7 (___) ___-____";
+    var tty = document.createElement("div");
+    tty.innerHTML = "";
+
+    g.parentNode.appendChild(tty);
+    g.onfocus= check1;
+    /*g.onmousedown=select3;*/
+    g.onkeydown=select3;
+    /*g.onkeypress=select3;*/
+    /*g.onkeyup=select3;*/
+
+
+    function select3(fgf) {
+        kkode = fgf.keyCode;
+        if (!(kkode<=57 && kkode>=48) && !(kkode >= 96 && kkode<=105) && kkode!=8 && kkode !=46){console.log(kkode);return false}
+        g.nextElementSibling.innerHTML = g.selectionStart.toString()+" - "+g.selectionEnd.toString();
+
+
+
+    }
+    function check1() {
+        g.setSelectionRange(4,4);
+    }
+
+    function check2() {
+
+        if (g.value.length<16){g.value = "+7 (___) ___-____";}
+        var str=[], o1;
+        o1 = g.selectionStart;
+
+        for (var i=0; i<=g.value.length;++i){
+            str[i]=g.value.toString().charAt(i);
+        }
+
+
+        if (str[0]!="+"){if (str[0].search(/\d/)==0 && g.selectionStart == 1){str[4]=str[0];o1=5}str[0]="+";}
+        if (str[1]!="7"){if (str[1].search(/\d/)==0){str[4]=str[1];  o1=5;}str[1]="7";}
+        if (str[2]!=" "){if (str[2].search(/\d/)==0 && g.selectionStart == 3){str[4]=str[2];o1=5}str[2]=" ";}
+        if (str[3]!="("){if (str[3].search(/\d/)==0){str[4]=str[3];  o1=5}str[3]="(";}
+        if (str[4].search(/\d/)==-1 && str[4]!="_"){str[4]="_"}
+        if (str[5].search(/\d/)==-1 && str[5]!="_"){str[5]="_"}
+        if (str[6].search(/\d/)==-1 && str[6]!="_"){str[6]="_"}
+        if (str[7]!=")"){if (str[7].search(/\d/)==0){str[9]=str[7];  o1=10}str[7]=")";}
+        if (str[8]!=" "){if (str[8].search(/\d/)==0){str[9]=str[8];  o1=10}str[8]=" ";}
+        if (str[9].search(/\d/)==-1 && str[9]!="_"){str[9]="_"}
+        if (str[10].search(/\d/)==-1 && str[10]!="_"){str[10]="_"}
+        if (str[11].search(/\d/)==-1 && str[11]!="_"){str[11]="_"}
+        if (str[12]!="-"){if (str[12].search(/\d/)==0){str[13]=str[12];  o1=14}str[12]="-";}
+        if (str[13].search(/\d/)==-1 && str[13]!="_"){str[13]="_"}
+        if (str[14].search(/\d/)==-1 && str[14]!="_"){str[14]="_"}
+        if (str[15].search(/\d/)==-1 && str[15]!="_"){str[15]="_"}
+        if (str[16].search(/\d/)==-1 && str[16]!="_"){str[16]="_"}
+        if (str[17]){str[17]=""}
+
+        if (g.selectionStart==7 && ((kkode<=57 && kkode>=48) || (kkode >= 96 && kkode<=105))){o1 = 9}
+        if (g.selectionStart==12 && ((kkode<=57 && kkode>=48) || (kkode >= 96 && kkode<=105))){o1 = 13}
+        if (g.selectionStart==12 && kkode==8){o1 = 11;str[11]="_"}
+        if (g.selectionStart==8 && kkode==8){o1 = 6;str[6]="_"}
+
+        var odkf="";
+        for (var i=0; i<str.length;++i){
+            odkf += str[i];
+        }
+        g.value=odkf;
+        if (g.value == "+7 (___) ___-____"){o1 = 4}
+
+        g.selectionStart = o1;
+        g.selectionEnd = o1;
+        g.nextElementSibling.innerHTML += " - "+kkode;
+        /*text.match(/\+\d{1}-\(\d{3}\)-\d{3}-\d{4}/g); */
+    }
+
+
+
+    /*-----------------------------------------------------*/
+
+</script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+﻿   <HTML>
+   <HEAD>
+   <TITLE>Интервальный таймер</TITLE>
+   <bgsound id=sound>
+   <HTA:APPLICATION
+        ID="oHTA"
+        APPLICATIONNAME="myApp"
+        BORDER="dialog"
+        BORDERSTYLE="normal"
+        CAPTION="yes"
+        ICON=""
+        MAXIMIZEBUTTON="yes"
+        MINIMIZEBUTTON="yes"
+        SCROLL="auto"
+        SCROLLFLAT="no"
+        SHOWINTASKBAR="yes"
+        SINGLEINSTANCE="no"
+        SYSMENU="yes"
+        VERSION="1.0"
+        WINDOWSTATE="normal" />
+
+   <SCRIPT language="VBScript">
+		window.resizeTo 700, 400
+		window.moveTo (screen.width\2)-600, (screen.height\2)-350
+   </Script>
+      	<SCRIPT language="javascript">
+		var  progr_width = [], use_period = [],
+		time_value = [], use_sound = [], time_indicate = [];
+		var periods_q;
+
+		function index_periods(){
+			periods_q = document.body.childNodes[1].childNodes.length;
+			for (var i=0; i<periods_q;){
+				use_period[i] = document.body.childNodes[1].childNodes[i].childNodes[1].childNodes[0].checked;
+				time_value[i] = document.body.childNodes[1].childNodes[i].childNodes[1].childNodes[3].value;
+				use_sound[i] = document.body.childNodes[1].childNodes[i].childNodes[3].childNodes[1].checked;
+				progr_width[i] = document.body.childNodes[1].childNodes[i].childNodes[0];
+				time_indicate[i]= document.body.childNodes[1].childNodes[i].childNodes[3].childNodes[5];
+				++i;
+			}
+		}
+
+
+	var timers=[],timeID=[], timeID_anim=[], op;
+	var stop_time=0, total=0;
+
+	function test_timer (kl){
+
+
+			 var now = Date.parse(new Date());
+			 var k = document.body.childNodes[0].childNodes[1].childNodes[17];
+			 var d = document.body.childNodes[0].childNodes[1].childNodes[18];
+
+
+			 if (kl==true) {
+
+				 for (var i=0; i<document.body.childNodes[1].childNodes.length;){
+					var p = document.body.childNodes[1].childNodes[i].childNodes[1].childNodes[3].value;
+					p=(p*60)*1000;
+					total=total+p;
+					++i
+				 }
+				 stop_time=now+total;
+				 op=setInterval(function(){
+					var jaj=Date.parse(new Date());
+					var h = stop_time - jaj;
+					d.innerText = h/1000 + 'сек';
+				 },500);
+			 } else {
+				d.innerText += ' '+(stop_time - Date.parse(new Date()))/1000 + 'сек';
+				clearInterval(op);
+			 }
+	}
+
+
+	function playsound() {
+
+	  var k = document.body.childNodes[0].childNodes[1].childNodes[15];
+	  var soundfile;
+	  if (k.value==''){;
+		soundfile="2.wma";
+	  } else {soundfile=k.value}
+	  document.all.sound.src = soundfile;
+	}
+	function stop_timer(){
+		index_periods();
+		for (var i = 0; i < periods_q; ){
+			progr_width[i].style.width = 0;
+			clearInterval(timeID[i]);
+			clearInterval(timeID_anim[i]);
+			clearInterval(timers[i]);
+			time_indicate[i].innerText = '';
+			++i;
+		}
+		clearInterval(op);
+		stop_time=0;
+		total=0;
+		document.all.sound.src = '';
+	}
+	function new_interval() {
+	stop_timer();
+	  var d = document.body.childNodes[1].lastChild.cloneNode(true);
+	  document.body.childNodes[1].appendChild(d);
+	}
+	function start_timer () {
+		stop_timer();
+		test_timer (true);
+		var p,a=0,dela_y,peri_od,step;
+		for (var i = 0; i < periods_q; ){
+			p = time_value[i];
+			p = (p*60)*1000;
+			a = a + p;
+			peri_od = p/100;
+			step = 1;
+			//if (peri_od>1000){
+			//	peri_od=1000;
+			//	step = 100/(p/1000);
+			//};
+			dela_y = a-p;
+			animate (i,peri_od,dela_y,step);
+			++i;
+
+		}
+	}
+	function animate(i,peri_od,dela_y,step){
+		var r = progr_width[i],widss=0;
+		timeID[i]=setTimeout (function (){
+			timeID_anim[i]=setInterval (function (){
+				if (parseInt(r.style.width)<100){
+					widss = widss+step;
+					r.style.width = widss+'%';
+					time_indicate[i].innerText = Math.round(widss * 100) / 100  + '%  '+ Math.round(((100 - parseFloat(r.style.width))/step*peri_od/1000)*100)/100;
+					if (parseInt(r.style.width)>=100) {
+						r.style.width = 100+"%";
+						playsound();
+						clearInterval(timeID[i]);
+						clearInterval(timeID_anim[i]);
+						if (i+1 == periods_q){
+							test_timer(false);
+						}
+
+
+					}
+
+				}
+			},peri_od)
+		},dela_y)
+
+
+
+	}
+	function save(){
+		stop_timer();
+		var fso, f1,htmlX;
+		fso = new ActiveXObject("Scripting.FileSystemObject");
+		f1 = fso.CreateTextFile("saved_timers.txt", true);
+		htmlX=document.body.innerHTML;
+		f1.write(htmlX);
+		f1.close();
+	}
+	function open(){
+		stop_timer()
+		var fso, f1,htmlX;
+		fso = new ActiveXObject("Scripting.FileSystemObject");
+		f1 = fso.OpenTextFile("saved_timers.txt", 1, false);
+		htmlX = f1.ReadAll();
+		document.body.innerHTML=(htmlX);
+		f1.close();
+	}
+
+
+   </SCRIPT>
+   </HEAD>
+   <BODY>
+       <div>
+			<H1 disabled="disabled">Интервалы</H1>
+			<div style="border:1px solid black;margin-bottom:5px;height:26px;width:550px;">
+				<input value="+" type="button" style="float:left;margin:1px;width:15px" onclick="new_interval()"></input>
+				<input value="Запустить" type="button" style="float:left;margin:1px;width:70px;" onclick="start_timer()"></input>
+				<input value="Остановить" type="button" style="float:left;margin:1px;width:75px;" onclick="stop_timer()"></input>
+				<input value="Сохранить" type="button" style="float:left;margin:1px;" onclick="save()"></input>
+				<input value="Открыть" type="button" style="float:left;margin:1px;" onclick="open()"></input>
+				<input name="sound_file" type="file" style="width: 20px;margin:1px;float:left;" onchange="playsound()">
+				<div style="margin:0px;float:left;font-size:12px;line-height: 1.0;" >Выберите звук</br>сигнала</div>
+				<div style="margin-left:10px;float:left;font-size:12px;line-height: 1.0;color:fff;" ></div>
+			</div>
+		</div>
+	   <div  name="maink" style="width:550px;border:1px solid black;">
+		   <div  name="interval6"style=" height:40px;position:relative;">
+				<div  style="height: 100%;width:0;background:green;position:absolute;top:0px;left:0px;filter:alpha(Opacity=70);"></div>
+				<label>
+					<input name="use_period" type="checkbox" checked="true" style="margin-right:3px;margin-left:3px;margin-top:8px;float:left;">
+					<div style="float:left;margin-right:3px;margin-left:3px;">Введите время</br> в минутах</div>
+					<input name="time" size="2" style="margin-right:3px;margin-left:3px;margin-top:8px;float:left;" value="0.05">
+
+
+				</label>
+				<div  style="float:left;margin-right:3px;margin-left:3px;margin-top:8px;">||</div>
+				<label >
+					<div style="float:left;margin-right:3px;margin-left:3px;" >Проигрывать </br>звук</div>
+					<input name="use_sound" type="checkbox" style="margin-right:3px;margin-left:3px;margin-top:8px;float:left;" checked="true">
+					<input name="sound_file" type="hidden" style="width: 200px;margin-right:3px;margin-left:3px;margin-top:8px;float:left;">
+					<div name = "time_remain" style="float:left;margin-right:3px;margin-left:3px;margin-top:10px;line-height:1em;" ></div>
+				</label>
+
+			</div>
+		</div>
+
+
+   </BODY>
+
+   </HTML>

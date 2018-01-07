@@ -1,0 +1,64 @@
+/* селекторы тегов*/
+html {
+  overflow-y: scroll;
+}
+body{
+	
+}
+
+div{
+	
+	border: 2px solid #3a18c3;
+	box-sizing: border-box;
+	overflow: hidden;
+	
+}
+
+
+/* id-селекторы */
+
+#first{
+	color:yellow
+}
+
+#last{
+	color:red
+}
+
+#header{
+	position:fixed;
+	max-width:50px;
+}
+
+/* селекторы-классов */
+
+.main_center > div{
+	max-width:1000px; 
+	width: 100%; 
+}
+
+.task_unit {
+	width: 100%; 
+	height: 150px; 
+	border: 2px solid red;
+}
+
+.the_task {
+	width:25%; 
+	height:100%; 
+	float:left; 
+	text-align:left;	
+}
+.solution {
+	line-height: 100%;
+	width: 75%; 
+	height: 100%; 
+	float:left; 
+}
+
+#txt{
+	/*display: none;*/
+	height: 0;
+	transition: height 0.1s linear;
+}
+

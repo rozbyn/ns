@@ -1,0 +1,2 @@
+https://poloniex.com/support/api/
+https://poloniex.com/public?command=returnTicker

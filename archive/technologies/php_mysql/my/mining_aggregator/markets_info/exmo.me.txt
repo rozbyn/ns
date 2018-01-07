@@ -1,0 +1,2 @@
+https://exmo.me/ru/api#/public_api
+https://api.exmo.com/v1/ticker/

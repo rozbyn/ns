@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <link href="examples.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Задачки</title>
+  <script src="new 1.js"></script>
+ </head> 
+ <body>
+	<div class="main_center" align="center">
+		<div>
+			<div class="task_unit" style="">
+				<div class="the_task">
+					Пользователь вводит время в минутах и расстояние в километрах. Найдите скорость в м/c.
+					</div>
+				<div class="solution" >
+					<div style="width:36%; display: inline-block;">Введите время в пути (мин) <input title="time" id="val1" type="text" size="1"></div>
+					<div style="width:30%; display: inline-block;">Введите расстояние (км) <input title="kilometers" id="val2" type="text" size="3"></div>
+					<div style="width:30%; display: inline-block;">
+						<input id="butto1" onclick="task1()" type="button" value="Рассчитать">
+					</div>
+					<div id="answer1" class="pa">Ответ</div>
+				</div>
+			</div>
+			<div class="task_unit" style="">
+				<div class="the_task">
+				</div>
+				Вывести на экран текст "Silence is golden".
+				<div class="solution" >
+					<input id="butto2" onclick="task2()" type="button" value="Silence">
+					<div id="answer2" class="pa">?</div>
+				</div>
+			</div>
+			<div class="task_unit" style="">
+				<div class="the_task">
+					Вывести на экран текущее название дня недели, название месяца и свое имя. Каждое слово должно быть в отдельной строке.
+				</div>
+				<div class="solution" >
+					<input id="butto3" onclick="task3()" type="button" value="Дата">
+					<div id="answer3" class="pa">X</div>
+				</div>
+			</div>
+			<div class="task_unit" style="">
+				<div class="the_task">
+					Пользователь вводит сумму вклада в банк и годовой процент. Найдите сумму вклада через 5 лет (рассмотреть два способа начисления процентов)
+				</div>
+				<div class="solution" >
+					<div style="width:30%; display: inline-block;">Введите сумму вклада <br/><input title="Vklad" id="val4_1" type="text" size="5"></div>
+					<div style="width:30%; display: inline-block;">Введите годовой процент <br/><input  title="Persent" id="val4_2" type="text" size="2"></div>
+
+					<input id="butto4" onclick="task4()" type="button" value="Вычислить">
+
+					<div id="answer4" class="pa">U</div>
+
+				</div>
+			</div>
+
+			<div id="cont">
+				<div id="headerr">
+					2112dsafsdsdbd
+				</div>
+				<div id="txt">
+					dsafdsfsgfsgfdg
+				</div>
+			</div>
+			<script>
+					document.getElementById("headerr").addEventListener("click",expand,false);
+					function expand( ) {
+						var h = document.getElementById("txt");
+						if (h.style.height !="50px") {
+							/*h.style.display = "block";*/
+							h.style.height = "50px";
+						} else {
+							h.style.height = "0px";
+							/*h.style.display = "none";*/
+
+						}
+				}
+			</script>
+
+		</div>
+			
+	</div>
+ </body>
+</html>

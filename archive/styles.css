@@ -1,0 +1,67 @@
+body{
+    overflow-y: scroll;
+}
+.main{
+    background: #fff;
+    max-width: 1144px;
+    margin: 0  auto;
+    word-wrap: break-word;
+}
+
+.expl_div:nth-child(odd){
+    clear: both;
+}
+
+
+.expl_div{
+    width: 530px;
+    background: #ffffff;
+    border: 3px solid black;
+    text-align: center;
+    font-size: 30px;
+    float: left;
+    margin: 18px;
+    cursor: default;
+}
+.expl_head{
+    min-height: 101px;
+    padding-bottom: 5px;
+}
+.curr_folder{
+    font-size: 60px;
+}
+.par_folder{
+
+}
+.expl_folder, .expl_file{
+    min-height: 35px;
+    border: 1px solid black;
+}
+.expl_folder{
+    background: #FFFF99;
+}
+
+.expl_file {
+     background: #FFCC99;
+}
+.expl_file>a {
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    display: block;
+}
+.expl_file:hover, .expl_folder:hover, .curr_folder:hover, .par_folder:hover {
+    background: #a3a3a3;
+}
+@media (max-width: 1200px){
+    .expl_div{
+        float: none;
+        margin: 18px auto;
+    }
+}
+@media (max-width: 574px){
+    .expl_div{
+        width: 300px;
+        font-size: 18px;
+    }
+}

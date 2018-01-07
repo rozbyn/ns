@@ -1,0 +1,299 @@
+﻿<html>
+<!-----------------------------------------------------------* 
+*       Простой редактор иконок формата ico(16x16)           *
+*------------------------------------------------------------*
+*                    iconeditor.hta                          *
+*------------------------------------------------------------*
+*           Programming by vksin aka dr.VerSys               *
+*                                                            *
+*                  mailto:vksin@ya.ru                        * 
+*                -----------------------                     *
+*                         2009                               * 
+*------------------------------------------------------------>
+<head>
+<meta http-equiv="Content-Type"
+content="text/html;>
+<title>Редактор иконок - HtaIconEditor</title>
+<HTA:APPLICATION ID="HIE01"
+APPLICATIONNAME="HtaIconEditor"
+BORDER="thin"
+BORDERSTYLE="sunken"
+CAPTION="yes"
+CONTEXTMENU="no"
+MAXIMIZEBUTTON="no"
+MINIMIZEBUTTON="no"
+SCROLL="no"
+SHOWINTASKBAR="yes"
+SYSMENU="yes">
+<STYLE>
+.styFont7{font-family:Tahoma;font-weight:bolder;
+          font-size:7pt;color:#000000;} 
+</STYLE>
+<!---------------------------------------------------------->
+<SCRIPT language="VBScript">
+'Инициализация
+'установка размеров и положения окна
+ window.resizeTo 380, 360
+ window.moveTo (screen.width\2)-200, (screen.height\2)-220
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+ Dim pixColor          'текущий цвет по умолчанию
+     pixColor="#000000"
+ Dim arrPixel(256)     'хранит текущее значение цвета каждого
+ '                     'пикселя для последующей передачи в файл 
+ Dim fNameICO          'имя нового файла иконки по умолчанию
+     fNameICO="newico.ico"  
+ Dim fNameTmp          'имя tmp-файла 
+     fNameTmp="~tmp.ico"
+ '
+ 'инициализирует массив
+  For i = 1 To 256
+      arrPixel(i)="#C0C0C0"  
+  Next   
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Sub prSetColor(cColor)
+'установливает текущий цвет, указанный юзером
+ pixColor=cColor
+ document.all.idCurrentColor.style.backgroundColor=pixColor
+End Sub
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Sub prClearAll()
+'очистка изображения (перезагружает hta)
+ Dim qstClear
+     qstClear = MsgBox("Очистить рисунок?", _
+                vbYesNo + vbQuestion, "Очистка")
+ If qstClear = vbNo Then Exit Sub
+document.location.reload()
+End Sub
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Sub prSaveToFile()
+'сохранение в файл
+ Dim qstSave
+     qstSave = MsgBox("Сохранить иконку в файл?", _
+                vbYesNo + vbQuestion, "Сохранить")
+ If qstSave = vbNo Then Exit Sub
+ dhCreateFileIco(fNameICO)
+End Sub
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Sub prImgReload()
+'обновление отображения иконки
+ On Error Resume Next
+    dhCreateFileIco(fNameTmp)
+    document.images.idICO.src=fNameTmp  
+ End Sub
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Sub prExit()
+'выход из программы
+ Dim qstExit
+     qstExit = MsgBox("Выйти из программы?", _
+                vbYesNo + vbQuestion, "Выход")
+ If qstExit = vbNo Then Exit Sub
+ On Error Resume Next
+ 'удаляет временный файл
+    Set objFSO = CreateObject("Scripting.FileSystemObject") 
+    objFSO.DeleteFile(fNameTmp)
+    Set objFSO = Nothing
+ window.close()
+End Sub
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Function dhCreateFileIco(fileIco)
+'формирование файла ico
+ Dim dataFile
+ Dim buffer 
+ Dim lenData 
+'заголовок файла ico 16х16
+  dataFile="00000100010010100000010018006803"
+  dataFile=dataFile & "00001600000028000000100000002000"
+  dataFile=dataFile & "00000100180000000000000000000000"
+  dataFile=dataFile & "0000000000000000000000000000"
+'информация о цветах пикселей созданной иконки
+'извлекает из массива и записывает в buffer
+'в соответствии со структурой файла ICO
+  For i = 256 To 16 Step -16
+    For j = i - 15 To i
+       buffer = buffer & Mid(arrPixel(j),6,2)  
+       buffer = buffer & Mid(arrPixel(j),4,2)
+       buffer = buffer & Mid(arrPixel(j),2,2)
+    Next  
+  Next
+ dataFile=dataFile & buffer 
+'"хвост" файла
+ For i=1 To 64
+    dataFile=dataFile & "00"     
+ Next
+ buffer="" 
+'конвертирует из Hex в Chr побайтно
+ lenData=Len(dataFile)  
+ For i=1 To lenData Step 2
+  buffer=buffer & Chr(dhHexToDec(Mid(dataFile, i, 2)))   
+ Next
+'пишет в файл 
+ Set objFSO = CreateObject("Scripting.FileSystemObject") 
+ With objFSO.CreateTextFile(fileIco)
+      .Write buffer
+      .Close
+ End With
+ Set objFSO = Nothing
+End Function
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Function dhHexToDec(dHex)
+'конвертация из Heximal в Decimal
+ Dim dSymbol
+ Dim dDecimal
+ Dim dx 
+     dhHexToDec = 0
+For dx = 1 To Len(dHex)
+    dSymbol = Mid(dHex, dx, 1)
+  Select Case dSymbol
+         Case "A": dDecimal = 10
+         Case "B": dDecimal = 11
+         Case "C": dDecimal = 12
+         Case "D": dDecimal = 13
+         Case "E": dDecimal = 14
+         Case "F": dDecimal = 15
+         Case Else: dDecimal = dSymbol
+  End Select
+ dhHexToDec = dhHexToDec + dDecimal * 16 ^ (Len(dHex) - dx)
+Next
+End Function
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+</Script>
+<!----------------------------------------------------------->
+</head>
+<body bgcolor="#FFFFFF" topmargin="0" leftmargin="0" onLoad='prImgReload()'>
+<!--Главная таблица-контейнер--> 
+<table border="0" cellpadding="0" cellspacing="0">
+<tr height="5">
+    <td width="10">&nbsp;</td>
+    <td width="48">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="270" class='styFont7' align="right"><p ID="idHelp"
+        style="CURSOR:help;" onClick='prHelp()'>ПОМОЩЬ</p></td>
+    <td width="30"></td>
+    <td width="0"></td>
+</tr>
+<tr>
+    <td></td>
+    <td valign="top">
+      <!--Таблица-контейнер для левой панели меню: Палитра, etc-->  
+      <table border="0" cellpadding="0" cellspacing="0" width="47">
+        <tr><td align="center" valign="top" class='styFont7'>Палитра</td></tr>
+        <tr><td valign="top">
+<!--Таблица меню палитры--> 
+<table border="1" cellpadding="0" cellspacing="0" alt="Меню выбора цвета">
+<tr><td width="15" height="15" bgcolor="#D90000" onClick='prSetColor("#D90000")'></td>
+    <td width="15" height="15" bgcolor="#FF0000" onClick='prSetColor("#FF0000")'></td>
+    <td width="15" height="15" bgcolor="#FFA6A6" onClick='prSetColor("#FFA6A6")'></td>
+</tr>
+<tr><td width="15" height="15" bgcolor="#DD6F00" onClick='prSetColor("#DD6F00")'></td>
+    <td width="15" height="15" bgcolor="#FF952B" onClick='prSetColor("#FF952B")'></td>
+    <td width="15" height="15" bgcolor="#FFC68C" onClick='prSetColor("#FFC68C")'></td>
+</tr>
+<tr><td width="15" height="15" bgcolor="#F9F900" onClick='prSetColor("#F9F900")'></td>
+    <td width="15" height="15" bgcolor="#FFFF00" onClick='prSetColor("#FFFF00")'></td>
+    <td width="15" height="15" bgcolor="#FFFFBF" onClick='prSetColor("#FFFFBF")'></td>
+</tr>
+<tr><td width="15" height="15" bgcolor="#00B300" onClick='prSetColor("#00B300")'></td>
+    <td width="15" height="15" bgcolor="#00FF00" onClick='prSetColor("#00FF00")'></td>
+    <td width="15" height="15" bgcolor="#A8FFA8" onClick='prSetColor("#A8FFA8")'></td>
+</tr>
+<tr><td width="15" height="15" bgcolor="#00DFDF" onClick='prSetColor("#00DFDF")'></td>
+    <td width="15" height="15" bgcolor="#00FFFF" onClick='prSetColor("#00FFFF")'></td>
+    <td width="15" height="15" bgcolor="#B7FFFF" onClick='prSetColor("#B7FFFF")'></td>
+</tr>
+<tr><td width="15" height="15" bgcolor="#0062C4" onClick='prSetColor("#0062C4")'></td>
+    <td width="15" height="15" bgcolor="#0000FF" onClick='prSetColor("#0000FF")'></td>
+    <td width="15" height="15" bgcolor="#6FB7FF" onClick='prSetColor("#6FB7FF")'></td>
+</tr>
+<tr><td width="15" height="15" bgcolor="#D700D7" onClick='prSetColor("#D700D7")'></td>
+    <td width="15" height="15" bgcolor="#FF00FF" onClick='prSetColor("#FF00FF")'></td>
+    <td width="15" height="15" bgcolor="#FFBFFF" onClick='prSetColor("#FFBFFF")'></td>
+</tr>
+<tr><td width="15" height="15" bgcolor="#000000" onClick='prSetColor("#000000")'></td>
+    <td width="15" height="15" bgcolor="#858585" onClick='prSetColor("#858585")'></td>
+    <td width="15" height="15" bgcolor="#9F9F9F" onClick='prSetColor("#9F9F9F")'></td>
+</tr>
+<tr><td width="15" height="15" bgcolor="#C0C0C0" onClick='prSetColor("#C0C0C0")'></td>
+    <td width="15" height="15" bgcolor="#E6E6E6" onClick='prSetColor("#E6E6E6")'></td>
+    <td width="15" height="15" bgcolor="#FFFFFF" onClick='prSetColor("#FFFFFF")'></td>
+</tr>
+</table>
+<!--Конец таблицы меню палитры--> 
+        </td></tr>
+        <tr><td height="5">&nbsp;</td></tr>
+        <tr><td align="center" class='styFont7'>Текущий цвет</td></tr>
+        <tr><td valign="top">
+             <!--Таблица-окно текущего цвета-->  
+             <table border="1" cellpadding="0" cellspacing="0" width="45">
+               <tr><td bgcolor="#000000" ID='idCurrentColor'>&nbsp;</td></tr>
+             </table><!--Конец таблицы-окна текущего цвета--> 
+        </td></tr>
+        <tr><td height="5">&nbsp;</td></tr>
+        <tr><td align="center" class='styFont7'>Иконка</td></tr>
+        <tr><td align="center"><IMG ID="idICO" height="16" width="16"
+            alt="Двойной клик обновляет отображение иконки"
+            onDblClick='prImgReload()'></td></tr>
+      </table><!--Конец таблицы-контейнера для левой панели меню-->  
+    </td>
+    <td width="20">&nbsp;</td>
+    <td>
+      <!--Таблица макетирования иконки--> 
+      <table border="1" cellpadding="0" cellspacing="0" width="270">
+      <script language="VBScript">
+       Dim cnt : cnt=0
+       For tRow =1 To 16
+        document.write("<tr>")  
+         For tCell = 1 To 16  
+           cnt=cnt+1
+document.write("<td width='15' height='15' bgcolor='#C0C0C0' ID='idR" & _
+               tRow & "C" & tCell & "' onClick='vbs: arrPixel(" & cnt & _
+               ")=pixColor: document.all.idR" & tRow & "C" & tCell & _
+               ".style.backgroundColor=pixColor'></td>")
+         Next
+        document.write("</tr>") 
+       Next 
+      </script>
+     </table><!--Конец таблицы макетирования иконки--> 
+    </td>
+  <td></td>
+  <td></td>
+  </tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr><td></td><td></td><td></td>
+      <td align="right"><input type="button" name="btn0" style="width:77px;"
+          value="Очистить" onClick='prClearAll()'> &nbsp;
+         <input type="button" name="btn1" style="width:77px;" value="Сохранить"
+          onClick='prSaveToFile()'> &nbsp;
+         <input type="button" name="btn2" style="width:77px;" value="Закрыть"
+          onClick='prExit()'></td>
+      <td></td>
+      <td></td>
+  </tr>
+</table>
+</body>
+<SCRIPT language="VBScript">
+Sub prHelp()
+'показывает Help
+Dim txtHelp
+txtHelp=txtHelp & "Простой редактор иконок." & vbNewLine
+txtHelp=txtHelp & "HTA-приложение. Разработчик: dr.VerSys" & vbNewLine
+txtHelp=txtHelp & "" & vbNewLine
+txtHelp=txtHelp & "Описание работы:" & vbNewLine
+txtHelp=txtHelp & "1. Выберите нужный цвет в меню ''Палитра''." & vbNewLine
+txtHelp=txtHelp & "   Выбранный цвет будет отображаться в окошке" & vbNewLine
+txtHelp=txtHelp & "   ''Текущий цвет''." & vbNewLine
+txtHelp=txtHelp & "2. На поле редактирования (поле в виде сетки)" & vbNewLine
+txtHelp=txtHelp & "   с помощью ''мышки'' создайте рисунок." & vbNewLine
+txtHelp=txtHelp & "3. Просмотр реального отображения создаваемой" & vbNewLine
+txtHelp=txtHelp & "   иконки вызывается (обновляется) двойным" & vbNewLine
+txtHelp=txtHelp & "   щелчком ''мышки'' по окошку ''Иконка''." & vbNewLine
+txtHelp=txtHelp & "4. Кнопкой ''Очистить'' полностью очищается поле" & vbNewLine
+txtHelp=txtHelp & "   редактирования без сохранения рисунка." & vbNewLine
+txtHelp=txtHelp & "5. Кнопкой ''Сохранить'' рисунок сохраняется в " & vbNewLine
+txtHelp=txtHelp & "   файл иконки."
+'
+MsgBox txtHelp, vbInformation, "Редактор иконок"
+End Sub
+</SCRIPT> 
+</html>

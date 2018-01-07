@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title></title>
+		<meta charset="utf8">
+        <script>
+        
+		function log_I(x,y)
+		{		
+				c = (x&&y);
+				rezul5.value = c;
+		}
+		function log_ILI(x,y)
+		{
+				c=(x||y);
+				return c;
+		}
+		function log_inv(x)
+		{
+				c=(!x);
+				return c;
+		}
+		function log_NeILI(x,y)
+		{
+				c=(!x&&!y);
+				return c;
+		}
+		
+         function sravn()
+{
+ n=document.getElementsByTagName("Select").item(0).options.selectedIndex;
+ h=document.getElementsByTagName("Select").item(0).options[n].value;
+a=parseInt(chislo_1.value);
+b=parseInt(chislo_2.value);
+switch(h) {
+    case ">": 
+        c=(a>b) ;
+        break;
+    case "<":     
+        c=(a<b) ;
+        break;
+    case "=": 
+        c=(a==b) ;    
+        break;
+    
+    default: 
+        c=(a>b) ;
+}
+
+
+rezul.value=c;
+rezul2.value=a;
+rezul3.value=b;
+rezul4.value= h;
+
+}
+        
+        
+        </script>
+        
+    </head>
+    <body>
+        <table border=1 >
+            
+            <tr align="center">
+                <td><input id=chislo_1 type="text" size="1"></td>
+                <td ><select name="znak" >
+                        <option value=">">></option>
+                        <option value="<"><</option>
+                        <option value="=">=</option>
+                    </select>
+                </td>
+                <td><input id=chislo_2 type="text" size="1"></td>
+                <td><input type="button" value="Сравнить" onclick="sravn()"></td>
+                <td><input type="button" value="2222" onclick="log_I(chislo_1.value,chislo_2.value)"></td>
+                
+            </tr>
+             
+            <tr align="center">
+                <td><input id="rezul" size="2" readonly></td>
+                <td><input id="rezul2" size="2" readonly></td>
+                <td><input id="rezul3" size="2" readonly></td>
+                <td><input id="rezul4" size="2" readonly></td>
+            </tr>
+            <tr align="center">
+                <td><input id="rezul5" size="2" readonly></td>
+                <td><input id="rezul6" size="2" readonly></td>
+                <td><input id="rezul7" size="2" readonly></td>
+                <td><input id="rezul8" size="2" readonly></td>
+            </tr>
+            <tr align="center">
+                <td><input id="rezul9" size="2" readonly></td>
+                <td><input id="rezul10" size="2" readonly></td>
+                <td><input id="rezul11" size="2" readonly></td>
+                <td><input id="rezul12" size="2" readonly></td>
+            </tr>
+            
+            </tr>
+        </table>
+    </body>
+    
+</html>

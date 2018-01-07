@@ -1,0 +1,138 @@
+* {
+	margin: 0; padding: 0;
+}
+
+
+
+body{
+
+text-align: center;
+}
+h1{
+   transition: color 1s;
+}
+#main{ 
+ width:800px;
+ margin: 0 auto;
+}
+
+#header{
+
+ background:#504742;
+ width:800px;
+ height:100px;
+ text-align:center;
+ color:#FFFFFF;
+ font-size:24px;
+ padding-top:40px;
+} 
+#nav{
+
+ background:#86776f;
+ width:800px;
+ height:auto;
+ text-align:left;
+ color:#211E1C;
+ font-size:18px;
+ padding-top:10px;
+} 
+#menu{
+ background:#95776f;
+ float:left;
+ width:200px;
+ min-height: 440px;
+ text-align:center;
+ color:#FFFFFF;
+ font-size:18px;
+ padding-top:10px;
+}
+#content{
+padding-top:10px;
+ background:#f0ebdb;
+ margin-left:200px;
+ min-height:300px;
+ text-align:center;
+   font-size:15px;
+}
+#footer{
+ background:#504742;
+ clear:both;
+ width:800px;
+ height:50px;
+ text-align:center;
+ color:#FFFFFF;
+ font-size:14px;
+ padding-top:10px;
+}
+.menu_el{
+	position:relative;
+	margin: 5px;
+	border:2px solid #504742;
+}
+.menu_el:hover {
+	position:relative;
+	background-color: #022d62;
+	background-image: url("pic/right-double-chevron.png"), url("pic/right-double-chevron1.png");
+	background-size: 25px 25px, 25px 25px;
+	background-repeat: no-repeat, no-repeat;
+	background-position: 15% center, 85% center;
+	margin: 5px;
+	border:2px solid #f0ebdb;
+	font-size:18px;
+	
+}
+.menu_el a {
+	 text-decoration:none;
+     display: block; /* Ссылка как блочный элемент */
+	 padding:5px;
+     text-align: center; /* Выравнивание по центру */
+     height: 100%; /* Высота на весь слой */
+     color: #fff; /* Цвет ссылки */
+    }
+
+ul.dropdown { 
+	position: relative; 
+	display: inline-block;
+	width:auto;
+	height:auto;
+	}
+ul.dropdown li { 
+	position: relative; 
+	left:0px;
+	}
+	
+ul.dropdown, ul.dropdown-inside {
+	list-style-type: none;
+	padding: 0;
+	}
+ul.dropdown-inside {
+	position: absolute;
+	left: -9999px;
+	}
+ul.dropdown li.dropdown-top {
+	float: left;
+	margin: 0 1px 0 0;
+	}
+ul.dropdown li.dropdown-top a {
+	padding: 3px 10px 4px;
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	}
+ul.dropdown a.dropdown-top { 
+	background: #86776F; 
+	}
+ul.dropdown a.dropdown-top:hover {
+	background:#022d62; 
+	}
+ul.dropdown li.dropdown-top:hover .dropdown-inside {
+	display: block;
+	left: 0;
+	z-index: 1;
+	}
+ul.dropdown .dropdown-inside { 
+	background: #86776F; 
+	}
+ul.dropdown .dropdown-inside a:hover { 
+	background: #022d62; 
+	}

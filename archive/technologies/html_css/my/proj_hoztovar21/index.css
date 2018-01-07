@@ -1,0 +1,35 @@
+body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;font-size: 15px}table{border-collapse:collapse;border-spacing:0;}fieldset,img,abbr{border:0;}address,caption,cite,code,dfn,em,strong,th,var {font-style:normal;font-weight:normal;}ul li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}legend{color:#000;}article,aside,details,figcaption,figure,footer,header,menu,nav,section {display:block;}
+
+
+.wrapper{
+   max-width: 1150px;
+   margin: 0 auto;
+   height: 100%;
+}
+.header{
+    height:150px;
+    background: rgb(255, 216, 122);
+}
+.logotype {
+   width: 181px;
+   height: 150px;
+   float: left;
+   background: url("pic/logotype.png") center no-repeat;
+   background-size: cover;
+}
+.contacts{
+   font-size: 16px;
+}
+.menu{
+   height:50px;
+   background: rgb(255, 204, 120);
+}
+.content{
+   min-height:500px;
+   background: rgb(255, 251, 210);
+}
+.footer{
+   height:100px;
+   background: rgb(223, 255, 174);
+}
+

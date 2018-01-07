@@ -1,0 +1,3 @@
+https://bittrex.com/Home/Api
+https://bittrex.com/api/v1.1/public/getticker?market=USDT-BTC
+https://bittrex.com/api/v1.1/public/getmarkets

@@ -1,0 +1,5 @@
++Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36; 12:46:35 11.09.2017
+http://away.vk.com/away.php
++Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36; 12:53:11 11.09.2017
+http://rozbyn.esy.es/php/testing.php
+four - 4; point - 2; phpLearn - 4; sauce - 2; whyMoney - 1; rain - 3; drink - 3; rules - 4; happy - 2; send_test - Отправить; 

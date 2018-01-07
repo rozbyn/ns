@@ -1,0 +1,71 @@
+div {
+   border: 1px solid black;
+   width: 8%;
+   height: 50px;
+}
+
+body div:nth-child(even){
+   background: #ffcc54;
+}
+
+body div:nth-child(odd){
+   background: #b6ff82;
+}
+
+.prim1 {
+
+}
+
+.prim2 {
+   height:200px;
+   width: 200px;
+   float: left;
+}
+
+.prim3 {
+   height:200px;
+   width: 200px;
+}
+
+.prim4 {
+   height:200px;
+   width: 200px;
+}
+
+.prim5 {
+   height:200px;
+   width: 200px;
+}
+
+.prim6 {
+   height:200px;
+   width: 200px;
+}
+
+.prim7 {
+   height:200px;
+   width: 200px;
+}
+
+.prim8 {
+   float: left;
+   height:200px;
+   width: 200px;
+}
+
+.prim9 {
+   float: left;
+}
+
+.prim10 {
+   float: left;
+}
+
+.prim11 {
+   float: left;
+}
+
+.prim12 {
+   float: left;
+}
+
