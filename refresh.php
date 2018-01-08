@@ -39,6 +39,8 @@ if (isset($_GET['file'])){
 			if (file_put_contents("d/$site/".$fN, $cont)){
 				echo 'Файл успешно закачан!' . '<br>';
 			}
+		} else {
+			echo 'Файл не закачан! Ошибка!' . '<br>';
 		}
 	}
 }
