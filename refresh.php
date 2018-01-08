@@ -24,18 +24,21 @@ if (isset($_GET['file'])){
 	} else {
 		$cont = file_get_contents($file);
 		if (file_put_contents('cont_temp.txt', $cont)){
+			if (!isset($_GET['n'])){
+				$v = substr($file, strrpos($file, '/')+1);
+				$fN = preg_replace('/[\[\]\{\}\-:;\'><—,?\/ \!@"_#$%^&()*+=|\\~`]{1}/iu', '', $v);
+			} else {
+				$fN = $_GET['n'];
+			}
 			$a = strpos($file, '//');
 			$b = substr($file, $a+2);
 			$c = strpos($b, '/');
 			$site = substr($b, 0, $c);
-			$fileName = substr($file, strrpos($file, '/')+1);
 			echo $site . '<br>';
-			echo $fileName . '<br>';
+			echo $fN . '<br>';
 			if (!is_dir('d/'.$site)){
 				mkdir('d/'.$site);
 			}
-			$fN = preg_replace('/[\[\]\{\}\-:;\'><—,?\/ \!@"_#$%^&()*+=|\\~`]{1}/iu', '', $fileName);
-			$cont = file_get_contents('cont_temp.txt');
 			if (file_put_contents("d/$site/".$fN, $cont)){
 				echo 'Файл успешно закачан!' . '<br>';
 			}
