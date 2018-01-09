@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('Europe/Moscow');
 include('mysql_function.php');
-$myDbObj = connect_DB('test', 'root', '', 'localhost');
+$myDbObj = connect_DB('u784337761_test', 'u784337761_root', 'nSCtm9jplqVA', 'localhost');
 $showThemeList = true;
 $showOneTheme = false;
 $info_message = '';

@@ -48,7 +48,7 @@ function make_table($headTable = ['#', 'name', 'count', 'something'], $arrOfData
 header('Content-Type: text/html; charset=utf-8');
 
 echo '<div>';////////////
-$dbTestConnection = new mysqli('localhost', 'root', '', 'test');
+$dbTestConnection = new mysqli('localhost', 'u784337761_root', 'nSCtm9jplqVA', 'u784337761_test');
 $dbTestConnection -> set_charset("utf8");
 if (mysqli_connect_errno()){
 	printf("Не удалось подключиться: %s\n", mysqli_connect_error());

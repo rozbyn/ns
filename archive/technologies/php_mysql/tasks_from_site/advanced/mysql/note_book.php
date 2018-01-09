@@ -2,7 +2,7 @@
 date_default_timezone_set('Europe/Moscow');
 include('mysql_function.php');
 header('Content-Type: text/html; charset=utf-8');
-$myDbObj = connect_DB('test', 'root', '', 'localhost');
+$myDbObj = connect_DB('u784337761_test', 'u784337761_root', 'nSCtm9jplqVA', 'localhost');
 $pTime = date('H:i');
 $pDate = date('d.m.Y');
 $showOneNote = false;
