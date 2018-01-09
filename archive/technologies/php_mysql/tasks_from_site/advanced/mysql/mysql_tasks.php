@@ -172,10 +172,15 @@ if ($showTable){
 	echo '</form>';
 	if (isset($_GET['sal_filt_submit'])){
 		if(isset($_GET['salary_filter']) && $_GET['salary_filter'] !== ''){
-			if ($stmt = $dbTestConnection -> prepare("SELECT * FROM workers WHERE salary=?")){
+			if ($stmt = $dbTestConnection -> prepare("SELECT id, name, age, salary FROM workers WHERE salary=?")){
 				$stmt->bind_param("i", $_GET['salary_filter']);
 				if($stmt->execute()){
-					$result = $stmt->get_result();
+					$stmt->bind_result($id, $name, $age, $salary);
+					$result=[];
+					for($i=0; $stmt->fetch(); $i++){
+						$result[$i] = ['id'=>$id, 'name'=>$name, 'age'=>$age, 'salary'=>$salary];
+					}
+					$vse_ok = true;
 				}
 				$stmt->close();
 				$showAllTable = false;
@@ -188,9 +193,13 @@ if ($showTable){
 	}
 	
 	if($showAllTable){
-		if ($stmt = $dbTestConnection -> prepare('SELECT * FROM workers')){
+		if ($stmt = $dbTestConnection -> prepare('SELECT id, name, age, salary FROM workers')){
 			if($stmt->execute()){
-				$result = $stmt->get_result();
+				$stmt->bind_result($id, $name, $age, $salary);
+				$result=[];
+				for($i=0; $stmt->fetch(); $i++){
+					$result[$i] = ['id'=>$id, 'name'=>$name, 'age'=>$age, 'salary'=>$salary];
+				}
 				$vse_ok = true;
 			} else {
 				echo 'Запрос НЕ ВЫПОЛНЕН!!!' . '<br>';
@@ -203,47 +212,41 @@ if ($showTable){
 		}
 	}
 	if (isset($result)){
-		if (is_object($result)){
-			for ($res = []; $row = $result->fetch_assoc(); $res[] = $row);
+		if (!empty($result)){
+			//for ($res = []; $row = $result->fetch_assoc(); $res[] = $row);
 			$headTable = [];
-			if (!empty($res)){
-				foreach($res[0] as $key => $val){
-					$headTable[] = '<b>'.$key.'</b>';
-				}
-				$headTable[] = '<b>Удалить?</b>';
-				$headTable[] = '<b>Изменить</b>';
-				foreach($res as $key => $arr1){
-					$res[$key][] = '<input type="checkbox" name="del_w_records[]" value="'.$arr1['id'].'">';
-					$res[$key][] = '<a href="mysql_tasks.php?edit_id='.$arr1['id'].'">Изменить</a>';
-				}
-				$res[][]= '<a href="mysql_tasks.php?new_worker=1">Новый</a>';
-				$res[count($res)-1][]= '';
-				$res[count($res)-1][]= '';
-				$res[count($res)-1][]= '';
-				$res[count($res)-1][]= '<input type="submit" name="del_w_button" value="Удалить">';
-				echo '<form action="" method="GET">';
-				make_table($headTable, $res);
-				echo '</form>';
-			} else {
-				echo '<a href="mysql_tasks.php?new_worker=1">Новый</a>';
+			foreach($result[0] as $key => $val){
+				$headTable[] = '<b>'.$key.'</b>';
 			}
-		} elseif ($result === false){
-			if ($vse_ok){
-				echo 'Запрос успешно выполнен' . '<br>';
-			} else {
-				echo 'Такого быть не может!!!' . '<br>';
-				echo $dbTestConnection->error;
+			$headTable[] = '<b>Удалить?</b>';
+			$headTable[] = '<b>Изменить</b>';
+			foreach($result as $key => $arr1){
+				$res[$key][] = $arr1['id'];
+				$res[$key][] = $arr1['name'];
+				$res[$key][] = $arr1['age'];
+				$res[$key][] = $arr1['salary'];
+				$res[$key][] = '<input type="checkbox" name="del_w_records[]" value="'.$arr1['id'].'">';
+				$res[$key][] = '<a href="mysql_tasks.php?edit_id='.$arr1['id'].'">Изменить</a>';
 			}
+			$res[][]= '<a href="mysql_tasks.php?new_worker=1">Новый</a>';
+			$res[count($res)-1][]= '';
+			$res[count($res)-1][]= '';
+			$res[count($res)-1][]= '';
+			$res[count($res)-1][]= '<input type="submit" name="del_w_button" value="Удалить">';
+			echo '<form action="" method="GET">';
+			make_table($headTable, $res);
+			echo '</form>';
+		} else {
+			echo '<a href="mysql_tasks.php?new_worker=1">Новый</a>';
 		}
 	} else {
 		echo 'Не удалось получить результат.' . '<br>';
 	}
-
 }
+
 $dbTestConnection->close();
 
 echo '</div>';///////////
-echo '<div>';////////////
 
 
 
