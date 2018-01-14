@@ -1,0 +1,98 @@
+body{
+	margin: 0;
+	font-family: Arial;
+}
+.wrapper{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.goods{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.img {
+	width: 200px;
+	height: 200px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin: 14px auto auto;
+}
+.product{
+	width: 230px;
+	float: left;
+	background: beige;
+	margin: 5px;
+}
+.price{
+	font-size: 33px;
+	color: chocolate;
+	text-align: center;
+}
+.add form{
+	text-align: center;
+}
+.add input[type="submit"]{
+	display: inline-block;
+	margin-bottom: 10px;
+	width: 200px;
+}
+.basket {
+	text-align: right;
+}
+.total{
+	clear: both;
+	background: blanchedalmond;
+}
+.design{
+	width: 40px;
+	height: 40px;
+	box-shadow: inset 0px 0px 0px 3px #9eb7ff;
+	border-radius: 10px;
+	margin: 3px;
+}
+.chosen{
+	background-image: url('img/galochka.png');
+	background-repeat: no-repeat;
+	background-size: 30px;
+	background-position: center;
+}
+.design a{
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+.design:hover{
+	box-shadow: inset 0px 0px 0px 3px #9eb7ff, 0px 0px 5px 3px #4575ff;
+}
+
+.choose_design{
+	background: #edf4ff;
+	display: inline-block;
+	margin: 0px auto;
+	padding: 5px;
+	border-radius: 5px;
+	position: absolute;
+	top: 52px;
+}
+@media (max-width: 1216px){
+    .goods{
+		max-width: 960px;
+    }
+}
+@media (max-width: 975px){
+    .goods{
+		max-width: 720px;
+    }
+}
+@media (max-width: 735px){
+    .goods{
+		max-width: 480px;
+    }
+}
+@media (max-width: 495px){
+    .goods{
+		max-width: 240px;
+    }
+}
+
+

@@ -14,10 +14,13 @@ setcookie("test","Тест!", time() + 3600*24);
 setcookie("test","Тест!", time() + 3600*24*30); 
 
 //Запишем куку на год (в году 3600*24*30*365 секунд!):
-setcookie("test","test3", time() + 3600*24*365); 
+setcookie("test1","test3", time() + 3600*24*365); 
 
-echo $_COOKIE['test'];
 
+
+//Удалим куку, установив третий параметр в текущий момент времени:
+setcookie('test', '', time());
+echo $_COOKIE['test1'];
 
 ?>
 <!DOCTYPE html>

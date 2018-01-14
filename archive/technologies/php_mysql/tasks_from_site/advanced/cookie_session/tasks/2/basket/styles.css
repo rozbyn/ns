@@ -1,0 +1,63 @@
+.wrapper{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.goods{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.img {
+	width: 200px;
+	height: 200px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin: 14px auto auto;
+}
+.product{
+	width: 230px;
+	float: left;
+	background: beige;
+	margin: 5px;
+}
+.price{
+	font-size: 33px;
+	color: chocolate;
+	text-align: center;
+}
+.add form{
+	text-align: center;
+}
+.add input[type="submit"]{
+	display: inline-block;
+	margin-bottom: 10px;
+	width: 200px;
+}
+.basket {
+	background: blanchedalmond;
+	text-align: right;
+}
+.total{
+	clear: both;
+}
+@media (max-width: 1216px){
+    .goods{
+		max-width: 960px;
+    }
+}
+@media (max-width: 975px){
+    .goods{
+		max-width: 720px;
+    }
+}
+@media (max-width: 735px){
+    .goods{
+		max-width: 480px;
+    }
+}
+@media (max-width: 495px){
+    .goods{
+		max-width: 240px;
+    }
+}
+
+

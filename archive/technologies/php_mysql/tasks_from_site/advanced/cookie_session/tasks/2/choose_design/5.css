@@ -1,0 +1,17 @@
+
+.wrapper {
+	background: #7383FF;
+}
+.product {
+    background: #0013A6;
+}
+.price {
+    color: white;
+}
+.choose_design {
+    background: #3041BF;
+}
+.total {
+    background: #001EFF;
+	color: white;
+}
