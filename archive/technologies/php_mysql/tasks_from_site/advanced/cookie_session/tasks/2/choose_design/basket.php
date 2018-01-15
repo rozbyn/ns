@@ -27,6 +27,15 @@ if ($showChoosenDesign){
 $chosenStyle=[1=>'','','','','',''];
 $chosenStyle[$choosenDesign] = 'class="chosen"';
 
+if (isset($_GET['mail'])){
+	$to = 'rozbyn@yandex.ru';
+	$subject = 'the TEST';
+	$message = 'hello1 hello1 hello1 hello1 hello1 hello1 hello1 hello1 hello1 hello1 ';
+	$headers = 'Content-type: text\html;';
+	$headers = 'Content-type: text\plain; Charset=utf-8';
+	$l = mail($to, $subject, $message, $headers);
+	var_dump($l);
+}
 
 ?>
 <!DOCTYPE html>
@@ -106,6 +115,7 @@ $chosenStyle[$choosenDesign] = 'class="chosen"';
 				 class="design" style="background: #001eff;"><a href="?d=5" <?=$chosenStyle[5]?> ></a></div><div
 				 class="design" style="background: red"><a href="?d=6" <?=$chosenStyle[6]?> ></a></div>
 			</div>
+			<a href="?mail=1">mail</a>
 		</div>
 	</div>
 	<div style="position: fixed; top:90%; left:80%; z-index:9; background: #f9f98c;"><a href="http://theory.phphtml.net/tasks/php/auth/rabota-s-cookie-na-php.html" target="_blank">Страница учебника</a></div>
