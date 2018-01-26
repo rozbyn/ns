@@ -54,11 +54,11 @@ function shutdown() {
 }
 // регистрируем функцию которая запустится по завершению скрипта
 register_shutdown_function('shutdown');
-djol();
+
 try {
     // код который может выбросить исключение
 	
-    if (true || rand(0, 1)) {
+    if (true && rand(0, 1)) {
         throw new Exception("et,jr");
 		//если выброшено исключение то весь код до блока catch игнорируется
     } else {
@@ -82,7 +82,6 @@ try {
 	print_r($e->getTrace());
 	echo '<br>getTraceAsString: ';
     echo $e->getTraceAsString();
-
 }
 
 
