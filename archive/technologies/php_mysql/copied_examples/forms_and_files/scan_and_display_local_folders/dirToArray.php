@@ -3,7 +3,7 @@
 
 <?php
 //функция создания массива из структуры локальной папки 
-$dir = 'files';
+$dir = '../../../';
 function dirToArray ($dir){
 	$result = [];
 	$cdir = scandir($dir);

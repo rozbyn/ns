@@ -1,6 +1,31 @@
 
 
 <?php
+class form {
+	public $formContent=[];
+	function __construct($action='', $method='GET', $tags=[]){
+		$this->$formContent['action'] = $action;
+		$this->$formContent['method'] = $method;
+		$tagsArr = [];
+		foreach($tags as $tag=>$val){
+			$tagsArr[$tag]=$val;
+		}
+		$this->$formContent['tags'] = $tagsArr;
+	}
+}
+
+$as = new form('','POST', ['id'=>'1', 'class'=>'logIn']);
+var_dump($as->formContent);
+
+
+
+
+
+
+
+
+
+
 // Пример функции с параметрами (скопировано)
 function makecoffee($types = array("капуччино"), $coffeeMaker = NULL)
 {
@@ -12,7 +37,7 @@ echo makecoffee(["капуччино", "лавацца"], "в чайнике");
 // // // //
 
 // Пример создания и использования класса для HTML форм(скопировано)
-class Form{
+class Form2{
 	//функция берет каждый элемент массива и возвращает набор HTML свойств для тегов
 	public function arrTohtml($arra=[]){
 		$htmlText = '';
@@ -43,7 +68,7 @@ class Form{
 		return '<textarea ' . $this -> arrTohtml($arr) . '>' . $valuee . '</textarea>';
 	}
 }
-$jfj = new Form;
+$jfj = new Form2;
 $content2 = '';
 $content2 .=  $jfj->open(['action'=>'index.php', 'method'=>'POST']);
 $content2 .=   $jfj->input(['type'=>'text', 'value'=>'!!!']). '<br>';
