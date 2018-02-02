@@ -43,6 +43,6 @@ print "</pre>";
     <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
     <input type="hidden" name="MAX_FILE_SIZE" value="30000000" />
     <!-- Название элемента input определяет имя в массиве $_FILES -->
-    Отправить этот файл: <input name="userfile[]" type="file" multiple accept="image/*"/>
+    Отправить этот файл: <input name="userfile" type="file" accept="image/*"/>
     <input type="submit" value="Send File" />
 </form>
