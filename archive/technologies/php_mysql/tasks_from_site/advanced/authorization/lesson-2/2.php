@@ -100,7 +100,7 @@ echo var_dump(user('id')) . '<br>';
 echo var_dump(user('e-mail')) . '<br>';
 echo var_dump(user('surname')) . '<br>';
 
-print_r(getUser(2)) . '<br>';
+print_r(getUser(3)) . '<br>';
 
 
 

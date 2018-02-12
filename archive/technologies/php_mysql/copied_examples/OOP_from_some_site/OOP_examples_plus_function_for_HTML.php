@@ -4,13 +4,13 @@
 class form {
 	public $formContent=[];
 	function __construct($action='', $method='GET', $tags=[]){
-		$this->$formContent['action'] = $action;
-		$this->$formContent['method'] = $method;
+		$this->formContent['action'] = $action;
+		$this->formContent['method'] = $method;
 		$tagsArr = [];
 		foreach($tags as $tag=>$val){
 			$tagsArr[$tag]=$val;
 		}
-		$this->$formContent['tags'] = $tagsArr;
+		$this->formContent['tags'] = $tagsArr;
 	}
 }
 

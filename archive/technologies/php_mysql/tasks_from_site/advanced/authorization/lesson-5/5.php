@@ -156,9 +156,9 @@ if (!isset($_SESSION['auth']) || $_SESSION['auth'] === false){
 		$res = mysqli_fetch_assoc($myDbObj->query("SELECT*FROM users2 WHERE login='$login' AND userkey='$key'"));
 		$login = '';
 		if (!empty($res)){
-			$_SESSION['auth'] = true;
-			$_SESSION['id'] = $res['id']; 
-			$_SESSION['login'] = $res['login'];
+			//$_SESSION['auth'] = true;
+			//$_SESSION['id'] = $res['id']; 
+			//$_SESSION['login'] = $res['login'];
 			$message = 'Вы вошли по кукам!';
 			setcookie('lastvisited', time(), time()+60*60*24*30);
 			

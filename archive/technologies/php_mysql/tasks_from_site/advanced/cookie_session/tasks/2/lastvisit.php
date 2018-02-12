@@ -3,11 +3,11 @@ date_default_timezone_set('Europe/Moscow');
 
 if (isset($_COOKIE['lastvisit']) ){
 	$timePassed = time() - $_COOKIE['lastvisit'];
-	//$timePassed = 42204157;
-	$years = floor($timePassed/31104000);
-	$a = $timePassed%31104000;
-	$months = floor($a/2592000);
-	$a = $timePassed%2592000;
+	$timePassed = time() - 677289600;
+	$years = floor($timePassed/31556926);
+	$a = $timePassed%31556926;
+	$months = floor($a/2629743);
+	$a = $timePassed%2629743;
 	$days = floor($a/86400);
 	$a = $timePassed%86400;
 	$hours = floor($a/3600);

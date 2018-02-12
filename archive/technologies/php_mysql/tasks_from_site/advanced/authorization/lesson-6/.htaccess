@@ -1,0 +1,10 @@
+RewriteEngine on
+RewriteRule ^registration/??(.*)$ index.php?reg=true&$1 [QSA]
+RewriteRule ^exit$ index.php?exit=true [L]
+RewriteRule ^verification/??(.*)$ verification.php?$1 [QSA]
+RewriteRule ^profile/?$ profile.php [L]
+RewriteRule ^profile/([0-9]+)/?$ profile.php?id=$1 [L]
+RewriteRule ^profile/([\w-_]+)/?$ profile.php?name=$1 [L]
+RewriteRule ^messages/?$ messages.php [QSA]
+#RewriteRule ^profile(/?.*)$ profile.php?$1 [QSA]
+

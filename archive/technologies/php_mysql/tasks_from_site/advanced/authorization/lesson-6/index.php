@@ -1,15 +1,7 @@
 <?php
-function login_validate($str){
-	if(strlen($str)<15 and !preg_match('#^[0-9]+$#',$str)){
-		if(preg_match('#^[a-z0-9]{1}(?:[a-z0-9]|(?:[-](?!-))|(?:[_](?!_)))+[a-z0-9]{1}$#i', $str)===1)return true;
-	}
-	return false;
-}
-function name_validate($str, $len = 20){
-	if(mb_strlen($str)<=$len and !preg_match('#^[0-9]+$#',$str)){
-		if(preg_match('#^[a-zа-я]{1}(?:[a-zа-я]|(?:[-](?!-)))+[a-zа-я]{1}$#iu', $str)===1)return true;
-	}
-}
+date_default_timezone_set('Europe/Moscow');
+include('classInputform.php');
+
 function generatePassword ($n=10){
 	$pass = '';
 	for($i=1; $i<=$n; $i++){
@@ -34,203 +26,194 @@ function addSaltToPassword($password, $salt){
 
 
 //////////////////////
+//Подключение к БД++++++++++++++++++++
 if($_SERVER['DOCUMENT_ROOT'] === '/home/u784337761/public_html'){
 	$myDbObj = new mysqli('localhost', 'u784337761_root', 'nSCtm9jplqVA', 'u784337761_test');
+} elseif($_SERVER['DOCUMENT_ROOT'] === '/storage/ssd3/266/4204266/public_html'){
+	$myDbObj = new mysqli('localhost', 'id4204266_root', 'asdaw_q32d213e', 'id4204266_test');
 } else {
 	$myDbObj = new mysqli('localhost', 'root', '', 'test');
 }
 $myDbObj->set_charset("utf8");
-if(isset($_COOKIE['lastvisited'])){
-	$timePassed = time() - $_COOKIE['lastvisited'];
-	echo 'Ваше последнее посещение было '. $timePassed . ' секунд назад<br>';
+//++++++++++++++++++++++++++++++++++++
+
+
+/* session_start();
+session_destroy(); */
+
+$registration = false;
+$headerText = '<a href=".">Сайт с профилями и сообщениями.</a>';
+
+//Выход из аккаунта-----
+if(isset($_GET['exit']) && $_GET['exit'] === 'true'){
+	setcookie('_ruId', '', time());
+	setcookie('_ruKey', '', time());
+	setcookie('_ruNoRem', '', time());
+	setcookie('_ruLVis', '', time());
+	header('Location: ./');
 }
-session_start(); 
+//Выход из аккаунта-----
 
 
-$loginErr = '';
-$passErr = '';
-$confPassErr = '';
-$emailErr = '';
-$errClassAdd = ['login'=>'','pass'=>'','confPass'=>'', 'email'=>''];
 
-$authLogin = '';
-$authPass = '';
-$authRem = '';
 
-$login = '';
-$password = '';
-$confirmPassword = '';
-$email = '';
-$name = '';
-$surname='';
-$city='';
-$lang = ['r'=>'', 'e'=>'', 'u'=>'', 'b'=>'', 'o'=>''];
-if(isset($_POST['register'])){
-	$emptyFields = '';
-	!empty($_POST['login']) ? $login = $_POST['login'] : $emptyFields.='1';
-	!empty($_POST['pass']) ? $password = $_POST['pass'] : $emptyFields.='2';
-	!empty($_POST['confirm-pass']) ? $confirmPassword = $_POST['confirm-pass'] : $emptyFields.='3';
-	!empty($_POST['email']) ? $email = $_POST['email'] : $emptyFields.='4';
-	!empty($_POST['name']) ? $name = $_POST['name'] :'';
-	!empty($_POST['surname']) ? $surname = $_POST['surname'] :'';
-	!empty($_POST['city']) ? $city = $_POST['city'] :'';
-	if(!empty($_POST['lang'])){
-		foreach($_POST['lang'] as $language){
-			$lang[$language] = 'selected';
-		}
-	}
-	if (strlen($emptyFields) != 0){
-		echo mb_substr(str_replace([1,2,3,4], ['логин, ', 'пароль, ', 'подтверждение пароля, ', 'E-mail, '], 'Введите '.$emptyFields),0,-2) . '!<br>';
-	} elseif(!login_validate($login)) {
-		$loginErr = 'Введите корректный логин!' . '<br>';
-		$errClassAdd['login'] = 'class="error"';
-	} elseif($password != $confirmPassword) {
-		$confPassErr = 'Пароли не совпадают!' . '<br>';
-		$passErr = 'Пароли не совпадают!' . '<br>';
-		$errClassAdd['confPass'] = 'class="error"';
-		$errClassAdd['pass'] = 'class="error"';
-	} elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-		$emailErr = 'Введите корректный e-mail!' . '<br>';
-		$errClassAdd['email'] = 'class="error"';
-	} else {
-		if(!empty(mysqli_fetch_assoc($myDbObj->query("SELECT * FROM users2 WHERE login='$login'")))){
-			echo 'Логин занят!' . '<br>';
-		} elseif(!empty(mysqli_fetch_assoc($myDbObj->query("SELECT * FROM users2 WHERE email='$email'")))){
-			echo 'E-mail занят!' . '<br>';
+
+
+
+//Проверка кук-----
+if(!empty($_COOKIE['_ruId']) && !empty($_COOKIE['_ruKey']) && !empty($_COOKIE['_ruLVis'])){
+	$logged_user_id = $myDbObj->real_escape_string($_COOKIE['_ruId']);
+	$logged_user_key = $myDbObj->real_escape_string($_COOKIE['_ruKey']);
+	$logged_user_time = time();
+	$logged_DBuserInfo = mysqli_fetch_assoc($myDbObj->query("SELECT * FROM auth6_users WHERE id='$logged_user_id' AND userkey='$logged_user_key'"));
+	if(!empty($logged_DBuserInfo)){
+		$userAuth = ($logged_DBuserInfo['verified'] == 1) ? true : 'NOT_VERIFIED';
+		$myDbObj->query("UPDATE auth6_users SET last_visit='$logged_user_time' WHERE id='$logged_user_id' AND userkey='$logged_user_key'");
+		if(!empty($_COOKIE['_ruNoRem']) && $_COOKIE['_ruNoRem'] === '1'){//выход из аккаунта после 10 минут бездействия
+			setcookie('_ruId', $_COOKIE['_ruId'], time()+60*10);
+			setcookie('_ruKey', $_COOKIE['_ruKey'], time()+60*10);
+			setcookie('_ruNoRem', '1', time()+60*10);
 		} else {
-			$name = $myDbObj->real_escape_string(mb_substr($name,0,15));
-			$surname = $myDbObj->real_escape_string(mb_substr($surname,0,30));
-			$city = $myDbObj->real_escape_string(mb_substr($city,0,20));
-			$langToDB = '';
-			foreach($lang as $key=>$val){
-				if($val=='selected'){
-					$langToDB .= $key;
-				}
-			}
-			$langToDB = $myDbObj->real_escape_string(mb_substr($langToDB,0,5));
-			$password = $myDbObj->real_escape_string($password);
-			
-			$salt = generatePassword();
-			$saltedPassword = addSaltToPassword($password, $salt);
-			$res = $myDbObj->query("INSERT INTO users2 SET login='$login', password='$saltedPassword', name='$name', surname='$surname', email='$email', city='$city', lang='$langToDB', salt = '$salt', lastvisit='".time()."'");
-			if ($res === false){
-				echo 'Ошибка записи данных в бд. ' .$myDbObj->error. '<br>';
-			} else {
-				echo 'Регистрация прошла успешно' . '<br>';
-				$login = '';
-				$password = '';
-				$confirmPassword = '';
-				$email = '';
-				$name = '';
-				$surname='';
-				$city='';
-				$lang = ['r'=>'', 'e'=>'', 'u'=>'', 'b'=>'', 'o'=>''];
+			if($logged_user_time - (int)$_COOKIE['_ruLVis'] > 604800){//раз в неделю обновляем куки
+				setcookie('_ruId', $_COOKIE['_ruId'], time()+60*60*24*30);
+				setcookie('_ruKey', $_COOKIE['_ruKey'], time()+60*60*24*30);
 			}
 		}
-	}
-}
-
-
-if (isset($_POST['generatepass'])){
-	$login = $_POST['login'];
-	$password = $_POST['pass'];
-	$confirmPassword = $_POST['confirm-pass'];
-	$email = $_POST['email'];
-	$name = $_POST['name'];
-	$surname = $_POST['surname'];
-	$city = $_POST['city'];
-	if(!empty($_POST['lang'])){
-		foreach($_POST['lang'] as $language){
-			$lang[$language] = 'selected';
-		}
-	}
-	echo generatePassword(10) . '<br>';
-	echo generatePassword(12) . '<br>';
-	echo generatePassword(14) . '<br>';
-	echo generatePassword(16) . '<br>';
-}
-if (!isset($_SESSION['auth']) || $_SESSION['auth'] === false){
-	if (!empty($_COOKIE['login']) && !empty($_COOKIE['key'])){
-		$login = $myDbObj->real_escape_string($_COOKIE['login']); 
-		$key = $myDbObj->real_escape_string($_COOKIE['key']);
-		$res = mysqli_fetch_assoc($myDbObj->query("SELECT*FROM users2 WHERE login='$login' AND userkey='$key'"));
-		$login = '';
-		if (!empty($res)){
-			$_SESSION['auth'] = true;
-			$_SESSION['id'] = $res['id']; 
-			$_SESSION['login'] = $res['login'];
-			$message = 'Вы вошли по кукам!';
-			setcookie('lastvisited', time(), time()+60*60*24*30);
-			
-		}
+		setcookie('_ruLVis', $logged_user_time, time()+60*60*24*30);
 	} else {
-		$message = 'Войдите или зарегистрируйтесь';
+		$userAuth = false;
 	}
-} elseif (isset($_SESSION['auth']) && $_SESSION['auth'] === true){
-	setcookie('lastvisited', time(), time()+60*60*24*30);
-	$message = 'Вы вошли по сессии!';
+} else {
+	$userAuth = false;
 }
-if(!empty($_POST['exit'])){
-	session_destroy();
-	setcookie('login', '', time());
-	setcookie('key', '', time());
-	setcookie('birthday', '', time());
-	setcookie('lastvisited', '', time());
-	$message = 'Вы вышли';
-}
-if(!empty($_POST['exit2'])){
-	session_destroy();
-	$message = 'Вы вышли из сессии!';
+//Проверка кук-----
+
+$errorMessage = '';
+
+if(isset($_GET['test'])){
+	echo '!!!' . '<br>';
 }
 
-if (isset($_POST['enter'])){
-	$authLogin = $_POST['authLogin'];
-	$authPass = $_POST['authPass'];
-	if (isset($_POST['remember'])){
-		$authRem = 'checked';
-	} else {
-		$authRem = '';
-	}
+if(isset($_GET['reg']) && $_GET['reg'] === 'true'){
+	$registration = true;
+}
+if($registration){
+	$headerText = '<a href=".">Регистрация</a>';
+	$regForm = new Inputform('','POST',[],'registration');
+	$regForm->addHtml('<p class="info_mes">Пожалуйста, заполните все поля отмеченые <span class="spanRequired">*</span></p>');
+	$regForm->labelOpen('<span class="fieldInfo">Логин<span class="spanRequired">*</span></span>');
+	$regLogin = $regForm->addTextInput('regLogin', true, ['placeholder'=>'Логин', 'maxlength'=>30], 'Введите логин!', 'Login', 'Некорректный логин!<br>Не менее 3 символов и не более 30,<br>только латинские символы, "-", "_".');
+	$regForm->labelClose('');
+	$regForm->labelOpen('<span class="fieldInfo">Пароль<span class="spanRequired">*</span></span>');
+	$regPass = $regForm->addPasswordInput('regPass', true, ['placeholder'=>'Пароль', 'maxlength'=>30], 'Введите пароль!', 'Password', 'Некорректный пароль!<br>Русские символы недопустимы,<br>от 6 до 30 символов.');
+	$regPassID = $regForm->id;
+	$regForm->labelClose('');
+	$regForm->labelOpen('<span class="fieldInfo">Подтверждение пароля<span class="spanRequired">*</span></span>');
+	$regPassConf = $regForm->addPasswordInput('regPassConf', true, ['placeholder'=>'Подтверждение пароля', 'maxlength'=>30], 'Введите подтверждение пароля!', 'Password', 'Некорректный пароль!<br>Русские символы недопустимы,<br>от 6 до 30 символов.', $regPassID, 'Пароли должны совпадать');
+	$regForm->labelClose('');
+	$regForm->labelOpen('<span class="fieldInfo">E-mail<span class="spanRequired">*</span></span>');
+	$regEmail = $regForm->addEmailInput('regEmail', true, ['placeholder'=>'E-mail', 'maxlength'=>30], 'Введите E-mail!', 'Email', 'Не корректный E-mail!');
+	$regForm->labelClose('');
+	$regForm->addButton('submit', 'Регистрация', ['class'=>'punch']);
+	$regFormHtml = $regForm->returnFullHtml();
 	
-	if (!login_validate($authLogin)){
-		$message = 'Некорректный логин';
-	} else {
-		if(empty($DBuserInfo = mysqli_fetch_assoc($myDbObj->query("SELECT * FROM users2 WHERE login='$authLogin'")))){
-			$message = 'Нет такого логина';
+	if($regForm->formSended && $regForm->noErrors){
+		$regLogin = $myDbObj->real_escape_string($regLogin);
+		$regPass = $myDbObj->real_escape_string($regPass);
+		$regPassConf = $myDbObj->real_escape_string($regPassConf);
+		$regEmail = $myDbObj->real_escape_string($regEmail);
+		$regDate = time();
+		if(!empty(mysqli_fetch_assoc($myDbObj->query("SELECT id FROM auth6_users WHERE login='$regLogin'")))){
+			$errorMessage = "<div class=\"errorMessage\">Логин \"$regLogin\" занят!</div>";
+		} elseif(!empty(mysqli_fetch_assoc($myDbObj->query("SELECT id FROM auth6_users WHERE email='$regEmail'")))){
+			$errorMessage = "<div class=\"errorMessage\">E-mail \"$regEmail\" занят!</div>";
 		} else {
-			if (addSaltToPassword($authPass, $DBuserInfo['salt']) == $DBuserInfo['password']){
-				$message = 'Вы успешно вошли по паролю!';
-				$_SESSION['auth'] = true;
-				$_SESSION['id'] = $DBuserInfo['id']; 
-				$_SESSION['login'] = $authLogin;
-				if(isset($_POST['remember']) && $_POST['remember'] == '1'){
-					$key = generatePassword(16);
-					setcookie('login', $authLogin, time()+60*60*24*30);
-					setcookie('key', $key, time()+60*60*24*30);
-					setcookie('lastvisited', time(), time()+60*60*24*30);
-					$res=$myDbObj->query("UPDATE users2 SET userkey='$key' WHERE login='$authLogin'");
-				}
-				$authLogin = '';
-				$authPass = '';
+			$verifed_key = generatePassword();
+			$salt = generatePassword();
+			$saltedPassword = addSaltToPassword($regPass, $salt);
+			$res = $myDbObj->query("INSERT INTO auth6_users SET login='$regLogin', password='$saltedPassword', email='$regEmail', salt = '$salt', registerDate=$regDate, verified_key='$verifed_key'");
+			if($res === false){
+				$errorMessage = '<div class="errorMessage">Ошибка записи данных в бд. ' .$myDbObj->error. '</div>';
 			} else {
-				$message = 'Неверный пароль!';
+				header("Location: verification?login=$regLogin&afterReg=true");
+				//header("Location: .");
 			}
 		}
 	}
+}elseif($userAuth===false){
+	$authForm = new Inputform('','POST',[],'authentication');
+	$authForm->addHtml('<p class="info_mes">Пожалуйста войдите.</p>');
+	$authForm->labelOpen('<span class="fieldInfo">Логин<span class="spanRequired">*</span></span>');
+	$login = $authForm->addTextInput('authLogin', true, ['placeholder'=>'Логин', 'maxlength'=>30], 'Введите логин!', false, 'Некорректный логин!<br>Не менее 3 символов и не более 30,<br>только латинские символы, "-", "_".');
+	$authForm->labelClose('');
+	$authForm->labelOpen('<span class="fieldInfo">Пароль<span class="spanRequired">*</span></span>');
+	$pass = $authForm->addPasswordInput('authPass', true, ['placeholder'=>'Пароль', 'maxlength'=>30], 'Введите пароль!', false, 'Некорректный пароль!<br>Русские символы недопустимы,<br>от 6 до 30 символов.');
+	$authForm->labelClose('');
+	$remember = $authForm->addCheckBox('rememberChkBox', ['checked'=>''], true, false, '<label id="remChkBx">', 'Запомнить меня?</label>');
+	$authForm->addButton('submit', 'Войти');
+	$authFormHtml = $authForm->returnFullHtml();
+	
+	if($authForm->formSended && $authForm->noErrors){
+		$login = $myDbObj->real_escape_string($login);
+		$pass = $myDbObj->real_escape_string($pass);
+		$DBuserInfo = mysqli_fetch_assoc($myDbObj->query("SELECT id, password, salt, verified FROM auth6_users WHERE login='$login'"));
+		if($myDbObj->affected_rows === 1){
+			$auth_saltedPassword = addSaltToPassword($pass, $DBuserInfo['salt']);
+			if($auth_saltedPassword == $DBuserInfo['password']){
+				$userId = $DBuserInfo['id'];
+				$key = generatePassword(16);
+				$lastVisit = time();
+				$myDbObj->query("UPDATE auth6_users SET userkey='$key', last_visit='$lastVisit' WHERE id='$userId'");
+				
+				if($remember){
+					setcookie('_ruId', $userId, time()+60*60*24*30);
+					setcookie('_ruKey', $key, time()+60*60*24*30);
+					setcookie('_ruLVis', $lastVisit, time()+60*60*24*30);
+				} else {
+					setcookie('_ruId', $userId, time()+60*10);
+					setcookie('_ruKey', $key, time()+60*10);
+					setcookie('_ruLVis', $lastVisit, time()+60*60*24*30);
+					setcookie('_ruNoRem', '1', time()+60*10);
+				}
+				if($DBuserInfo['verified'] == 1){
+					$userAuth = true;
+					$logged_DBuserInfo['login'] = $login;
+					$logged_DBuserInfo['id'] = $userId;
+				} else {
+					$userAuth = 'NOT_VERIFIED';
+					$logged_DBuserInfo['login'] = $login;
+				}
+			} else {
+				$errorMessage = '<div class="errorMessage">Неправильная пара логин-пароль!</div>';
+			}
+		} else {
+			$errorMessage = '<div class="errorMessage">Неправильная пара логин-пароль!</div>';
+		}
+	}
+}
+if($userAuth===true){
+	$logged_user_id = $logged_DBuserInfo['id'];
+	$row = $myDbObj->query("SELECT id, name, surname, avatar, short_addr FROM auth6_users WHERE name<>'' AND surname<>'' AND verified=1 AND id<>'$logged_user_id'");
+	for ($user_list=[]; $temp = $row->fetch_array(MYSQLI_ASSOC); $user_list[]=$temp);
+	if(!empty($user_list)){
+		$user_list_html = '<div class="users_list">';
+		foreach($user_list as $key=>$user){
+			if(!empty($user['short_addr'])){
+				$user_list_html .= '<a href="profile/'.$user['short_addr'].'" class="user_info" title="Посмотреть профиль">';
+			} else {
+				$user_list_html .= '<a href="profile/'.$user['id'].'" class="user_info" title="Посмотреть профиль">';
+			}
+			$user_list_html .= '<div class="user_name">'.$user['name'].' '.$user['surname'].'</div>';
+			$user_list_html .= '<div class="avatar" style="background-image: url(\''.$user['avatar'].'\')"></div>';
+			$user_list_html .= '</a>';
+		}
+		$user_list_html .= '</div>';
+	} else {
+		$user_list_html = '<div class="users_list">Тут пока никого нет =\'(</div>';
+	}
 }
 
-
-
-
-//var_dump(login_validate('a3sa-do'));
-//var_dump(login_validate('rozbyn'));
-//var_dump(login_validate('_r-'));
-//var_dump(login_validate('ddd---d'));
-//var_dump(login_validate('wer-ed_r-p'));
-//var_dump(login_validate('90ddak-gg_d'));
-//var_dump(login_validate('5644964'));
-
-
+$baseDir='';
 ?>
 <html lang="ru">
 <head>
@@ -242,20 +225,45 @@ if (isset($_POST['enter'])){
 <body>
 	<div id="main">
 		<header>
-			<h1>Сайт с профилями и сообщениями.</h1>
+		<?php if($userAuth === true || $userAuth === 'NOT_VERIFIED'){ ?>
+			<div id="user_menu">
+				<div class="dropdown_menu">
+					<div class="dropdown_menu_first_elem">
+						<a href="#">Вы вошли как: <?= $logged_DBuserInfo['login'] ?></a>
+					</div>
+					<div class="dropdown_menu_elem">
+						<a href="./">Обзор профилей</a>
+					</div>
+					<div class="dropdown_menu_elem">
+						<a href="profile">Мой профиль</a>
+					</div>
+					<div class="dropdown_menu_elem">
+						<a href="exit">Выход</a>
+					</div>
+				</div>
+			</div>
+		<?php }else{ ?>
+			<h1><?= $headerText ?></h1>
+		<?php } ?>
 		</header>
 		<content>
+		<?php if($userAuth !== true){ ?>
 			<div class="logIn">
-				<p>Пожалуйста войдите</p>
-				<form action="" method="POST">
-					Логин*</br><input name="authLogin" value="<?= $authLogin ?>"></br>
-					Пароль*</br><input type="password" name="authPass" value="<?= $authPass ?>"></br>
-					<label><input name='remember' type='checkbox' value='1' <?= $authRem ?> >Запомнить меня?</label></br>
-					<input type="submit" name="enter" value="Войти">
-				</form>
-				<p>Нет аккаунта? <a href="registration">Зарегистрируйтесь!</a></p>
+			<?= $errorMessage ?>
+			<?php if($registration){ ?>
+				<?= $regFormHtml ?>
+			<?php }elseif($userAuth===false){ ?>
+				<?= $authFormHtml ?>
+				<p id="register_link">Нет аккаунта?<br><a href="registration">Зарегистрируйтесь!</a></p>
+			<?php }elseif($userAuth === 'NOT_VERIFIED'){ ?>
+				<p class="info_mes">На указанную вами почту было отправлено письмо с ссылкой на активацию аккаунта. Пожалуйста, для полноценного использования сайта перейдите по ссылке в письме.</p>
+			<?php } ?>
 			</div>
+		<?php } else { ?>
+			<?= $user_list_html ?>
+		<?php } ?>
 		</content>
+		<footer>ROZBYN©</footer>
 	</div>
 </body>
 </html>

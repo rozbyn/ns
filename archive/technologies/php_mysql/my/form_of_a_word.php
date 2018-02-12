@@ -33,17 +33,17 @@
 	
 	echo "Сейчас $h час$ho, $m минут$mo,  $s секунд$so";	
 	echo '<hr>';
-	function skloneniye ($number, $word_0="Товаров",$word_1 = "Товар", $word_2_4 = "Товара"){
-		$f10 = $number % 10;
-		$f100 = $number % 100;
-		if ($f10==1 && $f100!=11){
-			return $word_1;
-		} elseif ( ($f10 >= 2 && $f10 <=4) && ($f100>20 || $f100 <= 10) ) {
-			return $word_2_4;
-		} else {
-			return $word_0;
-		}
+function skloneniye ($number, $word_0="Товаров",$word_1 = "Товар", $word_2_4 = "Товара"){
+	$f10 = $number % 10;
+	$f100 = $number % 100;
+	if ($f10==1 && $f100!=11){
+		return $word_1;
+	} elseif ( ($f10 >= 2 && $f10 <=4) && ($f100>20 || $f100 <= 10) ) {
+		return $word_2_4;
+	} else {
+		return $word_0;
 	}
+}
 	echo 10 % 12 . '<br>';
 	$x=0;
 	while($x <= 100){

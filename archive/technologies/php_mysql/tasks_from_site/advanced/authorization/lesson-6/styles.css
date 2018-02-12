@@ -1,3 +1,7 @@
+h1 a{
+	color: inherit;
+	text-decoration: none;
+}
 p{
 	margin: 0;
 }
@@ -6,28 +10,465 @@ p{
 }
 body{
 	margin: 0;
+	padding: 0;
+	font-family: "arial";
+	color: #4d4d4d;
 }
 h1{
 	margin: 0;
 	text-align: center;
+	max-height: 2.6em;
+	overflow: hidden;
+	line-height: 1.3em;
 }
+
 header{
-	background: aquamarine;
+	display:block;
+	background: #626262;
+	color: white;
+	position: relative;
+	min-height: 104px;
+}
+header h1{
+	padding-top: 30px;
+}
+footer{
+	display: block;
+	background: #626262;
+	text-align: center;
+	color: white;
+	font-size: 20px;
 }
 #main {
 	margin: 0 auto;
-	background: #ccffce;
-	height: 100%;
 	position:relative;
+	height: 100%;
 }
 content{
-	position:relative;
+	display:block;
+	min-height: calc(100% - 129px);
+	background: #fff8dc;
+}
+form{
+	margin: 0;
+	padding: 0;
 }
 .logIn{
-	position: relative;
-	left: calc(50% - 105px);
-	width: 150px;
+	/*position: relative;
+	left: calc(50% - 135px);*/
+	width: calc(100% - 60px);
 	background: cornsilk;
 	padding: 30px;
+	font-size: 14px;
+	margin: 0 auto;
 }
+.errorMessage{
+	background: #ffbb96;
+	padding: 10px;
+	margin: 0px auto 10px;
+	border-radius: 4px;
+	max-width: 319px;
+	text-align: center;
+}
+
+
+
+.logIn .fieldInfo{
+	padding: 0px 5px 0px 0px;
+	display: inline-block;
+	width: 200px;
+	text-align: end;
+}
+.logIn .spanRequired{
+	color: red;
+}
+.logIn .formElement{
+	position:relative;
+	margin: 0 auto;
+	max-width: 500px;
+	text-align: center;
+}
+
+.logIn .fieldInfo~.formElement{
+	display: inline-block;
+	width: 200px;
+}
+.logIn .formElement button{
+
+}
+#registration>label, #authentication>label{
+	max-width: 500px;
+	display: block;
+	margin: 0px auto 5px;
+}
+
+.info_mes{
+	background: #c7ffb3;
+	padding: 10px;
+	margin: 0pc auto 10px;
+	border-radius: 4px;
+	max-width: 319px;
+	text-align: center;
+}
+.logIn .formElement input[type="text"], .logIn .formElement input[type="email"], .logIn .formElement input[type="password"]{
+	width: 100%;
+	border: 1px solid #c2c2c2;
+	border-radius: 3px;
+	padding: 7px;
+}
+.validateError, .requiredError{
+	/*position: absolute;
+	left: 102%;
+	white-space: nowrap;
+	bottom: 0px;*/
+	background: #ffbc83b3;
+	font-size: 12px;
+	color: #4a4a4a;
+	padding: 2px 5px 4px 5px;
+	border: 1px solid #c2c2c2;
+	border-radius: 4px;
+}
+#register_link{
+	max-width: 135px;
+	margin: 5px auto 0px;
+}
+#remChkBx{
+	display: block;
+	max-width: 139px;
+	margin: 0 auto 5px;
+}
+.logIn .formElement button.punch {
+    background: #4162a8;
+    background-clip: border-box;
+    border-top: 1px solid #38538c;
+    border-right: 1px solid #1f2d4d;
+    border-bottom: 1px solid #151e33;
+    border-left: 1px solid #1f2d4d;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
+    box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
+    color: #fff;
+    font: bold 20px/1 "helvetica neue", helvetica, arial, sans-serif;
+    margin-bottom: 10px;
+    padding: 10px 0 12px 0;
+    text-align: center;
+    text-shadow: 0 -1px 1px #1e2d4d;
+    width: 150px;
+	-webkit-background-clip: padding-box;
+	margin-top: 0px;
+
+}
+.logIn .formElement button.punch:hover {
+    -webkit-box-shadow: inset 0 0 20px 1px #87adff, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
+    box-shadow: inset 0 0 20px 1px #87adff, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
+    cursor: pointer;
+}
+.logIn .formElement button.punch:active {
+    -webkit-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111111;
+    box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111111;
+    margin-top: 4px;
+	margin-bottom: 6px;
+
+}
+#user_menu{
+	z-index: 10;
+	text-align: center;
+/* 	position: absolute;
+	top: 5px;
+	right: 10px;
+	border: 1px solid white;
+	min-width: 134px;
+	overflow:hidden;
+	border-radius: 15px; */
+}
+
+#user_menu .dropdown_menu_elem a, #user_menu .dropdown_menu_first_elem a{
+	display: block;
+	padding: 3px 15px;
+	background: #626262;
+	color: white;
+	text-decoration: none;
+}
+#user_menu .dropdown_menu_elem a:hover, #user_menu .dropdown_menu_first_elem a:hover{
+	background: #363636;
+}
+#user_menu .dropdown_menu_first_elem a{
+	cursor: default;
+	pointer-events: none;
+}
+.users_list{
+	width: 1260px;
+	margin: 0 auto;
+}
+.user_info{
+	background: #fff;
+	width: 168px;
+	height: 198px;
+	margin: 20px;
+	display: inline-block;
+	border-radius: 5px;
+	border: 1px solid #cad1ff;
+	text-decoration: none;
+	color: #626262;
+	overflow: hidden;
+	word-wrap: break-word;
+	/* float: left; */
+}
+.user_info .user_name{
+	color: #710000;
+	text-align: center;
+	margin: 5px;
+	background: #e9ecff;
+	border-radius: 5px;
+	padding: 5px;
+	max-height: 58px;
+	overflow: hidden;
+}
+.user_info .avatar{
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	height: 130px;
+	margin: 5px;
+	background-color: #e9ffe1;
+}
+.showing_userInfo, .editing_userInfo{
+	margin: 15px auto 30px;
+	max-width: 600px;
+}
+.showing_userInfo .suAvatar, .editing_userInfo .suAvatar{
+	float: left;
+	height: 265px;
+	background: white;
+	width: 198px;
+	margin-right: 7px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	margin-left: 0px;
+	margin-bottom: 5px;
+	position: relative;
+	border: 1px solid #d2d2d2;
+}
+.showing_userInfo .suAvatar .send_message a{
+	position: absolute;
+	bottom: 0px;
+	height: 30px;
+	background: #93c6ff;
+	width: 170px;
+	margin-left: 15px;
+	line-height: 30px;
+	display: block;
+	text-decoration: none;
+	font-size: 14px;
+	text-align: center;
+	color: #292929;
+}
+.showing_userInfo .suAvatar .send_message a:hover{
+	background: #e6f1ff;
+}
+.showing_userInfo .suInfo, .editing_userInfo .suInfo{
+	display: inline-block;
+	max-width: 391px;
+	overflow: hidden;
+	border: 1px solid #d2d2d2;
+}
+.showing_userInfo .suInfo p, .editing_userInfo .suInfo>div{
+	margin-bottom: 7px;
+	background: #e6f1ff;
+	color: #424242;
+}
+.showing_userInfo .suInfo p .info_title, .editing_userInfo .suInfo>div .info_title{
+	width: 133px;
+	display: inline-block;
+	text-align: end;
+	vertical-align: top;
+}
+.showing_userInfo .suInfo p .info_text, .editing_userInfo .suInfo>div .info_text{
+	display: inline-block;
+	width: 232px;
+}
+.editing_userInfo .suAvatar .changeAvatar {
+	position: absolute;
+	bottom: 0px;
+	overflow: hidden;
+	background: #e6f1ff;
+	font-size: 12px;
+	width: 178px;
+	left: 10px;
+}
+.editing_userInfo .suAvatar .changeAvatar input[type="file"]{
+	width: 70px;
+}
+.editing_userInfo .suInfo input:not([type="radio"]), .editing_userInfo .suInfo select, .editing_userInfo .suInfo textarea{
+	border-radius: 3px;
+	background: #f1fffe;
+	width: 200px;
+	resize: none;
+	border: 1px solid #adadad;
+	font-family: inherit;
+	font-size: 13px;
+	padding: 2px 2px 2px 5px;
+}
+.editing_userInfo .suInfo input:not([type="radio"]):hover, .editing_userInfo .suInfo select:hover, .editing_userInfo .suInfo textarea:hover{
+	background: #fff;
+	border: 1px solid #0025c5;
+}
+.editing_userInfo .suInfo input:not([type="radio"]):focus, .editing_userInfo .suInfo select:focus, .editing_userInfo .suInfo textarea:focus{
+	background: #fff;
+	border: 1px solid #0025c5;
+}
+.editing_userInfo .suInfo input[type="date"], .editing_userInfo .suInfo select{
+	padding-left: 0px;
+}
+.editing_userInfo .link-messages, .messages .link-messages{
+	float: left;
+	clear: left;
+	width: 198px;
+	height: 25px;
+	background: azure;
+	border: 1px solid #d2d2d2;
+	text-align: center;
+	line-height: 25px;
+}
+.editing_userInfo .link-messages a, .messages .link-messages a{
+	display: block;
+	text-decoration: none;
+	color: #4d4d4d;
+}
+.messages{
+	max-width: 600px;
+	margin: 0 auto;
+}
+.messages .link-messages{
+	width: 95px;
+}
+.messages .mess_div{
+	overflow: hidden;
+}
+.messages .mess_div .control-messages{
+	text-align: center;
+	padding-top: 2px;
+}
+.messages .mess_div .messages-list{
+	margin: 10px 0px 0px 10px;
+}
+.messages .mess_div .messages-list .message{
+	background: #9bdcff;
+	margin-bottom: 10px;
+	border-radius: 6px;
+	display: block;
+	border: 1px solid #8a8a8a;
+	color: #0008a5;
+	position: relative;
+}
+.messages .mess_div .messages-list .message.unread{
+	background: #f5c746;
+	color: #720000;
+}
+.messages .mess_div .messages-list .message.unread:after{
+	content: "NEW!";
+	width: 28px;
+	height: 19.5px;
+	position: absolute;
+	top: 3px;
+	right: 0px;
+	border-top-right-radius: 4px;
+	font-size: 10px;
+	color: #d24646;
+	
+}
+
+.messages .mess_div .messages-list .message .message_info{
+	background: aliceblue;
+	font-size: 12px;
+	color: #848484;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+	padding-left: 5px;
+}
+.messages .mess_div .messages-list .message .message_text{
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	padding: 3px 5px 5px 5px;
+}
+
+
+
+
+
+.messages .mess_div .formElement{
+	text-align: center;
+}
+.messages .mess_div .formElement textarea{
+	width: 501px;
+	height: 140px;
+	resize: none;
+}
+#form_passChange, #form_accDelete{
+	max-width: 500px;
+	margin: 0 auto;
+}
+#form_passChange label input, #form_accDelete label input{
+	margin-bottom: 5px;
+}
+.editing_userInfo .suAvatar .changeAvatar .formElement{
+	display: inline-block;
+}
+
+.user_info .avatar:hover {
+    background-color: #ccffce;
+}
+.user_info:hover {
+    border: 5px solid #a3ff4d;
+    margin: 16px;
+}
+.user_name:hover {
+    background: #ffea73;
+}
+
+
+
+
+
+@media (max-width: 1259px){
+	.users_list{
+		width: 1050px;
+	}
+	
+}
+@media (max-width: 1049px){
+	.users_list{
+		width: 840px;
+	}
+}
+@media (max-width: 839px){
+	.users_list{
+		width: 630px;
+	}
+}
+@media (max-width: 629px){
+	.users_list{
+		width: 420px;
+	}
+	.showing_userInfo .suInfo p .info_text, .editing_userInfo .suInfo > div .info_text{
+		width: unset;
+	}
+}
+@media (max-width: 419px){
+	.users_list{
+		width: 210px;
+	}
+}
+
+/* 
+#user_menu .dropdown_menu_elem{
+	display:none;
+}
+#user_menu:hover .dropdown_menu_elem{
+	display:block;
+}
+
+ */
+
 
