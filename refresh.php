@@ -19,7 +19,7 @@ if (isset($_GET['file'])){
 				echo 'Файл "' .$localFile. '" создан!<br>';
 			}
 		} else {
-			echo 'Че хотел?' . '<br>';
+			echo 'Че хотел?(?CrNw=true)' . '<br>';
 		}
 	} else {
 		$cont = file_get_contents($file);

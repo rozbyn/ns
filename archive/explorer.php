@@ -34,7 +34,7 @@ function pageDataToHtml($parent_path, $current_dir, $arrOfFolders, $arrOfFiles, 
 	$stringHtml .= '</div><div class="curr_folder">';
 	$stringHtml .= $current_dir;
 	$stringHtml .= '</div></div>';
-	sort($arrOfFolders);
+	sort($arrOfFolders, SORT_FLAG_CASE|SORT_NATURAL);
 	sort($arrOfFiles);
 	foreach($arrOfFolders as $val){
 		$stringHtml .= '<div class="expl_folder"><input type="hidden" value="'.$val.'">';
@@ -44,7 +44,7 @@ function pageDataToHtml($parent_path, $current_dir, $arrOfFolders, $arrOfFiles, 
 	foreach($arrOfFiles as $val){
 		$stringHtml .= '<div class="expl_file"><a href="technologies/'.$val.'"target="_blank">';
 		$stringHtml .= showCurrentDir($val);
-		$stringHtml .= '</a></div>';
+		$stringHtml .= '</a><a href="https://github.com/rozbyn/ns/blob/master/archive/technologies/'.$val.'" target="_blank" title="code on github"><img class="github_link" src="../img/gh.png"></div>';
 	}
 	$no_explDiv ? '' : $stringHtml .= '</div>';
 	return $stringHtml;

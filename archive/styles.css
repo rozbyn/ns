@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 body{
     overflow-y: scroll;
+	font-family: 'Roboto';
 }
 .main{
     background: #fff;
@@ -36,6 +38,7 @@ body{
 .expl_folder, .expl_file{
     min-height: 35px;
     border: 1px solid black;
+	font-weight: 300;
 }
 .expl_folder{
     background: #FFFF99;
@@ -49,6 +52,14 @@ body{
     color: black;
     cursor: default;
     display: block;
+	position: relative;
+}
+.github_link {
+    position: absolute;
+    height: 1.3em;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
 }
 .expl_file:hover, .expl_folder:hover, .curr_folder:hover, .par_folder:hover {
     background: #a3a3a3;
