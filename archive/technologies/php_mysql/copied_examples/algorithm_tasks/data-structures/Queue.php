@@ -189,8 +189,38 @@ $o->enqueue('2asd');
 $o->enqueue('3asd');
 $o->enqueue('4asd');
 echo $o->peek() . '<br>';
+echo $o->dequeue() . '<br>';
+echo $o->dequeue() . '<br>';
+echo $o->dequeue() . '<br>';
+echo $o->peek() . '<br>';
 
 
+$D = new Deque;
+$D->enqueueFirst('F1');
+$D->enqueueFirst('F2');
+$D->enqueueFirst('F3');
+$D->enqueueFirst('F4');
+
+$D->enqueueLast('L1');
+$D->enqueueLast('L2');
+$D->enqueueLast('L3');
+$D->enqueueLast('L4');
+
+
+$D->echoAll();
+
+echo $D->peekFirst() . '<br>';
+echo $D->peekLast() . '<br>';
+
+echo $D->dequeueFirst() . '<br>';
+echo $D->dequeueFirst() . '<br>';
+echo $D->dequeueFirst() . '<br>';
+echo $D->dequeueFirst() . '<br>';
+
+echo $D->dequeueLast() . '<br>';
+echo $D->dequeueLast() . '<br>';
+echo $D->dequeueLast() . '<br>';
+echo $D->dequeueLast() . '<br>';
 
 
 

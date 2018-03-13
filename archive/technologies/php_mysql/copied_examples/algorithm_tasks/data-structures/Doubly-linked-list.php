@@ -94,7 +94,7 @@ class Dlinked_list {
 		
 	}
 	
-	public function removeLast(){//*TODO!!
+	public function removeLast(){
 		if($this->tail != null){
 			$this->tail =& $this->tail->previous;
 			$this->count--;

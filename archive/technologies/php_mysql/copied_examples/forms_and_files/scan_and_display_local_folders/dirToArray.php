@@ -21,7 +21,7 @@ function dirToArray ($dir){
 
 print_r($dir . '<br>');
 $dirArray = dirToArray($dir);
-print_r($dirArray);
+//print_r($dirArray);
 //функция представления массива строкой с переносами и табуляцией
 function massArrToString($arr, $vgf = 0, $resStr = ''){
 	if ($vgf == 0){
