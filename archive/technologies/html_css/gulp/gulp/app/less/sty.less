@@ -1,0 +1,483 @@
+@param: fadein(#fff, 0%);
+@clor: if((iscolor(@param)), @param, #afaced);
+.im-w-h(@im){
+	width: image-width("..@{im}");
+	height: image-height("..@{im}");
+}
+@color1: #320 * 4 + @clor / 2;
+@aadd: %('one: %a, two: %s, three: %S', 89, "\"as ! ! dad\"dd'\\/'D\\/f41", "dd\"");
+
+@onetwo: spin(@color1, 10);
+@twotwo: @color1;
+@three: lighten(darken(@onetwo, 0%), 5%);
+@four: saturate(desaturate(@three, 60%), 10%);
+@me: escape('asd"as/\\\\\   asda ./s]{}a32429)() dad"');
+@not-me: "me";
+@mme: @@not-me;// Переменная переменной
+@al: align;
+@fname: "MADEEvolveSans-Thin.otf";
+@wr: wrap;
+
+.br(@w: 1px; @t: solid; @c: #000){
+	border: @w @t @c;
+}
+.br_boxSh(@p: 0px; @shadow...){
+	border-radius: @p;
+	box-shadow: @shadow;
+}
+.m-p(@p){
+	border-width: @p;
+}
+.m-p(@m:0, @p:0){
+	margin: @m;
+	padding: @p;
+}
+.orangeShadow(@h-shadow:0; @v-shadow:0; @blur-radius:3px; @color: orange) { // создаем примесь с тремя параметрами, все параметры имеют значение по умолчанию
+	text-shadow: @arguments;
+}
+
+
+
+.clearfix(){
+	display: table;
+	content: "";
+	clear: both;
+}
+.testing{
+		.br(15px; @c: darkblue);
+		.m-p(20px;5px 5px 15px 10px);
+		box-sizing: border-box;
+		background: url("") left bottom;
+		@list: rgba(255,255,255,0.1), rgba(255, 125, 200, 0.5) 30%, rgba(255, 125, 200, 1) 60%, rgba(210, 150, 110, 1);
+		@grad: repeating-linear-gradient(55.5deg, rgba(255,255,255,0.1) , rgba(255,255,255,0.1) 10%, rgba(255, 125, 200, 0.5) 10%, rgba(125,255,125,0.6) 20%, rgba(255,255,255,0.1) 25%);
+		background-image: svg-gradient(ellipse, @list);
+		background-image: @grad;
+		background-repeat: repeat;
+		background-size: 200% 200%;
+		background-position: 0% 100%;
+		animation: bganim linear 3s infinite;
+		//animation: none;
+	}
+body {
+	background: @four; //Глобальная @four
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto";
+	&:before{
+	.br();
+		content: "@{mme}";
+		@{bd}: @clor;
+	}
+	&:after{
+		content: "@{aadd}";
+	}
+	.blo:after{
+		.clearfix;
+	}
+	.blo{
+		display: flex;
+		flex-flow: row wrap;
+	}
+	.@{wr}{
+		filter: ~"ms--special.browser.syntax()";//filter: ms:special.browser.syntax();
+		box-sizing: border-box;
+		display: flex;
+		flex-flow: row wrap;
+		width: 100%;
+		padding: 5px;
+		
+		.br(2px, dashed);
+		.it{
+			
+			overflow: hidden;
+			.orangeShadow(20px 20px 3px #5089B7,-20px -20px 3px #5f6fB7,20px -20px 3px #7f3ff7,-20px 20px 3px #7f3ff7;/**/;/**/;/**/;);
+			.br_boxSh(3px;0px;0px;3px;1px;#2F204F);
+			box-sizing: border-box;
+			margin: 5px;
+			padding: 15px 0;
+			min-width: 54px;
+			@four: @onetwo; // --переопределяем @four
+			background: @four; //Локальная @four
+			text-@{al}: center; //Интерполяция переменных (подставляется значение переменной @al)
+			vertical-align: middle;
+			text-transform: uppercase;
+			flex-grow: 1;
+			border: 2px dotted transparent;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			
+			/*transition: flex 1s ease;*/
+			@media (max-width: 1000px) {
+                background: @twotwo;
+				min-width: calc(10% - 10px);
+				
+            }
+			@media (max-width: 599px) {
+                background: @three;
+				min-width: calc(33.3333333% - 10px);
+            }
+			@keyframes showOn { // назначаем ключевые кадры для анимации
+				0% { // начало цикла анимации
+					opacity: 1; // уровень прозрачности для элемента (полностью прозрачный)
+				}
+				100% { // конец цикла анимации
+					opacity: 0; // уровень прозрачности для элемента (элемент непрозрачный)
+				}
+				
+			}
+			@keyframes bordered { // назначаем ключевые кадры для анимации
+				
+				100% { // конец цикла анимации
+					border: 2px dotted red;
+					background: desaturate(@three, 5%);
+					
+				}
+				
+			}
+			@keyframes bganim{
+				
+				
+				0% {
+					background-position: 0% 100%;
+				}
+				33.33% {
+					background-position: 50% 50%;
+				}
+				66.66% {
+					background-position: 100% 0%;
+				}
+				100% {
+					background-position: 150% -50%;
+				}
+				
+				
+			}
+			@keyframes bggradGrow{
+				@stage: 0%;
+				@{stage} {
+					background-image: repeating-radial-gradient(rgba(255,255,255,0.1) @stage, rgba(255, 125, 200, 0.5) @stage+5%, rgba(125,255,125,0.6) @stage+10%, rgba(255,255,255,0.1) @stage+15%);
+				}
+				
+				@stage10: 10%;
+				@{stage10} {
+					background-image: repeating-radial-gradient(rgba(255,255,255,0.1) @stage10, rgba(255, 125, 200, 0.5) @stage10+5%, rgba(125,255,125,0.6) @stage10+10%, rgba(255,255,255,0.1) @stage10+15%);
+				}
+				
+				@stage20: 20%;
+				@{stage20} {
+					background-image: repeating-radial-gradient(rgba(255,255,255,0.1) @stage20, rgba(255, 125, 200, 0.5) @stage20+5%, rgba(125,255,125,0.6) @stage20+10%, rgba(255,255,255,0.1) @stage20+15%);
+				}
+				
+				@stage30: 30%;
+				@{stage30} {
+					background-image: repeating-radial-gradient(rgba(255,255,255,0.1) @stage30, rgba(255, 125, 200, 0.5) @stage30+5%, rgba(125,255,125,0.6) @stage30+10%, rgba(255,255,255,0.1) @stage30+15%);
+				}
+				
+				@stage40: 40%;
+				@{stage40} {
+					background-image: repeating-radial-gradient(rgba(255,255,255,0.1) @stage40, rgba(255, 125, 200, 0.5) @stage40+5%, rgba(125,255,125,0.6) @stage40+10%, rgba(255,255,255,0.1) @stage40+15%);
+				}
+				
+				@stage50: 50%;
+				@{stage50} {
+					background-image: repeating-radial-gradient(rgba(255,255,255,0.1) @stage50, rgba(255, 125, 200, 0.5) @stage50+5%, rgba(125,255,125,0.6) @stage50+10%, rgba(255,255,255,0.1) @stage50+15%);
+				}
+				
+				@stage60: 60%;
+				@{stage60} {
+					background-image: repeating-radial-gradient(rgba(255,255,255,0.1) @stage60, rgba(255, 125, 200, 0.5) @stage60+5%, rgba(125,255,125,0.6) @stage60+10%, rgba(255,255,255,0.1) @stage60+15%);
+				}
+				
+				@stage70: 70%;
+				@{stage70} {
+					background-image: repeating-radial-gradient(rgba(255,255,255,0.1) @stage70, rgba(255, 125, 200, 0.5) @stage70+5%, rgba(125,255,125,0.6) @stage70+10%, rgba(255,255,255,0.1) @stage70+15%);
+				}
+				
+				@stage80: 80%;
+				@{stage80} {
+					background-image: repeating-radial-gradient(rgba(255,255,255,0.1) @stage80, rgba(255, 125, 200, 0.5) @stage80+5%, rgba(125,255,125,0.6) @stage80+10%, rgba(255,255,255,0.1) @stage80+15%);
+				}
+				
+				
+				
+				
+			}
+			
+			@keyframes shadowOn { // назначаем ключевые кадры для анимации
+				
+				90%  { // конец цикла анимации
+					.orangeShadow(0px 0px 3px #5089B7,-0px -0px 3px #5f6fB7,0px -0px 3px #7f3ff7,-0px 0px 3px #7f3ff7;/**/;/**/;/**/;);
+					box-shadow: 10px 10px 5px 0px #2F204F;
+				}
+				100%  { // конец цикла анимации
+					.orangeShadow(none;/**/;/**/;/**/;);
+					box-shadow: 10px 10px 5px 0px #2F204F;
+				}
+				
+			}
+			
+			 @font-face {
+				font-family: "Roboto"; //  задаем произвольное имя для шрифта
+				src: url("/fonts/@{fname}")  format("truetype"); // задаем путь и тип шрифта
+				font-style: normal; // стиль шрифта обычный
+				font-weight: normal; // нормальное начертание символов
+			}
+			&:hover{
+				animation: bordered 1s linear forwards infinite alternate, shadowOn .2s linear forwards;
+				animation-play-state: running;
+			}
+		}
+	}
+}
+@bd: background;
+
+.block{
+	@{bd}: #aaccbb;
+	font-family: monospace;
+	border: 1px solid transparent;
+	box-sizing: border-box;
+	margin: 10px;
+	float: left;
+	@{bd}-color: rgba(255,255,255,0.5);
+	&__element{
+		padding: 10px;
+		margin: 10px;
+		color: red;
+		@{bd}: #aaabbb;
+		&_modifier_active{
+			color: green;
+			@{bd}: #55abbb;
+		}
+	}
+	&_modifier_s{
+		font-size: 12px;
+	}
+	&_modifier_m{
+		font-size: 16px;
+	}
+	&&{
+		display: flex;
+	}
+	& &{
+		display: flex;
+	}
+	&, &-s, &-m{
+		display: flex;
+	}
+	
+}
+@image1: "/images/01.png";
+.block:nth-child(1){
+	@image1: "/images/5.jpg";
+	@expression: convert(20px, "pc");
+	@{bd}: url(@image1) no-repeat center center;
+	@{bd}-size: cover;
+	@{bd}-position: unit(unit(@expression);get-unit(@expression))  0px;
+	.im-w-h(@image1);
+}
+.parent {
+	.child {
+		.grandchild & { // делаем из вложенного элемента родителя
+			color: green;
+			a {
+				background: lightblue;
+			}
+		}
+		.grandchild& { // делаем из вложенного элемента родителя
+			color: green;
+			a {
+				background: yellow;
+			}
+		}
+	}
+}
+i, b, em { // групповой селектор
+	& > & { 
+		color: blue;
+	}
+}
+.my-mixin-collection() { // создаем внутри примеси два класса
+	.bordered {
+		border: 2px solid green; // сплошная граница размером 1 пиксель зеленого цвета
+		display: flex;
+	}
+	.hidden {
+		display: none; // элемент не отображается
+	}
+}
+button {
+	.my-mixin-collection.hidden();
+	.my-mixin-collection .bordered() !important; // вызываем примесь из класса .my-mixin-collection
+}
+.myElement {
+	color: red;
+	border: 1px solid red;
+}
+.myAnotherElement {
+	&:extend(.testing); // используем оператор родительского элемента и псевдокласс extend
+	font-size: 2em;
+}
+.a{
+	font-size: 15px;
+}
+.a, .b {
+	color: red;
+}
+.c:extend(.a, .b) {filter: e("ms--alwaysHasItsOwnSyntax.For.Stuff()")}
+
+body{background-image: data-uri("..@{image1}"); background-blend-mode: luminosity;}
+.c:after{
+	content: replace("Hello, Mars?", "Mars\?", "Earth!");
+}
+@list: "banana", "tomato", "potato", "peach";
+.c:after{
+	content: replace('This is a string.', "(string)|(this)", "new $2$1","gi");
+	n: length(@list);
+	d: extract(@list, 3);
+	width: ceil(2.4em);
+	width: floor(2.6px);
+	width: percentage(7/24);
+	width: round(1.77777777px, 2);
+	width: sqrt(25cm);
+	width: abs(-18.6%);
+	width: mod(11cm, 6px);
+	width: unit(pi(), %);
+	width: unit(cos(60deg), px);
+	width: pow(5px, -2cm);
+	width: pow(5px, 2cm);
+	width: pow(25px, 0.5cm);
+	width: min(3px, 42px, 1px, 16px);
+	width: max(3px, 42px, 1px, 16px);
+	
+	
+}
+/*
+isnumber(#ff0);     // false
+isnumber(blue);     // false
+isnumber("string"); // false
+isnumber(1234);     // true
+isnumber(56px);     // true
+isnumber(7.8%);     // true
+isnumber(keyword);  // false
+isnumber(url(...)); // false
+
+isstring(#ff0);     // false
+isstring(blue);     // false
+isstring("string"); // true
+isstring(1234);     // false
+isstring(56px);     // false
+isstring(7.8%);     // false
+isstring(keyword);  // false
+isstring(url(...)); // false
+
+iscolor(#ff0);     // true
+iscolor(blue);     // true
+iscolor("string"); // false
+iscolor(1234);     // false
+iscolor(56px);     // false
+iscolor(7.8%);     // false
+iscolor(keyword);  // false
+iscolor(url(...)); // false
+
+iskeyword(#ff0);     // false
+iskeyword(blue);     // false
+iskeyword("string"); // false
+iskeyword(1234);     // false
+iskeyword(56px);     // false
+iskeyword(7.8%);     // false
+iskeyword(keyword);  // true
+iskeyword(url(...)); // false
+
+isurl(#ff0);     // false
+isurl(blue);     // false
+isurl("string"); // false
+isurl(1234);     // false
+isurl(56px);     // false
+isurl(7.8%);     // false
+isurl(keyword);  // false
+isurl(url(...)); // true
+
+ispixel(#ff0);     // false
+ispixel(blue);     // false
+ispixel("string"); // false
+ispixel(1234);     // false
+ispixel(56px);     // true
+ispixel(7.8%);     // false
+ispixel(keyword);  // false
+ispixel(url(...)); // false
+
+isem(#ff0);     // false
+isem(blue);     // false
+isem("string"); // false
+isem(1234);     // false
+isem(56px);     // false
+isem(7.8em);    // true
+isem(keyword);  // false
+isem(url(...)); // false
+
+ispercentage(#ff0);     // false
+ispercentage(blue);     // false
+ispercentage("string"); // false
+ispercentage(1234);     // false
+ispercentage(56px);     // false
+ispercentage(7.8%);     // true
+ispercentage(keyword);  // false
+ispercentage(url(...)); // false
+
+isunit(11px, px);  // true
+isunit(2.2%, px);  // false
+isunit(33px, rem); // false
+isunit(4rem, rem); // true
+isunit(56px, "%"); // false
+isunit(7.8%, '%'); // true
+isunit(1234, em);  // false
+isunit(#ff0, pt);  // false
+isunit("mm", mm);  // false
+
+@rules: {
+    color: red;
+}
+
+isruleset(@rules);   // true
+isruleset(#ff0);     // false
+isruleset(blue);     // false
+isruleset("string"); // false
+isruleset(1234);     // false
+isruleset(56px);     // false
+isruleset(7.8%);     // false
+isruleset(keyword);  // false
+isruleset(url(...)); // false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+      @font-face {
+    font-family: 'Oswald';
+    src: local('Oswald Light'), local('Oswald-Light'), url('http://hb.bizmrg.com/fonts/oswald/300.woff2') format('woff2'), url('http://hb.bizmrg.com/fonts/oswald/300.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald Regular'), local('Oswald-Regular'), url('http://hb.bizmrg.com/fonts/oswald/400.woff2') format('woff2'), url('http://hb.bizmrg.com/fonts/oswald/400.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald DemiBold'), local('Oswald-DemiBold'), url('http://hb.bizmrg.com/fonts/oswald/600.woff2') format('woff2'), url('http://hb.bizmrg.com/fonts/oswald/600.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald RegularItalic'), local('Oswald-RegularItalic'), url('http://hb.bizmrg.com/fonts/oswald/400i.woff2') format('woff2'), url('http://hb.bizmrg.com/fonts/oswald/400i.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald MediumItalic'), local('Oswald-MediumItalic'), url('http://hb.bizmrg.com/fonts/oswald/500i.woff2') format('woff2'), url('http://hb.bizmrg.com/fonts/oswald/500i.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald ExtraLightItalic'), local('Oswald-ExtraLightItalic'), url('http://hb.bizmrg.com/fonts/oswald/200i.woff2') format('woff2'), url('http://hb.bizmrg.com/fonts/oswald/200i.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald HeavyItalic'), local('Oswald-HeavyItalic'), url('http://hb.bizmrg.com/fonts/oswald/800i.woff2') format('woff2'), url('http://hb.bizmrg.com/fonts/oswald/800i.woff') format('woff');
+    font-weight: 800;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald Heavy'), local('Oswald-Heavy'), url('http://hb.bizmrg.com/fonts/oswald/800.woff2') format('woff2'), url('http://hb.bizmrg.com/fonts/oswald/800.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald LightItalic'), local('Oswald-LightItalic'), url('http://hb.bizmrg.com/fonts/oswald/300i.woff2') format('woff2'), url('http://hb.bizmrg.com/fonts/oswald/300i.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald Medium'), local('Oswald-Medium'), url('http://hb.bizmrg.com/fonts/oswald/500.woff2') format('woff2'), url('http://hb.bizmrg.com/fonts/oswald/500.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald ExtraLight'), local('Oswald-ExtraLight'), url('http://hb.bizmrg.com/fonts/oswald/200.woff2') format('woff2'), url('http://hb.bizmrg.com/fonts/oswald/200.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald BoldItalic'), local('Oswald-BoldItalic'), url('http://hb.bizmrg.com/fonts/oswald/700i.woff2') format('woff2'), url('http://hb.bizmrg.com/fonts/oswald/700i.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald DemiBoldItalic'), local('Oswald-DemiBoldItalic'), url('http://hb.bizmrg.com/fonts/oswald/600i.woff2') format('woff2'), url('http://hb.bizmrg.com/fonts/oswald/600i.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald Bold'), local('Oswald-Bold'), url('http://hb.bizmrg.com/fonts/oswald/700.woff2') format('woff2'), url('http://hb.bizmrg.com/fonts/oswald/700.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
