@@ -1,7 +1,6 @@
 
 
 <?php
-echo '<pre>';
 include('classInputform.php');
 
 
@@ -54,7 +53,7 @@ $btn1 = $inputForm->addButton('submit', '✔', ['name'=>'subm', 'value'=>'ok']);
 $btn2 = $inputForm->addButton('reset', '✖', ['name'=>'reset', 'value'=>'popo']);
 $inputForm->addHtml('</div>');
 $last = $inputForm->id;
-//$inputForm->requiredText = '';
+$inputForm->requiredText = '';
 
 
 
@@ -75,7 +74,6 @@ $loginForm = $inputForm->returnFullHtml();
 //echo Inputform::tagsToHTML(['hey'=>'Привет']) . '<br>';
 //var_dump($_FILES);
 //var_dump($_REQUEST);
-echo '</pre>';
 ?>
 
 
