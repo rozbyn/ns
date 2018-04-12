@@ -21,6 +21,7 @@ var runSequence = require('run-sequence');
 var less = require('gulp-less');
 var combiner = require('stream-combiner2');
 var autoprefixer = require('gulp-autoprefixer');
+var sourcemaps = require('gulp-sourcemaps');
 
 
 
@@ -71,12 +72,16 @@ gulp.task('useref', function(){
 });
 gulp.task('uglify', function(){
 	return gulp.src('dist/js/**/*.js')
+	.pipe(sourcemaps.init())
 	.pipe(uglify()) 
+	.pipe(sourcemaps.write('../maps'))
 	.pipe(gulp.dest('dist/js'))
 });
 gulp.task('mincss', function(){
 	return gulp.src('dist/css/**/*.css')
+	.pipe(sourcemaps.init())
 	.pipe(csso()) 
+	.pipe(sourcemaps.write('../maps'))
 	.pipe(gulp.dest('dist/css'))
 });
 gulp.task('autoprefix', function(){

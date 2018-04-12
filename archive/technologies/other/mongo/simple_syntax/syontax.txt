@@ -1,0 +1,89 @@
+﻿---- "use info" - делает текущей бд info, если её нет то создает
+
+---- "show dbs" - показать список всех бд
+
+---- "db" - показать текущую бд
+
+---- "show collections" - список всех коллекций текущей бд
+
+---- "db.stats()" - статистика по текущей бд
+
+---- "db.users.stats()" - статистика по коллекции users в текущей бд
+
+---- "db.users.save( { name: "Tom" } )" - в коллекцию users (если нет то создается) текущей бд добавляется объект { name: "Tom" }
+
+---- "db.users.find()"			- показать все объекты кол-ции users
+
+---- "db.users.insertOne({"_id": 123457, "name": "Tom", "age": 28, languages: ["english", "spanish"]})" - добавляет один объект в кол-цию users текущей бд
+
+---- "db.users.find().pretty()" - читабельный вывод всех объектов кол-ции
+
+---- "db.users.insertMany([{"name": "Bob", "age": 26, languages: ["english", "frensh"]}, 
+{"name": "Alice", "age": 31, languages:["german", "english"]}])" - добавляет несколько объектов в кол-цию users текущей бд
+
+---- "db.users.insert({"name": "Tom", "age": 28, languages: ["english", "spanish"]})" - универсальный метод добавления документов
+
+---- можно сначала определить документ командой "document=({"name": "Bill", "age": 32, languages: ["english", "french"]})" а, затем добавить "db.users.insert(document)"
+
+---- "load("D:/users.js")" - выполняет команды из файла
+
+---- "db.users.find({name: "Tom"})" - показывает все записи где name="Tom"
+
+---- "db.users.find({name: "Tom", age: 32})" - показывает все записи где name="Tom" и age=32
+
+---- "db.users.find({languages: "english"})" - показать записи где Languages="english"
+
+---- "db.users.find({languages: ["english", "german"]})" - показать записи где Languages и english, и german
+
+---- "db.users.find({"languages.0": "english"})" - где english стоит на первом месте
+
+---- "db.users.find({name: "Tom"}, {age: 1})" - выбрать все записи где name=Tom, но показать только графу age (и __id)
+
+---- "db.persons.find({name: "Tom"}, {age: 0})" - выбрать все записи где name=Tom, но НЕпоказывать графу age
+
+---- "db.users.find({name: "Tom"}, {age: true, _id: false})" - выбрать все записи где name=Tom, но показать только графу age без __id
+
+---- "db.users.find({}, {age: 1, _id: 0})" - выбрать все записи но показать только графу age без __id
+
+
+
+------Использование JS ------
+---- "db.users.find("this.name=='Tom'")" - выбрать все записи где name=Tom
+
+---- "fn = function() { return this.name=="Tom"; }" - создаём функцию
+db.users.find(fn) - применяем функцию, выбрать все записи где name=Tom
+
+---- "function sqrt(n) { return n*n; }" - создаем функцию которая возвращает квадрат числа и используем - "sqrt(5)"
+
+------Использование Регулярок ------
+
+---- "db.users.find({name:/T\w+/i})" - выбрать все записи где name попадает по регулярное выражение /T\w+/i
+
+------ Сортировка, лимит, пропуск ------
+
+---- "db.users.find().limit(3)" - показать 3 документа
+
+---- "db.users.find().skip(3)" - пропустить первые 3 документа
+
+---- "db.users.find().sort({name: 1})" - сортировать результаты по полю name по возрастанию (-1 для убывания)
+
+---- "db.users.find().sort({name: 1}).skip(3).limit(3)" - комбинирование
+
+---- "db.users.findOne()" - показывает первый документ в коллекции
+
+---- "db.users.find().sort({ $natural: -1 }).limit(5)" - $natural означает порядок добавления документов, значение -1 означает обратный порядок, 1 -прямой
+
+---- "db.users.find ({name: "Tom"}, {languages: {$slice : 1}})" - выбрать все записи где name=Tom, но показать только первое значение поля languages
+
+---- "db.users.find ({name: "Tom"}, {languages: {$slice : -1}})" - выбрать все записи где name=Tom, но показать только последнее значение поля languages
+
+​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+
+
+
+
+
+
+
+
+

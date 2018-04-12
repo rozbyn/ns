@@ -1,0 +1,31 @@
+body, p, h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+.wrapper{
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+input[type="text"], 
+input[type="number"],
+button, 
+textarea, 
+label {
+	display: block;
+}
+
+textarea {
+	resize: none;
+}
+
+input[type="number"] {
+	width: 100px;
+}
+
+.hideText, .unHideText {
+    background: #fff5ec;
+    width: 223px;
+    margin: 10px auto;
+}

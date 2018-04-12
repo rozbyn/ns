@@ -15,7 +15,7 @@ function addEventParentFolders (htmlCollect){
     var len = htmlCollect.length;
     for(var i=0;i<len;i++){
         htmlCollect[i].addEventListener("click", function () {
-            var params = 'path='+this.firstChild.value;
+            var params = 'path=' + this.firstChild.value;
             ajaxPost('explorer.php', params, this, function (data, s) {
                 var p = s.parentNode.parentNode;
                 p.innerHTML = data;
@@ -29,19 +29,21 @@ function addEventParentFolders (htmlCollect){
 }
 
 
+function catchAjaxForFolders (data, node) {
+	var p = node.parentNode;
+	p.innerHTML = data;
+	var folders = p.getElementsByClassName('expl_folder');
+	var parentFolders = p.getElementsByClassName('par_folder');
+	addEventFolders(folders);
+	addEventParentFolders(parentFolders);
+}
+
 function addEventFolders(htmlCollect) {
     var len = htmlCollect.length;
     for(var i=0;i<len;i++){
         htmlCollect[i].addEventListener("click", function () {
-            var params = 'path='+this.firstChild.value;
-            ajaxPost('explorer.php', params, this, function (data, s) {
-                var p = s.parentNode;
-                p.innerHTML = data;
-                var folders = p.getElementsByClassName('expl_folder');
-                var parentFolders = p.getElementsByClassName('par_folder');
-                addEventFolders(folders);
-                addEventParentFolders(parentFolders);
-            });
+            var params = 'path=' + this.firstChild.value;
+            ajaxPost('explorer.php', params, this, catchAjaxForFolders);
         })
     }
 }
@@ -65,6 +67,8 @@ function ajaxGet(url, callback){
 	request.open('GET', url);
 	request.send();
 }
+
+
 function ajaxPost(url, params, s, callback){
 	var request = new XMLHttpRequest();
     var f = callback || function(data){} ;
@@ -77,3 +81,19 @@ function ajaxPost(url, params, s, callback){
 	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	request.send(params);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
