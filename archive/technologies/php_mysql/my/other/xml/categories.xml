@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<All-categories>
+  <showingCategories>
+    <category>
+      <id>1</id>
+      <name>Перчатки</name>
+      <priceCat>до 600 пар;от 600 до 6000 пар;свыше 6000 пар</priceCat>
+      <unit>Шт</unit>
+      <SubCategories>
+        <category>
+          <id>2</id>
+          <name>Перчатки "Зима" двойные</name>
+          <priceCat>до 600 пар;от 600 до 6000 пар;свыше 6000 пар</priceCat>
+          <unit>Шт</unit>
+        </category>
+        <category>
+          <id>3</id>
+          <name>7,5 класс вязки</name>
+          <priceCat>до 600 пар;от 600 до 6000 пар;свыше 6000 пар</priceCat>
+          <unit>Шт</unit>
+        </category>
+        <category>
+          <id>4</id>
+          <name>10 класс вязки</name>
+          <priceCat>до 600 пар;от 600 до 6000 пар;свыше 6000 пар</priceCat>
+          <unit>Шт</unit>
+        </category>
+        <category>
+          <id>18</id>
+          <name>Перчатки БМС</name>
+          <priceCat>Крупн. Опт;Опт</priceCat>
+          <unit>шт</unit>
+        </category>
+      </SubCategories>
+    </category>
+    <category>
+      <id>5</id>
+      <name>Замки</name>
+      <priceCat>Цена</priceCat>
+      <unit>Шт</unit>
+    </category>
+    <category>
+      <id>7</id>
+      <name>Ручки дверные</name>
+      <priceCat>Цена</priceCat>
+      <unit>Шт</unit>
+      <SubCategories>
+        <category>
+          <id>8</id>
+          <name>Ручка-кнопка Граненная</name>
+          <priceCat>Цена</priceCat>
+          <unit>Шт</unit>
+        </category>
+        <category>
+          <id>9</id>
+          <name>Ручка-кнопка Конус</name>
+          <priceCat>Цена</priceCat>
+          <unit>Шт</unit>
+        </category>
+        <category>
+          <id>10</id>
+          <name>Ручка-кнопка Круглая</name>
+          <priceCat>Цена</priceCat>
+          <unit>Шт</unit>
+        </category>
+      </SubCategories>
+    </category>
+    <category>
+      <id>11</id>
+      <name>Веревки, нитки, шнуры</name>
+      <priceCat>Цена</priceCat>
+      <unit>Шт</unit>
+      <SubCategories>
+        <category>
+          <id>13</id>
+          <name>Нити</name>
+          <priceCat>Цена</priceCat>
+          <unit>Шт</unit>
+        </category>
+        <category>
+          <id>14</id>
+          <name>Фалы</name>
+          <priceCat>Цена</priceCat>
+          <unit>Шт</unit>
+        </category>
+        <category>
+          <id>15</id>
+          <name>Шнуры</name>
+          <priceCat>Цена</priceCat>
+          <unit>Шт</unit>
+        </category>
+        <category>
+          <id>16</id>
+          <name>Шпагаты</name>
+          <priceCat>Цена</priceCat>
+          <unit>Шт</unit>
+        </category>
+        <category>
+          <id>17</id>
+          <name>Тросы</name>
+          <priceCat>Цена</priceCat>
+          <unit>Шт</unit>
+        </category>
+      </SubCategories>
+    </category>
+    <category>
+      <id>999</id>
+      <name>Разное</name>
+      <priceCat>Крупн. Опт;Опт</priceCat>
+      <unit>Шт</unit>
+      <SubCategories>
+        <category>
+          <id>19</id>
+          <name>Колеса для тачек</name>
+          <priceCat>Крупн. Опт;Опт</priceCat>
+          <unit>Шт</unit>
+        </category>
+        <category>
+          <id>23</id>
+          <name>Подшипники</name>
+          <priceCat>Крупн. Опт;Опт</priceCat>
+          <unit>Шт</unit>
+        </category>
+        <category>
+          <id>24</id>
+          <name>Черенки</name>
+          <priceCat>Крупн. Опт;Опт</priceCat>
+          <unit>Шт</unit>
+        </category>
+        <category>
+          <id>25</id>
+          <name>Стулья</name>
+          <priceCat>Крупн. Опт;Опт</priceCat>
+          <unit>Шт</unit>
+        </category>
+      </SubCategories>
+    </category>
+    <category>
+      <id>20</id>
+      <name>Лопаты, грабли, совки</name>
+      <priceCat>Цена</priceCat>
+      <unit>Шт</unit>
+    </category>
+    <category>
+      <id>21</id>
+      <name>Опрыскиватели</name>
+      <priceCat>Цена</priceCat>
+      <unit>Шт</unit>
+    </category>
+    <category>
+      <id>22</id>
+      <name>Оцинковка</name>
+      <priceCat>Цена</priceCat>
+      <unit>Шт</unit>
+    </category>
+    <category>
+      <id>26</id>
+      <name>Шланги</name>
+      <priceCat>Цена</priceCat>
+      <unit>Шт, М</unit>
+    </category>
+  </showingCategories>
+  <hiddenCategories>
+    <category>
+      <id>6</id>
+      <name>Замки висячие</name>
+      <priceCat>Цена</priceCat>
+      <unit>Шт</unit>
+    </category>
+    <category>
+      <id>27</id>
+      <name>Замки висячие2</name>
+      <priceCat>Цена</priceCat>
+      <unit>Шт</unit>
+    </category>
+  </hiddenCategories>
+</All-categories>

@@ -1,0 +1,3414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Products>
+  <Product>
+    <id>1</id>
+    <category>;1;2;</category>
+    <name>Перчатки х/б "Зима" двойные (ручной оверлок)</name>
+    <pack>100</pack>
+    <price>19,00;17,00;16,00</price>
+    <img-url>img/perchatki/1.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>2</id>
+    <category>;1;2;</category>
+    <name>Перчатки х/б "Зима" двойные с ПВХ протектор (ручной оверлок)</name>
+    <pack>100</pack>
+    <price>20,00;18,00;17,00</price>
+    <img-url>img/perchatki/2.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>3</id>
+    <category>;5;6;</category>
+    <name>Замок висячий AVERS PD-01-38 [12,144]</name>
+    <pack>1</pack>
+    <price>35</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>4</id>
+    <category>;5;6;</category>
+    <name>Замок висячий AVERS PD-01-50 [12,96]</name>
+    <pack>1</pack>
+    <price>55</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>5</id>
+    <category>;7;8;</category>
+    <name>Ручка-кнопка Граненная Дуб [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/1.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>6</id>
+    <category>;7;9;</category>
+    <name>Ручка-кнопка Конус Дуб [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/2.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>7</id>
+    <category>;7;10;</category>
+    <name>Ручка-кнопка Круглая Дуб [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/3.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>9</id>
+    <category>;1;4;</category>
+    <name>3-х нитка х/б белая"Лайт" (оверлок машинный)</name>
+    <pack>250</pack>
+    <price>6,50;6,00;5,60</price>
+    <img-url>img/perchatki/10-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>10</id>
+    <category>;1;4;</category>
+    <name>3-х нитка х/б белая "Лайт" с ПВХ (оверлок машинный)</name>
+    <pack>250</pack>
+    <price>7,00;6,50;6,00</price>
+    <img-url>img/perchatki/10-2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>11</id>
+    <category>;1;4;</category>
+    <name>4-х нитка х/б "Эконом" черные (оверлок машинный)</name>
+    <pack>250</pack>
+    <price>7,70;7,25;6,70</price>
+    <img-url>img/perchatki/10-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>12</id>
+    <category>;1;4;</category>
+    <name>4-х нитка х/б "Эконом" с ПВХ черные (оверлок машинный)</name>
+    <pack>250</pack>
+    <price>8,20;7,80;7,30</price>
+    <img-url>img/perchatki/10-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>13</id>
+    <category>;1;4;</category>
+    <name>5-и нитка х/б "Профи" (оверлок машинный)</name>
+    <pack>200</pack>
+    <price>9,00;8,60;7,90</price>
+    <img-url>img/perchatki/10-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>14</id>
+    <category>;1;4;</category>
+    <name>5-и нитка х/б "Профи" с ПВХ - волна белые (оверлок машинный)</name>
+    <pack>200</pack>
+    <price>9,20;8,70;8,20</price>
+    <img-url>img/perchatki/10-6.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>15</id>
+    <category>;1;4;</category>
+    <name>5-и нитка х/б "Профи" с ПВХ - протектор белая (оверлок машинный)</name>
+    <pack>200</pack>
+    <price>9,20;8,70;8,20</price>
+    <img-url>img/perchatki/10-7.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>16</id>
+    <category>;1;4;</category>
+    <name>5-и нитка х/б "Профи" черные (оверлок машинный)</name>
+    <pack>200</pack>
+    <price>9,00;8,60;7,90</price>
+    <img-url>img/perchatki/10-8.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>17</id>
+    <category>;1;4;</category>
+    <name>5-и нитка х/б "Профи" черные с ПВХ (оверлок машинный)</name>
+    <pack>200</pack>
+    <price>9,20;8,70;8,20</price>
+    <img-url>img/perchatki/10-9.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>18</id>
+    <category>;1;4;</category>
+    <name>5-и нитка х/б "Профи" черные с ПВХ - волна (оверлок машинный)</name>
+    <pack>200</pack>
+    <price>9,20;8,70;8,20</price>
+    <img-url>img/perchatki/10-10.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>19</id>
+    <category>;1;4;</category>
+    <name>5-и нитка х/б "Профи" черные с ПВХ - протектор (оверлок машинный)</name>
+    <pack>200</pack>
+    <price>9,20;8,70;8,20</price>
+    <img-url>img/perchatki/10-11.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>20</id>
+    <category>;1;3;</category>
+    <name>4-х нитка х/б "Стандарт" белые (оверлок машинный)</name>
+    <pack>250</pack>
+    <price>8,20;7,80;7,30</price>
+    <img-url>img/perchatki/7-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>21</id>
+    <category>;1;3;</category>
+    <name>4-х нитка х/б "Стандарт" с ПВХ белые (оверлок машинный)</name>
+    <pack>250</pack>
+    <price>9,00;8,60;7,90</price>
+    <img-url>img/perchatki/7-2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>22</id>
+    <category>;1;3;</category>
+    <name>4-х нитка х/б "Стандарт" с ПВХ - волна белые (оверлок машинный)</name>
+    <pack>250</pack>
+    <price>9,00;8,60;7,90</price>
+    <img-url>img/perchatki/7-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>23</id>
+    <category>;1;3;</category>
+    <name>4-х нитка х/б "Стандарт" с ПВХ - протектор белые (оверлок машинный)</name>
+    <pack>250</pack>
+    <price>9,00;8,60;7,90</price>
+    <img-url>img/perchatki/7-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>24</id>
+    <category>;1;3;</category>
+    <name>4-х нитка х/б "Стандарт" черные (оверлок машинный)</name>
+    <pack>250</pack>
+    <price>8,20;7,80;7,30</price>
+    <img-url>img/perchatki/7-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>25</id>
+    <category>;1;3;</category>
+    <name>4-х нитка х/б "Стандарт" черные с ПВХ  (оверлок машинный)</name>
+    <pack>250</pack>
+    <price>9,00;8,60;7,90</price>
+    <img-url>img/perchatki/7-6.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>26</id>
+    <category>;1;3;</category>
+    <name>4-х нитка х/б "Стандарт" черные с ПВХ - волна (оверлок машинный)</name>
+    <pack>250</pack>
+    <price>9,00;8,60;7,90</price>
+    <img-url>img/perchatki/7-7.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>27</id>
+    <category>;1;3;</category>
+    <name>4-х нитка х/б "Стандарт" черные с ПВХ - протектор (оверлок машинный)</name>
+    <pack>250</pack>
+    <price>9,00;8,60;7,90</price>
+    <img-url>img/perchatki/7-8.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>28</id>
+    <category>;1;3;</category>
+    <name>5-и нитка х/б "Профи"(оверлок машинный)</name>
+    <pack>200</pack>
+    <price>9,00;8,60;7,90</price>
+    <img-url>img/perchatki/7-9.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>29</id>
+    <category>;1;3;</category>
+    <name>5-и нитка х/б "Профи" с ПВХ (оверлок машинный)</name>
+    <pack>200</pack>
+    <price>9,20;8,70;8,20</price>
+    <img-url>img/perchatki/7-10.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>30</id>
+    <category>;1;3;</category>
+    <name>5-и нитка х/б "Профи" с ПВХ - волна (оверлок машинный)</name>
+    <pack>200</pack>
+    <price>9,20;8,70;8,20</price>
+    <img-url>img/perchatki/7-11.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>31</id>
+    <category>;1;3;</category>
+    <name>5-и нитка х/б "Профи" с ПВХ - протектор (оверлок машинный)</name>
+    <pack>200</pack>
+    <price>9,20;8,70;8,20</price>
+    <img-url>img/perchatki/7-12.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>32</id>
+    <category>;1;3;</category>
+    <name>5-и нитка х/б "Профи" черные (оверлок машинный)</name>
+    <pack>200</pack>
+    <price>9,00;8,60;7,90</price>
+    <img-url>img/perchatki/7-13.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>33</id>
+    <category>;1;3;</category>
+    <name>5-и нитка х/б "Профи" черные с ПВХ (оверлок машинный)</name>
+    <pack>200</pack>
+    <price>9,20;8,70;8,20</price>
+    <img-url>img/perchatki/7-14.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>34</id>
+    <category>;1;3;</category>
+    <name>5-и нитка х/б "Профи" черные с ПВХ - волна  (оверлок машинный)</name>
+    <pack>200</pack>
+    <price>9,20;8,70;8,20</price>
+    <img-url>img/perchatki/7-15.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>35</id>
+    <category>;1;3;</category>
+    <name>5-и нитка х/б "Профи" черные с ПВХ - протектор (оверлок машинный)</name>
+    <pack>200</pack>
+    <price>9,20;8,70;8,20</price>
+    <img-url>img/perchatki/7-16.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>36</id>
+    <category>;1;3;</category>
+    <name>5-и нитка х/б "Профи" серые с ПВХ - протектор (ручной оверлок)</name>
+    <pack>200</pack>
+    <price>10,50;9,90;9,30</price>
+    <img-url>img/perchatki/7-17.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>37</id>
+    <category>;1;3;</category>
+    <name>6-и нитка х/б "Люкс" серые с ПВХ - протектор (ручной оверлок)</name>
+    <pack>200</pack>
+    <price>11,50;10,50;10,00</price>
+    <img-url>img/perchatki/7-18.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>38</id>
+    <category>;1;3;</category>
+    <name>6-и нитка х/б "Люкс" белые с ПВХ - протектор (ручной оверлок)</name>
+    <pack>200</pack>
+    <price>11,50;10,50;10,00</price>
+    <img-url>img/perchatki/7-19.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>39</id>
+    <category>;1;3;</category>
+    <name>5-и нитка х/б "Профи" с ПВХ - протектор (ручной оверлок)</name>
+    <pack>200</pack>
+    <price>10,50;9,90;9,30</price>
+    <img-url>img/perchatki/7-20.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>40</id>
+    <category>;1;3;</category>
+    <name>6-и нитка х/б "Люкс" черные с ПВХ - протектор (ручной оверлок)</name>
+    <pack>200</pack>
+    <price>11,50;10,50;10,00</price>
+    <img-url>img/perchatki/7-21.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>41</id>
+    <category>;1;3;</category>
+    <name>5-и нитка х/б "Профи" черные  с ПВХ - протектор (ручной оверлок)</name>
+    <pack>200</pack>
+    <price>10,50;9,90;9,30</price>
+    <img-url>img/perchatki/7-22.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>45</id>
+    <category>;5;6;</category>
+    <name>Замок висячий AVERS PD-01-63 [6,48]</name>
+    <pack>1</pack>
+    <price>82,00</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>46</id>
+    <category>;5;6;</category>
+    <name>Замок висячий PD-01-25 (МВС-122) [6,240]</name>
+    <pack>1</pack>
+    <price>25,00</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>47</id>
+    <category>;5;6;</category>
+    <name>Замок висячий PD-01-32 (МВС-123) [6,240]</name>
+    <pack>1</pack>
+    <price>35,00</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>51</id>
+    <category>;11;13;</category>
+    <name>Нить на катушке белая, черная</name>
+    <pack>230</pack>
+    <price>41</price>
+    <img-url>img/nitki/nit-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>52</id>
+    <category>;11;13;</category>
+    <name>Нить обувная №375 черный</name>
+    <pack>100</pack>
+    <price>10</price>
+    <img-url>img/nitki/nit-2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>53</id>
+    <category>;11;13;</category>
+    <name>Нить рыболовная кукуруза 100гр</name>
+    <pack>150</pack>
+    <price>41</price>
+    <img-url>img/nitki/nit-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>54</id>
+    <category>;11;17;</category>
+    <name>Трос в оплетке Ø2мм, 20м</name>
+    <pack>50</pack>
+    <price>53</price>
+    <img-url>img/nitki/tros-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>55</id>
+    <category>;11;17;</category>
+    <name>Трос в оплетке Ø2,5мм, 20м</name>
+    <pack>50</pack>
+    <price>65</price>
+    <img-url>img/nitki/tros-2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>56</id>
+    <category>;11;17;</category>
+    <name>Трос в оплетке Ø3мм, 20м</name>
+    <pack>25</pack>
+    <price>100</price>
+    <img-url>img/nitki/tros-2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>57</id>
+    <category>;11;17;</category>
+    <name>Трос в оплетке Ø2,5 мм, цена за 1 м</name>
+    <pack>100</pack>
+    <price>3,5</price>
+    <img-url>img/nitki/tros-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>58</id>
+    <category>;11;17;</category>
+    <name>Трос в оплетке Ø3 мм, цена за 1 м</name>
+    <pack>100</pack>
+    <price>5,3</price>
+    <img-url>img/nitki/tros-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>59</id>
+    <category>;11;17;</category>
+    <name>Трос в оплетке Ø3 мм, цена за 1 м</name>
+    <pack>200</pack>
+    <price>5,3</price>
+    <img-url>img/nitki/tros-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>60</id>
+    <category>;11;17;</category>
+    <name>Трос в оплетке Ø3,5 мм, цена за 1 м</name>
+    <pack>100</pack>
+    <price>7,7</price>
+    <img-url>img/nitki/tros-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>61</id>
+    <category>;11;17;</category>
+    <name>Трос в оплетке Ø4 мм, цена за 1 м</name>
+    <pack>100</pack>
+    <price>8,2</price>
+    <img-url>img/nitki/tros-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>62</id>
+    <category>;11;17;</category>
+    <name>Трос в оплетке Ø5 мм, цена за 1 м</name>
+    <pack>100</pack>
+    <price>12,5</price>
+    <img-url>img/nitki/tros-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>63</id>
+    <category>;11;17;</category>
+    <name>Трос в оплетке Ø6 мм, цена за 1 м</name>
+    <pack>100</pack>
+    <price>16</price>
+    <img-url>img/nitki/tros-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>64</id>
+    <category>;11;17;</category>
+    <name>Трос в оплетке Ø7 мм, цена за 1 м</name>
+    <pack>100</pack>
+    <price>18</price>
+    <img-url>img/nitki/tros-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>65</id>
+    <category>;11;17;</category>
+    <name>Трос в оплетке Ø8 мм, цена за 1 м</name>
+    <pack>100</pack>
+    <price>24,5</price>
+    <img-url>img/nitki/tros-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>66</id>
+    <category>;11;14;</category>
+    <name>Фал капроновый в бабине Ø6, 100м</name>
+    <pack>1</pack>
+    <price>7</price>
+    <img-url>img/nitki/fal-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>67</id>
+    <category>;11;14;</category>
+    <name>Фал капроновый в бабине Ø6, 200м</name>
+    <pack>1</pack>
+    <price>7</price>
+    <img-url>img/nitki/fal-1.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>68</id>
+    <category>;11;14;</category>
+    <name>Фал капроновый в бабине Ø8, 100м</name>
+    <pack>1</pack>
+    <price>9,7</price>
+    <img-url>img/nitki/fal-1.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>69</id>
+    <category>;11;14;</category>
+    <name>Фал капроновый в бабине Ø8, 200м</name>
+    <pack>1</pack>
+    <price>9,7</price>
+    <img-url>img/nitki/fal-1.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>70</id>
+    <category>;11;14;</category>
+    <name>Фал капроновый в бабине Ø10, 100м</name>
+    <pack>1</pack>
+    <price>17,3</price>
+    <img-url>img/nitki/fal-1.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>71</id>
+    <category>;11;14;</category>
+    <name>Фал капроновый в бабине Ø10, 200м</name>
+    <pack>1</pack>
+    <price>17,3</price>
+    <img-url>img/nitki/fal-1.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>72</id>
+    <category>;11;14;</category>
+    <name>Фал капроновый в бабине Ø12, 100м, Эль</name>
+    <pack>1</pack>
+    <price></price>
+    <img-url>img/nitki/fal-1.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>73</id>
+    <category>;11;14;</category>
+    <name>Фал капроновый в бабине Ø12, 200м, Эль</name>
+    <pack>1</pack>
+    <price>25</price>
+    <img-url>img/nitki/fal-1.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>74</id>
+    <category>;11;14;</category>
+    <name>Фал капроновый тип 1, Ø6</name>
+    <pack>20</pack>
+    <price>178</price>
+    <img-url>img/nitki/fal-2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>75</id>
+    <category>;11;14;</category>
+    <name>Фал капроновый тип 2, Ø8</name>
+    <pack>10</pack>
+    <price>240</price>
+    <img-url>img/nitki/fal-2.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>76</id>
+    <category>;11;14;</category>
+    <name>Фал капроновый тип 3, Ø10</name>
+    <pack>20</pack>
+    <price>180</price>
+    <img-url>img/nitki/fal-2.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>77</id>
+    <category>;11;15;</category>
+    <name>Шнур в бабине Ø5, 100м, цветной</name>
+    <pack>1</pack>
+    <price>2,2</price>
+    <img-url>img/nitki/shnur-1.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>78</id>
+    <category>;11;15;</category>
+    <name>Шнур в бабине Ø5, 200м, цветной</name>
+    <pack>1</pack>
+    <price>2,2</price>
+    <img-url>img/nitki/shnur-1.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>79</id>
+    <category>;11;15;</category>
+    <name>Шнур в бабине Ø6, 100м, цветной</name>
+    <pack>1</pack>
+    <price>2,7</price>
+    <img-url>img/nitki/shnur-1.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>80</id>
+    <category>;11;15;</category>
+    <name>Шнур в бабине Ø6, 200м, цветной</name>
+    <pack>1</pack>
+    <price>2,7</price>
+    <img-url>img/nitki/shnur-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>81</id>
+    <category>;11;15;</category>
+    <name>Шнур в бабине Ø6, 500м, цветной</name>
+    <pack>1</pack>
+    <price>2,7</price>
+    <img-url>img/nitki/shnur-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>82</id>
+    <category>;11;15;</category>
+    <name>Шнур в бабине Ø8, 100м, цветной</name>
+    <pack>1</pack>
+    <price>4,5</price>
+    <img-url>img/nitki/shnur-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>83</id>
+    <category>;11;15;</category>
+    <name>Шнур в бабине Ø8, 200м, цветной</name>
+    <pack>1</pack>
+    <price>4,5</price>
+    <img-url>img/nitki/shnur-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>84</id>
+    <category>;11;15;</category>
+    <name>Шнур в бабине Ø10, 100м, цветной</name>
+    <pack>1</pack>
+    <price>7</price>
+    <img-url>img/nitki/shnur-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>85</id>
+    <category>;11;15;</category>
+    <name>Шнур в бабине Ø10, 200м, цветной</name>
+    <pack>1</pack>
+    <price>7</price>
+    <img-url>img/nitki/shnur-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>86</id>
+    <category>;11;15;</category>
+    <name>Шнур в бабине Ø12, 100м, цветной</name>
+    <pack>1</pack>
+    <price>9,3</price>
+    <img-url>img/nitki/shnur-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>87</id>
+    <category>;11;15;</category>
+    <name>Шнур в бабине Ø12, 200м, цветной</name>
+    <pack>1</pack>
+    <price>9,3</price>
+    <img-url>img/nitki/shnur-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>88</id>
+    <category>;11;15;</category>
+    <name>Шнур в бабине Ø15, 100м, цветной</name>
+    <pack>1</pack>
+    <price>13</price>
+    <img-url>img/nitki/shnur-2.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>89</id>
+    <category>;11;15;</category>
+    <name>Шнур в бабине Ø15, 200м, цветной</name>
+    <pack>1</pack>
+    <price>13</price>
+    <img-url>img/nitki/shnur-2.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>90</id>
+    <category>;11;15;</category>
+    <name>Шнур в бабине Ø20, 100м, цветной</name>
+    <pack>1</pack>
+    <price>24</price>
+    <img-url>img/nitki/shnur-2.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>91</id>
+    <category>;11;15;</category>
+    <name>Шнур хозяйственный Ø2, 20м, белый</name>
+    <pack>200</pack>
+    <price>10,3</price>
+    <img-url>img/nitki/shnur-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>92</id>
+    <category>;11;15;</category>
+    <name>Шнур хозяйственный Ø2, 20м, цветной</name>
+    <pack>200</pack>
+    <price>10,5</price>
+    <img-url>img/nitki/shnur-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>93</id>
+    <category>;11;15;</category>
+    <name>Шнур хозяйственный Ø3, 100м, белый</name>
+    <pack>20</pack>
+    <price>57</price>
+    <img-url>img/nitki/shnur-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>94</id>
+    <category>;11;15;</category>
+    <name>Шнур хозяйственный Ø3, 100м, цветной</name>
+    <pack>20</pack>
+    <price>65</price>
+    <img-url>img/nitki/shnur-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>95</id>
+    <category>;11;15;</category>
+    <name>Шнур хозяйственный Ø3, 20м, белый</name>
+    <pack>200</pack>
+    <price>12</price>
+    <img-url>img/nitki/shnur-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>96</id>
+    <category>;11;15;</category>
+    <name>Шнур хозяйственный Ø3, 20м, цветной</name>
+    <pack>200</pack>
+    <price>14,5</price>
+    <img-url>img/nitki/shnur-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>97</id>
+    <category>;11;15;</category>
+    <name>Шнур хозяйственный Ø4, 100м, белый</name>
+    <pack>20</pack>
+    <price>90</price>
+    <img-url>img/nitki/shnur-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>98</id>
+    <category>;11;15;</category>
+    <name>Шнур хозяйственный Ø4, 100м, цветной</name>
+    <pack>20</pack>
+    <price>100</price>
+    <img-url>img/nitki/shnur-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>99</id>
+    <category>;11;15;</category>
+    <name>Шнур хозяйственный Ø4, 20м, белый</name>
+    <pack>100</pack>
+    <price>18,5</price>
+    <img-url>img/nitki/shnur-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>100</id>
+    <category>;11;15;</category>
+    <name>Шнур хозяйственный Ø4, 20м, цветной</name>
+    <pack>100</pack>
+    <price>21</price>
+    <img-url>img/nitki/shnur-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>101</id>
+    <category>;11;15;</category>
+    <name>Шнур хозяйственный Ø5, 100м, белый</name>
+    <pack>15</pack>
+    <price>150</price>
+    <img-url>img/nitki/shnur-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>102</id>
+    <category>;11;15;</category>
+    <name>Шнур хозяйственный Ø5, 100м, цветной</name>
+    <pack>15</pack>
+    <price>150</price>
+    <img-url>img/nitki/shnur-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>103</id>
+    <category>;11;15;</category>
+    <name>Шнур хозяйственный Ø5, 20м, белый</name>
+    <pack>50</pack>
+    <price>31</price>
+    <img-url>img/nitki/shnur-3.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>104</id>
+    <category>;11;15;</category>
+    <name>Шнур хозяйственный Ø5, 20м, цветной</name>
+    <pack>50</pack>
+    <price>31</price>
+    <img-url>img/nitki/shnur-3.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>107</id>
+    <category>;11;15;</category>
+    <name>Шнур хозяйственный Ø6, 20м, белый</name>
+    <pack>50</pack>
+    <price>41</price>
+    <img-url>img/nitki/shnur-3.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>108</id>
+    <category>;11;15;</category>
+    <name>Шнур хозяйственный Ø6, 20м, цветной</name>
+    <pack>50</pack>
+    <price>41</price>
+    <img-url>img/nitki/shnur-3.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>109</id>
+    <category>;11;16;</category>
+    <name>Джутовый шпагат 100м</name>
+    <pack>30</pack>
+    <price>19</price>
+    <img-url>img/nitki/shpagat-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>110</id>
+    <category>;11;16;</category>
+    <name>Джутовый шпагат 300м</name>
+    <pack>25</pack>
+    <price>40</price>
+    <img-url>img/nitki/shpagat-1.png</img-url>
+    <showOnMain>1</showOnMain>
+  </Product>
+  <Product>
+    <id>111</id>
+    <category>;11;16;</category>
+    <name>Джутовый шпагат 500м</name>
+    <pack>20</pack>
+    <price>75</price>
+    <img-url>img/nitki/shpagat-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>112</id>
+    <category>;11;16;</category>
+    <name>Джуто-льняной 1000текс, 100м (РФ)</name>
+    <pack>50</pack>
+    <price>25</price>
+    <img-url>img/nitki/shpagat-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>113</id>
+    <category>;11;16;</category>
+    <name>Джутовый шпагат 1,5кг</name>
+    <pack>0</pack>
+    <price>280</price>
+    <img-url>img/nitki/shpagat-2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>114</id>
+    <category>;11;16;</category>
+    <name>Джутовый шпагат 1кг</name>
+    <pack>12</pack>
+    <price>275</price>
+    <img-url>img/nitki/shpagat-2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>115</id>
+    <category>;11;16;</category>
+    <name>Шпагат полипропиленовый, белый 100м</name>
+    <pack>30</pack>
+    <price>19</price>
+    <img-url>img/nitki/shpagat-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>116</id>
+    <category>;11;16;</category>
+    <name>Шпагат полипропиленовый, белый 300м</name>
+    <pack>25</pack>
+    <price>39/45</price>
+    <img-url>img/nitki/shpagat-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>117</id>
+    <category>;11;16;</category>
+    <name>Шпагат полипропиленовый, белый 500м</name>
+    <pack>20</pack>
+    <price>70/80</price>
+    <img-url>img/nitki/shpagat-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>118</id>
+    <category>;11;16;</category>
+    <name>Шпагат полипропиленовый, белый 800м</name>
+    <pack>15</pack>
+    <price>123</price>
+    <img-url>img/nitki/shpagat-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>119</id>
+    <category>;11;16;</category>
+    <name>Шпагат полипропиленовый сеновязальный 2200текс, высший сорт. За 1 кг - 145р (РФ)</name>
+    <pack>1</pack>
+    <price>145</price>
+    <img-url>img/nitki/shpagat-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>120</id>
+    <category>;11;16;</category>
+    <name>Шпагат полипропиленовый 2200текс, высший сорт. За 0,8 кг - 115р (РФ)</name>
+    <pack>10</pack>
+    <price>145</price>
+    <img-url>img/nitki/shpagat-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>121</id>
+    <category>;11;16;</category>
+    <name>Шпагат полипропиленовый 1000текс, Белый, 100м (РФ)</name>
+    <pack>50</pack>
+    <price></price>
+    <img-url>img/nitki/shpagat-6.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>122</id>
+    <category>;11;16;</category>
+    <name>Шпагат полипропиленовый 1000текс, Белый, 300гр (РФ)</name>
+    <pack>25</pack>
+    <price></price>
+    <img-url>img/nitki/shpagat-6.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>123</id>
+    <category>;11;16;</category>
+    <name>Шпагат полипропиленовый цветной 100м</name>
+    <pack>30</pack>
+    <price>19</price>
+    <img-url>img/nitki/shpagat-7.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>124</id>
+    <category>;11;16;</category>
+    <name>Шпагат полипропиленовый цветной 300м</name>
+    <pack>25</pack>
+    <price>35</price>
+    <img-url>img/nitki/shpagat-7.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>125</id>
+    <category>;11;16;</category>
+    <name>Шпагат полипропиленовый цветной 500м</name>
+    <pack>20</pack>
+    <price>70</price>
+    <img-url>img/nitki/shpagat-7.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>126</id>
+    <category>;11;16;</category>
+    <name>Шпагат полипропиленовый цветной 1000м</name>
+    <pack>15</pack>
+    <price>125</price>
+    <img-url>img/nitki/shpagat-7.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>127</id>
+    <category>;11;16;</category>
+    <name>Шпагат полипропиленовый цветной 1000текс, 100м (РФ)</name>
+    <pack>50</pack>
+    <price></price>
+    <img-url>img/nitki/shpagat-7.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>128</id>
+    <category>;11;16;</category>
+    <name>Шпагат полипропиленовый цветной 1000текс, 300гр (РФ)</name>
+    <pack>25</pack>
+    <price></price>
+    <img-url>img/nitki/shpagat-7.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>129</id>
+    <category>;18;</category>
+    <name>Перчатки цветочек </name>
+    <pack>1200</pack>
+    <price>22,00;27,00</price>
+    <img-url>img/perchatki/bms-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>130</id>
+    <category>;18;</category>
+    <name>Перчатки маслобензостойкие</name>
+    <pack>120</pack>
+    <price>41,00;45,00</price>
+    <img-url>img/perchatki/bms-2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>131</id>
+    <category>;18;</category>
+    <name>Перчатки КШС тип 1</name>
+    <pack>300</pack>
+    <price>40,00;50,00</price>
+    <img-url>img/perchatki/bms-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>132</id>
+    <category>;18;</category>
+    <name>Перчатки МБС манжет крага</name>
+    <pack></pack>
+    <price>53,00;56,00</price>
+    <img-url>img/perchatki/bms-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>133</id>
+    <category>;18;</category>
+    <name>Перчатки МБС манжет резинка</name>
+    <pack></pack>
+    <price>51,00;55,00</price>
+    <img-url>img/perchatki/bms-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>134</id>
+    <category>;18;</category>
+    <name>Перчатки нейлон "Точка"</name>
+    <pack>1200</pack>
+    <price>13,00;16,00</price>
+    <img-url>img/perchatki/bms-6.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>135</id>
+    <category>;18;</category>
+    <name>Перчатки №300 с резиновым покрытием зимние</name>
+    <pack>480</pack>
+    <price>39,00;44,00</price>
+    <img-url>img/perchatki/bms-7.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>136</id>
+    <category>;18;</category>
+    <name>Перчатки зимние с вспенненым латексным покрытием (полный облив)</name>
+    <pack>480</pack>
+    <price>44,00;49,00</price>
+    <img-url>img/perchatki/bms-8.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>137</id>
+    <category>;18;</category>
+    <name>Краги спилковые сварочные Portwest С усиленным наладонником</name>
+    <pack>96</pack>
+    <price>205,00;230,00</price>
+    <img-url>img/perchatki/bms-9.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>138</id>
+    <category>;18;</category>
+    <name>Перчатки нейлоновые с латексным покрытием Стекольщик</name>
+    <pack>720</pack>
+    <price>31,00;35,00</price>
+    <img-url>img/perchatki/bms-10.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>139</id>
+    <category>;18;</category>
+    <name>Краги спилковые сварочные серые</name>
+    <pack>120</pack>
+    <price>170,00;185,00</price>
+    <img-url>img/perchatki/bms-11.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>140</id>
+    <category>;18;</category>
+    <name>Крага Сварочная Portwest</name>
+    <pack>720</pack>
+    <price>180,00;195,00</price>
+    <img-url>img/perchatki/bms-12.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>141</id>
+    <category>;18;</category>
+    <name>Крага Сварочная Portwest</name>
+    <pack>96</pack>
+    <price>185,00;200,00</price>
+    <img-url>img/perchatki/bms-13.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>142</id>
+    <category>;18;</category>
+    <name>Перчатки резиновые хозяйственные</name>
+    <pack>400</pack>
+    <price>21,00;27,00</price>
+    <img-url>img/perchatki/bms-14.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>143</id>
+    <category>;999;</category>
+    <name>Щетка металлическая</name>
+    <pack>300</pack>
+    <price>21,00;27,00</price>
+    <img-url>img/other/o-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>144</id>
+    <category>;999;</category>
+    <name>Щетка металлическая гнутая черная</name>
+    <pack>300</pack>
+    <price>22,00;28,00</price>
+    <img-url>img/other/o-2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>145</id>
+    <category>;999;</category>
+    <name>Пистолет скелетный для герметика</name>
+    <pack>50</pack>
+    <price>70,00;75,00</price>
+    <img-url>img/other/o-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>146</id>
+    <category>;999;</category>
+    <name>Пистолет для монтажной пены</name>
+    <pack>400</pack>
+    <price>190,00;230,00</price>
+    <img-url>img/other/o-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>147</id>
+    <category>;999;</category>
+    <name>Пьезоподжиг модель № 900 ( металл)</name>
+    <pack>100</pack>
+    <price>205,00;250,00</price>
+    <img-url>img/other/o-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>148</id>
+    <category>;999;</category>
+    <name>Пьезоподжиг KOVICA модель 1005</name>
+    <pack>100</pack>
+    <price>180,00;250,00</price>
+    <img-url>img/other/o-6.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>149</id>
+    <category>;999;</category>
+    <name>Пьезоподжиг Kovea модель 915</name>
+    <pack>100</pack>
+    <price>170,00;230,00</price>
+    <img-url>img/other/o-7.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>150</id>
+    <category>;999;</category>
+    <name>Газ в баллоне (от 5 кор.)</name>
+    <pack>28</pack>
+    <price>39,00;43,00</price>
+    <img-url>img/other/o-8.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>151</id>
+    <category>;999;</category>
+    <name>Газ в баллоне Корея (от 5 кор.)</name>
+    <pack>28</pack>
+    <price>41,00;45,00</price>
+    <img-url>img/other/o-9.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>152</id>
+    <category>;999;</category>
+    <name>Газ балон мегамакс (от 5 кор.)</name>
+    <pack>28</pack>
+    <price>46,00;49,00</price>
+    <img-url>img/other/o-10.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>153</id>
+    <category>;999;</category>
+    <name>Газ балон 4 сезона(от 5 кор.)</name>
+    <pack>28</pack>
+    <price>58,00;61,00</price>
+    <img-url>img/other/o-11.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>154</id>
+    <category>;999;</category>
+    <name>Горелка без пьезоподжига большая "Корея"</name>
+    <pack>20</pack>
+    <price>130,00;140,00</price>
+    <img-url>img/other/o-12.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>155</id>
+    <category>;999;</category>
+    <name>Горелка без пьезоподжига маленькая "Корея"</name>
+    <pack>300</pack>
+    <price>125,00;135,00</price>
+    <img-url>img/other/o-12.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>156</id>
+    <category>;999;</category>
+    <name>Крючек для вязки арматуры большой</name>
+    <pack>100</pack>
+    <price>80,00;90,00</price>
+    <img-url>img/other/o-13.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>157</id>
+    <category>;999;</category>
+    <name>Крючек для вязки арматуры маленький</name>
+    <pack>100</pack>
+    <price>75,00;90,00</price>
+    <img-url>img/other/o-14.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>158</id>
+    <category>;999;</category>
+    <name>Маркер-краска по металлу белый</name>
+    <pack>144</pack>
+    <price>33,00;38,00</price>
+    <img-url>img/other/o-15.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>159</id>
+    <category>;999;</category>
+    <name>Маркер-краска по металлу черный</name>
+    <pack>144</pack>
+    <price>35,00;38,00</price>
+    <img-url>img/other/o-15.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>160</id>
+    <category>;999;</category>
+    <name>Маркер-краска по металлу золотой</name>
+    <pack>144</pack>
+    <price>40,00;50,00</price>
+    <img-url>img/other/o-15.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>161</id>
+    <category>;5;6;</category>
+    <name> Замок висячий PD-01-32-L [6,72]</name>
+    <pack>1</pack>
+    <price>40</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>162</id>
+    <category>;5;6;</category>
+    <name> Замок висячий PD-01-38 (МВС-124) [6,120]</name>
+    <pack>1</pack>
+    <price>47</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>163</id>
+    <category>;5;6;</category>
+    <name> Замок висячий PD-01-38-L [6,48]</name>
+    <pack>1</pack>
+    <price>53</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>164</id>
+    <category>;5;6;</category>
+    <name> Замок висячий PD-01-50 (МВС-125) [6,60]</name>
+    <pack>1</pack>
+    <price>82</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>165</id>
+    <category>;5;6;</category>
+    <name> Замок висячий PD-01-50-Blister (МВС-125- Blister) [6,24]</name>
+    <pack>1</pack>
+    <price>85</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>166</id>
+    <category>;5;6;</category>
+    <name> Замок висячий PD-01-50-L [6,36]</name>
+    <pack>1</pack>
+    <price>85</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>167</id>
+    <category>;5;6;</category>
+    <name> Замок висячий PD-01-63 (МВС-126) [6,30]</name>
+    <pack>1</pack>
+    <price>120</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>168</id>
+    <category>;5;6;</category>
+    <name> Замок висячий PD-01-63-L [6,30]</name>
+    <pack>1</pack>
+    <price>130</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>169</id>
+    <category>;5;6;</category>
+    <name> Замок висячий PD-01-75 (МВС-127) [6,24]</name>
+    <pack>1</pack>
+    <price>160</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>170</id>
+    <category>;7;8;</category>
+    <name> Ручка-кнопка Граненная Карельская береза [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>171</id>
+    <category>;7;8;</category>
+    <name> Ручка-кнопка Граненная Клен [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>172</id>
+    <category>;7;8;</category>
+    <name> Ручка-кнопка Граненная Красное дерево[24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>173</id>
+    <category>;7;8;</category>
+    <name> Ручка-кнопка Граненная Лимон [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>174</id>
+    <category>;7;8;</category>
+    <name> Ручка-кнопка Граненная Лиственница [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>175</id>
+    <category>;7;8;</category>
+    <name> Ручка-кнопка Граненная Мокко [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>176</id>
+    <category>;7;8;</category>
+    <name> Ручка-кнопка Граненная Орегон [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>177</id>
+    <category>;7;8;</category>
+    <name> Ручка-кнопка Граненная Орех [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>178</id>
+    <category>;7;8;</category>
+    <name> Ручка-кнопка Граненная Палисандр [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>179</id>
+    <category>;7;9;</category>
+    <name> Ручка-кнопка Конус Карельская береза[24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>180</id>
+    <category>;7;9;</category>
+    <name> Ручка-кнопка Конус Клен [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>181</id>
+    <category>;7;9;</category>
+    <name> Ручка-кнопка Конус Красное дерево [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>182</id>
+    <category>;7;9;</category>
+    <name> Ручка-кнопка Конус Лимон [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>183</id>
+    <category>;7;9;</category>
+    <name> Ручка-кнопка Конус Лиственница [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>184</id>
+    <category>;7;9;</category>
+    <name> Ручка-кнопка Конус Мокко [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>185</id>
+    <category>;7;9;</category>
+    <name> Ручка-кнопка Конус Орегон [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>186</id>
+    <category>;7;9;</category>
+    <name> Ручка-кнопка Конус Орех [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>187</id>
+    <category>;7;9;</category>
+    <name> Ручка-кнопка Конус Полисандр [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>188</id>
+    <category>;7;10;</category>
+    <name> Ручка-кнопка Круглая Карельская береза[24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>189</id>
+    <category>;7;10;</category>
+    <name> Ручка-кнопка Круглая Клен [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>190</id>
+    <category>;7;10;</category>
+    <name> Ручка-кнопка Круглая Красное дерево [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>191</id>
+    <category>;7;10;</category>
+    <name> Ручка-кнопка Круглая Лимон [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>192</id>
+    <category>;7;10;</category>
+    <name> Ручка-кнопка Круглая Лиственница [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>193</id>
+    <category>;7;10;</category>
+    <name> Ручка-кнопка Круглая Мокко [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>194</id>
+    <category>;7;10;</category>
+    <name> Ручка-кнопка Круглая Орегон [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>195</id>
+    <category>;7;10;</category>
+    <name> Ручка-кнопка Круглая Орех [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>196</id>
+    <category>;7;10;</category>
+    <name> Ручка-кнопка Круглая Палисандр [24]</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/ruchkiDvern/3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>197</id>
+    <category>;999;19;</category>
+    <name>Колесо 3,00х8 Ø16</name>
+    <pack>5</pack>
+    <price>;230</price>
+    <img-url>img/other/kolesaDlyaTachek/k-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>198</id>
+    <category>;999;19;</category>
+    <name>Колесо 3,50х8 Ø20</name>
+    <pack>5</pack>
+    <price>;305</price>
+    <img-url>img/other/kolesaDlyaTachek/k-2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>199</id>
+    <category>;999;19;</category>
+    <name>Колесо 4,00х8 Ø20</name>
+    <pack>5</pack>
+    <price>;305</price>
+    <img-url>img/other/kolesaDlyaTachek/k-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>200</id>
+    <category>;999;19;</category>
+    <name>Колесо 4,00х8 Ø16</name>
+    <pack>5</pack>
+    <price>;305</price>
+    <img-url>img/other/kolesaDlyaTachek/k-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>201</id>
+    <category>;999;19;</category>
+    <name>Камера 3,00х8</name>
+    <pack>100</pack>
+    <price>;65</price>
+    <img-url>img/other/kolesaDlyaTachek/k-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>202</id>
+    <category>;999;19;</category>
+    <name>Камера 3,25х8</name>
+    <pack>100</pack>
+    <price>;65</price>
+    <img-url>img/other/kolesaDlyaTachek/k-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>203</id>
+    <category>;999;19;</category>
+    <name>Камера 3,50х8</name>
+    <pack>100</pack>
+    <price>;65</price>
+    <img-url>img/other/kolesaDlyaTachek/k-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>204</id>
+    <category>;999;19;</category>
+    <name>Камера 4,00х8</name>
+    <pack>100</pack>
+    <price>;75</price>
+    <img-url>img/other/kolesaDlyaTachek/k-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>205</id>
+    <category>;999;19;</category>
+    <name>Покрышка 3,00х8</name>
+    <pack>100</pack>
+    <price>;110</price>
+    <img-url>img/other/kolesaDlyaTachek/k-6.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>206</id>
+    <category>;999;19;</category>
+    <name>Покрышка 3,25х8</name>
+    <pack>100</pack>
+    <price>;110</price>
+    <img-url>img/other/kolesaDlyaTachek/k-6.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>207</id>
+    <category>;999;19;</category>
+    <name>Покрышка 3,50х8</name>
+    <pack>100</pack>
+    <price>;110</price>
+    <img-url>img/other/kolesaDlyaTachek/k-6.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>208</id>
+    <category>;999;19;</category>
+    <name>Покрышка 4,00х8</name>
+    <pack>100</pack>
+    <price>;125</price>
+    <img-url>img/other/kolesaDlyaTachek/k-6.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>209</id>
+    <category>;20;</category>
+    <name>Совок посадочный СП-1, толщина 1,2 мм Сталь 0,8 КП</name>
+    <pack>100</pack>
+    <price>28</price>
+    <img-url>img/lopaty/l-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>210</id>
+    <category>;20;</category>
+    <name>Совок Посадочный СП-2, толщина 1,2 мм сталь 08КП</name>
+    <pack>100</pack>
+    <price>27</price>
+    <img-url>img/lopaty/l-2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>211</id>
+    <category>;20;</category>
+    <name>Совок посадочный СП-3, толщина 1,2 мм сталь 08КП</name>
+    <pack>60</pack>
+    <price>32</price>
+    <img-url>img/lopaty/l-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>212</id>
+    <category>;20;</category>
+    <name>Совок посадочный СП-4, толщина 1,2 мм сталь 08КП</name>
+    <pack>50</pack>
+    <price>27</price>
+    <img-url>img/lopaty/l-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>213</id>
+    <category>;20;</category>
+    <name>Мотыжка комбинированная ОД-1 Изготовлен из стали Ст3, толщина  2 мм</name>
+    <pack>60</pack>
+    <price>41</price>
+    <img-url>img/lopaty/l-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>214</id>
+    <category>;20;</category>
+    <name>Мотыжка комбинированная ТД-1, Изготовлен из стали Ст3, толщина материала 2 мм</name>
+    <pack>60</pack>
+    <price>41</price>
+    <img-url>img/lopaty/l-6.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>215</id>
+    <category>;20;</category>
+    <name>Мотыжка комбинированная ТМ-1, Изготовлен из стали Ст3, толщина материала 2 мм</name>
+    <pack>60</pack>
+    <price>46</price>
+    <img-url>img/lopaty/l-7.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>216</id>
+    <category>;20;</category>
+    <name>Мотыжка комбинированная ОМ-1, Изготовлен из стали Ст3, толщина материала 2 мм</name>
+    <pack>60</pack>
+    <price>46</price>
+    <img-url>img/lopaty/l-8.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>217</id>
+    <category>;20;</category>
+    <name>Мотыжка комбинированная ОД-2, Изготовлен из стали Ст3, толщина материала 2 мм</name>
+    <pack>60</pack>
+    <price>42</price>
+    <img-url>img/lopaty/l-9.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>218</id>
+    <category>;20;</category>
+    <name>Корнеудалитель, Изготавливается из стали Ст45, толщина материала 2 мм, каленый</name>
+    <pack>30</pack>
+    <price>73</price>
+    <img-url>img/lopaty/l-10.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>219</id>
+    <category>;20;</category>
+    <name>Рыхлитель трехзубый Р-3, Изготовлен из стали Ст3, диаметр зуба 6 мм</name>
+    <pack>60</pack>
+    <price>41</price>
+    <img-url>img/lopaty/l-11.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>220</id>
+    <category>;20;</category>
+    <name>Рыхлитель пятизубый Р-5, Изготовлен из стали Ст3, диаметр зуба 5 мм</name>
+    <pack>10</pack>
+    <price>52</price>
+    <img-url>img/lopaty/l-12.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>221</id>
+    <category>;20;</category>
+    <name>Грабли 14-ти зубые усиленные, Изготавливается из стали Ст3, толщина материала 3 мм</name>
+    <pack>30</pack>
+    <price>100</price>
+    <img-url>img/lopaty/l-13.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>222</id>
+    <category>;20;</category>
+    <name>Грабли 12-ти зубые усиленные, Изготавливается из стали Ст3, толщина материала 3 мм</name>
+    <pack>30</pack>
+    <price>95</price>
+    <img-url>img/lopaty/l-13.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>223</id>
+    <category>;20;</category>
+    <name>Культиватор ручной КР-1 с плавающим лезвием, изготовлен из стали Ст3 толщиной 1,5 мм</name>
+    <pack>15</pack>
+    <price>215</price>
+    <img-url>img/lopaty/l-14.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>224</id>
+    <category>;20;</category>
+    <name>Конус посадочный, изготовлен из оцинкованной стали, толщина 1,2 мм</name>
+    <pack>25</pack>
+    <price>70</price>
+    <img-url>img/lopaty/l-15.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>225</id>
+    <category>;20;</category>
+    <name>Садовый набор №2, крашенные, Сталь 65Г, толщина 3 мм, термообработка</name>
+    <pack>8</pack>
+    <price>280</price>
+    <img-url>img/lopaty/l-16.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>226</id>
+    <category>;20;</category>
+    <name>Садовый набор №2, некрашенные, Сталь 65Г, толщина 3 мм, термообработка</name>
+    <pack>8</pack>
+    <price>260</price>
+    <img-url>img/lopaty/l-16.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>227</id>
+    <category>;20;</category>
+    <name>Садовый набор №1, крашенные, Сталь 65Г, толщина 3 мм, термообработка</name>
+    <pack>8</pack>
+    <price>380</price>
+    <img-url>img/lopaty/l-17.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>228</id>
+    <category>;20;</category>
+    <name>Садовый набор №1, некрашенные, Сталь 65Г, толщина 3 мм, термообработка</name>
+    <pack>8</pack>
+    <price>350</price>
+    <img-url>img/lopaty/l-17.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>229</id>
+    <category>;20;</category>
+    <name>Лопата штыковая нержавеющая с ребром жесткости, толщина 1,5мм</name>
+    <pack>10</pack>
+    <price>200</price>
+    <img-url>img/lopaty/l-18.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>230</id>
+    <category>;20;</category>
+    <name>Лопата штыковая нержавеющая с ребром жесткости, толщина 2мм</name>
+    <pack>10</pack>
+    <price>255</price>
+    <img-url>img/lopaty/l-18.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>231</id>
+    <category>;20;</category>
+    <name>Лопата штыковая прямоугольная нержавеющая с ребром жесткости, толщина 1,5 мм</name>
+    <pack>10</pack>
+    <price>200</price>
+    <img-url>img/lopaty/l-19.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>232</id>
+    <category>;20;</category>
+    <name>Лопата штыковая прямоугольная нержавеющая с ребром жесткости, толщина 2 мм</name>
+    <pack>10</pack>
+    <price>255</price>
+    <img-url>img/lopaty/l-19.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>233</id>
+    <category>;20;</category>
+    <name>Лопата совковая нержавеющая, толщина 1,5 мм</name>
+    <pack>30</pack>
+    <price>260</price>
+    <img-url>img/lopaty/l-20.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>234</id>
+    <category>;20;</category>
+    <name>Лопата штыковая острая нержавеющая облегченная с ребрами жесткости 1,5 мм</name>
+    <pack>10</pack>
+    <price>200</price>
+    <img-url>img/lopaty/l-21.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>235</id>
+    <category>;20;</category>
+    <name>Лопата штыковая острая нержавеющая облегченная с ребрами жесткости 2 мм</name>
+    <pack>10</pack>
+    <price>255</price>
+    <img-url>img/lopaty/l-21.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>236</id>
+    <category>;20;</category>
+    <name>Вилы 4-рогие копальные, Зубья изготовлены из стали 45 диаметром 8 мм, каленые</name>
+    <pack>10</pack>
+    <price>150</price>
+    <img-url>img/lopaty/l-22.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>237</id>
+    <category>;20;</category>
+    <name>Вилы 4-рогие копальные, Зубья изготовлены из стали 45 диаметром 10 мм, каленые</name>
+    <pack>10</pack>
+    <price>165</price>
+    <img-url>img/lopaty/l-22.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>238</id>
+    <category>;20;</category>
+    <name>Лопата облегченная с ребром жесткости, толщина 2 мм</name>
+    <pack>10</pack>
+    <price>82</price>
+    <img-url>img/lopaty/l-23.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>239</id>
+    <category>;20;</category>
+    <name>Лопата совковая с ребром жесткости, закаленная S-2, Китай</name>
+    <pack>12</pack>
+    <price>140</price>
+    <img-url>img/lopaty/l-24.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>240</id>
+    <category>;20;</category>
+    <name>Лопата штыковая с ребром жесткости, закаленная К-2, Китай</name>
+    <pack>12</pack>
+    <price>140</price>
+    <img-url>img/lopaty/l-25.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>241</id>
+    <category>;20;</category>
+    <name>Лопата штыковая, закаленная евро К-2, Китай</name>
+    <pack>12</pack>
+    <price>140</price>
+    <img-url>img/lopaty/l-26.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>242</id>
+    <category>;20;</category>
+    <name>Лопата совковая, закаленная евро S-1, Китай</name>
+    <pack>12</pack>
+    <price>140</price>
+    <img-url>img/lopaty/l-27.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>243</id>
+    <category>;21;</category>
+    <name>ЖУК 1,2л Опрыскиватель ОП-230</name>
+    <pack>20</pack>
+    <price>135</price>
+    <img-url>img/opriskivateli/opr-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>244</id>
+    <category>;21;</category>
+    <name>ЖУК 1,5л Опрыскиватель ОП-205 (20)</name>
+    <pack>20</pack>
+    <price>175</price>
+    <img-url>img/opriskivateli/opr-2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>245</id>
+    <category>;21;</category>
+    <name>ЖУК 2,5л Опрыскиватель ОП-205М(20)</name>
+    <pack>20</pack>
+    <price>215</price>
+    <img-url>img/opriskivateli/opr-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>246</id>
+    <category>;21;</category>
+    <name>ЖУК 4л Опрыскиватель ОП-209 (термо)</name>
+    <pack>5</pack>
+    <price>480</price>
+    <img-url>img/opriskivateli/opr-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>247</id>
+    <category>;21;</category>
+    <name>ЖУК 5л Опрыскиватель ОП-207 (термо)</name>
+    <pack>5</pack>
+    <price>460</price>
+    <img-url>img/opriskivateli/opr-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>248</id>
+    <category>;21;</category>
+    <name>ЖУК 6л Опрыскиватель ОП-209 (п/э пакет)</name>
+    <pack>5</pack>
+    <price>510</price>
+    <img-url>img/opriskivateli/opr-6.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>249</id>
+    <category>;21;</category>
+    <name>ЖУК 7л черный Опрыскиватель ОП-220 (термоусад., нетелескоп. бр-т) г.Ковров</name>
+    <pack>5</pack>
+    <price>440</price>
+    <img-url>img/opriskivateli/opr-7.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>250</id>
+    <category>;21;</category>
+    <name>ЖУК 8л Опрыскиватель ОП-207 (термо)</name>
+    <pack>5</pack>
+    <price>510</price>
+    <img-url>img/opriskivateli/opr-8.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>251</id>
+    <category>;21;</category>
+    <name>ЖУК 9л Опрыскиватель ОП-209 (термо)</name>
+    <pack>5</pack>
+    <price>540</price>
+    <img-url>img/opriskivateli/opr-9.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>252</id>
+    <category>;21;</category>
+    <name>ЖУК 10л Опрыскиватель ОП-207 (термо)</name>
+    <pack>5</pack>
+    <price>550</price>
+    <img-url>img/opriskivateli/opr-10.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>253</id>
+    <category>;21;</category>
+    <name>ЖУК 12л Опрыскиватель ОГ-112 (термо)</name>
+    <pack>5</pack>
+    <price>730</price>
+    <img-url>img/opriskivateli/opr-11.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>254</id>
+    <category>;21;</category>
+    <name>ЖУК 15л Опрыскиватель ОГ-115 (термо)</name>
+    <pack>5</pack>
+    <price>850</price>
+    <img-url>img/opriskivateli/opr-12.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>255</id>
+    <category>;21;</category>
+    <name>Ремкомплект №1 к опрыскивателям ОП-207, ОП-209</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/opriskivateli/opr-13.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>256</id>
+    <category>;21;</category>
+    <name>Ремкомплект №2 к опрыскивателям ОГ-112, ОГ-115</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/opriskivateli/opr-14.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>257</id>
+    <category>;21;</category>
+    <name>Ремкомплект №3 к брандспойтам для опрыскивателей</name>
+    <pack>1</pack>
+    <price>45</price>
+    <img-url>img/opriskivateli/opr-15.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>258</id>
+    <category>;21;</category>
+    <name>Удочка (брандспойт в сборе) телескоп. 3 м</name>
+    <pack>10</pack>
+    <price>300</price>
+    <img-url>img/opriskivateli/opr-16.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>259</id>
+    <category>;21;</category>
+    <name>Удочка (брандспойт в сборе) телескоп,-алюмин. 2,2м</name>
+    <pack>10</pack>
+    <price>235</price>
+    <img-url>img/opriskivateli/opr-16.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>260</id>
+    <category>;22;</category>
+    <name>Ведро строительное 12 л черное [1]</name>
+    <pack>1</pack>
+    <price>43</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>261</id>
+    <category>;22;</category>
+    <name>Ведро строительное 16 л черное [1]</name>
+    <pack>1</pack>
+    <price>63</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>262</id>
+    <category>;22;</category>
+    <name>Ведро строительное 20 л черное [1]</name>
+    <pack>1</pack>
+    <price>71</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>263</id>
+    <category>;22;</category>
+    <name>Таз строительный квадратный 45 л черный [1]</name>
+    <pack>1</pack>
+    <price>190</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>264</id>
+    <category>;22;</category>
+    <name>Таз строительный квадратный 60 л черный [1]</name>
+    <pack>1</pack>
+    <price>225</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>265</id>
+    <category>;22;</category>
+    <name>Таз строительный квадратный 80 л черный [1]</name>
+    <pack>1</pack>
+    <price>300</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>266</id>
+    <category>;22;</category>
+    <name>Таз строительный круглый 40 л черный [1]</name>
+    <pack>1</pack>
+    <price>193</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>267</id>
+    <category>;22;</category>
+    <name>Таз строительный круглый 65 л черный [1]</name>
+    <pack>1</pack>
+    <price>220</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>268</id>
+    <category>;22;</category>
+    <name>Таз строительный круглый 90 л черный [1]</name>
+    <pack>1</pack>
+    <price>285</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>269</id>
+    <category>;22;</category>
+    <name>Ведро металлическое Черное ТУ 12 л [10]</name>
+    <pack>1</pack>
+    <price>80</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>270</id>
+    <category>;22;</category>
+    <name>Ведро металлическое Черное ТУ 15 л [10]</name>
+    <pack>1</pack>
+    <price>85</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>271</id>
+    <category>;22;</category>
+    <name>Ведро металлическое Черное ТУ 9 л [10]</name>
+    <pack>1</pack>
+    <price>80</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>272</id>
+    <category>;22;</category>
+    <name>Ведро оцинкованное 7 л [10]</name>
+    <pack>1</pack>
+    <price>84</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>273</id>
+    <category>;22;</category>
+    <name>Ведро оцинкованное 9 л [10]</name>
+    <pack>1</pack>
+    <price>88</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>274</id>
+    <category>;22;</category>
+    <name>Ведро оцинкованное 12 л [10]</name>
+    <pack>1</pack>
+    <price>94</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>275</id>
+    <category>;22;</category>
+    <name>Ведро оцинкованное 15 л [10]</name>
+    <pack>1</pack>
+    <price>120</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>276</id>
+    <category>;22;</category>
+    <name>Бак оцинкованный 12 л [5]</name>
+    <pack>1</pack>
+    <price>160</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>277</id>
+    <category>;22;</category>
+    <name>Бак оцинкованный 15 л [5]</name>
+    <pack>1</pack>
+    <price>200</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>278</id>
+    <category>;22;</category>
+    <name>Бак оцинкованный 25 л [5]</name>
+    <pack>1</pack>
+    <price>295</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>279</id>
+    <category>;22;</category>
+    <name>Бак оцинкованный 32 л [5]</name>
+    <pack>1</pack>
+    <price>330</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>280</id>
+    <category>;22;</category>
+    <name>Бак оцинкованный 52 л [5]</name>
+    <pack>1</pack>
+    <price>487</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>281</id>
+    <category>;22;</category>
+    <name>Бак оцинкованный 110 л [3]</name>
+    <pack>1</pack>
+    <price>670</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>282</id>
+    <category>;22;</category>
+    <name>Бак оцинкованный 80 л [3]</name>
+    <pack>1</pack>
+    <price>580</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>283</id>
+    <category>;22;</category>
+    <name>Бак оцинкованный с краником 32 л [5]</name>
+    <pack>1</pack>
+    <price>370</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>284</id>
+    <category>;22;</category>
+    <name>Бак оцинкованный д/белья 25 л [5]</name>
+    <pack>1</pack>
+    <price>295</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>285</id>
+    <category>;22;</category>
+    <name>Бак оцинкованный д/белья 32 л [5]</name>
+    <pack>1</pack>
+    <price>330</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>286</id>
+    <category>;22;</category>
+    <name>Бак оцинкованный д/белья 52 л [5]</name>
+    <pack>1</pack>
+    <price>490</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>287</id>
+    <category>;22;</category>
+    <name>Бак оцинкованный д/воды 32 л [5]</name>
+    <pack>1</pack>
+    <price>370</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>288</id>
+    <category>;22;</category>
+    <name>Бак оцинкованный овальный 55 л [1]</name>
+    <pack>1</pack>
+    <price>490</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>289</id>
+    <category>;22;</category>
+    <name>Бак оцинкованный овальный 75 л [1]</name>
+    <pack>1</pack>
+    <price>580</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>290</id>
+    <category>;22;</category>
+    <name>Бак оцинкованный плоский 100 л [1]</name>
+    <pack>1</pack>
+    <price>710</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>291</id>
+    <category>;22;</category>
+    <name>Ванна оцинкованная 40 л [5]</name>
+    <pack>1</pack>
+    <price>330</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>292</id>
+    <category>;22;</category>
+    <name>Ванна оцинкованная 55 л [5]</name>
+    <pack>1</pack>
+    <price>490</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>293</id>
+    <category>;22;</category>
+    <name>Ванна оцинкованная 75 л [5]</name>
+    <pack>1</pack>
+    <price>580</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>294</id>
+    <category>;22;</category>
+    <name>Ванна хозяйственная оцинкованная 60 л [4]</name>
+    <pack>1</pack>
+    <price>390</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>295</id>
+    <category>;22;</category>
+    <name>Ванна хозяйственная оцинкованная 80 л [4]</name>
+    <pack>1</pack>
+    <price>430</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>296</id>
+    <category>;22;</category>
+    <name>Ковш банный оцинкованный 1,5 л [10]</name>
+    <pack>1</pack>
+    <price>80</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>297</id>
+    <category>;22;</category>
+    <name>Корыто оцинкованное 45 л [5]</name>
+    <pack>1</pack>
+    <price>420</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>298</id>
+    <category>;22;</category>
+    <name>Совок зольный оцинкованный [10]</name>
+    <pack>1</pack>
+    <price>43</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>299</id>
+    <category>;22;</category>
+    <name>Таз оцинкованный круглый 13 л [10]</name>
+    <pack>1</pack>
+    <price>130</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>300</id>
+    <category>;22;</category>
+    <name>Таз оцинкованный круглый 26 л [5]</name>
+    <pack>1</pack>
+    <price>220</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>301</id>
+    <category>;22;</category>
+    <name>Таз оцинкованный круглый 38 л [5]</name>
+    <pack>1</pack>
+    <price>260</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>302</id>
+    <category>;22;</category>
+    <name>Таз оцинкованный овальный 23 л [5]</name>
+    <pack>1</pack>
+    <price>215</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>303</id>
+    <category>;22;</category>
+    <name>Таз оцинкованный овальный 40 л [5]</name>
+    <pack>1</pack>
+    <price>300</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>304</id>
+    <category>;22;</category>
+    <name>Таз оцинкованный овальный 60 л [5]</name>
+    <pack>1</pack>
+    <price>390</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>305</id>
+    <category>;22;</category>
+    <name>Таз алюминиевый 10 л [5]</name>
+    <pack>1</pack>
+    <price>450</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>306</id>
+    <category>;22;</category>
+    <name>Ведро поддоник оцинкованный 9 л </name>
+    <pack>1</pack>
+    <price>135</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>307</id>
+    <category>;22;</category>
+    <name>Ведро поддоник оцинкованный 12 л </name>
+    <pack>1</pack>
+    <price>145</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>308</id>
+    <category>;22;</category>
+    <name>Ведро поддоник нержавейка 7 л </name>
+    <pack>1</pack>
+    <price>380</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>309</id>
+    <category>;22;</category>
+    <name>Лейка сад.-огор. оцинкованная 10 л [4]</name>
+    <pack>1</pack>
+    <price>245</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>310</id>
+    <category>;22;</category>
+    <name>Лейка сад.-огор. оцинкованная 8 л [4]</name>
+    <pack>1</pack>
+    <price>220</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>311</id>
+    <category>;22;</category>
+    <name>Лейка сад.-огор. оцинкованная 5 л [4]</name>
+    <pack>1</pack>
+    <price>200</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>312</id>
+    <category>;999;23;</category>
+    <name>Подшипник на тачку 35x16 без бортика</name>
+    <pack>100</pack>
+    <price>;45</price>
+    <img-url>img/other/otr2-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>313</id>
+    <category>;999;23;</category>
+    <name>Подшипник на тачку 35x20 без бортика</name>
+    <pack>100</pack>
+    <price>;45</price>
+    <img-url>img/other/otr2-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>314</id>
+    <category>;999;23;</category>
+    <name>Подшипник на тачку 35x20 с бортиком</name>
+    <pack>100</pack>
+    <price>;35</price>
+    <img-url>img/other/otr2-2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>315</id>
+    <category>;999;23;</category>
+    <name>Подшипник на тачку 35x16 с бортиком</name>
+    <pack>100</pack>
+    <price>;35</price>
+    <img-url>img/other/otr2-2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>316</id>
+    <category>;999;23;</category>
+    <name>Подшипник 17 (17x19x6)</name>
+    <pack>10</pack>
+    <price>;35</price>
+    <img-url>img/other/otr2-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>317</id>
+    <category>;999;23;</category>
+    <name>Подшипник 18 (8x22x7)</name>
+    <pack>10</pack>
+    <price>;35</price>
+    <img-url>img/other/otr2-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>318</id>
+    <category>;999;23;</category>
+    <name>Подшипник 19 (9x24x7)</name>
+    <pack>10</pack>
+    <price>;35</price>
+    <img-url>img/other/otr2-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>319</id>
+    <category>;999;23;</category>
+    <name>Подшипник 25 (5x16x5)</name>
+    <pack>10</pack>
+    <price>;35</price>
+    <img-url>img/other/otr2-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>320</id>
+    <category>;999;23;</category>
+    <name>Подшипник 26 (6x19x6)</name>
+    <pack>10</pack>
+    <price>;35</price>
+    <img-url>img/other/otr2-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>321</id>
+    <category>;999;23;</category>
+    <name>Подшипник 27 (7x22x7)</name>
+    <pack>10</pack>
+    <price>;35</price>
+    <img-url>img/other/otr2-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>322</id>
+    <category>;999;23;</category>
+    <name>Подшипник 28 (8x24x8)</name>
+    <pack>10</pack>
+    <price>;35</price>
+    <img-url>img/other/otr2-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>323</id>
+    <category>;999;23;</category>
+    <name>Подшипник 29 (9x26x8)</name>
+    <pack>10</pack>
+    <price>;35</price>
+    <img-url>img/other/otr2-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>324</id>
+    <category>;999;23;</category>
+    <name>Подшипник 200 (10x30x9)</name>
+    <pack>10</pack>
+    <price>;36</price>
+    <img-url>img/other/otr2-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>325</id>
+    <category>;999;23;</category>
+    <name>Подшипник 201 (12x32x10)</name>
+    <pack>10</pack>
+    <price>;37</price>
+    <img-url>img/other/otr2-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>326</id>
+    <category>;999;23;</category>
+    <name>Подшипник 202 (15x35x11)</name>
+    <pack>10</pack>
+    <price>;38</price>
+    <img-url>img/other/otr2-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>327</id>
+    <category>;999;23;</category>
+    <name>Подшипник 203 (17x40x12)</name>
+    <pack>10</pack>
+    <price>;40</price>
+    <img-url>img/other/otr2-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>328</id>
+    <category>;999;23;</category>
+    <name>Подшипник 100 (10x26x8)</name>
+    <pack>10</pack>
+    <price>;36</price>
+    <img-url>img/other/otr2-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>329</id>
+    <category>;999;23;</category>
+    <name>Подшипник 101 (12x28x8)</name>
+    <pack>10</pack>
+    <price>;37</price>
+    <img-url>img/other/otr2-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>330</id>
+    <category>;999;23;</category>
+    <name>Подшипник 102 (15x32x9)</name>
+    <pack>10</pack>
+    <price>;36</price>
+    <img-url>img/other/otr2-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>331</id>
+    <category>;999;23;</category>
+    <name>Подшипник 103 (17x35x10)</name>
+    <pack>10</pack>
+    <price>;42</price>
+    <img-url>img/other/otr2-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>332</id>
+    <category>;999;23;</category>
+    <name>Подшипник 204 (20x47x14)</name>
+    <pack>10</pack>
+    <price>;48</price>
+    <img-url>img/other/otr2-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>333</id>
+    <category>;999;23;</category>
+    <name>Подшипник 205 (25x52x15)</name>
+    <pack>10</pack>
+    <price>;51</price>
+    <img-url>img/other/otr2-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>334</id>
+    <category>;999;24;</category>
+    <name>Черенок для метлы Ø25, длинна 1.3м</name>
+    <pack>20</pack>
+    <price>;35</price>
+    <img-url>img/other/otr2-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>335</id>
+    <category>;999;24;</category>
+    <name>Черенок для граблей Ø30, длинна 1.3м</name>
+    <pack>20</pack>
+    <price>;38</price>
+    <img-url>img/other/otr2-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>336</id>
+    <category>;999;24;</category>
+    <name>Черенок для граблей Ø30, длинна 1.5м</name>
+    <pack>20</pack>
+    <price>;43</price>
+    <img-url>img/other/otr2-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>337</id>
+    <category>;999;24;</category>
+    <name>Черенок для граблей Ø30, длинна 1.7м</name>
+    <pack>20</pack>
+    <price>;47</price>
+    <img-url>img/other/otr2-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>338</id>
+    <category>;999;24;</category>
+    <name>Черенок для лопаты Ø40, длинна 1.2м</name>
+    <pack>20</pack>
+    <price>;42</price>
+    <img-url>img/other/otr2-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>339</id>
+    <category>;999;24;</category>
+    <name>Черенок для лопаты Ø40, длинна 1.3м</name>
+    <pack>20</pack>
+    <price>;42</price>
+    <img-url>img/other/otr2-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>340</id>
+    <category>;999;24;</category>
+    <name>Черенок для лопаты Ø40, длинна 1.5м</name>
+    <pack>20</pack>
+    <price>;47</price>
+    <img-url>img/other/otr2-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>341</id>
+    <category>;999;24;</category>
+    <name>Черенок для лопаты Ø40, длинна 1.8м</name>
+    <pack>20</pack>
+    <price>;80</price>
+    <img-url>img/other/otr2-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>342</id>
+    <category>;999;24;</category>
+    <name>Черенок дер. с резьбой для щеток</name>
+    <pack>20</pack>
+    <price>;45</price>
+    <img-url>img/other/otr2-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>343</id>
+    <category>;999;24;</category>
+    <name>Черенок для косы дер. Ø36  1.8м.</name>
+    <pack>20</pack>
+    <price>;80</price>
+    <img-url>img/other/otr2-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>344</id>
+    <category>;999;</category>
+    <name>Метла ПЛОСКАЯ (полипропиленовая, синтетическая)</name>
+    <pack>20</pack>
+    <price>;85</price>
+    <img-url>img/other/otr2-6.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>345</id>
+    <category>;999;</category>
+    <name>Метла ПЛОСКАЯ (полипропиленовая, синтетическая с дерев. черенком)</name>
+    <pack>5</pack>
+    <price>;110</price>
+    <img-url>img/other/otr2-7.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>346</id>
+    <category>;999;</category>
+    <name>Метла КРУГЛАЯ (4 КОЛЬЦА)(полипропиленовая синтетическая)</name>
+    <pack>15</pack>
+    <price>;110</price>
+    <img-url>img/other/otr2-8.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>347</id>
+    <category>;999;</category>
+    <name>Метла КРУГЛАЯ (5 КОЛЕЦ) (полипропиленовая, синтетическая, с  дерев.черенком)</name>
+    <pack>10</pack>
+    <price>;130</price>
+    <img-url>img/other/otr2-9.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>348</id>
+    <category>;999;25;</category>
+    <name>Табуретка круглая (ткань)</name>
+    <pack>5</pack>
+    <price>;250</price>
+    <img-url>img/other/styl/styl-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>349</id>
+    <category>;999;25;</category>
+    <name>Табуретка круглая (искуственная кожа)</name>
+    <pack>5</pack>
+    <price>;210</price>
+    <img-url>img/other/styl/styl-1.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>350</id>
+    <category>;999;25;</category>
+    <name>Табуретка квадратная (ткань)</name>
+    <pack>5</pack>
+    <price>;250</price>
+    <img-url>img/other/styl/styl-2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>351</id>
+    <category>;999;25;</category>
+    <name>Табуретка квадратная (искуственная кожа)</name>
+    <pack>5</pack>
+    <price>;210</price>
+    <img-url>img/other/styl/styl-2.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>352</id>
+    <category>;999;25;</category>
+    <name>Стул со спинкой усиленный "Гранд" (искуственная кожа)</name>
+    <pack>5</pack>
+    <price>;530</price>
+    <img-url>img/other/styl/styl-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>353</id>
+    <category>;999;25;</category>
+    <name>Стул со спинкой усиленный "Гранд" (ткань)</name>
+    <pack>5</pack>
+    <price>;580</price>
+    <img-url>img/other/styl/styl-3.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>354</id>
+    <category>;999;25;</category>
+    <name>Стул со спинкой "Венский" (искуственная кожа)</name>
+    <pack>5</pack>
+    <price>;515</price>
+    <img-url>img/other/styl/styl-4.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>355</id>
+    <category>;999;25;</category>
+    <name>Пуфик круглый (искуственная кожа)</name>
+    <pack>5</pack>
+    <price>;350</price>
+    <img-url>img/other/styl/styl-5.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>356</id>
+    <category>;999;25;</category>
+    <name>Табуретка большая VIP (искуственная кожа)</name>
+    <pack>5</pack>
+    <price>;390</price>
+    <img-url>img/other/styl/styl-6.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>357</id>
+    <category>;999;25;</category>
+    <name>Стул детский (искуственная кожа)</name>
+    <pack>5</pack>
+    <price>;260</price>
+    <img-url>img/other/styl/styl-7.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>358</id>
+    <category>;999;25;</category>
+    <name>Полка для обуви (искуственная кожа) 60 см</name>
+    <pack>5</pack>
+    <price>;600</price>
+    <img-url>img/other/styl/styl-8.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>359</id>
+    <category>;999;25;</category>
+    <name>Полка для обуви (искуственная кожа) 80 см</name>
+    <pack>5</pack>
+    <price>;700</price>
+    <img-url>img/other/styl/styl-8.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>360</id>
+    <category>;999;</category>
+    <name>Черенок хром с резьбой 1,3м</name>
+    <pack>20</pack>
+    <price>;90</price>
+    <img-url>img/other/styl/styl-9.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>361</id>
+    <category>;999;</category>
+    <name>Москитная сетка на магнитах на дверь 80 см</name>
+    <pack>5</pack>
+    <price>;210</price>
+    <img-url>img/other/styl/styl-10.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>362</id>
+    <category>;999;</category>
+    <name>Москитная сетка на магнитах на дверь 100 см</name>
+    <pack>5</pack>
+    <price>;240</price>
+    <img-url>img/other/styl/styl-10.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>363</id>
+    <category>;999;</category>
+    <name>Москитная сетка на магнитах на дверь 120 см</name>
+    <pack>5</pack>
+    <price>;290</price>
+    <img-url>img/other/styl/styl-10.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>364</id>
+    <category>;26;</category>
+    <name>Поливочный шланг Стрейч Хоз 15м</name>
+    <pack>5</pack>
+    <price>500</price>
+    <img-url>img/other/styl/styl-11.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>365</id>
+    <category>;26;</category>
+    <name>Поливочный шланг Стрейч Хоз 22,5м</name>
+    <pack>5</pack>
+    <price>630</price>
+    <img-url>img/other/styl/styl-12.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>366</id>
+    <category>;26;</category>
+    <name>Поливочный шланг Стрейч Хоз 30м</name>
+    <pack>5</pack>
+    <price>780</price>
+    <img-url>img/other/styl/styl-13.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>367</id>
+    <category>;26;</category>
+    <name>Поливочный шланг Стрейч Хоз 45м</name>
+    <pack>5</pack>
+    <price>950</price>
+    <img-url>img/other/styl/styl-14.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>368</id>
+    <category>;26;</category>
+    <name>Шланг силиконовый ⌀6</name>
+    <pack>100м</pack>
+    <price>10</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>369</id>
+    <category>;26;</category>
+    <name>Шланг силиконовый ⌀8</name>
+    <pack>100м</pack>
+    <price>13</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>370</id>
+    <category>;26;</category>
+    <name>Шланг силиконовый ⌀10</name>
+    <pack>100м</pack>
+    <price>19</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>371</id>
+    <category>;26;</category>
+    <name>Шланг силиконовый ⌀12</name>
+    <pack>100м</pack>
+    <price>21</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>372</id>
+    <category>;26;</category>
+    <name>Шланг силиконовый ⌀14</name>
+    <pack>100м</pack>
+    <price>23</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>373</id>
+    <category>;26;</category>
+    <name>Шланг силиконовый ⌀16 - толщина стенки 3мм</name>
+    <pack>25м</pack>
+    <price>37</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>374</id>
+    <category>;26;</category>
+    <name>Шланг силиконовый ⌀18 - толщина стенки 3мм</name>
+    <pack>25м</pack>
+    <price>37</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>375</id>
+    <category>;26;</category>
+    <name>Шланг силиконовый ⌀20 - толщина стенки 3мм</name>
+    <pack>25м</pack>
+    <price>48</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>376</id>
+    <category>;26;</category>
+    <name>Шланг силиконовый ⌀25 - толщина стенки 3,5мм</name>
+    <pack>25м</pack>
+    <price>55</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>377</id>
+    <category>;26;</category>
+    <name>Шланг растягивающийся 15м</name>
+    <pack>1шт</pack>
+    <price>275</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>378</id>
+    <category>;26;</category>
+    <name>Шланг растягивающийся 22,5м</name>
+    <pack>1шт</pack>
+    <price>350</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>379</id>
+    <category>;26;</category>
+    <name>Шланг растягивающийся 30м</name>
+    <pack>1шт</pack>
+    <price>475</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>380</id>
+    <category>;26;</category>
+    <name>Шланг растягивающийся 45м</name>
+    <pack>1шт</pack>
+    <price>580</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>381</id>
+    <category>;26;</category>
+    <name>Шланг растягивающийся 60м</name>
+    <pack>1шт</pack>
+    <price>680</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>382</id>
+    <category>;26;</category>
+    <name>Шланг газовый ⌀6 50м</name>
+    <pack>1м</pack>
+    <price>29</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>383</id>
+    <category>;26;</category>
+    <name>Шланг газовый ⌀9 50м</name>
+    <pack>1м</pack>
+    <price>32</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>384</id>
+    <category>;26;</category>
+    <name>Шланг газовый ⌀12 50м</name>
+    <pack>1м</pack>
+    <price>50</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>385</id>
+    <category>;26;</category>
+    <name>Шланг поливочный черный ⌀16</name>
+    <pack>50м</pack>
+    <price>45</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>386</id>
+    <category>;26;</category>
+    <name>Шланг поливочный черный ⌀18</name>
+    <pack>50м</pack>
+    <price>48</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>387</id>
+    <category>;26;</category>
+    <name>Шланг поливочный черный ⌀20</name>
+    <pack>50м</pack>
+    <price>53</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+  <Product>
+    <id>388</id>
+    <category>;26;</category>
+    <name>Шланг поливочный черный ⌀25</name>
+    <pack>50м</pack>
+    <price>73</price>
+    <img-url>img/no_photo.png</img-url>
+    <showOnMain>0</showOnMain>
+  </Product>
+</Products>
