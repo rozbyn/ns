@@ -3,8 +3,7 @@ return [
 
 	'all' => [
 		//
-		'show',
-		'redirectShow'
+		'login', 
 	],
 	
 	'authorize' => [
@@ -16,6 +15,11 @@ return [
 	],
 	
 	'admin' => [
+		'logout',
+		'add',
+		'edit',
+		'delete',
+		'posts',
 		//
 	],
 	

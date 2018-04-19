@@ -40,19 +40,24 @@ class View
 		exit;
 	}
 	
-	public static function redirect($url) 
+	public static function redirect($url, $code = 307) 
 	{
-		http_response_code(307);
+		http_response_code($code);
 		header('location: ' . $url);
 		exit;
 	}
 	
-	public function message ($status, $message) 
+	public static function message ($status, $message, $noExit = false) 
 	{
-		exit(json_encode(['status' => $status, 'message' => $message]));
+		if ($noExit) {
+			$str = json_encode(['status' => $status, 'message' => $message]);
+			endConnection($str);
+		} else {
+			exit(json_encode(['status' => $status, 'message' => $message]));
+		}
 	}
 	
-	public function location ($url) 
+	public static function location ($url) 
 	{
 		exit(json_encode(['url' => $url]));
 	}

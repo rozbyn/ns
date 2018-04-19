@@ -15,15 +15,28 @@ class Db
 		
 	}
 	
-	public function query($sql, $params = []) 
+	public function query($sql, $params = [], $returnCount = false) 
 	{
 		$stmt = $this->db->prepare($sql);
 		if (!empty($params)) {
 			foreach ($params as $key => $val) {
-				$stmt->bindValue(':'.$key, $val);
+				
+				if (is_int($val)) {
+					$type = PDO::PARAM_INT;
+				} else {
+					$type = PDO::PARAM_STR;
+				}
+				$stmt->bindValue(':'.$key, $val, $type);
 			}
 		}
-		$stmt->execute();
+		
+		if ($stmt->execute() === false) {
+			return implode('; ', $stmt->errorInfo()).' ;'. $stmt->queryString;
+		}
+		
+		if ($returnCount) {
+			return $stmt->rowCount();
+		}
 		
 		return $stmt;
 	}
@@ -31,6 +44,9 @@ class Db
 	public function row($sql, $params = []) 
 	{
 		$result = $this->query($sql, $params);
+		if (is_string($result)) {
+			return $result;
+		}
 		return $result->fetchAll(PDO::FETCH_ASSOC);
 	}
 	
@@ -39,5 +55,10 @@ class Db
 		$result = $this->query($sql, $params);
 		return $result->fetchColumn();
 	}
+	
+	public function lastInsertId () {
+		return $this->db->lastInsertId();
+	}
+	
 	
 }

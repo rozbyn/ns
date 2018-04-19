@@ -15,7 +15,7 @@ for($i=0;$i<10;$i++){
 	echo "Строка номер $i" . '<br>';
 	flush();
 	ob_flush();
-	sleep(0);
+	sleep(1);
 }
 $x = false;
 echo gettype($x) . '<br>';

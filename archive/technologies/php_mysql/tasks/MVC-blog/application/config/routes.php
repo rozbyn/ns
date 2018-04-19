@@ -1,39 +1,74 @@
 <?php 
 
 return [
+
+	// Main Controller
+	
 	'' => [
 		'controller' => 'main',
 		'action' => 'index'
 	],
 	
-	'account/login' => [
-		'controller' => 'account',
+	"main/index/(?'page'\d+)?\/?" => [
+		'controller' => 'main',
+		'action' => 'index'
+	],
+	
+	'contact' => [
+		'controller' => 'main',
+		'action' => 'contact'
+	],
+	
+	'about' => [
+		'controller' => 'main',
+		'action' => 'about'
+	],
+	
+	"post\/?(?'id'\d+)?\/?" => [
+		'controller' => 'main',
+		'action' => 'post'
+	],
+	
+	'index.php' => [
+		'controller' => 'main',
+		'action' => 'index'
+	],
+	
+	// Admin Controller
+	
+	'admin' => [
+		'controller' => 'admin',
 		'action' => 'login'
 	],
 	
-	'account/register' => [
-		'controller' => 'account',
-		'action' => 'register'
+	'admin/login' => [
+		'controller' => 'admin',
+		'action' => 'login'
 	],
 	
-	'account' => [
-		'controller' => 'account',
-		'action' => 'redirectLogin'
+	'admin/logout' => [
+		'controller' => 'admin',
+		'action' => 'logout'
 	],
 	
-	'news/show' => [
-		'controller' => 'news',
-		'action' => 'show'
+	'admin/add' => [
+		'controller' => 'admin',
+		'action' => 'add'
 	],
 	
-	'news' => [
-		'controller' => 'news',
-		'action' => 'redirectShow'
+	"admin/edit\/?(?'id'\d+)?\/?" => [
+		'controller' => 'admin',
+		'action' => 'edit'
 	],
 	
-	'contacts' => [
-		'controller' => 'main',
-		'action' => 'contact'
+	"admin/delete\/?(?'id'\d+)?\/?" => [
+		'controller' => 'admin',
+		'action' => 'delete'
+	],
+	
+	"admin/posts\/?(?'page'\d+)?\/?" => [
+		'controller' => 'admin',
+		'action' => 'posts'
 	],
 	
 ];

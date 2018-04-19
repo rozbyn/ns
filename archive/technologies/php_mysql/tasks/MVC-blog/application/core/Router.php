@@ -26,10 +26,18 @@ class Router
 	
 	public function match()
 	{
+		$url = trim(substr($_SERVER['REQUEST_URI'], strlen($GLOBALS['basePath'])), '/');
 		
-		$url = trim(substr($_SERVER['REQUEST_URI'], 39), '/');
 		foreach ($this->routes as $route => $params) {
 			if (preg_match($route, $url, $matches)) {
+				foreach ($matches as $key => $val) {
+					if (is_string($key)) {
+						if (is_numeric($val)) {
+							$val = (int) $val;
+						}
+						$params[$key] = $val;
+					}
+				}
 				$this->params = $params;
 				return true;
 			}
