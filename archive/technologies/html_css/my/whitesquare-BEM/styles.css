@@ -307,6 +307,7 @@ p, body, input{
 	display: inline-block;
 	text-align: justify;
 	word-spacing: -1px;
+	color: #7e7e7e;
 }
 
 .b-company__header {

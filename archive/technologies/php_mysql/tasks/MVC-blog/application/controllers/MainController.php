@@ -28,7 +28,7 @@ class MainController extends Controller
 				$messageText = "Имя: ".$_POST['name'].'<br>';
 				$messageText .= "E-mail: ".$_POST['email'].'<br>';
 				$messageText .= "Сообщение: ".$_POST['text'].'<br>';
-				sendSmtp('ADMIN', 'ezcs@ro.ru', 'Сообщение из блога', $messageText);
+				sendSmtp('ADMIN', 'ezcs@ya.ru', 'Сообщение из блога', $messageText);
 				exit;
 			} else {
 				$this->view->message('Ошибка', $this->model->lastError);
