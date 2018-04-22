@@ -1,0 +1,67 @@
+<div class="d-flex-row w-50">
+  <div class="d-flex-col w-50">
+    <fieldset class="content">
+	  <legend>Legend</legend>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, ipsam.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, ipsam.</p>
+    </fieldset>
+    <fieldset class="content">
+	  <legend>Legend</legend>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, ipsam.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, ipsam.</p>
+    </fieldset>
+  </div>
+  <fieldset class="content w-50">
+    <legend>Legend</legend>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, ipsam.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, ipsam.</p>
+  </fieldset>
+</div>
+
+
+<style>
+* {
+	box-sizing: border-box;
+}
+.d-flex-row{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.d-flex-col{
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.content{
+  flex: 1 0 auto;
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid black;
+}
+.w-50{
+  padding: 0 6px;
+  width: 50%;
+}
+fieldset{
+	display: inline-block;
+	border: 3px double grey;
+	padding: 6px 3%;
+	margin: 0px 6px 12px;
+	vertical-align: top;
+	flex: 1 0 auto;
+}
+fieldset>legend{
+	margin: 0;
+	padding: 0px 6px;
+	font-size: 18px;
+	font-family: Oswald;
+	font-weight: 500;
+	line-height: 1.2em;
+	color: #7e7e7e;
+	text-transform: uppercase;
+	border: 3px double;
+}
+
+
+</style>

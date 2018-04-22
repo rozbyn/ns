@@ -219,9 +219,50 @@ input[type="color"]:focus,
 textarea:focus
 {
 	color: #111;
-	border-color: #29c5e6;
+	border-color: #929292;
 	outline: none;
 }
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="tel"]:hover,
+input[type="search"]:hover,
+input[type="url"]:hover,
+input[type="date"]:hover,
+input[type="datetime"]:hover,
+input[type="datetime-local"]:hover,
+input[type="month"]:hover,
+input[type="week"]:hover,
+input[type="number"]:hover,
+input[type="time"]:hover,
+input[type="color"]:hover,
+textarea:hover
+{
+	border-color: #29c5e6;
+	
+}
+input[type="text"]:active,
+input[type="email"]:active,
+input[type="password"]:active,
+input[type="tel"]:active,
+input[type="search"]:active,
+input[type="url"]:active,
+input[type="date"]:active,
+input[type="datetime"]:active,
+input[type="datetime-local"]:active,
+input[type="month"]:active,
+input[type="week"]:active,
+input[type="number"]:active,
+input[type="time"]:active,
+input[type="color"]:active,
+textarea:active
+{
+	border-color: #F1731F;
+	transition: none;
+	
+}
+
+
 
 ::-webkit-input-placeholder { /* Chrome */
   color: #aaa;
@@ -254,9 +295,23 @@ textarea:focus
   opacity: 0.5;
 }
 
+input[type="radio"]{
+	margin: 0;
+}
+
 .form-elem{
 	display: block;
 	margin-bottom: 12px;
+	clear: both;
+	position: relative;
+}
+.form-elem-i{
+	display: inline-block;
+	margin-bottom: 12px;
+	font-size: 14px;
+	padding: 0 0;
+	position: relative;
+	white-space: nowrap;
 }
 .inpt-cap{
     width: 25%;
@@ -268,6 +323,15 @@ textarea:focus
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 500;
+}
+.chk-cap{
+    display: inline-block;
+    line-height: 1em;
+    color: #7e7e7e;
+    font-family: Oswald;
+    font-size: inherit;
+    text-transform: uppercase;
+    font-weight: 400;
 }
 
 
@@ -282,6 +346,27 @@ textarea{
 	display: inline-block;
 	vertical-align: top;
 }
+
+fieldset{
+	display: inline-block;
+	border: 3px double grey;
+	padding: 6px;
+	margin: 0px 6px 12px;
+	vertical-align: top;
+	flex: 1 0 auto;
+}
+fieldset>legend{
+	margin: 0;
+	padding: 0px 6px;
+	font-size: 18px;
+	font-family: Oswald;
+	font-weight: 500;
+	line-height: 1.2em;
+	color: #7e7e7e;
+	text-transform: uppercase;
+	border: 3px double;
+}
+
 
 input[type="color"]{
     background: transparent;
@@ -298,6 +383,156 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 	margin: 0;
 	border: none;
 }
+
+.rad-but{
+	position: relative;
+	top: 1px;
+	width: 15px;
+	height: 15px;
+	background: #fff;
+	border-radius: 50%;
+	border: 1px solid dimgray;
+	display: inline-block;
+}
+input[type=radio]:checked ~ .rad-but:before{
+	content: "";
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 7px;
+	height: 7px;
+	background: #29c5e6;
+	border-radius: 50%;
+}
+
+.chck-box{
+	position: relative;
+	top: 1px;
+	width: 15px;
+	height: 15px;
+	background: #fff;
+	border: 1px solid dimgray;
+	display: inline-block;
+}
+input[type=checkbox]:checked ~ .chck-box:before{
+	content: "";
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 7px;
+	height: 7px;
+	background: #29c5e6;
+}
+
+input[type=checkbox]:hover ~ .chck-box,
+input[type=radio]:hover ~ .rad-but
+{
+	box-shadow: inset 0 0 1px 1px dimgray;
+}
+
+input[type=checkbox]:active ~ .chck-box,
+input[type=radio]:active ~ .rad-but
+{
+	box-shadow: inset 0 0 2px 1px black;
+}
+/* range */
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 14px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: none;
+  background: repeating-linear-gradient(120deg, #ffffff 0, #ffffff 3px, #999 4px, #999 6px , #ffffff 7px);
+  border-radius: 3px;
+  border: 1px solid #a7a7a7;
+  backface-visibility: hidden
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0 0 2px 0px #545454;
+  border: 1px solid #5a5a5a;
+  height: 14px;
+  width: 5px;
+  border-radius: 4px;
+  background: rgba(41, 197, 230, 0.5);
+  cursor: pointer;
+  -webkit-appearance: none;
+  border-width: 7px 2px;
+  margin-top: -8px;
+  box-sizing: content-box;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: repeating-linear-gradient(120deg, #ffffff 0, #ffffff 3px, #999 4px, #999 6px , #ffffff 7px);
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 14px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: none;
+  background: repeating-linear-gradient(120deg, #ffffff 0, #ffffff 3px, #999 4px, #999 6px , #ffffff 7px);
+  border-radius: 3px;
+  border: 1px solid #a7a7a7;
+}
+input[type=range]::-moz-range-thumb {
+	box-shadow: 0 0 2px 0px #545454;
+	height: 14px;
+	width: 5px;
+	border-radius: 4px;
+	background: rgba(41, 197, 230, 0.5);
+	cursor: pointer;
+	border: 1px solid #5a5a5a;
+	border-width: 7px 2px;
+	box-sizing: content-box;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 12.8px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 39px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #ac51b5;
+  border: 0px solid #000101;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #ac51b5;
+  border: 0px solid #000101;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: #65001c;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #ac51b5;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #ac51b5;
+}
+/* range */
+
+
+
+
 
 
 
@@ -321,6 +556,22 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 	display: table;
 	clear: both;
 }
+.w-20pr{
+	width:20%
+}
+.w-25pr{
+	width:25%
+}
+.w-50pr{
+	width:50%
+}
+.w-75pr{
+	width:75%
+}
+.w-100pr{
+	width:100%
+}
+
 .col-md-1,
 .col-md-2,
 .col-md-3,
@@ -568,6 +819,30 @@ p{
 	margin-top: 0;
 }
 
+.d-n{
+	display: none;
+}
+.d-table{
+	display: table;
+	table-layout: auto;
+}
+.d-table-row{
+	display: table-row;
+}
+.d-table-cell{
+	display: table-cell;
+	padding: 2px 6px;
+}
+.d-flex{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+.d-flex-col{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+}
 
 
 
