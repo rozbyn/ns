@@ -1,6 +1,7 @@
 <?php 
 date_default_timezone_set('Europe/Moscow');
 require 'application/lib/Dev.php';
+require 'application/lib/sendSmtp.php';
 
 
 use application\core\Router;

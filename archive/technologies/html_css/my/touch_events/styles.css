@@ -1,0 +1,10 @@
+
+
+.circle{
+	width: 10vmax;
+	height: 10vmax;
+    background: rgb(255, 174, 46);
+    border-radius: 70%;
+    position: fixed;
+    
+}
