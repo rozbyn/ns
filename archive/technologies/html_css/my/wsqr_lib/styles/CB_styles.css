@@ -1544,7 +1544,7 @@ table tbody tr:nth-child(odd){
 	}
 }
 
-@media (min-width: 321px){
+@media (max-width: 320px){
 	.col-sm-1{
 		width: 4.16666%;
 	}
@@ -1994,7 +1994,161 @@ table tbody tr:nth-child(odd){
 	}
 }
 
+/* links */
+a:link,
+a:visited
+{
+	color: #8f8f8f; 
+}
 
+/* images */
+
+
+img{
+	width: 100%;
+	height: auto;
+	display: block;
+	padding: 1px;
+}
+
+/* navigation */
+/* aside */
+ul.aside-menu{
+	display: block;
+	text-transform: uppercase;
+	color: #8f8f8f;
+	font: 14px 'Oswald', sans-serif;
+	font-weight: 300;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #e7e7e7;
+	background: #f3f3f3;
+}
+ul.aside-menu li>a{
+	text-decoration: none;
+	color: inherit;
+	display: inline-block;
+}
+ul.aside-menu>li>a{
+	padding: 8px 3px 8px 0;
+}
+ul.aside-menu li.active{
+	color: #29c5e6;
+}
+
+ul.aside-menu li{
+	position: relative;
+	border-top: 1px solid #dfdfdf;
+}
+ul.aside-menu>li{
+	list-style: square inside;
+	padding: 0 0 0 12px;
+}
+ul.aside-menu li:first-child{
+	border: 0;
+}
+
+ul.aside-menu ul{
+	display: none;
+	color: #8f8f8f;
+	
+}
+ul.aside-menu>li>ul{
+	background: #e9e9e9;
+	font-size: 0.9em;
+	margin: 0 0 0 -12px;
+	padding: 0;
+}
+ul.aside-menu>li>ul>li{
+	padding: 0 0 0 30px;
+}
+ul.aside-menu>li>ul>li.active{
+	background: #f2f2f2;
+}
+
+ul.aside-menu>li>ul>li>ul{
+	font-size: 0.9em;
+	margin: 0 0 0 -30px;
+	background: #dadada;
+	padding: 0;
+}
+
+
+
+ul.aside-menu>li>ul>li>ul>li{
+	border-top-color: #b3b3b3;
+	padding: 0 0 0 40px;
+}
+ul.aside-menu>li>ul>li ul>li.active{
+	background: #e7e7e7;
+}
+ul.aside-menu ul>li{
+	list-style: none;
+	
+}
+ul.aside-menu ul>li>a{
+	padding: 6px 0 6px 0px;
+}
+
+ul.aside-menu>li>ul>li>ul>li ul{
+	background: #dadada;
+	margin: 0;
+	padding: 0;
+	border: solid;
+	border-width: 1px 0;
+	
+}
+ul.aside-menu>li>ul>li>ul>li ul>li{
+	padding: 0;
+	border-top-color: #b3b3b3;
+}
+ul.aside-menu>li>ul>li>ul>li ul>li>a{
+	padding-left: 3px;
+}
+
+/* aside hover*/
+ul.aside-menu ul{
+	display: none;
+}
+ul.aside-menu li:hover>ul{
+	display: block;
+}
+ul.aside-menu li:not(.active):hover>ul{
+	position: absolute;
+	left: 95%;
+	top: -1px;
+	z-index: 1;
+	width: -moz-max-content;
+	width: max-content;
+	border: 1px solid;
+	margin: 0;
+	box-shadow: 0px 0px 5px 1px #c3c3c3
+}
+ul.aside-menu ul>li:not(.active) li:not(.active):hover>ul.menu_hov-l{
+	left: unset;
+	right: 95%;
+}
+
+ul.aside-menu li:not(.active):hover>ul>li,
+ul.aside-menu>li>ul>li>ul>li:not(.active):hover ul>li{
+	padding: 0 6px;
+}
+ul.aside-menu>li>ul>li>ul>li:not(.active):hover ul>li>a{
+	padding-left: 0;
+}
+ul.aside-menu li:not(.active):hover>ul>li:hover{
+	background: #fff;
+}
+
+
+
+/* aside selected parent*/
+ul.aside-menu li.active>ul,
+ul.aside-menu li.active_parent>ul
+{
+	position: static;
+	display: block;
+}
 
 
 
@@ -2003,6 +2157,10 @@ table tbody tr:nth-child(odd){
 
 /* misc */
 .outl{
+	outline: 1px solid #c9c9c9;
+}
+.outl_bord{
+	border: 1px solid #fff;
 	outline: 1px solid #c9c9c9;
 }
 
@@ -2030,6 +2188,14 @@ table tbody tr:nth-child(odd){
 .no-mar-r{
 	margin-right: 0;
 }
+
+.no-pad{
+	padding: 0;
+}
+.no-pad-r{
+	padding-right: 0;
+}
+
 
 .m-t-6{
 	margin-top: 6px;
@@ -2069,6 +2235,13 @@ table tbody tr:nth-child(odd){
 	margin-bottom: 18px;
 }
 
+.p-6-3{
+	padding: 6px 3px;
+}
+.p-rl-3{
+	padding-left: 3px;
+	padding-right: 3px;
+}
 .p-tb-6{
 	padding-top: 6px;
 	padding-bottom: 6px;
@@ -2191,7 +2364,9 @@ html .full-flex{
 	width: 0;
 	flex: 1 1 50%;
 }
-
+.p-6-3-0{
+	padding: 6px 3px 0;;
+}
 
 
 
