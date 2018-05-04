@@ -165,7 +165,7 @@ while ($finfo = $fieldMeta->fetch_field()) {
 }
 $fieldMeta->close();
 $parameters = [
-	11,
+	1,
 	999
 ];
 $typesStr = '';
