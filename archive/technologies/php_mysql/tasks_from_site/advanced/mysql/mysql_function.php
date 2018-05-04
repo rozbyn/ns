@@ -141,6 +141,67 @@ function query_mysqli($db_mysqli, $stmt_query='SELECT * FROM guest_book', $arrOf
 	}
 	return $result;
 }
+//Подключение к БД++++++++++++++++++++
+if($_SERVER['DOCUMENT_ROOT'] === '/home/u784337761/public_html'){
+	//$myDbObj = new mysqli('localhost', 'u784337761_root', 'nSCtm9jplqVA', 'u784337761_test');
+	$r = connect_DB('u784337761_test', 'u784337761_root', 'nSCtm9jplqVA', 'localhost');
+} elseif($_SERVER['DOCUMENT_ROOT'] === '/storage/ssd3/266/4204266/public_html'){
+	//$myDbObj = new mysqli('localhost', 'id4204266_root', 'asdaw_q32d213e', 'id4204266_test');
+	$r = connect_DB('id4204266_test', 'id4204266_root', 'asdaw_q32d213e', 'localhost');
+} else {
+	//$myDbObj = new mysqli('localhost', 'root', '', 'test');
+	$r = connect_DB();
+}
+$r->set_charset("utf8");
+//++++++++++++++++++++++++++++++++++++
+
+
+$query = 'SELECT * FROM guest_book WHERE record_id > ? AND record_id < ?';
+$stmt = $r->prepare($query);
+$fieldMeta = $stmt->result_metadata();
+$f_count = $fieldMeta->field_count;
+while ($finfo = $fieldMeta->fetch_field()) {
+	$f_names[] = $finfo->name;
+}
+$fieldMeta->close();
+$parameters = [
+	11,
+	999
+];
+$typesStr = '';
+foreach($parameters as &$val){
+	switch (gettype($val)):
+		case 'integer':
+			$typesStr .= 'i';
+			break;
+		case 'double':
+			$typesStr .= 'd';
+			break;
+		case 'string':
+			$typesStr .= 's';
+			break;
+		default:
+			$typesStr .= 's';
+			$val = '';
+			break;
+	endswitch;
+}
+array_unshift($parameters, $typesStr);
+$res = $stmt->bind_param(...$parameters);
+$res = $stmt->execute();
+$bindArray = range(1, $f_count);
+$res = $stmt->bind_result(...$bindArray);
+$resultArray = [];
+for($i = 0; $stmt->fetch(); $i++){
+	for($j = 0; $j < $f_count; $j++){
+		$resultArray[$i][$f_names[$j]] = $bindArray[$j];
+	}
+}
+$stmt->close();
+echo '<pre>' . '<br>';
+var_export($resultArray);
+echo '</pre>' . '<br>';
+
 /*--------------------------------------------------*/
 /*
 header('Content-Type: text/html; charset=utf-8');
