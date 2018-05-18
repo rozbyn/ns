@@ -58,7 +58,7 @@ function realName ($path) {
 /*-----------------------------------------------------------------------------------*/
 setlocale(LC_ALL, 'ru_RU', 'RU', 'rus');
 date_default_timezone_set('Europe/Moscow');
-
+/* ---- --- -- - */
 define('EXPLORE_DIR', 'technologies');
 define('NEED_GITHUB_LINK', true);
 define('GITHUB_LINK_PREFIX', 'https://github.com/rozbyn/ns/blob/master/archive/');
