@@ -199,7 +199,6 @@ for($i = 0; $stmt->fetch(); $i++){
 }
 $stmt->close();
 echo '<pre>' . '<br>';
-var_export($resultArray);
 echo '</pre>' . '<br>';
 
 /*--------------------------------------------------*/

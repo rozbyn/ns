@@ -1,8 +1,16 @@
 <?php
 date_default_timezone_set('Europe/Moscow');
-include('mysql_function.php');
 header('Content-Type: text/html; charset=utf-8');
-$myDbObj = connect_DB('test2', 'root', '', 'localhost');
+//Подключение к БД++++++++++++++++++++
+if($_SERVER['DOCUMENT_ROOT'] === '/home/u784337761/public_html'){
+	$myDbObj = new mysqli('localhost', 'u784337761_root', 'nSCtm9jplqVA', 'u784337761_test');
+} elseif($_SERVER['DOCUMENT_ROOT'] === '/storage/ssd3/266/4204266/public_html'){
+	$myDbObj = new mysqli('localhost', 'id4204266_root', 'asdaw_q32d213e', 'id4204266_test');
+} else {
+	$myDbObj = new mysqli('localhost', 'root', '', 'test2');
+}
+$myDbObj->set_charset("utf8");
+//++++++++++++++++++++++++++++++++++++
 $query = 'SELECT * FROM customers JOIN orders ON (customers.id = orders.userid)';
 /*
 SELECT * FROM customers JOIN adresses ON (customers.id = adresses.userid) WHERE customers.id = 1;
