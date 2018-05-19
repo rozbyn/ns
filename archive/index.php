@@ -104,6 +104,7 @@ if (isset($_POST['path'])) {
 	} else {
 		echo 'WRONG DIR: ' . EXPLORE_DIR;
 	}
+/* ________________________________________________________________________ */
 ?>
 <!DOCTYPE html>
 <html>
