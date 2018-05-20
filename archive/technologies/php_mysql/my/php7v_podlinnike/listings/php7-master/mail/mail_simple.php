@@ -17,6 +17,10 @@
     // Разделяем тело сообщения и заголовки.
     list ($head, $body) = preg_split("/\r?\n\r?\n/s", $mail, 2);
     // Отправляем почту. Внимание! Опасный прием!
-    mail("", "", $body, $head);
+    var_dump(mail("", "", $body, $head));
   }
+
+var_dump(mail("ezcs@yandex.ru", "ваавыааыаыаыв", 'Heloo dfuias!'));
+
+
 ?>

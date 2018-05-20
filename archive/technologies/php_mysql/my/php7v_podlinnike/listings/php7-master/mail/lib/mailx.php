@@ -18,6 +18,6 @@
       $head = str_replace($p[0], "", $head);
     }
     // Отправляем почту
-    mail($to, $subject, $body, trim($head));
+    var_dump(mail($to, $subject, $body, trim($head)));
   }
 ?>

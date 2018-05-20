@@ -11,7 +11,7 @@
   // Разбираем одну из частей, QUERY_STRING, на элементы массива.
   parse_str(@$parsed['query'], $query);
   // Добавляем новый элемент в массив QUERY_STRING.
-  $query['names']['read'] = 'tom';
+  $query['names']['read']['asd'] = 'tom';
   // Собираем QUERY_STRING назад из массива.
   $parsed['query'] = http_build_query($query);
   // Создаем результирующий URL.
@@ -19,4 +19,10 @@
   // Выводим результаты работы.
   echo "Старый URL: $url<br>";
   echo "Новый: $newurl";
+  echo  '<br><pre>';
+  $as = parse_url($newurl);
+  parse_str($as["query"], $arr);
+  var_dump($arr);
+
+  echo urldecode($newurl);
 ?>

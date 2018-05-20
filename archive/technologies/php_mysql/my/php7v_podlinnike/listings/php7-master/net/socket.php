@@ -2,12 +2,16 @@
   // Соединяемся с Web-сервером localhost. Обратите внимание,
   // что префикс "http://" не используется - информация о протоколе 
   // и так содержится в номере порта (80).
-  $fp = fsockopen("localhost", 80);
+  $fp = fsockopen("ya.ru", 443);
   // Посылаем запрос главной страницы сервера. Конец строки
   // в виде "\r\n" соответствует стандарту протокола HTTP.
-  fputs($fp, "GET / HTTP/1.1\r\n");
+
+  if($fp === false){
+    exit('no connection!');
+  }
   // Посылаем обязательный для HTTP 1.1 заголовок Host.
-  fputs($fp, "Host: localhost\r\n");
+  fputs($fp, "GET https://ya.ru/ HTTP/1.1\r\n");
+  fputs($fp, "Host: ya.ru\r\n");
   // Отключаем режим Keep-alive, что заставляет сервер СРАЗУ ЖЕ закрыть 
   // соединение после посылки ответа, а не ожидать следующего запроса. 
   // Попробуйте убрать эту строчку - и работа скрипта сильно замедлится.
@@ -16,8 +20,22 @@
   fputs($fp, "\r\n");
   // Теперь читаем по одной строке и выводим ответ.
   echo "<pre>";
-  while (!feof($fp))
-    echo htmlspecialchars(fgets($fp, 1000));
+  $i = 0;
+  $readBody = false;
+  $body = '';
+  while (!feof($fp) && $i < 1000){
+    $a = fgets($fp, 1000);
+    if($a === "\r\n") {
+      $readBody = true;
+    }
+    if ($readBody) {
+      $body .= $a;
+    } else {
+      echo htmlspecialchars($a);
+    }
+    $i++;
+  }
+  echo $body;
   echo "</pre>";
   // Отключаемся от сервера.
   fclose($fp);
