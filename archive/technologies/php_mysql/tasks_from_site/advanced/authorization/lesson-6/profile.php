@@ -463,7 +463,8 @@ if($userAuth==='NOT_VERIFIED' || $userAuth === false){
 			$nowDate = new DateTime();
 			$sUserBirthday = date('d.m.Y', $showing_DBuserInfo['birthday']);
 			$sdbuiBirth = new DateTime($sUserBirthday);
-			$sUserAge = timeWord((($nowDate->diff($sdbuiBirth))->format('%Y')), 'Y');
+                        $difference = $nowDate->diff($sdbuiBirth);
+			$sUserAge = timeWord(($difference->format('%Y')), 'Y');
 		} else {
 			$sUserBirthday = '';
 			$sUserAge = '';

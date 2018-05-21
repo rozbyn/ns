@@ -25,6 +25,6 @@
   </form>
   <?php foreach($gb as $text) {?>
       <?=htmlspecialchars($text)?><br /><hr />
-  <?}?>
+  <?php }?>
 </body>
 </html>

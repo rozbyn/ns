@@ -31,6 +31,8 @@
       print "Файл $path не может быть прочитан";
       exit();
     }
+    $headers = '';
+    $multipart = '';
     $file = fread($fp, filesize($path));
     fclose($fp);
 

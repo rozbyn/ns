@@ -70,7 +70,9 @@ function grgrg () {
 	return 'return 123';
 }
 $rgrgr = grgrg();
-foreach ($rgrgr as $i) echo "$i ";
+foreach ($rgrgr as $i) {
+    echo "$i ";
+}
 echo $rgrgr->getReturn();
 echo '<br>';
 

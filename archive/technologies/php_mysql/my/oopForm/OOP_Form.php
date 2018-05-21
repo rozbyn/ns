@@ -111,7 +111,6 @@ $loginForm = $inputForm->returnFullHtml();
 				white-space: nowrap;
 				border: 1px solid white;
 				font-size: 12px;
-				//display: none;
 			}
 			.requiredError:before, .validateError:before{
 				content: '';

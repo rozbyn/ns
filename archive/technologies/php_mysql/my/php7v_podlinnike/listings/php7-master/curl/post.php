@@ -1,6 +1,6 @@
 <?php ## Отправка данных методом POST
   // Задаем адрес удаленного сервера
-  $curl = curl_init("http://localhost/handler.php");
+  $curl = curl_init("http://test.r/ns/archive/technologies/php_mysql/my/php7v_podlinnike/listings/php7-master/curl/handler.php");
 
   // Передача данных осуществляется методом POST
   curl_setopt($curl, CURLOPT_POST, 1);

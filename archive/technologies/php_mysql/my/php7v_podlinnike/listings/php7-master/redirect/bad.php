@@ -22,6 +22,6 @@
   </form>
   <?php foreach($gb as $text) {?>
       <?=$text?><br /><hr />
-  <? } ?>
+  <?php } ?>
 </body>
 </html>
