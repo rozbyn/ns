@@ -4,11 +4,18 @@
   // храниться сессии, достаточно поменять только эту функцию
   function ses_fname($key)
   {
-    return dirname(__FILE__)."/sessiondata/".session_name()."/$key"; 
+      $ses = dirname(__FILE__)."/sessiondata/".session_name()."/$key";
+      //echo $ses;
+    return $ses;
   }
   // Заглушки - эти функции просто ничего не делают
   function ses_open($save_path, $ses_name)
   {
+    $key = session_id();
+    $path = ses_fname($key);
+    if (!is_file($path)){
+        touch($path);
+    }
     return true;
   }
   function ses_close()
@@ -21,7 +28,7 @@
   {
     // Получаем имя файла и открываем файл.
     $fname = ses_fname($key);
-    return @file_get_contents($fname);
+    return file_get_contents($fname);
   }
 
   // Запись данных сессии во временное хранилище
@@ -72,7 +79,12 @@
   session_name("test1");
   session_start();
   // Увеличиваем счетчик в сессии.
-  $_SESSION['count'] = @$_SESSION['count'] + 1;
+  if (!isset($_SESSION['count'])){
+      $_SESSION['count'] = 0;
+  }
+  $_SESSION['count']++;
+  
+  
 ?>
 <h2>Счетчик</h2>
 В текущей сессии работы с браузером Вы открыли эту страницу
