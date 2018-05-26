@@ -1,10 +1,6 @@
 Options -Indexes
 AddDefaultCharset UTF-8
 
-RewriteEngine on
-RewriteBase /
-RewriteRule ^dummy(/)?(.html)?$ http://www.google.com/ [L]
-
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /ns/archive [L]
