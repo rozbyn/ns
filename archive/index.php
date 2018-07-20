@@ -1,5 +1,4 @@
 <?php
-
 function generateHtml ($varables, $folders, $files, $no_explDiv = false) {
 	$stringHtml = '';
 	$no_explDiv ? $stringHtml = '<div class="expl_head"><div class="par_folder">' : $stringHtml = '<div class="expl_div"><div class="expl_head"><div class="par_folder">';

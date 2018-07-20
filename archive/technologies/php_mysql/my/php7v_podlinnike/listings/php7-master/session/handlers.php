@@ -28,7 +28,7 @@
   {
     // Получаем имя файла и открываем файл.
     $fname = ses_fname($key);
-    return file_get_contents($fname);
+    return (string) file_get_contents($fname);
   }
 
   // Запись данных сессии во временное хранилище
