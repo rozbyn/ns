@@ -28,10 +28,13 @@ function getSelfAddres (){
 
 function endConnect ($mess) {
 	ob_implicit_flush(1);
+	session_write_close();
 	ignore_user_abort(true);
+	header("Content-Encoding: none");
 	header('Connection: close');
 	header("Content-Length: " . strlen($mess));
 	echo $mess;
+	ob_end_flush();
 	flush();
 	ob_flush();
 	flush();
@@ -199,7 +202,9 @@ function sendBaseRequest ($url = '', $dataArr = [], $noAnsver = false, $onlyHead
 				$returnArray['headers'][$headerName] = trim($headerVal);
 			}
 		}
-		$returnArray['read_result'] = true;
+		if(!$returnArray['read_timeouted']){
+			$returnArray['read_result'] = true;
+		}
 		$requestBody = $body;
 		$jsonArr = json_decode($requestBody, true);
 		if($jsonArr === null){

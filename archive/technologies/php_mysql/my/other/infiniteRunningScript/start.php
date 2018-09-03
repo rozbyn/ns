@@ -37,7 +37,10 @@ if(isset($_REQUEST['RUNNING']) && $_REQUEST['RUNNING'] = 'da'){
 		$sleepTime = (($res['maxExTime'] - $requestTime) - 5) * 1000000;
 		@usleep($sleepTime);
 		$rez = sendBaseRequest(dirname(getSelfAddres())."/$newFileName", ['RUNNING'=>'da']);
-		file_put_contents('dbug.dbug', $arrRunOpt['runCount'] ."\r\n" . var_export($rez, true) . "\r\n" );
+		if(!is_dir('dbugs')){
+			mkdir('dbugs');
+		}
+		file_put_contents("dbugs/{$arrRunOpt['runCount']}dbug.dbug", $arrRunOpt['runCount'] ."\r\n" . var_export($rez, true) . "\r\n" );
 		if(is_file('0_STOP'))unlink(__FILE__);
 	}
 }
