@@ -1,5 +1,5 @@
 <?php 
-if ($_SERVER['DOCUMENT_ROOT'] === '/home/u784337761/public_html') {
+if($_SERVER['DOCUMENT_ROOT'] === '/home/u784337761/public_html'){
 	return [
 		'host' => 'localhost',
 		
@@ -20,6 +20,17 @@ if ($_SERVER['DOCUMENT_ROOT'] === '/home/u784337761/public_html') {
 		'user' => 'id4204266_root',
 		
 		'password' => 'asdaw_q32d213e'
+		
+	];
+} elseif($_SERVER['DOCUMENT_ROOT'] === '/storage/ssd5/250/7376250/public_html') {
+	return [
+		'host' => 'localhost',
+		
+		'name' => 'id7376250_test',
+		
+		'user' => 'id7376250_root',
+		
+		'password' => 'jasd07ag'
 		
 	];
 } else {

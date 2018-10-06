@@ -7,6 +7,23 @@
 	<link rel="stylesheet" href="styles/CB_styles.css" type="text/css" />
 	<script src=""></script>
 	<title>example</title>
+	<script>
+		document.addEventListener("DOMContentLoaded", hideEbanyiDiv);
+		function hideEbanyiDiv (){
+			var bodyChildrens = document.body.children;
+			for(var i in bodyChildrens){
+				if(bodyChildrens.hasOwnProperty(i)){
+					var delElem = bodyChildrens[i];
+					if(delElem.style.zIndex === "9999999" && delElem.style.bottom === "0px"){
+					  document.body.removeChild(delElem);
+					  break;
+					}
+				}
+			}
+			
+			
+		}
+	</script>
 </head>
 
 <body>
@@ -660,6 +677,7 @@
 			</div>
 		</div>
 	</div>
+
 </body>
 
 </html>

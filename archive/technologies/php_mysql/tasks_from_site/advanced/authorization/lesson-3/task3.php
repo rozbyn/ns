@@ -12,13 +12,22 @@ function name_validate($str, $len = 20){
 }
 
 
-//////////////////////
+//Подключение к БД++++++++++++++++++++
+$mysqlHost = 'localhost';
+$mysqlUserName = 'root';
+$mysqlPass = '';
+$mysqlDB = 'test';
 if($_SERVER['DOCUMENT_ROOT'] === '/home/u784337761/public_html'){
-	$myDbObj = new mysqli('localhost', 'u784337761_root', 'nSCtm9jplqVA', 'u784337761_test');
-} else {
-	$myDbObj = new mysqli('localhost', 'root', '', 'test');
+	$mysqlUserName = 'u784337761_root'; $mysqlPass = 'nSCtm9jplqVA'; $mysqlDB = 'u784337761_test';
+} elseif($_SERVER['DOCUMENT_ROOT'] === '/storage/ssd3/266/4204266/public_html'){
+	$mysqlUserName = 'id4204266_root'; $mysqlPass = 'asdaw_q32d213e'; $mysqlDB = 'id4204266_test';
+} elseif($_SERVER['DOCUMENT_ROOT'] === '/storage/ssd5/250/7376250/public_html'){
+	$mysqlUserName = 'id7376250_root'; $mysqlPass = 'jasd07ag'; $mysqlDB = 'id7376250_test';
 }
+
+$myDbObj = new mysqli($mysqlHost, $mysqlUserName, $mysqlPass, $mysqlDB);
 $myDbObj->set_charset("utf8");
+//++++++++++++++++++++++++++++++++++++
 $login = '';
 $password = '';
 $confirmPassword = '';

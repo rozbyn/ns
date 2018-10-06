@@ -187,6 +187,20 @@ if (isset($_POST['path'])) {
     </div>
 	<!--<textarea id="debug" rows="20" cols="100"></textarea>-->
 	<script>
+		document.addEventListener("DOMContentLoaded", hideEbanyiDiv);
+		function hideEbanyiDiv (){
+			var bodyChildrens = document.body.children;
+			for(var i in bodyChildrens){
+				if(bodyChildrens.hasOwnProperty(i)){
+					var delElem = bodyChildrens[i];
+					if(delElem.style.zIndex === "9999999" && delElem.style.bottom === "0px"){
+					  document.body.removeChild(delElem);
+					  break;
+					}
+				}
+			}
+		}
+		
 		
 		window.onload = addEvents(document);
 		

@@ -9,9 +9,19 @@ ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 $headers = apache_request_headers();
-$str = '+' . $headers['User-Agent']. '; ' . date('H:i:s d.m.Y', $_SERVER['REQUEST_TIME']). PHP_EOL;
-if (isset($headers['Referer'])){
-	$str .= $headers['Referer'];
+
+$userAgent = 'no-user-agent';
+if(isset($headers['User-Agent'])) $userAgent = $headers['User-Agent'];
+if(isset($headers['user-Agent'])) $userAgent = $headers['user-Agent'];
+
+$referer = 'no-ref';
+if(isset($headers['Referer'])) $referer = $headers['Referer'];
+if(isset($headers['referer'])) $referer = $headers['referer'];
+
+
+$str = '+' . $userAgent. '; ' . date('H:i:s d.m.Y', $_SERVER['REQUEST_TIME']). PHP_EOL;
+if ($referer !== 'no-ref'){
+	$str .= $referer;
 	$str .= PHP_EOL;
 }
 if (!empty($_REQUEST)){

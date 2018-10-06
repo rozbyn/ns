@@ -142,17 +142,20 @@ function query_mysqli($db_mysqli, $stmt_query='SELECT * FROM guest_book', $arrOf
 	return $result;
 }
 //Подключение к БД++++++++++++++++++++
+$mysqlHost = 'localhost';
+$mysqlUserName = 'root';
+$mysqlPass = '';
+$mysqlDB = 'test';
 if($_SERVER['DOCUMENT_ROOT'] === '/home/u784337761/public_html'){
-	//$myDbObj = new mysqli('localhost', 'u784337761_root', 'nSCtm9jplqVA', 'u784337761_test');
-	$r = connect_DB('u784337761_test', 'u784337761_root', 'nSCtm9jplqVA', 'localhost');
+	$mysqlUserName = 'u784337761_root'; $mysqlPass = 'nSCtm9jplqVA'; $mysqlDB = 'u784337761_test';
 } elseif($_SERVER['DOCUMENT_ROOT'] === '/storage/ssd3/266/4204266/public_html'){
-	//$myDbObj = new mysqli('localhost', 'id4204266_root', 'asdaw_q32d213e', 'id4204266_test');
-	$r = connect_DB('id4204266_test', 'id4204266_root', 'asdaw_q32d213e', 'localhost');
-} else {
-	//$myDbObj = new mysqli('localhost', 'root', '', 'test');
-	$r = connect_DB();
+	$mysqlUserName = 'id4204266_root'; $mysqlPass = 'asdaw_q32d213e'; $mysqlDB = 'id4204266_test';
+} elseif($_SERVER['DOCUMENT_ROOT'] === '/storage/ssd5/250/7376250/public_html'){
+	$mysqlUserName = 'id7376250_root'; $mysqlPass = 'jasd07ag'; $mysqlDB = 'id7376250_test';
 }
-$r->set_charset("utf8");
+
+$myDbObj = new mysqli($mysqlHost, $mysqlUserName, $mysqlPass, $mysqlDB);
+$myDbObj->set_charset("utf8");
 //++++++++++++++++++++++++++++++++++++
 
 
