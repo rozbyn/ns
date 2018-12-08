@@ -1,15 +1,17 @@
 <?php
 
-$i = 0;
-while ($i < 50) {
-	echo $i . '0123456789';
-	$i++;
-}
+$start = -microtime(true);
+$maxExTime = ini_get('max_execution_time');
 
-echo '<br>';
-
-$i = 0;
-while ($i < 50) {
-	echo $i . 'абра кадабра!';
-	$i++;
+while(true){
+	echo 'bob<br>';
+	flush();
+	ob_flush();
+	flush();
+	ob_flush();
+	usleep(500000);
+	if(($maxExTime - (microtime(true) + $start)) < 0.5){
+		echo 'end';
+		break;
+	}
 }

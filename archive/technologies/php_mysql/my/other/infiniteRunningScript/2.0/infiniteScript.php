@@ -1,4 +1,5 @@
 <?php
+$start = -microtime(true);
 require_once './sendRequestNoAnsver.php';
 $unlinkThisFile = (basename(__FILE__) === 'infiniteScript.php') ? '' : __FILE__;
 
@@ -14,8 +15,8 @@ $arServerVars = [
 ];
 $thisScriptUrl = "{$arServerVars['scheme']}://{$arServerVars['host']}{$arServerVars['port']}{$arServerVars['path']}";
 
-//$maxExTime = ini_get('max_execution_time');
-$maxExTime = 10;
+$maxExTime = ini_get('max_execution_time');
+//$maxExTime = 10;
 
 $count = $_REQUEST['runCount'];
 $nxtCount = $count+1;
@@ -39,9 +40,12 @@ if(!file_put_contents($newFileName, $newFileContent)) return exitScript();
 
 
 while (!is_file("0_RECD_$nxtCount")) {
+	if(($maxExTime - (microtime(true) + $start)) < 0.5) {
+		touch("0_SCRIPT_ERROR_$count");
+		exitScript();
+	}; 
 	sendRequestNoAnswer($newFileUrl);
 	usleep(500000);
-	
 }
 exitScript();
 
