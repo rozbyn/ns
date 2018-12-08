@@ -71,21 +71,20 @@ function sendBaseRequest ($url = '', $dataArr = [], $noAnsver = false, $onlyHead
 			];
 		}
 	}
-	
+	$erCode = 0;
+	$erMess = 0;
 	$urlParts = parse_url($url);
 	$method = !empty($dataArr) ? 'POST' : 'GET';
 	$transport = ($urlParts['scheme'] == 'https') ? 'ssl' : 'tcp';
 	$port = ($urlParts['scheme'] == 'https') ? 443 : 80;
 	$query = isset($urlParts['query']) ? "?{$urlParts['query']}" : '';
+	$path = isset($urlParts['path']) ? $urlParts['path'] : '/';
 	$maxExTime = (int)ini_get('max_execution_time');
 	$connection_time = -microtime(true);
-	$fp = @stream_socket_client(
-		$transport."://".$urlParts['host'].":".$port, 
-		$erCode, 
-		$erMess, 
-		(float)(($tOut = getTimeout($startExTime, $maxExTime))['sec'] .'.'. $tOut['microsec'])
-	);
-	$connection_time += microtime(true);;
+	$remSocket = $transport."://".$urlParts['host'].":".$port;
+	$tOut = getTimeout($startExTime, $maxExTime);
+	$fp = stream_socket_client($remSocket, $erCode, $erMess, (float)($tOut['sec'] .'.'. $tOut['microsec']));
+	$connection_time += microtime(true);
 	$returnArray = [
 		'rawdata' => '',
 		'data' => '',
@@ -106,14 +105,15 @@ function sendBaseRequest ($url = '', $dataArr = [], $noAnsver = false, $onlyHead
 	if (!($fp)) {
 		return $returnArray;
 	} else {
-		if(($tOut = setConnectTimeout($fp, $startExTime, $maxExTime))[0] === false) {
+		$tOut = setConnectTimeout($fp, $startExTime, $maxExTime);
+		if($tOut[0] === false) {
 			// echo "$tOut = false <br>";
 			$returnArray['connection_timeouted'] = true;
 			return $returnArray;
 		}
 		// echo "before write: {$tOut[1]['sec']} - {$tOut[1]['microsec']}<br>";
 		$data = http_build_query($dataArr);
-		$headers = $method. " ".$urlParts['path'].$query." HTTP/1.0\r\n"
+		$headers = $method. " ".$path.$query." HTTP/1.0\r\n"
 		 . "Host: ".$urlParts['host']."\r\n"
 		 // . "Accept: */*\r\n"
 		 . "Content-Type: application/x-www-form-urlencoded\r\n"
@@ -121,6 +121,7 @@ function sendBaseRequest ($url = '', $dataArr = [], $noAnsver = false, $onlyHead
 		 // . "Connection: Close\r\n"
 		 . "\r\n";
 		 
+		
 		$returnArray['write_time'] = -microtime(true);
 		$wrResult = fwrite($fp, $headers . $data . "\r\n\r\n");
 		$returnArray['write_time'] += microtime(true);
@@ -140,7 +141,8 @@ function sendBaseRequest ($url = '', $dataArr = [], $noAnsver = false, $onlyHead
 		$bodyLen = 0;
 		$lineLen = 8192;
 		for($i = 0, $rd = ''; (!feof($fp) && $i < 100); $i++){
-			if(($tOut = setConnectTimeout($fp, $startExTime, $maxExTime))[0] === false) {
+			$tOut = setConnectTimeout($fp, $startExTime, $maxExTime);
+			if($tOut[0] === false) {
 				$returnArray['connection_timeouted'] = true;
 				break;
 			}
@@ -195,10 +197,10 @@ function sendBaseRequest ($url = '', $dataArr = [], $noAnsver = false, $onlyHead
 				break;
 			}
 		}
-		
+		var_dump($headers);
 		foreach (explode("\r\n",$headers) as $val) {
 			if(!empty($val)){
-				@list($headerName, $headerVal) = explode(':',  $val);
+				@list($headerName, $headerVal) = explode(':',  $val, 2);
 				$returnArray['headers'][$headerName] = trim($headerVal);
 			}
 		}
@@ -216,9 +218,9 @@ function sendBaseRequest ($url = '', $dataArr = [], $noAnsver = false, $onlyHead
 	}
 }
 
-// $url = 'http://test.r/ns/archive/technologies/php_mysql/my/other/infiniteRunningScript/a.php';
-// echo "<pre>";
-// $rez = sendBaseRequest($url, [], false);
-// echo "</pre>";
-// var_dump($rez);
+ $url = 'https://www.google.com/';
+ echo "<pre>";
+ $rez = sendBaseRequest($url, [], false);
+ var_dump($rez);
+ echo "</pre>";
 ?>

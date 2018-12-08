@@ -1,60 +1,5 @@
 <?php
-function generateHtml ($varables, $folders, $files, $no_explDiv = false) {
-	$stringHtml = '';
-	$no_explDiv ? $stringHtml = '<div class="expl_head"><div class="par_folder">' : $stringHtml = '<div class="expl_div"><div class="expl_head"><div class="par_folder">';
-	$stringHtml .= '<input type="hidden" value="'.$varables['parent_path'].'">';
-	$stringHtml .= $varables['parent_name'];
-	$stringHtml .= '</div><div class="curr_folder">';
-	$stringHtml .= '<input type="hidden" value="'.$varables['current_path'].'">';
-	$stringHtml .= $varables['current_name'];
-	$stringHtml .= '</div></div>';
-	sort($folders);
-	sort($files);
-	foreach($folders as $val){
-		$stringHtml .= '<div class="expl_folder"><input type="hidden" value="'.$val.'">';
-		$stringHtml .= basename($val);
-		$stringHtml .= '</div>';
-	}
-	foreach($files as $val){
-		$stringHtml .= '<div class="expl_file"><a href="'.($val).'" target="_blank">';
-		$stringHtml .= basename($val);
-		$stringHtml .= '</a>';
-		if (NEED_GITHUB_LINK) {
-			$stringHtml .= '<a class="github_link" href="'.GITHUB_LINK_PREFIX.$val.'" target="_blank" title="code on github"><img class="github_img" src="../img/gh.png"></a>';
-		}
-		$stringHtml .= '</div>';
-	}
-	$no_explDiv ? '' : $stringHtml .= '</div>';
-	if (function_exists('tidy_repair_string')) {
-		$tidyParams = [
-			'indent' => TRUE,
-			'wrap' => 200,
-			'show-body-only'=>1
-		];
-		return tidy_repair_string($stringHtml, $tidyParams);
-	}
-	return $stringHtml;
-}
-function getFiles_Folders ($path) {
-	$folders = [];
-	$files = [];
-	$cdir = scandir($path);
-	foreach ($cdir as $elem) {
-		if ($elem != '.' && $elem != '..') {
-			if (is_dir($y = $path . DIRECTORY_SEPARATOR . $elem)) {
-				$folders[] = $y;
-			} elseif (is_file($y = $path . DIRECTORY_SEPARATOR . $elem)) {
-				$files[] = $y;
-			}
-		}
-	}
-	return [$folders, $files];
-	
-}
-function realName ($path) {
-	return basename(realpath($path));
-}
-/*-----------------------------------------------------------------------------------*/
+
 setlocale(LC_ALL, 'ru_RU', 'RU', 'rus');
 date_default_timezone_set('Europe/Moscow');
 /* ---- --- -- - */
@@ -257,4 +202,62 @@ if (isset($_POST['path'])) {
 	</script>
 </body>
 </html>
-<?php } ?>
+<?php } 
+
+function generateHtml ($varables, $folders, $files, $no_explDiv = false) {
+	$stringHtml = '';
+	$no_explDiv ? $stringHtml = '<div class="expl_head"><div class="par_folder">' : $stringHtml = '<div class="expl_div"><div class="expl_head"><div class="par_folder">';
+	$stringHtml .= '<input type="hidden" value="'.$varables['parent_path'].'">';
+	$stringHtml .= $varables['parent_name'];
+	$stringHtml .= '</div><div class="curr_folder">';
+	$stringHtml .= '<input type="hidden" value="'.$varables['current_path'].'">';
+	$stringHtml .= $varables['current_name'];
+	$stringHtml .= '</div></div>';
+	sort($folders);
+	sort($files);
+	foreach($folders as $val){
+		$stringHtml .= '<div class="expl_folder"><input type="hidden" value="'.$val.'">';
+		$stringHtml .= basename($val);
+		$stringHtml .= '</div>';
+	}
+	foreach($files as $val){
+		$stringHtml .= '<div class="expl_file"><a href="'.($val).'" target="_blank">';
+		$stringHtml .= basename($val);
+		$stringHtml .= '</a>';
+		if (NEED_GITHUB_LINK) {
+			$stringHtml .= '<a class="github_link" href="'.GITHUB_LINK_PREFIX.$val.'" target="_blank" title="code on github"><img class="github_img" src="../img/gh.png"></a>';
+		}
+		$stringHtml .= '</div>';
+	}
+	$no_explDiv ? '' : $stringHtml .= '</div>';
+	if (function_exists('tidy_repair_string')) {
+		$tidyParams = [
+			'indent' => TRUE,
+			'wrap' => 200,
+			'show-body-only'=>1
+		];
+		return tidy_repair_string($stringHtml, $tidyParams);
+	}
+	return $stringHtml;
+}
+function getFiles_Folders ($path) {
+	$folders = [];
+	$files = [];
+	$cdir = scandir($path);
+	foreach ($cdir as $elem) {
+		if ($elem != '.' && $elem != '..') {
+			if (is_dir($y = $path . DIRECTORY_SEPARATOR . $elem)) {
+				$folders[] = $y;
+			} elseif (is_file($y = $path . DIRECTORY_SEPARATOR . $elem)) {
+				$files[] = $y;
+			}
+		}
+	}
+	return [$folders, $files];
+	
+}
+function realName ($path) {
+	return basename(realpath($path));
+}
+/*-----------------------------------------------------------------------------------*/
+?>

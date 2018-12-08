@@ -298,7 +298,7 @@ if($userAuth==='NOT_VERIFIED' || $userAuth === false){
 							</label>
 						</div>
 					<?php } ?>
-					<button type="submit" name="edit_user_complete" value="true">Сохранить</button></span>
+					<span><button type="submit" name="edit_user_complete" value="true">Сохранить</button></span>
 				</form>
 			</div>
 		<?php }  ?>

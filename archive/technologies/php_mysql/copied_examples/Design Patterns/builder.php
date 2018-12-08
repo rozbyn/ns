@@ -114,3 +114,5 @@ echo $post->getId() . PHP_EOL;
 print_r($post->getCategories()) . PHP_EOL;
 print_r($post->getStatistics()) . PHP_EOL;
 echo $post->getText() . PHP_EOL;
+?>
+</pre>

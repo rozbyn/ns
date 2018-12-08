@@ -3,4 +3,4 @@ AddDefaultCharset UTF-8
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /ns/archive [L]
+RewriteRule ^(.*)$ /archive [L]
