@@ -1,5 +1,5 @@
 <?php
-
+//asd
 interface Observer
 {
     public function changePrice($price);
