@@ -75,7 +75,4 @@ foreach ($arNewContents as $rawUrl => $rawContent) {
 $log = ['removed'=>$arLocalRmove, 'updated'=>$arLocalAdd];
 file_put_contents('lastCommit.txt', var_export($log, true));
 file_put_contents('jopz.txt', var_export($payload, true));
-
-
-
-
+//vova
