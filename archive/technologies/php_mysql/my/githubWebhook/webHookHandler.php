@@ -16,7 +16,6 @@ echo strtotime('2018-12-08T21:39:09+03:00') - strtotime('2018-12-08T21:38:54+03:
 
 if(!isset($_REQUEST['payload'])) exit;
 $payload = json_decode($_REQUEST['payload'], true);
-file_put_contents('jopz.txt', var_export($payload, true));
 $arAdded = $arLocalAdd = $arRemoved = $arLocalRmove = [];
 
 $commits = $payload['commits'];
@@ -75,6 +74,7 @@ foreach ($arNewContents as $rawUrl => $rawContent) {
 
 $log = ['removed'=>$arLocalRmove, 'updated'=>$arLocalAdd];
 file_put_contents('lastCommit.txt', var_export($log, true));
+file_put_contents('jopz.txt', var_export($payload, true));
 
 
 
