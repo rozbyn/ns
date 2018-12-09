@@ -59,7 +59,7 @@ dump2(array_keys($arAdded));
 
 $arNewContents = getContentsAsync(array_keys($arAdded));
 
-dump2(array_keys($arNewContents));
+dump2($arNewContents);
 
 foreach ($arLocalRmove as $localPath) {
 	$localP = "$thisServerRootFolder/$localPath";
