@@ -1,6 +1,6 @@
 <?php
 'https://raw.githubusercontent.com/rozbyn/ns/master/archive/technologies/php_mysql/copied_examples/Design%20Patterns/adapter.php';
-
+//privet
 require_once '../getContentsAsync/getContentsAsynch.php';
 
 $ghPrefix = 'https://raw.githubusercontent.com/rozbyn/ns/master/';
