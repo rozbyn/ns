@@ -74,4 +74,4 @@ foreach ($arNewContents as $rawUrl => $rawContent) {
 }
 
 $log = ['removed'=>$arLocalRmove, 'updated'=>$arLocalAdd];
-//vova
+//vova g
