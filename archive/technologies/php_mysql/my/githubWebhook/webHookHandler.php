@@ -70,7 +70,7 @@ foreach ($arLocalRmove as $localPath) {
 foreach ($arNewContents as $rawUrl => $rawContent) {
 	$localPa = $arLocalAdd[$rawUrl];
 	$localP = "$thisServerRootFolder/$localPa";
-	file_put_contents($localP, $rawContent);
+	file_put_contents($localP, $rawContent["content"]);
 }
 
 $log = ['removed'=>$arLocalRmove, 'updated'=>$arLocalAdd];
