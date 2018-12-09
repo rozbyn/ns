@@ -2,21 +2,18 @@
 'https://raw.githubusercontent.com/rozbyn/ns/master/archive/technologies/php_mysql/copied_examples/Design%20Patterns/adapter.php';
 //privet
 require_once '../getContentsAsync/getContentsAsynch.php';
+require_once './functions.php';
 
 $ghPrefix = 'https://raw.githubusercontent.com/rozbyn/ns/master/';
 $thisServerRootFolder = $_SERVER['DOCUMENT_ROOT'] === 'E:/site/' ? 'E:/site/ns' : $_SERVER['DOCUMENT_ROOT'];
 
 
-echo '<br>';
-echo strtotime('2018-12-08T21:39:09+03:00');
-echo '<br>';
-echo strtotime('2018-12-08T21:38:54+03:00');
-echo '<br>';
-echo strtotime('2018-12-08T21:39:09+03:00') - strtotime('2018-12-08T21:38:54+03:00');
 
 if(!isset($_REQUEST['payload'])) exit;
 $payload = json_decode($_REQUEST['payload'], true);
 $arAdded = $arLocalAdd = $arRemoved = $arLocalRmove = [];
+
+dump2($payload);
 
 $commits = $payload['commits'];
 
@@ -58,7 +55,11 @@ foreach ($commits as $commit) {
 }
 
 
+dump2(array_keys($arAdded));
+
 $arNewContents = getContentsAsync(array_keys($arAdded));
+
+dump2(array_keys($arNewContents));
 
 foreach ($arLocalRmove as $localPath) {
 	$localP = "$thisServerRootFolder/$localPath";
@@ -73,6 +74,4 @@ foreach ($arNewContents as $rawUrl => $rawContent) {
 }
 
 $log = ['removed'=>$arLocalRmove, 'updated'=>$arLocalAdd];
-file_put_contents('lastCommit.txt', var_export($log, true));
-file_put_contents('jopz.txt', var_export($payload, true));
 //vova
