@@ -74,4 +74,5 @@ foreach ($arNewContents as $rawUrl => $rawContent) {
 }
 
 $log = ['removed'=>$arLocalRmove, 'updated'=>$arLocalAdd];
+dump2($log);
 //vova g222
