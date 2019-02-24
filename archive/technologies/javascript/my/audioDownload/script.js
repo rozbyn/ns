@@ -90,51 +90,70 @@ findKey('c', ip);
 window.ap._impl._currentHls.coreComponents[4].mediaSource;
 
 
-var sourceBufStor = [];
-var sourceArrStor = [];
-origSBAppend = SourceBuffer.prototype.appendBuffer;
-SourceBuffer.prototype.appendBuffer = function (source) {
-	saveSB(this, source);
-	return origSBAppend.apply(this, arguments);
-};
+(function(){
+
+	var sourceBufStor = [];
+	var sourceArrStor = [];
+	
+	
+	origSBAppend = SourceBuffer.prototype.appendBuffer;
+	SourceBuffer.prototype.appendBuffer = function (source) {
+		console.log('appendBuffer');
+		saveSB(this, source);
+		return origSBAppend.apply(this, arguments);
+	};
 
 
-function saveSB (sB, arBin) {
-	var i = sourceBufStor.findIndex(function (el) {return el === sB;});
-	if(i === -1){
-		var arLen = sourceBufStor.push(sB);
-		sourceArrStor[arLen-1] = [arBin];
-		sB.addEventListener('updateend', checkEnded.bind(null, (arLen-1)));
-	} else {
-		sourceArrStor[i].push(arBin);
-	}
-}
-
-function checkEnded(index, e) {
-	if(e.target.ended){
-		saveFile(index);
-	}
-}
-
-function saveFile(index) {
-	var filename = getCurrentAudioFilename();
-	var file = new File(sourceArrStor[index], filename);
-	var a = document.createElement('a');
-	var d = URL.createObjectURL(file);
-	a.download = filename;
-	a.href = d;
-	a.click();
-}
-
-function getCurrentAudioFilename() {
-	if(window.ap && window.ap.getCurrentAudio){
-		var a = window.ap.getCurrentAudio();
-		if(a[3] !== '' && a[4] !== '' ){
-			return a[4] + ' – ' + a[3] + '.mp3';
+	function saveSB (sB, arBin) {
+		console.log('saveSB');
+		var i = sourceBufStor.findIndex(function (el) {return el === sB;});
+		if(i === -1){
+			var arLen = sourceBufStor.push(sB);
+			sourceArrStor[arLen-1] = [arBin];
+			sB.addEventListener('updateend', checkEnded.bind(null, (arLen-1)));
+		} else {
+			sourceArrStor[i].push(arBin);
 		}
 	}
-	return 'track.mp3';
-}
+
+	function checkEnded(index, e) {
+		console.log('checkEnded', e.target.ended);
+		if(e.target.ended){
+			saveFile(index);
+		}
+	}
+
+	function saveFile(index) {
+		console.log('saveFile', index);
+		var filename = getCurrentAudioFilename();
+		var file = new File(sourceArrStor[index], filename);
+		var d = URL.createObjectURL(file);
+		var a = document.createElement('a');
+		a.style.display = 'none';
+		document.body.appendChild(a);
+		a.download = filename;
+		a.href = d;
+		a.click();
+		document.body.removeChild(a);
+	}
+
+	function getCurrentAudioFilename() {
+		console.log('getCurrentAudioFilename');
+		if(window.ap && window.ap.getCurrentAudio){
+			var a = window.ap.getCurrentAudio();
+			if(a[3] !== '' && a[4] !== '' ){
+				return a[4] + ' – ' + a[3] + '.mp3';
+			}
+		}
+		return 'track.mp3';
+	}
+	
+	window.sourceBufStor = sourceBufStor;
+	window.sourceArrStor = sourceArrStor;
+	window.getCurrentAudioFilename = getCurrentAudioFilename;
+	window.saveFile = saveFile;
+	
+})();
 
 
 // window.ap._ensureHasURL(audioArr, fun);
