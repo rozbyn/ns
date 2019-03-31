@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<title>Разделить и соединить файл</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<style>
+			html, body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				box-sizing: border-box;
+			}
+			.wrap0 {
+				height: 100%;
+				background: #bec8ff;
+				padding: 50px;
+			}
+			.wrap1 {
+				border: 10px solid #fff;
+				height: 100%;
+				border-radius: 60px;
+				overflow: hidden;
+			}
+			.wrap2 {
+				height: 100%;
+				background: cornflowerblue;
+				display: table;
+				width: 100%;
+				border-radius: 50px;
+			}
+			.wrap3 {
+				display: table-cell;
+				vertical-align: middle;
+				font-size: 4em;
+				font-weight: bold;
+				color: #fff;
+				font-family: sans-serif;
+				text-align: center;
+			}
+			#dropZone{
+				cursor: pointer;
+			}
+			
+			#dropZone.dragover {
+				background: #3f3c74;
+				border: 3px dashed #fff;
+			}
+			
+			#dropZone.loading {
+				background: #3f3c74;
+				border: 0;
+			}
+			
+			
+			#fileElem{
+				display: none;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="wrap0">
+			<div class="wrap1">
+				<div class="wrap2" id="dropZone">
+					<input type="file" name="fileContent" id="fileElem" multiple>
+					<div class="wrap3">Drop your files here!</div>
+				</div>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>

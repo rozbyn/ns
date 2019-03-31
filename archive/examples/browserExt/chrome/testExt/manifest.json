@@ -17,5 +17,17 @@
 	"background": {
 		"scripts": ["background.js"],
 		"persistent": false
+	},
+	
+	"content_scripts" : [
+		{
+			"js": ["contentScript.js"], 
+			"matches": ["*://*.vk.com/*"],
+			"run_at": "document_end"
+		}
+	],
+	"web_accessible_resources": ["pageScript.js"],
+	"externally_connectable": {
+		"matches": ["*://*.vk.com/*"]
 	}
 }

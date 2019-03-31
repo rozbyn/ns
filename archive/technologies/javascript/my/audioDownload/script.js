@@ -87,75 +87,45 @@ var ip = {
 
 findKey('c', ip);
 
+
+var jojj = ap.play;
+ap.play = function () {
+	console.log(arguments);
+	return jojj.apply(this, arguments);
+};
+ap.on(null, AudioPlayer.EVENT_CURRENT_CHANGED, function () {console.log(arguments)});
+
+
 window.ap._impl._currentHls.coreComponents[4].mediaSource;
 
 
-(function(){
 
-	var sourceBufStor = [];
-	var sourceArrStor = [];
-	
-	
-	origSBAppend = SourceBuffer.prototype.appendBuffer;
-	SourceBuffer.prototype.appendBuffer = function (source) {
-		console.log('appendBuffer');
-		saveSB(this, source);
-		return origSBAppend.apply(this, arguments);
-	};
-
-
-	function saveSB (sB, arBin) {
-		console.log('saveSB');
-		var i = sourceBufStor.findIndex(function (el) {return el === sB;});
-		if(i === -1){
-			var arLen = sourceBufStor.push(sB);
-			sourceArrStor[arLen-1] = [arBin];
-			sB.addEventListener('updateend', checkEnded.bind(null, (arLen-1)));
-		} else {
-			sourceArrStor[i].push(arBin);
-		}
-	}
-
-	function checkEnded(index, e) {
-		console.log('checkEnded', e.target.ended);
-		if(e.target.ended){
-			saveFile(index);
-		}
-	}
-
-	function saveFile(index) {
-		console.log('saveFile', index);
-		var filename = getCurrentAudioFilename();
-		var file = new File(sourceArrStor[index], filename);
-		var d = URL.createObjectURL(file);
-		var a = document.createElement('a');
-		a.style.display = 'none';
-		document.body.appendChild(a);
-		a.download = filename;
-		a.href = d;
-		a.click();
-		document.body.removeChild(a);
-	}
-
-	function getCurrentAudioFilename() {
-		console.log('getCurrentAudioFilename');
-		if(window.ap && window.ap.getCurrentAudio){
-			var a = window.ap.getCurrentAudio();
-			if(a[3] !== '' && a[4] !== '' ){
-				return a[4] + ' – ' + a[3] + '.mp3';
-			}
-		}
-		return 'track.mp3';
-	}
-	
-	window.sourceBufStor = sourceBufStor;
-	window.sourceArrStor = sourceArrStor;
-	window.getCurrentAudioFilename = getCurrentAudioFilename;
-	window.saveFile = saveFile;
-	
-})();
 
 
 // window.ap._ensureHasURL(audioArr, fun);
 /****************************************************************************************************************/
+
+
+
+
+function strToUint8Array(str, cb) {
+	cb = cb || function(){};
+	var blob = new Blob([str]);
+	var filer = new FileReader;
+	filer.addEventListener('loadend', function(e){
+		var r = e.target.result;
+		var view = new Uint8Array(r);
+		cb(str, view);
+	});
+	filer.readAsArrayBuffer(blob);
+}
+
+
+function joinTwoTypedArray(arr1, arr2) {
+	var buff = arr1.length + arr2.length;
+	var newA = new Uint8Array(buff);
+	newA.set(arr1);
+	newA.set(arr2, arr1.length);
+	return newA;
+}
 
