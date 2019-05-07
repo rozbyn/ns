@@ -1,10 +1,14 @@
 
 
 
-/* global saveVkAudioExtensionKey, SourceBuffer, chrome, contentScriptTabs */
+/* global saveVkAudioExtensionKey, SourceBuffer, chrome, contentScriptTabs, vk, saveVkAudioThisTabID, AdsLight, ap */
 
 ;javascript:(function(){
-	vk.audioAdsConfig.enabled = false;
+	try {
+		AdsLight.setNewBlock = function () {};
+		ap._checkAdsPlay = function (a,b,cb) {cb();};
+	} catch (e) {}
+
 	if(!saveVkAudioExtensionKey || !saveVkAudioThisTabID) return;
 //	document.head.removeChild(document.getElementById('saveVkAudioScript2'));
 	sendMessageToBackgroundScript('pageScriptReady', tracksInfo);
@@ -58,9 +62,9 @@
 						trInfo.status = 'ready';
 						console.log(sourceArrStor[trInfo.binArIndex]);
 //						trInfo.file = new File(sourceArrStor[trInfo.binArIndex], trInfo.name);
-						sendTracksInfo();
 					}
 				});
+				sendTracksInfo();
 			}, 500);
 		}
 	}

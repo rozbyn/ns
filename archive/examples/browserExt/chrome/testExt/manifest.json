@@ -8,7 +8,7 @@
 		"128": "icon128.png"
 	},
 	"browser_action": {
-		"default_icon": "icon128.png",
+		"default_icon": "icon128-gray.png",
 		"default_title": "Сохранить трек VK",
 		"default_popup": "defpopup.html"
 	},
@@ -26,7 +26,7 @@
 			"run_at": "document_end"
 		}
 	],
-	"web_accessible_resources": ["pageScript.js"],
+	"web_accessible_resources": ["pageScript.js", "info/findKeyInWindow.js"],
 	"externally_connectable": {
 		"matches": ["*://*.vk.com/*"]
 	}

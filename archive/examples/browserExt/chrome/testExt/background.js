@@ -18,17 +18,20 @@ var actionsHandlers = {
 		sendResponse(contentScriptTabs);
 	},
 	"tracksInfo" : function (request, sender, sendResponse) {
-		console.log('tracksInfo', request);
+//		console.log('tracksInfo', request, sender);
 		a_tracksInfo = request.data;
-		sendMessageToPopupScript('tracksInfo', request.data);
+		setBadge(a_tracksInfo);
+//		sendMessageToPopupScript('tracksInfo', request.data);
 		sendResponse(true);
 	},
 	"getTracksInfo": function (request, sender, sendResponse) {
+		console.log('getTracksInfo', request, sender);
 		if(!scriptReady) sendResponse(false);
 		sendResponse(a_tracksInfo);
 	},
 	"pageScriptReady": function (request, sender, sendResponse) {
 		scriptReady = true;
+		console.log(request, sender);
 		sendResponse(true);
 	}
 };
@@ -66,14 +69,21 @@ function messagesHandler(request, sender, sendResponse) {
 
 
 chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
-	removeValueFromArray(tabId, contentScriptTabs);
+	var removed = removeValueFromArray(tabId, contentScriptTabs);
+	if(tabId == removed){
+		for (var i in a_tracksInfo) {
+			if(a_tracksInfo[i].tabID == removed){
+				delete a_tracksInfo[i];
+			}
+		}
+	}
 });
 
 
 
 function runActionHandler(request, sender, sendResponse) {
 	if(request.action in actionsHandlers){
-		console.log(request.action, request.data);
+//		console.log(request.action, request.data, sender);
 		return actionsHandlers[request.action](request, sender, sendResponse);
 	} else {
 		sendResponse(10000);
@@ -152,7 +162,34 @@ function sendMessageToPageScript(tabID, action, data) {
 function removeValueFromArray (value, array) {
 	var i = array.indexOf(value);
 	if(i !== -1){
-		array.splice(i, 1);
-		return array;
+		return array.splice(i, 1)[0];;
 	}
 }
+
+
+
+function setBadge(tracksInfo) {
+	var readyCount = 0;
+	var count = 0;
+	var tabID = 0;
+	for (var i in tracksInfo) {
+		if(tracksInfo[i].status === 'ready'){
+			readyCount++;
+		}
+		tabID = tracksInfo[i].tabID;
+		count++;
+	}
+	tabID = parseInt(tabID);
+	if(count > 0){
+		chrome.browserAction.setIcon({path: 'icon128.png', tabId: tabID});
+	} else {
+		chrome.browserAction.setIcon({path: 'icon128-gray.png'});
+	}
+	if(readyCount > 0){
+		chrome.browserAction.setBadgeText({text: ''+readyCount, tabId: tabID});
+	} else {
+		chrome.browserAction.setBadgeText({text: ''});
+	}
+	
+}
+

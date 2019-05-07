@@ -39,8 +39,11 @@ sendMessageToBackgroundScript('getTracksInfo', 0 , processTracksInfo);
 
 /*----------------------------------------------------------------------------*/
 var checkReadyInterval = false;
+var updateInfoTimeout = false;
+var wasFirstChecked = false;
 function processTracksInfo(newTracksInfo) {
 	if(newTracksInfo === false){
+		if(!wasFirstChecked) jo.showHelp();
 		if(!checkReadyInterval){
 			checkReadyInterval = setInterval(function () {
 				console.log('checkReadyInterval');
@@ -48,12 +51,20 @@ function processTracksInfo(newTracksInfo) {
 			}, 200);
 		}
 	} else {
+		if(!wasFirstChecked) jo.hideHelp();
 		sendMessageToBackgroundScript('getContentScriptTabs', 0 , function (taabs) {
 			contentScriptTabs = taabs;
 		});
 		clearInterval(checkReadyInterval);
 		jo.processTracksInfo(newTracksInfo);
+		updateInfoTimeout = setTimeout(function () {
+			sendMessageToBackgroundScript('getTracksInfo', 0 , processTracksInfo);
+			sendMessageToBackgroundScript('getContentScriptTabs', 0, function (taabs) {
+				contentScriptTabs = taabs;
+			});
+		}, 1000);
 	}
+	wasFirstChecked = true;
 }
 
 
@@ -153,14 +164,16 @@ function popupWindowHandler() {
 	var tracksInfo = this.tracksInfo = {};
 	var trackStatusAli = {
 		"ready": 'Готов к загрузке',
-		"loading": 'Загружается...',
+		"loading": 'Загружается...'
 	};
 	
 	var htmlVars = {
+		'helpContainer': {'type': 'id', 'selector': 'helpContainer'},
+		'showHelpLabel': {'type': 'id', 'selector': 'showHelpLabel'},
 		'tracksTableBody': {'type': 'id', 'selector': 'tracksTableBody'}
 	};
 	setHtmlVars();
-	
+	addListeners();
 	
 	
 	
@@ -190,10 +203,53 @@ function popupWindowHandler() {
 	
 	this.processTracksInfo = processTracksInfo;
 	function processTracksInfo(newTracksInfo) {
+		if(!isTracksChanged(newTracksInfo)) return;
 		tracksInfo = newTracksInfo;
 		renderTracks();
 		console.log('processTracksInfo', newTracksInfo);
 	}
+	
+	
+	
+	this.hideHelp = function () {
+		htmlVars.helpContainer.classList.add('collapsed');
+	};
+	this.showHelp = function () {
+		htmlVars.helpContainer.classList.remove('collapsed');
+	};
+	
+	
+	
+	function addListeners() {
+		
+		htmlVars.showHelpLabel.addEventListener('click', function () {
+			htmlVars.helpContainer.classList.toggle('collapsed');
+		});
+		
+	}
+	
+	
+	
+	function isTracksChanged(newTracksInfo) {
+		if(isObjEmpty(tracksInfo) && isObjEmpty(newTracksInfo)) return false;
+		for (var i in newTracksInfo) {
+			if(i in tracksInfo){
+				if(
+						newTracksInfo[i].id !== tracksInfo[i].id
+						|| newTracksInfo[i].name !== tracksInfo[i].name
+						|| newTracksInfo[i].status !== tracksInfo[i].status
+						|| newTracksInfo[i].tabID !== tracksInfo[i].tabID
+				){
+					return true;
+				}
+			} else {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
 	
 	
 	function renderTracks() {
@@ -207,18 +263,18 @@ function popupWindowHandler() {
 	
 	function getTrackTemplate(trackInfo) {
 		var cont = document.createElement('tr');
+		if(trackInfo.status === 'ready'){
+			cont.classList.add("readyToDownload");
+		}
 		var nameRowEl = document.createElement('td');
-		var statusRowEl = document.createElement('td');
 		var actionsRowEl = getActionsTemplate(trackInfo).cont;
 		if(trackInfo.name) nameRowEl.innerHTML = trackInfo.name;
-		if(trackInfo.status) statusRowEl.innerHTML = trackStatusAli[trackInfo.status];
+//		if(trackInfo.status) statusRowEl.innerHTML = trackStatusAli[trackInfo.status];
 		cont.appendChild(nameRowEl);
-		cont.appendChild(statusRowEl);
 		cont.appendChild(actionsRowEl);
 		var obj = {
 			cont: cont,
 			nameRowEl: nameRowEl,
-			statusRowEl: statusRowEl,
 			actionsRowEl: actionsRowEl
 		};
 		return obj;		
@@ -230,11 +286,14 @@ function popupWindowHandler() {
 		var actionsRowEl = document.createElement('td');
 		if(trackInfo.status === 'ready'){
 			var downloadLink = document.createElement('a');
+			downloadLink.classList.add('downloadTrackLink');
 			downloadLink.innerHTML = 'Скачать';
 			downloadLink.vkTrackID = trackInfo.id;
 			downloadLink.vkSaveTabID = trackInfo.tabID;
 			downloadLink.addEventListener('click', onDownloadButtonClick);
 			actionsRowEl.appendChild(downloadLink);
+		} else {
+			actionsRowEl.innerHTML = trackStatusAli[trackInfo.status];
 		}
 		return {cont: actionsRowEl};
 	}
@@ -274,7 +333,11 @@ function popupWindowHandler() {
 		}
 	}
 	
-	
+	function isObjEmpty(obj) {
+		for (var k in obj)
+			return false;
+		return true;
+	}
 	
 	
 	

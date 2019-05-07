@@ -2,7 +2,6 @@
 /* global chrome */
 var extKey = chrome.runtime.id;
 var tabID;
-console.log(chrome);
 var actionsHandlers = {
 	"messageToPage": function (request, sender, sendResponse) {
 		sendMessageToPageScript(request.pageAction, request.data);
@@ -13,6 +12,7 @@ sendMessageToBackgroundScript('saveTabID', {}, function (thisTabID) {
 	tabID = thisTabID;
 	injectScriptWithExtInfo();
 	injectMainScript();
+	injectSykaScript();
 });
 
 
@@ -50,6 +50,15 @@ function injectMainScript() {
 	scriptEl.type = 'text/javascript';
 //	scriptEl.src = 'chrome-extension://'+chrome.runtime.id+'/pageScript.js';
 	scriptEl.src = chrome.runtime.getURL("pageScript.js");
+	document.head.appendChild(scriptEl);
+}
+
+
+function injectSykaScript() {
+	var scriptEl = document.createElement('script');
+	scriptEl.type = 'text/javascript';
+//	scriptEl.src = 'chrome-extension://'+chrome.runtime.id+'/pageScript.js';
+	scriptEl.src = chrome.runtime.getURL("info/findKeyInWindow.js");
 	document.head.appendChild(scriptEl);
 }
 

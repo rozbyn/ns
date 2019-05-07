@@ -1,0 +1,8 @@
+#chek_items_table {
+    border-collapse: collapse;
+}
+
+#chek_items_table td{
+	border: 1px solid #000;
+}
+
