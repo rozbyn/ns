@@ -1,0 +1,2 @@
+e:\site\ns\archive\technologies\java\book\my>javac Example.java
+e:\site\ns\archive\technologies\java\book\my>java -classpath . Example

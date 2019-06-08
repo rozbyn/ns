@@ -1,0 +1,204 @@
+
+@import "/fonts/oswald/oswald.css";
+
+
+/* general */
+html{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	width: 400px;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: #FFF url("/pic/bg.png");
+	font-family: Tahoma, sans-serif;
+	font-weight: 400;
+	border: 3px double #808080;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+p{
+	margin:0;
+	padding:0;
+}
+.no-user-select {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+}
+
+
+
+
+/* tables */
+.table-owfv-x-a{
+	overflow-x: auto;
+}
+table{
+	caption-side: top;
+	color: #8f8f8f;
+	border: 2px solid transparent;
+	border-collapse: collapse;
+	padding: 0 3px;
+	table-layout: fixed;
+	margin: 5px;
+	width: calc(100% - 10px);
+}
+
+table>caption{
+	border-bottom: 0;
+	color: #7e7e7e;
+	font-size: 24px;
+	font-family: Oswald, sans-serif;
+	line-height: 1.2;
+	padding: 6px;
+	text-transform: uppercase;
+}
+
+
+
+table tr>th,
+table tr>td
+{
+	vertical-align: middle;
+	border: 1px #dedede;
+	border-style: solid none;
+}
+
+
+table thead tr>th{
+	background: #29c5e6;
+	color: #fff;
+	padding: 8px 6px;
+}
+table tr>td{
+	padding: 6px;
+}
+table tfoot tr{
+	background: #777;
+	color: #fff;
+}
+table tfoot tr>td{
+	border: 0;
+}
+table td:nth-child(1){
+	width: 76%;
+}
+table td:nth-child(2){
+	text-align: center;
+	cursor: default;
+}
+table tr.readyToDownload{
+	background: #29c5e6;
+	color: #fff;
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+/* help-block */
+#showHelpLabel{
+	cursor: pointer;
+}
+
+.help-block{
+	text-align: left;
+	overflow: hidden;
+}
+.help-block ul{
+	margin: 0;
+	padding: 0 20px;
+}
+.help-block #trackCheme {
+	width: 367px;
+	margin: 4px -150px 0px -25px;
+}
+
+.downloadTrackLink{
+	cursor: pointer;
+}
+
+.downloadTrackLink:hover{
+	text-decoration: underline;
+}
+
+
+
+
+
+/* textarea+fieldset */
+textarea{
+	height: 7em;
+	width: 70%;
+	resize: none;
+	padding: 0.1em 0.5em;
+	line-height: 1.2em;
+	display: inline-block;
+	vertical-align: top;
+}
+textarea[rows]{
+	height: auto;
+}
+textarea[cols]{
+	width: auto;
+}
+
+fieldset{
+	text-align: center;
+	display: inline-block;
+	border: 3px double #808080;
+	padding: 6px;
+	margin: 6px 13px;
+	vertical-align: top;
+	flex: 1 0 auto;
+}
+fieldset>legend{
+	margin: 0;
+	padding: 0px 6px;
+	font-size: 18px;
+	font-family: Oswald;
+	font-weight: 500;
+	line-height: 1.2em;
+	color: #7e7e7e;
+	text-transform: uppercase;
+	border: 3px double;
+}
+.fldst-h-100pr{
+	height: calc(100% - 47px);
+}
+@-moz-document url-prefix() {
+	.fldst-h-100pr {
+		height: 100%;
+	}
+}
+
+
+fieldset.collapsed{
+	height: 0;
+	margin-bottom: 8px;
+}
+
+
+fieldset.collapsed .help-block {
+	height: 0;
+}
