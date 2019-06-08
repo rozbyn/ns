@@ -22,7 +22,13 @@ function arrt($arr){
 header('Content-Type: text/html; charset=utf-8');
 
 echo '<div>';////////////
-$dbTestConnection = new mysqli('localhost', 'root', '', 'test');
+
+
+
+
+$dbConfig = ['host'=>'','name'=>'','user'=>'','pass'=>''];
+
+$dbTestConnection = new mysqli($dbConfig['host'], $dbConfig['user'], $dbConfig['pass'], $dbConfig['name']);
 $dbTestConnection -> set_charset("utf8");
 if (mysqli_connect_errno()){
 	printf("Не удалось подключиться: %s\n", mysqli_connect_error());

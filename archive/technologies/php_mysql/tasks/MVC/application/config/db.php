@@ -22,6 +22,17 @@ if($_SERVER['DOCUMENT_ROOT'] === '/home/u784337761/public_html'){
 		'password' => 'asdaw_q32d213e'
 		
 	];
+} elseif($_SERVER['DOCUMENT_ROOT'] === '/home/x/x905346n/x905346n.beget.tech/public_html') {
+	return [
+		'host' => 'localhost',
+		
+		'name' => 'x905346n_main',
+		
+		'user' => 'x905346n_main',
+		
+		'password' => 'z*7WK4qG'
+		
+	];
 } elseif($_SERVER['DOCUMENT_ROOT'] === '/storage/ssd5/250/7376250/public_html') {
 	return [
 		'host' => 'localhost',
