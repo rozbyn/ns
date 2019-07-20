@@ -53,12 +53,17 @@ if (isset($_POST['path'])) {
 <!DOCTYPE html>
 <html>
 <head>
+		<?=include_once $_SERVER['DOCUMENT_ROOT'] . '/config/yandexMetrika.php';?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <style>
 		body{
 			overflow-y: scroll;
 			font-family: sans-serif;
+			-webkit-user-select: none;  /* Chrome all / Safari all */
+			-moz-user-select: none;     /* Firefox all */
+			-ms-user-select: none;      /* IE 10+ */
+			user-select: none;
 		}
 		.main{
 			background: #fff;

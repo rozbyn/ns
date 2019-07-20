@@ -1,0 +1,4 @@
+javac -classpath . Venicle.java
+javac -classpath . VenicleDemo.java
+
+java -classpath . VenicleDemo

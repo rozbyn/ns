@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Сохранить трек VK - 2019",
 	"description": "Расширение позволяет сохранить проигрываемый трек на сайте vk.com",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"short_name": "Скачать музыку VK",
 	
 	"icons" : {

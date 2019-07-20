@@ -34,19 +34,13 @@ function addSaltToPassword($password, $salt){
 
 
 //Подключение к БД++++++++++++++++++++
-$mysqlHost = 'localhost';
-$mysqlUserName = 'root';
-$mysqlPass = '';
-$mysqlDB = 'test';
-if($_SERVER['DOCUMENT_ROOT'] === '/home/u784337761/public_html'){
-	$mysqlUserName = 'u784337761_root'; $mysqlPass = 'nSCtm9jplqVA'; $mysqlDB = 'u784337761_test';
-} elseif($_SERVER['DOCUMENT_ROOT'] === '/storage/ssd3/266/4204266/public_html'){
-	$mysqlUserName = 'id4204266_root'; $mysqlPass = 'asdaw_q32d213e'; $mysqlDB = 'id4204266_test';
-} elseif($_SERVER['DOCUMENT_ROOT'] === '/storage/ssd5/250/7376250/public_html'){
-	$mysqlUserName = 'id7376250_root'; $mysqlPass = 'jasd07ag'; $mysqlDB = 'id7376250_test';
+$dbConfigFilePath = $_SERVER['DOCUMENT_ROOT'] . '/config/dbConfig.php';
+if(!is_file($dbConfigFilePath)){
+	exit('no db config');
 }
+$dbConfig = require_once $dbConfigFilePath;
 
-$myDbObj = new mysqli($mysqlHost, $mysqlUserName, $mysqlPass, $mysqlDB);
+$myDbObj = new mysqli($dbConfig['host'], $dbConfig['user'], $dbConfig['password'], $dbConfig['name']);
 $myDbObj->set_charset("utf8");
 //++++++++++++++++++++++++++++++++++++
 if(isset($_COOKIE['lastvisited'])){

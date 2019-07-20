@@ -660,7 +660,7 @@ endForm();
 echo '</div>';///////////
 echo '<div>';////////////
 
-echo '<a href="/rozbyn/scripting_task.php">clear</a>';
+echo '<a href="scripting_task.php">clear</a>';
 ?>
 </div>
 </pre>

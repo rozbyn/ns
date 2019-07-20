@@ -4,10 +4,17 @@
 /* global saveVkAudioExtensionKey, SourceBuffer, chrome, contentScriptTabs, vk, saveVkAudioThisTabID, AdsLight, ap */
 
 ;javascript:(function(){
-	try {
-		AdsLight.setNewBlock = function () {};
-		ap._checkAdsPlay = function (a,b,cb) {cb();};
-	} catch (e) {}
+	setInterval(function () {
+		try {AdsLight.setNewBlock = function () {};} catch (e) {}
+		try {ap._checkAdsPlay = function (a,b,cb) {cb();};} catch (e) {}
+		try {ap.ads._fetchAd = function(e, t, n, o, i){o();};} catch (e) {}
+		var adsBlock = document.getElementById('ads_left');
+		if (!adsBlock) return;
+		if (adsBlock.style.display !== 'none') {
+			adsBlock.style.display = 'none';
+		}
+
+	}, 1000);
 
 	if(!saveVkAudioExtensionKey || !saveVkAudioThisTabID) return;
 //	document.head.removeChild(document.getElementById('saveVkAudioScript2'));
@@ -38,7 +45,7 @@
 		var i = sourceBufStor.indexOf(sB);
 		if(i === -1){
 			var trackInfo = getCurrentTrackInfo();
-			console.log(trackInfo);
+//			console.log(trackInfo);
 			sB.trackID = trackInfo.id;
 			trackInfo['soundBuffer'] = sB;
 			trackInfo['status'] = 'loading';
@@ -60,7 +67,7 @@
 					if(el.ended && el.trackID && tracksInfo[el.trackID].status === 'loading'){
 						var trInfo = tracksInfo[el.trackID];
 						trInfo.status = 'ready';
-						console.log(sourceArrStor[trInfo.binArIndex]);
+//						console.log(sourceArrStor[trInfo.binArIndex]);
 //						trInfo.file = new File(sourceArrStor[trInfo.binArIndex], trInfo.name);
 					}
 				});

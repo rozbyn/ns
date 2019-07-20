@@ -16,7 +16,7 @@
           $this->name = $title;
         }
 
-        public function print()
+        public function print2()
         {
           echo "{$this->name} ({$this->id})";
         }
@@ -24,5 +24,5 @@
     }
   }
 
-  (new Container)->anonym()->print();
+  (new Container)->anonym()->print2();
 ?>

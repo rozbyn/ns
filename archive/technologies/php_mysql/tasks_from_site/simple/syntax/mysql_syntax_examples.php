@@ -25,10 +25,14 @@ echo '<div>';////////////
 
 
 
+$dbConfigFilePath = $_SERVER['DOCUMENT_ROOT'] . '/config/dbConfig.php';
+if(!is_file($dbConfigFilePath)){
+	exit('no db config');
+}
+$dbConfig = require_once $dbConfigFilePath;
 
-$dbConfig = ['host'=>'','name'=>'','user'=>'','pass'=>''];
 
-$dbTestConnection = new mysqli($dbConfig['host'], $dbConfig['user'], $dbConfig['pass'], $dbConfig['name']);
+$dbTestConnection = new mysqli($dbConfig['host'], $dbConfig['user'], $dbConfig['password'], $dbConfig['name']);
 $dbTestConnection -> set_charset("utf8");
 if (mysqli_connect_errno()){
 	printf("Не удалось подключиться: %s\n", mysqli_connect_error());

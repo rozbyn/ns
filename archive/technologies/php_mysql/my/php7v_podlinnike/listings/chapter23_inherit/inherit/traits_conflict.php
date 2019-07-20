@@ -29,7 +29,7 @@
     {
       Tag::tags insteadof Author;
       Author::authors insteadof Tag;
-      Author::tags as list;
+//      Author::tags as list;
     }
   }
 
