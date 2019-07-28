@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<title>Заголовок страницы</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+		<meta name="description" content="Описание страницы">
+		<meta name="keywords" content="HTML, META, метатег, тег, поисковая система">
+<!--
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">-->
+
+
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+	</head>
+	<body>
+			<svg id="svg"
+					 version="1.1"
+					 baseProfile="full"
+					 width="100%" height="100%"
+					 xmlns="http://www.w3.org/2000/svg"
+					 viewBox="0 0 1000 500"
+					 preserveAspectRatio="none">
+
+
+			<circle cx="150" cy="100" r="80" fill="green" />
+
+			<text x="150" y="125" font-size="60" text-anchor="middle" fill="white">SVG</text>
+
+			<path id="mainLine" d="M250,20 C400,100 500,25 600,400" fill="none" stroke="blue" stroke-width="5"></path>
+			
+			<path id="subLine1" d="M250,20 L400,100" fill="none" stroke="#525252" stroke-width="1" stroke-dasharray="3"></path>
+			<path id="subLine2" d="M500,25 L600,400" fill="none" stroke="#525252" stroke-width="1" stroke-dasharray="3"></path>
+			
+			<path id="subLine3" d="M500,25 L600,400" fill="none" stroke="#525252" stroke-width="1" stroke-dasharray="3"></path>
+			
+			<path id="perpendLine" d="M500,25 L600,400" fill="none" stroke="#525252" stroke-width="1" stroke-dasharray="3"></path>
+
+			<circle id="startDot" cx="250" cy="20" r="7" fill="#ff3b3b" />
+			<circle id="point1Dot" cx="400" cy="100" r="7" fill="#00bf0b" />
+			<circle id="point2Dot" cx="500" cy="25" r="7" fill="#00d0e0" />
+			<circle id="endDot" cx="600" cy="400" r="7" fill="#797979" />
+			
+			<circle id="testPoint" cx="450" cy="450" r="7" fill="#0ad0e0" />
+			<circle id="testPoint2" cx="450" cy="450" r="7" fill="#000" />
+			
+
+			</svg>
+			<script src="script.js"></script>
+	</body>
+</html>
