@@ -1,0 +1,330 @@
+html{
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
+	
+}
+
+body{
+	overflow-y: scroll;
+	user-select: none;
+	font-family: "OpenSans-Semibold","Helvetica Neue",Arial,Helvetica,sans-serif;
+	font-size: 14px;
+	color: #333;
+}
+
+html, body{
+	margin: 0;
+	padding: 0;
+	
+}
+
+#preloader{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(255, 255, 255, 0.88);
+	z-index: 999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#preloader_image {
+	width: 70px;
+	height: 70px;
+}
+#preloader_text {
+	margin-left: 10px;
+	display: inline-block;
+	font-size: 4em;
+}
+
+
+
+#main{
+	background: #fff;
+	max-width: 1144px;
+	margin: 0  auto;
+	word-wrap: break-word;
+	display: none;
+}
+#explorer_container{
+	width: 530px;
+	background: #ffffff;
+	border-width: 3px;
+	border-style: solid;
+	text-align: center;
+	font-size: 25px;
+	margin: 18px auto;
+	cursor: default;
+}
+.expl_head{
+	min-height: 50px;
+	padding-bottom: 5px;
+}
+.curr_folder{
+	font-size: 40px;
+}
+.par_folder{
+}
+.expl_folder, .expl_file{
+	min-height: 35px;
+	border-width: 1px;
+	border-style: solid;
+	font-weight: 300;
+	position: relative;
+}
+.expl_folder{
+	background: #FFFF99;
+}
+.expl_file {
+	background: #FFCC99;
+}
+.expl_file > a {
+	text-decoration: none;
+	color: inherit;
+	cursor: default;
+	display: block;
+	position: relative;
+	min-height: 35px;
+}
+.fileSynchIcon{
+	position: absolute;
+	z-index: 1;
+	top: 2px;
+	right: 3px;
+	font-size: 0;
+	display: none;
+}
+.fileSynchIcon svg {
+	fill: #e6e6e6;
+}
+.fileSynchIcon:hover svg {
+	fill: #ffffff;
+}
+.expl_file:hover .fileSynchIcon{
+	display: block;
+}
+
+.expl_file:hover, .expl_folder:hover, .curr_folder:hover, .par_folder:hover {
+	background: #a3a3a3;
+}
+
+@media screen and (max-width : 530px){
+	.expl_div{
+		width: 100%;
+	}
+}
+
+.popupContainerOverlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.46);
+	height: 100%;
+	width: 100%;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+}
+
+.filePopupCont{
+	/*min-width: 530px;*/
+	min-height: 400px;
+	background: #b6e8ff;
+	overflow: hidden;
+	width: 70%;
+	height: 70%;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #0a71a2;
+	position: relative;
+	box-shadow: 2px 3px 10px 0px #060606;
+	display: flex;
+	flex-direction: column;
+	border-radius: 3px;
+}
+.popupHeader {
+	color: #ffffff;
+	height: 30px;
+	width: 100%;
+	background: #0a71a2;
+	font-size: 18px;
+	line-height: 26px;
+	overflow: hidden;
+}
+.popupHeaderText{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: calc(100% - 50px);
+	white-space: nowrap;
+	padding-left: 5px;
+}
+.popupHeaderCloseIcon {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: 2px solid;
+	line-height: 17px;
+	height: 25px;
+	width: 24px;
+	font-size: 30px;
+	box-sizing: border-box;
+	cursor: pointer;
+	border-radius: 3px;
+	text-indent: -1px;
+}
+.popupBody {
+	display: flex;
+	flex-direction: column;
+	flex: 1 0 auto;
+}
+.infoMess {
+	margin: 5px 12px;
+	border-bottom-style: dashed;
+	border-bottom-width: 1px;
+	border-bottom-color: #98d3ef;
+}
+.infoMess>a {
+	color: inherit;
+}
+
+#localFileInput{
+	display: none;
+}
+.chooseLocalFileArea {
+	flex: 1 1 auto;
+	background: #b6e8ff;
+	margin: 5px;
+	border: 3px solid #333;
+	border-radius: 3px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.chooseLocalFileArea.dragover
+/*,.chooseLocalFileArea:hover*/
+{
+	border-style: dashed;
+	background: #0a71a2;
+	color: #fff;
+}
+#dropFileHereText {
+	font-size: 50px;
+}
+@media screen and (max-width : 880px){
+	#dropFileHereText{
+		font-size: calc(5.5vw);
+	}
+}
+
+#activeSynchWindow {
+	position: absolute;
+	bottom: 0;
+	right: 20px;
+	background: #b6e8ff;
+	border: 3px solid #0a71a2;
+	min-width: 200px;
+	border-radius: 3px 3px 0 0;
+	display: none;
+}
+
+.activeSynchHeader {
+	background: #0a71a2;
+	color: #fff;
+	height: 19px;
+	padding: 0 2px;
+}
+.activeSynchMinimizeIcon {
+	position: absolute;
+	top: 0;
+	right: 2px;
+	cursor: pointer;
+}
+
+.activeSynchMinimizeIcon:before{
+	content: "\25BC";
+}
+
+.activeSynchMinimizeIcon.upIcon:before{
+	content: "\25B2";
+}
+
+.loadingStatusIndicator {
+	width: 12px;
+	height: 12px;
+	background: #34d240;
+	border-radius: 50%;
+}
+.loadingStatusIndicator.loading {
+	animation: 0.14s steps(2, jump-none) infinite loadingIndicator;
+}
+
+@keyframes loadingIndicator {
+	0% {
+		background-color: #34d240;
+	}
+	100% {
+		background-color: #d23434;
+	}
+}
+
+.activeSynchItemsTable {
+	border-collapse: collapse;
+	table-layout: fixed;
+	min-width: 100%;
+	user-select: text;
+}
+.activeSynchItemsTable a {
+	color: inherit;
+}
+
+.activeSynchItemsTable td {
+	padding: 0;
+	height: 25px;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-right-width: 0;
+	border-left-width: 0;
+	border-style: solid;
+	border-color: #777;
+	vertical-align: middle;
+}
+
+.activeSynchItemsTable td:nth-child(1) {
+	border-left-width: 1px;
+	padding: 0 5px;
+}
+.activeSynchItemsTable td:nth-child(2) {
+	width: 1px;
+}
+.activeSynchItemsTable td:nth-child(3) {
+	width: 1px;
+}
+.activeSynchItemsTable td:nth-child(4) {
+	width: 1px;
+	padding-left: 2px;
+}
+.activeSynchItemsTable td:nth-child(5) {
+	text-align: right;
+	width: 15px;
+	position: relative;
+	padding-left: 15px;
+}
+.stopSynchIcon {
+	font-size: 26px;
+	position: absolute;
+	top: -4px;
+	right: 2px;
+	line-height: 30px;
+	user-select: none;
+	cursor: pointer;
+}
+.stopSynchIcon:hover {
+	color: #616161;
+}

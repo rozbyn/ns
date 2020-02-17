@@ -1,4 +1,6 @@
 (function () {
+	
+	
 	var dropZone = document.getElementById('dropZone');
 	var fileElem = document.getElementById('fileElem');
 	var textEl = dropZone.getElementsByClassName('wrap3')[0];
@@ -13,12 +15,14 @@
 	});
 	dropZone.addEventListener("dragenter", dragover);
 	dropZone.addEventListener("dragover", dragover);
+	dropZone.addEventListener("dragleave", dragEnd);
 	dropZone.addEventListener("dragend", dragEnd);
 	dropZone.addEventListener("dragexit", dragEnd);
 	dropZone.addEventListener("drop", dragEnd);
 	dropZone.addEventListener("drop", drop);
 	
 	function dragover(e) {
+//		console.log(e.dataTransfer);
 		if(isLoading) return;
 		e.stopPropagation();
 		e.preventDefault();
@@ -33,9 +37,12 @@
 	function drop(e) {
 		if(isLoading) return;
 		isLoading = true;
-		toggleLoading();		
+		toggleLoading();
 		e.stopPropagation();
 		e.preventDefault();
+		console.log(e.dataTransfer.files[0]);
+		toggleLoading();
+		return;
 		var dt = e.dataTransfer;
 		var files = dt.files;
 		var file = files[0];
@@ -47,7 +54,7 @@
 		toggleLoading();
 		var files = fileElem.files;
 		var file = files[0];
-		processFile(file);
+//		processFile(file);
 	}
 	
 	
@@ -73,7 +80,8 @@
 	function processFile(file) {
 		var reader = new FileReader;
 		reader.addEventListener('loadend', function () {
-			processArrayBuffer(reader.result);
+			console.log(reader);
+//			processArrayBuffer(reader.result);
 		});
 		reader.readAsArrayBuffer(file);
 	}
@@ -83,7 +91,7 @@
 		var splittedAr = splitUint8Array(ar);
 		var fileName = 'tempFile';
 		var newFile = new File(splittedAr, fileName);
-		saveFile(newFile, fileName);
+//		saveFile(newFile, fileName);
 		isLoading = false;
 		toggleLoading();
 	}
