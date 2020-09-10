@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<title>Сохранить трек VK</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style.css" type="text/css">
+	</head>
+	<body>
+		<fieldset id="helpContainer" class="collapsed">
+			<legend id="showHelpLabel" class="no-user-select">Справка</legend>
+			<div class="help-block">
+				<ul>
+					<li>
+						Откройте страничку "Вконтакте" и начните воспроизведение музыки 
+						(плеер вверху, музыка в записях ленты, из раздела "Моя музыка").
+					</li>
+					<li>
+						Чтобы скачать трек его нужно прослушать от начала до конца.
+					</li>
+					<li>
+						Чтобы ускорить воспроизведение трека передвигайте бегунок времени вперед, но так
+						что-бы бегунок времени не оказался правее полоски загрузки иначе получившийся трек будет "срезанным".
+						<img id="trackCheme" src="pic/trackVKcheme.jpg" alt="trackVKcheme"/>
+					</li>
+					<li>
+						Трек будет готов к загрузке когда серая полоска загрузки "дойдет" до конца
+					</li>
+				</ul>
+			</div>
+		</fieldset>
+
+		
+		
+		
+		<div>
+			<table>
+				<tbody id="tracksTableBody">
+				</tbody>
+			</table>
+		</div>
+		<script src="popup.js"></script>
+	</body>
+</html>
