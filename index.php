@@ -11,7 +11,7 @@ $metricaHtml = include_once $_SERVER['DOCUMENT_ROOT'] . '/config/yandexMetrika.p
 	
 	
     <meta charset="UTF-8">
-    <title>rozbyn.site</title>
+    <title>rozbyn-dev.ru</title>
 		<?=$metricaHtml?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="reset.css" type="text/css">
@@ -22,7 +22,7 @@ $metricaHtml = include_once $_SERVER['DOCUMENT_ROOT'] . '/config/yandexMetrika.p
 </head>
 <body>
     <div class="main">
-        <h1>rozbyn.site</h1>
+        <h1>rozbyn-dev.ru</h1>
         <!--
         <h5></h5>
         <h6></h6>

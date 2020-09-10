@@ -1,354 +1,153 @@
-#tt_main_wrap {
+
+
+html, body{
+	padding: 0;
+	margin: 0;
+	height: 100%;
 	width: 100%;
-	display: inline-block;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-	margin:0 auto;
 }
-#tt_controls_wrap {
-	position: relative;
-	float: right;
-	width: 30%;
+
+.exercises-table {
+	border: 0;
+	border-collapse: collapse;
+	display: none;
+}
+.exercise-name {
+	display: none;
+}
+
+
+.d-n{
+	display: none;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	height: 100%;
+	overflow: auto;
+}
+
+td {
+	padding: 0;
+	margin: 0;
+}
+
+
+.exercises-table img{
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+.exercises-container {
+	display: flex;
+	height: 100%
+}
+
+
+
+.exercises-round-column {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 24.2vh;
+}
+.exercise-item-container {
+	height: 24%;
+	flex: 1 1 auto;
+	/*display: inline;*/
+}
+.exercise-round-number {
+	height: auto;
+	flex: 0 0 auto;
+}
+
+
+.exercises-order-numbers {
+	width: auto;
+}
+
+.exercises-order-numbers .exercise-name {
+	display: block;
+}
+
+
+.exercises-order-numbers .exercise-item-container {
+	flex: 1 1 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.exercises-order-numbers .exercise-item-container:first-child{
+	flex: 0 0 auto;
+	height: auto;
+}
+
+.exercise-image {
+	height: 100%;
+	/*display: inline;*/
+}
+
+
+.exercise-image img{
+	display: block;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+
+
+.exercise-item-container.exercise-round-number .exercise-name {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+
+.timer-container {
+	flex: 1 1 auto;
+	max-width: 700px;
+	height: 100%;
+	/*display: none;*/
+}
+/*@media (min-aspect-ratio: 1/1) {
+  .wrapper {
+    background: #9ff;  blue 
+  }
+}*/
+
+
+/*
+
+@media (max-aspect-ratio: 6/5) {
+  .wrapper {
+    background: #9af;  blue 
+  }
+}*/
+
+
+
+
+
+
+
+
+
+
+#timerFrame {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 740px;
 	height: 600px;
-    background-color: #E3E3E3;
-}
-@media (max-width: 640px) {
-	#tt_controls_wrap {
-		float: left;
-		width: 100%;
-	}
-}
-#controls div .setfield {
-    display: block;
-    top: 0;
-	left: 0;
-	width: 100%;
-    height: 40px;
-    padding-right: 10px;
-    cursor: pointer;
-    border: solid 1px #b3b3b3;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    font-family: Arial, Helvetica, Sans-serif;
-    font-size: 1.5em;
-    text-align: right;
-    color: #4c4c4c;
-}
-#controls div:hover .setfield {
-    display: block;
-    top: 0;
-	left: 0;
-    height: 40px;
-    padding-right: 10px;
-    cursor: pointer;
-    background-color: #909090;
-    border: solid 1px #000;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    font-family: Arial, Helvetica, Sans-serif;
-    font-size: 1.5em;
-    text-align: right;
-    text-shadow: none;
-    color: #efefef;
-}
-#controls div .setfield_label {
-    display: block;
-    position: absolute;
-    top: 0; left: 0;
-    padding: 0 10px;
-    cursor: pointer;
-    line-height: 42px;
-    font-size: 1.2em;
-    color: #4c4c4c;
-}
-#controls div:hover .setfield_label {
-    display: block;
-    position: absolute;
-    top: 0; left: 0;
-    padding: 0 10px;
-    line-height: 42px;
-    text-shadow: none;
-    font-size: 1.2em;
-    color: #efefef;
-}
-#indicator {
-  position: relative;
-    width: 25px;
-    height: 600px;
-    z-index: 1000;
-}
-#indicator #arrow {
-	position: relative;
-    top: 34px;
-	left: 0;
-    width: 25px;
-    height: 46px;
-    background: url('/wp-content/themes/Fitness/lib/images/indicator.png') 0 0 no-repeat;
-    -webkit-transition-property: all;
-    -webkit-transition-duration: 0.25s;
-}
-#tt_timer_wrap {
-    top: 0;
-	left: 0;
-    height: 600px;
-	width: 70%;
-	float: left;
-    background-color: #000;
-}
-#tt_clock_wrap {
-	margin: 20px;
-    height: 292px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-}
-#tt_cycles_wrap {
-	float: left;
-	margin: 20px;
-	min-width: 150px;
-	width: 40%;
-    height: 206px;
-    background-color: #FFF;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-}
-#tt_tabatas_wrap {
-	float: left;
-	margin: 20px;
-	min-width: 150px;
-	width: 40%;
-    height: 206px;
-    background-color: #FFF;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-}
-@media (max-width: 640px) {
-	#tt_timer_wrap {
-		width: 100%;
-	}
-}
-@media (max-width: 400px) {
-	#tt_controls_wrap {
-		height: 580px;
-	}
-
-	#tt_timer_wrap {
-		height: 400px;
-	}
-
-	#tt_clock_wrap {
-		height: 180px;
-	}
-
-	.tt_timer_label {
-		font-size: 2em !important;
-		line-height: 40px !important;
-	}
-
-	.tt_number_label {
-		font-size: 6em !important;
-		line-height: 100px !important;
-	}
-
-	.tt_small_number_label {
-		font-size: 5em !important;
-		line-height: 120px !important;
-	}
-
-	#tt_cycles_wrap {
-		min-width: 100px;
-		height: 150px;
-		margin-top: 0;
-	}
-
-	#tt_tabatas_wrap {
-		min-width: 100px;
-		height: 150px;
-		margin: 0;
-	}
-}
-.tt_timer_label {
-    display: block;
-    line-height: 60px;
-    font-size: 3em;
-    color: #000;
-    text-align: center;
-}
-.tt_small_timer_label {
-    display: block;
-    line-height: 0px;
-    font-size: 26px;
-    font-weight: normal;
-    color: #000;
-    text-align: center;
-}
-.tt_number_label {
-    display: block;
-    line-height: 160px;
-    font-size: 9em;
-    font-weight: bold;
-    color: #000;
-    text-align: center;
-}
-.tt_small_number_label {
-    display: block;
-    line-height: 170px;
-    font-size: 100px;
-    font-weight: bold;
-    color: #000;
-    text-align: center;
-}
-.tt_clock_default {
-    background-color: #FFF;
-}
-
-.tt_clock_prepare {
-    background-color: yellow;
-}
-.tt_clock_work {
-    background-color: lime;
-}
-.tt_clock_rest {
-    background-color: red;
-}
-a.tt_small_button {
-    display: block;
-    line-height: 34px;
-    cursor: pointer;
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-}
-a.tt_big_button {
-    display: block;
-    line-height: 60px;
-    cursor: pointer;
-    background-color: #f45205;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    font-size: 1.75em;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-     text-decoration: none;
-}
-a.tt_big_button_selected {
-    display: block;
-    line-height: 60px;
-    cursor: pointer;
-    background-color: #000;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    font-size: 1.75em;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-     text-decoration: none;
-}
-a.tt_big_button:active {
-    background-color: #000;
-    color: #fff;
-     text-decoration: none;
-}
-a.tt_big_button:hover {
-    background-color: #fff;
-    color: #000;
-     text-decoration: none;
-}
-span.tt_setting_label {
-    display: block;
-    float: right;
-}
-#tt_setpreparetime {
-	position: absolute;
-	top: 34px;
-	margin-left: 2.5%;
-	width: 90%;
-}
-#tt_setworktime {
-	position: absolute;
-	top: 98px;
-	margin-left: 2.5%;
-	width: 90%;
-}
-#tt_setresttime {
-	position: absolute;
-	top: 162px;
-	margin-left: 2.5%;
-	width: 90%;
-}
-#tt_setcycles {
-	position: absolute;
-	top: 226px;
-	margin-left: 2.5%;
-	width: 90%;
-}
-#tt_settabatas {
-	position: absolute;
-	top: 290px;
-	margin-left: 2.5%;
-	width: 90%;
-}
-#tt_plusminus {
-	position: absolute;
-	top: 368px;
-	margin-left: 2.5%;
-	width: 95%;
-}
-#tt_setting_increase {
-    display: block;
-    /*width: 97px;*/
-	width: 49%;
-    height: 38px;
-    float: left;
-    border: solid 1px #b3b3b3;
-    border-left: none;
-    -webkit-border-top-right-radius: 20px;
-    -webkit-border-bottom-right-radius: 20px;
-    -moz-border-radius-topright: 20px;
-    -moz-border-radius-bottomright: 20px;
-}
-#tt_setting_increase:active {
-    background-color: #000;
-    text-shadow: none;
-    color: #efefef;
-    border: none;
-    height: 40px;
-}
-#tt_setting_decrease {
-    display: block;
-	width: 49%;
-    height: 38px;
-    float: left;
-    line-height: 38px;
-    border: solid 1px #b3b3b3;
-    -webkit-border-top-left-radius: 20px;
-    -webkit-border-bottom-left-radius: 20px;
-    -moz-border-radius-topleft: 20px;
-    -moz-border-radius-bottomleft: 20px;
-}
-#tt_setting_decrease:active {
-    background-color: #000;
-    text-shadow: none;
-    color: #efefef;
-    border: none;
-    height: 40px;
-}
-#startbutton {
-	position: absolute;
-	top: 505px;
-	margin-left: 5%;
-	width: 90%;
-}
-#resetbutton {
-	position: absolute;
-	top: 505px;
-	margin-left: 5%;
-	width: 90%;
-}
-#pausebutton {
-	position: absolute;
-	top: 428px;
-	margin-left: 5%;
-	width: 90%;
+	border: 0;
 }

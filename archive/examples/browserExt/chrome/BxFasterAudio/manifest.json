@@ -1,34 +1,32 @@
 {
 	"manifest_version": 2,
-	"name": "Сохранить трек VK - 2019",
-	"description": "Расширение позволяет сохранить проигрываемый трек на сайте vk.com",
-	"version": "0.0.3",
-	"short_name": "Скачать музыку VK",
+	"name": "__MSG_appName__",
+	"description": "__MSG_appDesc__",
+	"version": "1.0.1",
+	"default_locale" : "ru",
+	"short_name": "__MSG_appName__",
 	
 	"icons" : {
-		"128": "icon128.png"
+		"16": "pic/icon16_2.png",
+		"128": "pic/icon128.png"
 	},
-	"browser_action": {
-		"default_icon": "icon128-gray.png",
-		"default_title": "Сохранить трек VK",
-		"default_popup": "defpopup.html"
-	},
-	
-	
 	"background": {
 		"scripts": ["background.js"],
 		"persistent": false
 	},
 	
+	"browser_action": {
+		"default_title": "__MSG_appName__",
+		"default_popup": "popup.html",
+		"default_icon": "pic/icon16_2_gray.png"
+	},
+	
 	"content_scripts" : [
 		{
 			"js": ["contentScript.js"], 
-			"matches": ["*://*.vk.com/*"],
-			"run_at": "document_end"
+			"matches": ["*://*.bitrix24.ru/*"],
+			"all_frames": true,
+			"run_at": "document_idle"
 		}
-	],
-	"web_accessible_resources": ["pageScript.js", "info/findKeyInWindow.js"],
-	"externally_connectable": {
-		"matches": ["*://*.vk.com/*"]
-	}
+	]
 }

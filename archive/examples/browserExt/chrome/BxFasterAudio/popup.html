@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
-		<title>Сохранить трек VK</title>
+		<title id="message_appName">Fast forward Bitrix24</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="style.css" type="text/css">
 	</head>
 	<body>
-		<fieldset id="helpContainer" class="collapsed">
-			<legend id="showHelpLabel" class="no-user-select">Справка</legend>
-			<div class="help-block">
-				<ul>
-					<li>
-						Откройте страничку "Вконтакте" и начните воспроизведение музыки 
-						(плеер вверху, музыка в записях ленты, из раздела "Моя музыка").
+		<div class="background_o"></div>
+		<div class="main_container">
+			<div class="head_container">
+				<div class="I_icon">i</div>
+				<div class="head_text" id="message_headText">
+					Для использования приложения войдите в ваш Битрикс24
+				</div>
+			</div>
+			<div class="center_container">
+				<ul class="actions_list">
+					<li id="message_listItem1Text">
+						Войдите в <span class="bold">сделку/лид/контакт/компанию</span>, содержащую запись звонка
 					</li>
-					<li>
-						Чтобы скачать трек его нужно прослушать от начала до конца.
+					<li id="message_listItem2Text">
+						Нажмите
+						<span class="playIcon">▸</span>,
+						в правой части временной шкалы записи звонка появится надпись “<span class="bold">X1</span>”
 					</li>
-					<li>
-						Чтобы ускорить воспроизведение трека передвигайте бегунок времени вперед, но так
-						что-бы бегунок времени не оказался правее полоски загрузки иначе получившийся трек будет "срезанным".
-						<img id="trackCheme" src="pic/trackVKcheme.jpg" alt="trackVKcheme"/>
+					<li id="message_listItem3Text">
+						Нажмите на “<span class="bold">X1</span>”, 
+						появится выпадающее меню с различными значениями ускорения воспроизведения записи
 					</li>
-					<li>
-						Трек будет готов к загрузке когда серая полоска загрузки "дойдет" до конца
+					<li id="message_listItem4Text">
+						Выберите необходимое ускорение щелчком мыши
 					</li>
 				</ul>
 			</div>
-		</fieldset>
-
-		
-		
-		
-		<div>
-			<table>
-				<tbody id="tracksTableBody">
-				</tbody>
-			</table>
+			<div class="footer_container">
+				<a href="https://bitroid.ru/" class="bitroid_link" target="_blank" id="bitroidLink">
+					<div class="bitroid_logo"></div>
+					<div class="footer_text" id="message_footerText">
+						БИТРОИД — ваш системный интегратор. <br>
+						Больше интересных решений для вашего Битрикс24 на нашем сайте.
+					</div>
+				</a>
+			</div>
 		</div>
+		
 		<script src="popup.js"></script>
 	</body>
 </html>

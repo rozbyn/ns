@@ -1,0 +1,49 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+div{
+	box-sizing: border-box;
+}
+.wrap0 {
+	height: 100%;
+	background: #bec8ff;
+	padding: 50px;
+}
+.wrap1 {
+	border: 10px solid #fff;
+	height: 100%;
+	border-radius: 60px;
+	overflow: hidden;
+}
+.wrap2 {
+	height: 100%;
+	background: cornflowerblue;
+	display: table;
+	width: 100%;
+	border-radius: 50px;
+}
+.wrap3 {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 4em;
+	font-weight: bold;
+	color: #fff;
+	font-family: sans-serif;
+	text-align: center;
+}
+#dropZone{
+	cursor: pointer;
+}
+
+#dropZone.dragover {
+	background: #3f3c74;
+	border: 3px dashed #fff;
+}
+
+#dropZone.loading {
+	background: #3f3c74;
+	border: 0;
+}
+

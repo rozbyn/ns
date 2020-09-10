@@ -18,20 +18,17 @@ var actionsHandlers = {
 		sendResponse(contentScriptTabs);
 	},
 	"tracksInfo" : function (request, sender, sendResponse) {
-//		console.log('tracksInfo', request, sender);
 		a_tracksInfo = request.data;
 		setBadge(a_tracksInfo);
 //		sendMessageToPopupScript('tracksInfo', request.data);
 		sendResponse(true);
 	},
 	"getTracksInfo": function (request, sender, sendResponse) {
-		console.log('getTracksInfo', request, sender);
 		if(!scriptReady) sendResponse(false);
 		sendResponse(a_tracksInfo);
 	},
 	"pageScriptReady": function (request, sender, sendResponse) {
 		scriptReady = true;
-		console.log(request, sender);
 		sendResponse(true);
 	}
 };
@@ -83,7 +80,6 @@ chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
 
 function runActionHandler(request, sender, sendResponse) {
 	if(request.action in actionsHandlers){
-//		console.log(request.action, request.data, sender);
 		return actionsHandlers[request.action](request, sender, sendResponse);
 	} else {
 		sendResponse(10000);

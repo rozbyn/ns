@@ -1,13 +1,11 @@
 
-
-
-/* global saveVkAudioExtensionKey, SourceBuffer, chrome, contentScriptTabs, vk, saveVkAudioThisTabID, AdsLight, ap */
+/* global saveVkAudioExtensionKey, SourceBuffer, chrome, contentScriptTabs, vk, saveVkAudioThisTabID, AdsLight, ap, URL */
 
 ;javascript:(function(){
 	setInterval(function () {
 		try {AdsLight.setNewBlock = function () {};} catch (e) {}
-		try {ap._checkAdsPlay = function (a,b,cb) {cb();};} catch (e) {}
-		try {ap.ads._fetchAd = function(e, t, n, o, i){o();};} catch (e) {}
+		try {ap._checkAdsPlay = function (a,b,cb) {if(typeof cb === 'function') {cb();}};} catch (e) {}
+		try {ap.ads._fetchAd = function(e, t, n, o, i){if(typeof o === 'function') o();};} catch (e) {}
 		var adsBlock = document.getElementById('ads_left');
 		if (!adsBlock) return;
 		if (adsBlock.style.display !== 'none') {
@@ -27,8 +25,12 @@
 		"downloadTrack": function (request) {
 			if(!request.data.id || !(request.data.id in tracksInfo)) return;
 			var trInfo = tracksInfo[request.data.id];
-			trInfo.file = new File([sourceArrStor[trInfo.binArIndex]], trInfo.name);
-			saveFile(trInfo.file);
+			if(trInfo.status === 'directLink' && trInfo.directLink){
+				saveFileByDirectUrl(trInfo);
+			} else {
+				trInfo.file = new File([sourceArrStor[trInfo.binArIndex]], trInfo.name);
+				saveFile(trInfo.file);
+			}
 		}
 	};
 	checkEnded();
@@ -45,7 +47,6 @@
 		var i = sourceBufStor.indexOf(sB);
 		if(i === -1){
 			var trackInfo = getCurrentTrackInfo();
-//			console.log(trackInfo);
 			sB.trackID = trackInfo.id;
 			trackInfo['soundBuffer'] = sB;
 			trackInfo['status'] = 'loading';
@@ -67,7 +68,6 @@
 					if(el.ended && el.trackID && tracksInfo[el.trackID].status === 'loading'){
 						var trInfo = tracksInfo[el.trackID];
 						trInfo.status = 'ready';
-//						console.log(sourceArrStor[trInfo.binArIndex]);
 //						trInfo.file = new File(sourceArrStor[trInfo.binArIndex], trInfo.name);
 					}
 				});
@@ -86,6 +86,9 @@
 				tabID: tracksInfo[i].tabID,
 				status: tracksInfo[i].status
 			};
+			if(tracksInfo[i].directLink){
+				objToSend[i].directLink = tracksInfo[i];
+			}
 		}
 		sendMessageToBackgroundScript('tracksInfo', objToSend);
 	}
@@ -104,7 +107,6 @@
 	}
 
 	function getCurrentAudioFilename() {
-		console.log('getCurrentAudioFilename');
 		if(window.ap && window.ap.getCurrentAudio){
 			var a = window.ap.getCurrentAudio();
 			if(a[3] && a[4]){
@@ -112,6 +114,19 @@
 			}
 		}
 		return 'track.mp3';
+	}
+	
+	
+	
+	function saveFileByDirectUrl(trackInfo) {
+		var a = document.createElement('a');
+		a.style.display = 'none';
+		document.body.appendChild(a);
+		a.download = trackInfo.name;
+		a.href = trackInfo.directLink;
+		a.target = '_blank';
+		a.click();
+		document.body.removeChild(a);
 	}
 	
 	
@@ -147,6 +162,7 @@
 	window.saveVkAudio.audioStor = audioStor;
 	window.saveVkAudio.getCurrentAudioFilename = getCurrentAudioFilename;
 	window.saveVkAudio.saveFile = saveFile;
+	window.saveVkAudio.saveFileByDirectUrl = saveFileByDirectUrl;
 	window.saveVkAudio.sendMessage = sendMessage;
 	
 	
@@ -163,7 +179,6 @@
 	
 	function runActionHandler(request) {
 		if (request.action in actionsHandlers) {
-			console.log(request.action, request.data);
 			return actionsHandlers[request.action](request);
 		}
 	}
@@ -224,5 +239,66 @@
 	window.saveVkAudio.sendMessageToBackgroundScript = sendMessageToBackgroundScript;
 	window.saveVkAudio.sendMessageToContentScript = sendMessageToContentScript;
 	
+	
+	
+	var directLinkRegex = /^https:\/\/.+?audios\/\w+\.(mp3|wav|wave|wma|ogg|aac|ac3)/;
+	window.ap.eventBus.subscribe('start', async function () {
+		var audioSrc = window.ap._impl._currentAudioEl.src;
+		var isDirectLink = directLinkRegex.test(audioSrc);
+		if(isDirectLink && !window.ap._impl._currentHls){ // Трек доступен по прямой ссылке
+			var trackInfo = getCurrentTrackInfo();
+			if(trackInfo.id in tracksInfo) return;
+			var response = await fetch(audioSrc);
+			var contentType = response.headers.get('content-type');
+			if(response.status !== 200 || contentType.indexOf('audio') !== 0){
+				return;
+			}
+			trackInfo.arrayBuffer = await response.arrayBuffer();
+			trackInfo.binArIndex = sourceArrStor.length;
+			sourceArrStor.push(trackInfo.arrayBuffer);
+			trackInfo.status = 'ready';
+//			trackInfo.directLink = audioSrc;
+			tracksInfo[trackInfo.id] = trackInfo;
+			
+			
+			
+			sendTracksInfo();
+		}
+	});
+
+
+/*
+window.ap.eventBus.subscribe()
+ADDED: "added"
+AD_COMPLETED: "ad_completed"
+AD_DEINITED: "ad_deinit"
+AD_READY: "ad_ready"
+AD_STARTED: "ad_started"
+BUFFERED: "buffered"
+CAN_PLAY: "actual_start"
+CURRENT_CHANGED: "curr"
+DESELECT: "deselect"
+EMPTY_PLAYLIST: "empty_playlist"
+ENDED: "ended"
+FAILED: "failed"
+FREQ_UPDATE: "freq"
+INIT: "init"
+LOADED: "loaded"
+NOT_FOUND_PLAYLIST: "not_found_playlist"
+PAUSE: "pause"
+PLAY: "start"
+PLAYLIST_CHANGED: "plchange"
+PLAY_NEXT: "play_next"
+PLAY_REQUESTED: "request_play"
+PROGRESS: "progress"
+REMOVED: "removed"
+SEEK: "seek"
+SELECT: "select"
+START_LOADING: "start_load"
+STOP: "stop"
+UPDATE: "update"
+VOLUME: "volume"
+
+*/
 	
 })();

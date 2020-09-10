@@ -2,7 +2,6 @@
 /* global chrome */
 
 
-
 var contentScriptTabs = [];
 var extKey = chrome.runtime.id;
 var actionsHandlers = {
@@ -46,7 +45,6 @@ function processTracksInfo(newTracksInfo) {
 		if(!wasFirstChecked) jo.showHelp();
 		if(!checkReadyInterval){
 			checkReadyInterval = setInterval(function () {
-				console.log('checkReadyInterval');
 				sendMessageToBackgroundScript('getTracksInfo', 0 , processTracksInfo);
 			}, 200);
 		}
@@ -83,7 +81,6 @@ function messagesHandler(request, sender, sendResponse) {
 
 function runActionHandler(request, sender, sendResponse) {
 	if(request.action in actionsHandlers){
-		console.log(request.action, request.data);
 		return actionsHandlers[request.action](request, sender, sendResponse);
 	} else {
 		sendResponse(10000);
@@ -137,7 +134,6 @@ function sendMessageToPageScript(tabID, action, data) {
 		data: data
 	};
 	if(tabID && contentScriptTabs.indexOf(tabID) !== -1){
-		console.log('sendMessageToPageScript', tabID, data);
 		chrome.tabs.sendMessage(tabID, objToSend);
 	} else if (tabID === 'all') {
 		contentScriptTabs.forEach(function (y_tabID) {
@@ -164,7 +160,7 @@ function popupWindowHandler() {
 	var tracksInfo = this.tracksInfo = {};
 	var trackStatusAli = {
 		"ready": 'Готов к загрузке',
-		"loading": 'Загружается...'
+		"loading": 'Загружается...',
 	};
 	
 	var htmlVars = {
@@ -206,7 +202,6 @@ function popupWindowHandler() {
 		if(!isTracksChanged(newTracksInfo)) return;
 		tracksInfo = newTracksInfo;
 		renderTracks();
-		console.log('processTracksInfo', newTracksInfo);
 	}
 	
 	

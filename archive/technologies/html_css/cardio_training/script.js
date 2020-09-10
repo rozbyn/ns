@@ -195,11 +195,27 @@ function STTabataTimerViewController() {
 			document.getElementById('arrow').style.top = "290px";
 		}
 	};
+	
+	var lastPlayedAudio;
 	playSound = function (soundfile) {
-		document.getElementById('tt_sound').innerHTML = "<audio id=\"background_audio\" autoplay=\"autoplay\"><source src=\"" + soundfile + "\" type=\"audio/mpeg\" /></audio>";
+		stopSound();
+		console.log(soundfile, soundfile+'Audio');
+		var audioEl = document.getElementById(soundfile+'Audio');
+		if(!audioEl) return;
+		lastPlayedAudio = audioEl;
+		audioEl.currentTime = 0;
+		var t = audioEl.play();
+		
+		
+		t.then(function () {
+//			log(1); 
+		}, function () {
+//			log(audioEl.error);
+		});
+//		document.getElementById('tt_sound').innerHTML = "<audio id=\"background_audio\" autoplay=\"autoplay\"><source src=\"" + soundfile + "\" type=\"audio/mpeg\" /></audio>";
 	};
 	stopSound = function () {
-		document.getElementById('tt_sound').innerHTML = "";
+		if(lastPlayedAudio) lastPlayedAudio.pause();
 	};
 	setTimerData = function (i) {
 		if (field === 'prepare') {
@@ -397,3 +413,96 @@ function STTabataTimerViewController() {
 		playSound('' + sounds.stoppingsession);
 	};
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(function () {
+
+
+
+
+//    frame = BX24.getScrollSize();
+//    BX24.resizeWindow(frame.scrollWidth, 1200); /???????????????????????????????????????????????????????????
+	var logAddListener = false;
+	var logWaitStack = [];
+	var logElID = 'LOG_DIV';
+	function log () {
+		var myArgs = arguments;
+		var logEl = document.getElementById(logElID);
+		if(!logEl && !logAddListener){
+			logEl = document.createElement('div');
+			logEl.style.position = 'absolute';
+			logEl.style.top = '10px';
+			logEl.style.left = '10px';
+			logEl.style.padding = '10px';
+			logEl.style.background = '#fff';
+			logEl.style.whiteSpace = 'pre';
+
+			logEl.addEventListener('click', function () {
+				logEl.innerHTML = '';
+			});
+
+			logEl.id = logElID;
+			logAddListener = true;
+			if(document.readyState === "complete"){
+				document.body.appendChild(logEl);
+				log.apply(null, myArgs);
+			} else {
+				window.addEventListener('load', function () {
+					document.body.appendChild(logEl);
+					log.apply(null, myArgs);
+				});
+			}
+		} else if (!logEl && logAddListener) {
+			logWaitStack.push(arguments);
+		} else {
+			if(logWaitStack.length > 0){
+				for(var i = 0; i < logWaitStack.length; i++) {
+					display(logWaitStack[i], logEl);
+				};
+				logWaitStack = [];
+			}
+			display(arguments, logEl);
+		}
+	}
+
+
+	function display(args, logEl) {
+		for (var i in args) {
+			if (typeof args[i] === 'object' && args[i] !== null && typeof args[i].nodeName !== 'string') {
+				logEl.innerHTML += '\r\n';
+				logEl.innerHTML += JSON.stringify(args[i], null, '\t');
+				logEl.innerHTML += '\r\n';
+			} else {
+				logEl.innerHTML += args[i] + ', ';
+			}
+		}
+		logEl.innerHTML += '\r\n';
+	}
+	window.log = log;
+})();

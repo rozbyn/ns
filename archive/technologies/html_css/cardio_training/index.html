@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
-		<title>cardio_trening</title>
+		<title>cardio_training</title>
 		<meta charset="UTF-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		
@@ -11,37 +11,150 @@
 		<meta name="description" content="Описание страницы">
 		<meta name="keywords" content="HTML, META, метатег, тег, поисковая система"> 
 
-		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 		<link rel="stylesheet" type="text/css" href="style.css">
 		
-		<style>
-			#timerFrame {
-				position: absolute;
-				top: 0;
-				right: 0;
-				width: 740px;
-				height: 600px;
-			}
-		</style>
 		
-		
-		<script>
-			function resizeIframe(obj) { obj.style.height = obj.contentWindow.document.body.scrollHeight + 10 + 'px'; }
+		<link type="text/css" rel="stylesheet" href="timer_style.css" />
+		<script type="text/javascript" src="script.js"></script>
+		<script type="text/javascript">
+			var labels = {
+				workout : "Тренировка",
+				prepare : "Подготовка",
+				work : "Работа",
+				rest : "Отдых",
+				cycles : "Раунды",
+				tabatas : "Циклы",
+				cyclesl : "Раунды",
+				tabatasl : "Циклы",
+				start : "СТАРТ",
+				stop : "СТОП",
+				pause : "ПАУЗА",
+				resume : "Продолжить"
+			};
+
+			var sounds = {
+				pausingsession : "pause",
+				rest : "rest",
+				sessioncomplete : "complete",
+				startingsession: "pause",
+				stoppingsession: "pause",
+				tabatacomplete: "tabatacomplete",
+				work: "work",
+				warning: "working"
+			};
+
+			var newtimer = new STTabataTimerViewController();
 		</script>
 	</head>
 	
 	<body>
 		<div class="wrapper">
-		
-			<table border="2">
+			<div class="exercises-container">
+				
+				
+				<div class="exercises-round-column exercises-order-numbers">
+					<div class="exercise-item-container">
+						<div class="exercise-name">№</div>
+					</div>
+					<div class="exercise-item-container">
+						<div class="exercise-name">1</div>
+					</div>
+					<div class="exercise-item-container">
+						<div class="exercise-name">2</div>
+					</div>
+					<div class="exercise-item-container">
+						<div class="exercise-name">3</div>
+					</div>
+					<div class="exercise-item-container">
+						<div class="exercise-name">4</div>
+					</div>
+				</div>
+				
+				
+				<div class="exercises-round-column">
+					<div class="exercise-item-container exercise-round-number">
+						<div class="exercise-name">Раунд 1</div>
+					</div>
+					<div class="exercise-item-container">
+						<div class="exercise-name">Ходьба с захлестом голени</div>
+						<div class="exercise-image"><img src="img/2.gif"></div>
+					</div>
+					<div class="exercise-item-container">
+						<div class="exercise-name">Подъем колен к груди</div>
+						<div class="exercise-image"><img src="img/3.gif"></div>
+					</div>
+					<div class="exercise-item-container">
+						<div class="exercise-name">Бокс</div>
+						<div class="exercise-image"><img src="img/8.gif"></div>
+					</div>
+					<div class="exercise-item-container">
+						<div class="exercise-name">Разведение ног в планке</div>
+						<div class="exercise-image"><img src="img/13-0.gif"></div>
+					</div>
+				</div>
+				
+				
+				<div class="exercises-round-column">
+					<div class="exercise-item-container exercise-round-number">
+						<div class="exercise-name">Раунд 2</div>
+					</div>
+					<div class="exercise-item-container">
+						<div class="exercise-name">Разведение рук и ног</div>
+						<div class="exercise-image"><img src="img/1.gif"></div>
+					</div>
+					<div class="exercise-item-container">
+						<div class="exercise-name">Подтягивание колен</div>
+						<div class="exercise-image"><img src="img/5.gif"></div>
+					</div>
+					<div class="exercise-item-container">
+						<div class="exercise-name">Удар ногой вбок с касанием пола</div>
+						<div class="exercise-image"><img src="img/9.gif"></div>
+					</div>
+					<div class="exercise-item-container">
+						<div class="exercise-name">Низкоударные берпи</div>
+						<div class="exercise-image"><img src="img/11.gif"></div>
+					</div>
+				</div>
+				
+				
+				<div class="exercises-round-column">
+					<div class="exercise-item-container exercise-round-number">
+						<div class="exercise-name">Раунд 3</div>
+					</div>
+					<div class="exercise-item-container">
+						<div class="exercise-name">Конькобежец</div>
+						<div class="exercise-image"><img src="img/4.gif"></div>
+					</div>
+					<div class="exercise-item-container">
+						<div class="exercise-name">Удар ногой вперед и назад</div>
+						<div class="exercise-image"><img src="img/10.gif"></div>
+					</div>
+					<div class="exercise-item-container">
+						<div class="exercise-name">Ходьба в планку</div>
+						<div class="exercise-image"><img src="img/12.gif"></div>
+					</div>
+					<div class="exercise-item-container">
+						<div class="exercise-name">Спринтер</div>
+						<div class="exercise-image"><img src="img/7.gif"></div>
+					</div>
+				</div>
+				
+				
+			</div>
+			
+			
+			
+			<table class="exercises-table">
 				<thead>
 					<tr>
 						<th>№</th>
-						<th>Раунд 1 (повторяем в 2 круга)	</th>
-						<th>Раунд 2 (повторяем в 2 круга)</th>
-						<th>Раунд 3 (повторяем в 2 круга)</th>
+						<!--<th>Раунд 1</th>-->
+						<th>Раунд 1</th>
+						<th>Раунд 2</th>
+						<th>Раунд 3</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -51,15 +164,15 @@
 					<tr>
 						<td>1</td>
 						<td>
-							<div>Ходьба с захлестом голени</div>
+							<div class="exercise-name">Ходьба с захлестом голени</div>
 							<div><img src="img/2.gif"></div>
 						</td>
 						<td>
-							<div>Разведение рук и ног</div>
+							<div class="exercise-name">Разведение рук и ног</div>
 							<div><img src="img/1.gif"></div>
 						</td>
 						<td>
-							<div>Конькобежец</div>
+							<div class="exercise-name">Конькобежец</div>
 							<div><img src="img/4.gif"></div>
 						</td>
 					</tr>
@@ -69,15 +182,15 @@
 					<tr>
 						<td>2</td>
 						<td>
-							<div>Подъем колен к груди</div>
+							<div class="exercise-name">Подъем колен к груди</div>
 							<div><img src="img/3.gif"></div>
 						</td>
 						<td>
-							<div>Подтягивание колен</div>
+							<div class="exercise-name">Подтягивание колен</div>
 							<div><img src="img/5.gif"></div>
 						</td>
 						<td>
-							<div>Удар ногой вперед и назад</div>
+							<div class="exercise-name">Удар ногой вперед и назад</div>
 							<div><img src="img/10.gif"></div>
 						</td>
 					</tr>
@@ -87,15 +200,15 @@
 					<tr>
 						<td>3</td>
 						<td>
-							<div>Бокс</div>
+							<div class="exercise-name">Бокс</div>
 							<div><img src="img/8.gif"></div>
 						</td>
 						<td>
-							<div>Удар ногой вбок с касанием пола</div>
+							<div class="exercise-name">Удар ногой вбок с касанием пола</div>
 							<div><img src="img/9.gif"></div>
 						</td>
 						<td>
-							<div>Ходьба в планку</div>
+							<div class="exercise-name">Ходьба в планку</div>
 							<div><img src="img/12.gif"></div>
 						</td>
 					</tr>
@@ -105,15 +218,15 @@
 					<tr>
 						<td>4</td>
 						<td>
-							<div>Разведение ног в планке</div>
-							<div><img src="img/13.gif"></div>
+							<div class="exercise-name">Разведение ног в планке</div>
+							<div><img src="img/13-0.gif"></div>
 						</td>
 						<td>
-							<div>Низкоударные берпи</div>
+							<div class="exercise-name">Низкоударные берпи</div>
 							<div><img src="img/11.gif"></div>
 						</td>
 						<td>
-							<div>Спринтер</div>
+							<div class="exercise-name">Спринтер</div>
 							<div><img src="img/7.gif"></div>
 						</td>
 					</tr>
@@ -125,8 +238,102 @@
 				</tbody>
 
 			</table>
-			
-			<iframe id="timerFrame" seamless=""  scrolling="no"  src="./test.html"></iframe>
+			<div class="timer-container">
+
+				
+				<audio id="tabatacompleteAudio" class="d-n" preload="auto" controls>
+					<source src="sound/tabatacomplete.ogg" type="audio/ogg">
+					<source src="sound/tabatacomplete.mp3" type="audio/mpeg">
+				</audio>
+
+
+				<audio id="completeAudio" class="d-n" preload="auto">
+					<source src="sound/complete.ogg" type="audio/ogg">
+					<source src="sound/complete.mp3" type="audio/mpeg">
+				</audio>
+
+
+				<audio id="pauseAudio" class="d-n" preload="auto">
+					<source src="sound/pause.ogg" type="audio/ogg">
+					<source src="sound/pause.mp3" type="audio/mpeg">
+				</audio>
+
+
+				<audio id="restAudio" class="d-n" preload="auto">
+					<source src="sound/rest.ogg" type="audio/ogg">
+					<source src="sound/rest.mp3" type="audio/mpeg">
+				</audio>
+
+
+				<audio id="workAudio" class="d-n" preload="auto">
+					<source src="sound/work.ogg" type="audio/ogg">
+					<source src="sound/work.mp3" type="audio/mpeg">
+				</audio>
+
+
+				<audio id="workingAudio" class="d-n" preload="auto">
+					<source src="sound/working.ogg" type="audio/ogg">
+					<source src="sound/working.mp3" type="audio/mpeg">
+				</audio>
+
+				<div id="tt_main_wrap">
+					
+					<div id="tt_controls_wrap">
+						<div id="indicator">
+							<div id="arrow"></div>
+						</div>
+						<div id="controls">
+							<div class="timer-config-field-container" id="tt_setpreparetime">
+								<input type="text" class="setfield" id="setpreparetime" readonly="readonly" onfocus="newtimer.setField('prepare');" ondblclick="newtimer.zero();" />
+								<span onclick="newtimer.setField('prepare');" ondblclick="newtimer.zero();" class="setfield_label" id="setpreparetime_label"></span>
+							</div>
+							<div class="timer-config-field-container" id="tt_setworktime">
+								<input type="text" class="setfield" id="setworktime" readonly="readonly" onfocus="newtimer.setField('work');" ondblclick="newtimer.zero();" />
+								<span onclick="newtimer.setField('work');" ondblclick="newtimer.zero();" class="setfield_label" id="setworktime_label"></span>
+							</div>
+							<div class="timer-config-field-container" id="tt_setresttime">
+								<input type="text" class="setfield" id="setresttime" readonly="readonly" onfocus="newtimer.setField('rest');" ondblclick="newtimer.zero();" />
+								<span onclick="newtimer.setField('rest');" ondblclick="newtimer.zero();" class="setfield_label" id="setresttime_label"></span>
+							</div>
+							<div class="timer-config-field-container" id="tt_setcycles">
+								<input type="text" class="setfield" id="setcycles" readonly="readonly" onfocus="newtimer.setField('cycles');" ondblclick="newtimer.zero();" />
+								<span onclick="newtimer.setField('cycles');" ondblclick="newtimer.zero();" class="setfield_label" id="setcycles_label"></span>
+							</div>
+							<div class="timer-config-field-container" id="tt_settabatas">
+								<input type="text" class="setfield" id="settabatas" readonly="readonly" onfocus="newtimer.setField('tabatas');" ondblclick="newtimer.zero();" />
+								<span onclick="newtimer.setField('tabatas');" ondblclick="newtimer.zero();" class="setfield_label" id="settabatas_label"></span>
+							</div>
+							<div class="timer-config-field-container" id="tt_plusminus">
+								<a class="tt_small_button" id="tt_setting_decrease" onmousedown="newtimer.minus();" onmouseup="newtimer.invalidate();" onmouseout="newtimer.invalidate();">-</a>
+								<a class="tt_small_button" id="tt_setting_increase" onmousedown="newtimer.plus();" onmouseup="newtimer.invalidate();" onmouseout="newtimer.invalidate();">+</a>
+							</div>
+						</div>
+						<div style="clear:both">
+							<a class="tt_big_button" id="resetbutton" style="display:none" onclick="newtimer.resetButtonPushed();"></a>
+							<a class="tt_big_button" id="pausebutton" style="display:none" onclick="newtimer.stopButtonPushed();"></a>
+							<a class="tt_big_button" id="startbutton" onclick="newtimer.startButtonPushed();"></a>
+						</div>
+					</div>
+
+					<div id="tt_timer_wrap">
+						<div id="tt_clock_wrap" class="tt_clock_default">
+							<span class="tt_timer_label" id="tt_clock_label"></span>
+							<span class="tt_number_label" id="currenttime"></span>
+						</div>
+						<div>
+							<div id="tt_cycles_wrap">
+								<span class="tt_small_number_label" id="currentcycle"></span>
+								<span class="tt_small_timer_label" id="tt_cycles_label"></span>
+							</div>
+							<div id="tt_tabatas_wrap">
+								<span class="tt_small_number_label" id="currenttabata"></span>
+								<span class="tt_small_timer_label" id="tt_tabatas_label"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script>newtimer.sessionLoaded();</script>
+			</div>
 			
 		
 		</div>

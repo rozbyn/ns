@@ -47,7 +47,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		}
 		
 		
-		$result = file_put_contents($_REQUEST['PATH'], $newFileContent, LOCK_EX);
+//		$result = file_put_contents($_REQUEST['PATH'], $newFileContent, LOCK_EX);
 		if($result === false){
 			$jsonArr['ERROR'] = 'Error target file writing';
 			showJsonAndExit();

@@ -1,4 +1,6 @@
 
+
+
 /* global chrome */
 var extKey = chrome.runtime.id;
 var tabID;
@@ -68,7 +70,6 @@ function messagesHandler(request, sender, sendResponse) {
 
 function runActionHandler(request, sender, sendResponse) {
 	if(request.action in actionsHandlers){
-		console.log(request.action, request.data);
 		return actionsHandlers[request.action](request, sender, sendResponse);
 	} else {
 		sendResponse(10000);
