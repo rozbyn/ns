@@ -205,6 +205,20 @@
 	}
 	
 	
+	
+	function onToggleAudioMessagePlay(elem) {
+		var audioMessInfo = {
+			id : elem.getAttribute('id'),
+			name : elem.getAttribute('aria-label'),
+			duration : elem.getAttribute('data-duration'),
+			mp3link : elem.getAttribute('data-mp3'),
+			ogglink : elem.getAttribute('data-ogg'),
+		};
+		console.log(audioMessInfo, this, arguments);
+		origToggleAudioMessageFunc.apply(this, arguments);
+	}
+	
+	
 	window.saveVkAudio = {};
 	window.saveVkAudio.sourceBufStor = sourceBufStor;
 	window.saveVkAudio.sourceArrStor = sourceArrStor;
@@ -310,7 +324,7 @@
 //	console.log(checkAudioPlayer() && !IS_MOBILE_PLAYER);
 	if(checkAudioPlayer() && !IS_MOBILE_PLAYER){
 		window.ap.eventBus.subscribe('start', async function () {
-//			console.log(arguments, this);
+			console.log(arguments, this);
 			var directLinkRegex = /^https:\/\/.+?\.(mp3|wav|wave|wma|ogg|aac|ac3)/;
 			var audioSrc = window.ap._impl._currentAudioEl.src;
 			var isDirectLink = directLinkRegex.test(audioSrc);
@@ -362,7 +376,17 @@
 		});
 	}
 	
-
+	// AudioMessagePlayer.togglePlay
+	
+	var origToggleAudioMessageFunc;
+	if(
+			('AudioMessagePlayer' in window) 
+			&& ('togglePlay' in window.AudioMessagePlayer) 
+			&& (typeof window.AudioMessagePlayer.togglePlay === 'function') 
+	){
+		origToggleAudioMessageFunc = window.AudioMessagePlayer.togglePlay;
+		window.AudioMessagePlayer.togglePlay = onToggleAudioMessagePlay;
+	}
 
 /*
 window.ap.eventBus.subscribe()
