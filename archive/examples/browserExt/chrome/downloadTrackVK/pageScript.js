@@ -1,6 +1,9 @@
 
 /* global saveVkAudioExtensionKey, SourceBuffer, chrome, contentScriptTabs, vk, saveVkAudioThisTabID, AdsLight, ap, URL, audio, playerAdapter */
 
+
+
+
 ;javascript:(function(){
 	
 	setInterval(function () {
@@ -17,6 +20,8 @@
 	
 	var CAN_WORK = false;
 	var IS_MOBILE_PLAYER = false;
+	
+	
 	
 	
 	
@@ -105,7 +110,10 @@
 				status: tracksInfo[i].status
 			};
 			if(tracksInfo[i].directLink){
-				objToSend[i].directLink = tracksInfo[i];
+				objToSend[i].directLink = tracksInfo[i].directLink;
+			}
+			if(tracksInfo[i].coverUrl){
+				objToSend[i].coverUrl = tracksInfo[i].coverUrl;
 			}
 		}
 		sendMessageToBackgroundScript('tracksInfo', objToSend);
@@ -155,14 +163,47 @@
 			var a = window.audio.getCurrent();
 			trackInfo['id'] = a.fullId; // 5675103_456239174
 			trackInfo['name'] = a.performer + ' - ' + a.title + '.mp3';
+			if(typeof a.coverUrl_p === 'string' && a.coverUrl_p.length > 0){
+				trackInfo.coverUrl = a.coverUrl_p;
+			} else if(typeof a.coverUrl_s === 'string' && a.coverUrl_s.length > 0){
+				trackInfo.coverUrl = a.coverUrl_s;
+			}
 		} else if ('ap' in window) {
 			a = window.ap.getCurrentAudio();
 			trackInfo['id'] = a[1] + '_' + a[0]; // 5675103_456239140
 			trackInfo['name'] = a[4] + ' - ' + a[3] + '.mp3'; // Hatom - Hard Street (Исполнитель - Трек)
+			var coverUrl = getCoverMaxSizeUrl(a[14]);
+			if(coverUrl) trackInfo.coverUrl = coverUrl;
 		}
 		trackInfo['tabID'] = saveVkAudioThisTabID;
 		return trackInfo;
 	}
+	
+	
+	
+	function getCoverMaxSizeUrl(coverUrlsString) {
+		if (typeof coverUrlsString !== 'string' || coverUrlsString.length < 1) {
+			return false;
+		}
+		var url = false;
+		var size = 0;
+		var arUrls = coverUrlsString.split(',');
+		for (var i = 0; i < arUrls.length; i++) {
+			try {
+				var urlObj = new URL(arUrls[i]);
+			} catch (e) {
+				continue;
+			}
+			var tempSize = parseInt(urlObj.searchParams.get('size'));
+			if(isFinite(tempSize) && tempSize > 0 && tempSize > size){
+				size = tempSize;
+				url = arUrls[i];
+			}
+		}
+		if(url) return url;
+		return false;
+	}
+	
 	
 	
 	function getNextTrackInfo() {
@@ -180,11 +221,19 @@
 			if(!nextAudio) return false;
 			trackInfo.id = nextAudio.fullId; // 5675103_456239174
 			trackInfo.name = nextAudio.performer + ' - ' + nextAudio.title + '.mp3';
+			if(typeof nextAudio.coverUrl_p === 'string' && nextAudio.coverUrl_p.length > 0){
+				trackInfo.coverUrl = nextAudio.coverUrl_p;
+			} else if(typeof nextAudio.coverUrl_s === 'string' && nextAudio.coverUrl_s.length > 0){
+				trackInfo.coverUrl = nextAudio.coverUrl_s;
+			}
+			
 			
 		} else if ('ap' in window) {
 			a = window.ap.getCurrentPlaylist().getNextAudio(window.ap.getCurrentAudio());
 			trackInfo.id = a[1] + '_' + a[0];
 			trackInfo.name = a[4] + ' - ' + a[3] + '.mp3';
+			var coverUrl = getCoverMaxSizeUrl(a[14]);
+			if(coverUrl) trackInfo.coverUrl = coverUrl;
 		}
 		trackInfo['tabID'] = saveVkAudioThisTabID;
 		return trackInfo;
@@ -214,7 +263,25 @@
 			mp3link : elem.getAttribute('data-mp3'),
 			ogglink : elem.getAttribute('data-ogg'),
 		};
-		console.log(audioMessInfo, this, arguments);
+		if(audioMessInfo.id in tracksInfo) {
+			origToggleAudioMessageFunc.apply(this, arguments);
+			return;
+		}
+		var trackInfo = {};
+		trackInfo.id = audioMessInfo.id;
+		trackInfo.name = audioMessInfo.id + '.mp3';
+		trackInfo.tabID = saveVkAudioThisTabID;
+		trackInfo.status = 'loading';
+		getArrayBufferByUrl(audioMessInfo.mp3link).then(function (buff) {
+			if(!buff) return;
+			trackInfo.arrayBuffer = buff;
+			trackInfo.binArIndex = sourceArrStor.length;
+			sourceArrStor.push(trackInfo.arrayBuffer);
+			trackInfo.status = 'ready';
+			sendTracksInfo();
+		});
+		tracksInfo[trackInfo.id] = trackInfo;
+		sendTracksInfo();
 		origToggleAudioMessageFunc.apply(this, arguments);
 	}
 	
@@ -324,19 +391,15 @@
 //	console.log(checkAudioPlayer() && !IS_MOBILE_PLAYER);
 	if(checkAudioPlayer() && !IS_MOBILE_PLAYER){
 		window.ap.eventBus.subscribe('start', async function () {
-			console.log(arguments, this);
 			var directLinkRegex = /^https:\/\/.+?\.(mp3|wav|wave|wma|ogg|aac|ac3)/;
 			var audioSrc = window.ap._impl._currentAudioEl.src;
 			var isDirectLink = directLinkRegex.test(audioSrc);
 			if(isDirectLink && !window.ap._impl._currentHls){ // Трек доступен по прямой ссылке
 				var trackInfo = getCurrentTrackInfo();
 				if(trackInfo.id in tracksInfo) return;
-				var response = await fetch(audioSrc);
-				var contentType = response.headers.get('content-type');
-				if(response.status !== 200 || contentType.indexOf('audio') !== 0){
-					return;
-				}
-				trackInfo.arrayBuffer = await response.arrayBuffer();
+				var buff = await getArrayBufferByUrl(audioSrc);
+				if(!buff) return;
+				trackInfo.arrayBuffer = buff;
 				trackInfo.binArIndex = sourceArrStor.length;
 				sourceArrStor.push(trackInfo.arrayBuffer);
 				trackInfo.status = 'ready';
@@ -362,12 +425,9 @@
 				return;
 			}
 			var trackInfo = getCurrentTrackInfo();
-			var response = await fetch(decodedUrl);
-			var contentType = response.headers.get('content-type');
-			if(response.status !== 200 || contentType.indexOf('audio') !== 0){
-				return;
-			}
-			trackInfo.arrayBuffer = await response.arrayBuffer();
+			var buff = await getArrayBufferByUrl(decodedUrl);
+			if(!buff) return;
+			trackInfo.arrayBuffer = buff;
 			trackInfo.binArIndex = sourceArrStor.length;
 			sourceArrStor.push(trackInfo.arrayBuffer);
 			trackInfo.status = 'ready';
@@ -380,12 +440,23 @@
 	
 	var origToggleAudioMessageFunc;
 	if(
-			('AudioMessagePlayer' in window) 
+			('AudioMessagePlayer' in window)
 			&& ('togglePlay' in window.AudioMessagePlayer) 
 			&& (typeof window.AudioMessagePlayer.togglePlay === 'function') 
 	){
 		origToggleAudioMessageFunc = window.AudioMessagePlayer.togglePlay;
 		window.AudioMessagePlayer.togglePlay = onToggleAudioMessagePlay;
+	}
+
+
+
+	async function getArrayBufferByUrl(url) {
+		var response = await fetch(url);
+		var contentType = response.headers.get('content-type');
+		if(response.status !== 200 || contentType.indexOf('audio') !== 0){
+			return false;
+		}
+		return await response.arrayBuffer();
 	}
 
 /*

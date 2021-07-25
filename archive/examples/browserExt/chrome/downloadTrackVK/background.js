@@ -19,6 +19,7 @@ var actionsHandlers = {
 	},
 	"tracksInfo" : function (request, sender, sendResponse) {
 		a_tracksInfo = request.data;
+		console.log(a_tracksInfo);
 		setBadge(a_tracksInfo);
 //		sendMessageToPopupScript('tracksInfo', request.data);
 		sendResponse(true);

@@ -263,7 +263,21 @@ function popupWindowHandler() {
 		}
 		var nameRowEl = document.createElement('td');
 		var actionsRowEl = getActionsTemplate(trackInfo).cont;
-		if(trackInfo.name) nameRowEl.innerHTML = trackInfo.name;
+		if(trackInfo.coverUrl){
+			var coverLink = document.createElement('a');
+			coverLink.className = 'trackCoverLink';
+			coverLink.target = '_blank';
+			coverLink.href = getGoogleSearchImageLink(trackInfo.coverUrl);
+			coverLink.style.backgroundImage = 'url('+trackInfo.coverUrl+')';
+			nameRowEl.appendChild(coverLink);
+		}
+		
+		if(trackInfo.name) {
+			var nameSpan = document.createElement('span');
+			nameSpan.className = 'trackName';
+			nameSpan.innerHTML = trackInfo.name;
+			nameRowEl.appendChild(nameSpan);
+		}
 //		if(trackInfo.status) statusRowEl.innerHTML = trackStatusAli[trackInfo.status];
 		cont.appendChild(nameRowEl);
 		cont.appendChild(actionsRowEl);
@@ -274,6 +288,14 @@ function popupWindowHandler() {
 		};
 		return obj;		
 	}
+	
+	
+	
+	function getGoogleSearchImageLink(imageUrl) {
+		var imageUrl = encodeURIComponent(imageUrl);
+		return 'https://www.google.ru/searchbyimage?image_url='+imageUrl;
+	}
+	
 	
 	
 	
