@@ -1,3 +1,0 @@
-Options +Indexes
-RewriteEngine on
-RewriteRule ^dummy(/)?(.html)?$ http://www.google.com/ [R=301]
