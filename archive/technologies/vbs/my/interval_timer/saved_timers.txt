@@ -6,25 +6,19 @@
 <DIV style="BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid; WIDTH: 550px; BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid" name="maink">
 <DIV style="HEIGHT: 40px; POSITION: relative" name="interval6">
 <DIV style="HEIGHT: 100%; WIDTH: 0px; BACKGROUND: green; POSITION: absolute; LEFT: 0px; FILTER: alpha(Opacity=70); TOP: 0px"></DIV><LABEL><INPUT style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" CHECKED type=checkbox value="" name=use_period> 
-<DIV style="FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px">Введите время<BR>в минутах</DIV><INPUT style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" size=2 value=5 name=time> </LABEL>
+<DIV style="FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px">Введите время<BR>в минутах</DIV><INPUT style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" size=2 value=0.05 name=time> </LABEL>
 <DIV style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px">||</DIV><LABEL>
 <DIV style="FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px">Проигрывать <BR>звук</DIV><INPUT style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" CHECKED type=checkbox value="" name=use_sound> <INPUT style="WIDTH: 200px; MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" type=hidden name=sound_file> 
 <DIV style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 3px; LINE-HEIGHT: 1em; MARGIN-RIGHT: 3px" name="time_remain"></DIV></LABEL></DIV>
 <DIV style="HEIGHT: 40px; POSITION: relative" name="interval6">
 <DIV style="HEIGHT: 100%; WIDTH: 0px; BACKGROUND: green; POSITION: absolute; LEFT: 0px; FILTER: alpha(Opacity=70); TOP: 0px"></DIV><LABEL><INPUT style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" CHECKED type=checkbox value=on name=use_period> 
-<DIV style="FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px">Введите время<BR>в минутах</DIV><INPUT style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" size=2 value=10 name=time> </LABEL>
+<DIV style="FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px">Введите время<BR>в минутах</DIV><INPUT style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" size=2 value=0.05 name=time> </LABEL>
 <DIV style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px">||</DIV><LABEL>
 <DIV style="FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px">Проигрывать <BR>звук</DIV><INPUT style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" CHECKED type=checkbox value=on name=use_sound> <INPUT style="WIDTH: 200px; MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" type=hidden name=sound_file> 
 <DIV style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 3px; LINE-HEIGHT: 1em; MARGIN-RIGHT: 3px" name="time_remain"></DIV></LABEL></DIV>
 <DIV style="HEIGHT: 40px; POSITION: relative" name="interval6">
 <DIV style="HEIGHT: 100%; WIDTH: 0px; BACKGROUND: green; POSITION: absolute; LEFT: 0px; FILTER: alpha(Opacity=70); TOP: 0px"></DIV><LABEL><INPUT style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" CHECKED type=checkbox value=on name=use_period> 
-<DIV style="FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px">Введите время<BR>в минутах</DIV><INPUT style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" size=2 value=15 name=time> </LABEL>
-<DIV style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px">||</DIV><LABEL>
-<DIV style="FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px">Проигрывать <BR>звук</DIV><INPUT style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" CHECKED type=checkbox value=on name=use_sound> <INPUT style="WIDTH: 200px; MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" type=hidden name=sound_file> 
-<DIV style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 3px; LINE-HEIGHT: 1em; MARGIN-RIGHT: 3px" name="time_remain"></DIV></LABEL></DIV>
-<DIV style="HEIGHT: 40px; POSITION: relative" name="interval6">
-<DIV style="HEIGHT: 100%; WIDTH: 0px; BACKGROUND: green; POSITION: absolute; LEFT: 0px; FILTER: alpha(Opacity=70); TOP: 0px"></DIV><LABEL><INPUT style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" CHECKED type=checkbox value=on name=use_period> 
-<DIV style="FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px">Введите время<BR>в минутах</DIV><INPUT style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" size=2 value=20 name=time> </LABEL>
+<DIV style="FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px">Введите время<BR>в минутах</DIV><INPUT style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" size=2 value=0.05 name=time> </LABEL>
 <DIV style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px">||</DIV><LABEL>
 <DIV style="FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px">Проигрывать <BR>звук</DIV><INPUT style="MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" CHECKED type=checkbox value=on name=use_sound> <INPUT style="WIDTH: 200px; MARGIN-TOP: 8px; FLOAT: left; MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px" type=hidden name=sound_file> 
 <DIV style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 3px; LINE-HEIGHT: 1em; MARGIN-RIGHT: 3px" name="time_remain"></DIV></LABEL></DIV></DIV>

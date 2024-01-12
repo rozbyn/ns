@@ -42,19 +42,13 @@ function prepStrVar($str){
 //////////////////////
 
 //Подключение к БД++++++++++++++++++++
-$mysqlHost = 'localhost';
-$mysqlUserName = 'root';
-$mysqlPass = '';
-$mysqlDB = 'test';
-if($_SERVER['DOCUMENT_ROOT'] === '/home/u784337761/public_html'){
-	$mysqlUserName = 'u784337761_root'; $mysqlPass = 'nSCtm9jplqVA'; $mysqlDB = 'u784337761_test';
-} elseif($_SERVER['DOCUMENT_ROOT'] === '/storage/ssd3/266/4204266/public_html'){
-	$mysqlUserName = 'id4204266_root'; $mysqlPass = 'asdaw_q32d213e'; $mysqlDB = 'id4204266_test';
-} elseif($_SERVER['DOCUMENT_ROOT'] === '/storage/ssd5/250/7376250/public_html'){
-	$mysqlUserName = 'id7376250_root'; $mysqlPass = 'jasd07ag'; $mysqlDB = 'id7376250_test';
+$dbConfigFilePath = $_SERVER['DOCUMENT_ROOT'] . '/Config/dbConfig.php';
+if(!is_file($dbConfigFilePath)){
+	exit('no db config');
 }
+$dbConfig = require_once $dbConfigFilePath;
 
-$myDbObj = new mysqli($mysqlHost, $mysqlUserName, $mysqlPass, $mysqlDB);
+$myDbObj = new mysqli($dbConfig['host'], $dbConfig['user'], $dbConfig['password'], $dbConfig['name']);
 $myDbObj->set_charset("utf8");
 //++++++++++++++++++++++++++++++++++++
 $baseDir='./';
@@ -154,13 +148,15 @@ if($userAuth==='NOT_VERIFIED' || $userAuth === false){
 		$res = $myDbObj->query("DELETE FROM auth6_users WHERE id = '$delete_id'");
 	}
 	//показываем строку с статистикой пользователей
-	$users_status = ($myDbObj->query("
+	
+	$rezs = $myDbObj->query("
 							SELECT 
 							(SELECT COUNT(1) FROM auth6_users WHERE user_status = 10) AS 'admins',
 							(SELECT COUNT(1) FROM auth6_users WHERE user_status = 2) AS 'moder',
 							(SELECT COUNT(1) FROM auth6_users WHERE banned > ".time().") AS 'banned',
 							(SELECT COUNT(1) FROM auth6_users WHERE user_status = 1 AND banned <= ".time().") AS 'users'
-							"))->fetch_array(MYSQLI_ASSOC);
+							");
+	$users_status = $rezs->fetch_array(MYSQLI_ASSOC);
 	$users_status_text = 'Администраторов: '.$users_status['admins'].', модераторов: '.$users_status['moder'].', забаненных пользователей: '.$users_status['banned'].', остальных пользователей: '.$users_status['users'];
 	//показываем строку с статистикой пользователей
 	$row = $myDbObj->query("SELECT id, login, name, surname, user_status, banned FROM auth6_users");
@@ -180,7 +176,8 @@ if($userAuth==='NOT_VERIFIED' || $userAuth === false){
 			$errorMessage = '<div class="errorMessage">Ошибка записи данных в БД! '.$myDbObj->error.'</div>';
 		}
 	}
-	$edit_user_arr = ($myDbObj->query("SELECT * FROM auth6_users WHERE id='$editUser'"))->fetch_array(MYSQLI_ASSOC);
+	$rezs = $myDbObj->query("SELECT * FROM auth6_users WHERE id='$editUser'");
+	$edit_user_arr = $rezs->fetch_array(MYSQLI_ASSOC);
 	//var_dump($_POST);
 } else {
 	header("Location: $baseDir");

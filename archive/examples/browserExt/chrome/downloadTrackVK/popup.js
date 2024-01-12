@@ -2,7 +2,6 @@
 /* global chrome */
 
 
-
 var contentScriptTabs = [];
 var extKey = chrome.runtime.id;
 var actionsHandlers = {
@@ -11,12 +10,28 @@ var actionsHandlers = {
 	}
 };
 
+var currentTabID;
+
+chrome.windows.getCurrent().then(function (result) {
+	return result.id;
+}).then(function (windowID) {
+	return chrome.tabs.query({active: true, windowId: windowID});
+}).then(function (tabs) {
+	if (!tabs || tabs.length !== 1 || !tabs[0].id) return;
+	currentTabID = tabs[0].id;
+	sendMessageToPageScript(currentTabID, 'getTracksInfo');
+	setInterval(function () {
+		sendMessageToPageScript(currentTabID, 'getTracksInfo');
+	}, 500);
+});
+
+
 
 
 var jo = new popupWindowHandler;
 
 
-sendMessageToBackgroundScript('getTracksInfo', 0 , processTracksInfo);
+//sendMessageToBackgroundScript('getTracksInfo', 0 , processTracksInfo);
 
 
 
@@ -46,7 +61,6 @@ function processTracksInfo(newTracksInfo) {
 		if(!wasFirstChecked) jo.showHelp();
 		if(!checkReadyInterval){
 			checkReadyInterval = setInterval(function () {
-				console.log('checkReadyInterval');
 				sendMessageToBackgroundScript('getTracksInfo', 0 , processTracksInfo);
 			}, 200);
 		}
@@ -75,7 +89,7 @@ chrome.runtime.onMessageExternal.addListener(messagesHandler);
 
 
 function messagesHandler(request, sender, sendResponse) {
-	if(!checkMessage(request)) return;
+	if(!checkMessage(request, sender)) return;
 	runActionHandler(request, sender, sendResponse);
 }
 
@@ -83,7 +97,6 @@ function messagesHandler(request, sender, sendResponse) {
 
 function runActionHandler(request, sender, sendResponse) {
 	if(request.action in actionsHandlers){
-		console.log(request.action, request.data);
 		return actionsHandlers[request.action](request, sender, sendResponse);
 	} else {
 		sendResponse(10000);
@@ -92,9 +105,10 @@ function runActionHandler(request, sender, sendResponse) {
 
 
 
-function checkMessage(request) {
+function checkMessage(request, sender) {
 	var isValid = 
-			request.target 
+			sender.tab.id === currentTabID
+			&& request.target
 			&& request.target === 'popup'
 			&& request.extKey
 			&& request.extKey === extKey
@@ -104,30 +118,28 @@ function checkMessage(request) {
 
 
 
-function sendMessageToContentScript(tabID, action, data, cb) {
-	data = data || {};
-	if(contentScriptTabs.length <= 0) return (20000);
-	var objToSend = {
-		target: 'content',
-		extKey: extKey,
-		action: action,
-		data: data
-	};
-	if(tabID && contentScriptTabs.indexOf(tabID) !== -1){
-		chrome.tabs.sendMessage(tabID, objToSend, cb);
-	} else if (tabID === 'all') {
-		contentScriptTabs.forEach(function (y_tabID) {
-			chrome.tabs.sendMessage(y_tabID, objToSend, cb);
-		});
-	}
-}
+//function sendMessageToContentScript(tabID, action, data, cb) {
+//	data = data || {};
+//	if(contentScriptTabs.length <= 0) return (20000);
+//	var objToSend = {
+//		target: 'content',
+//		extKey: extKey,
+//		action: action,
+//		data: data
+//	};
+//	if(tabID && contentScriptTabs.indexOf(tabID) !== -1){
+//		chrome.tabs.sendMessage(tabID, objToSend, cb);
+//	} else if (tabID === 'all') {
+//		contentScriptTabs.forEach(function (y_tabID) {
+//			chrome.tabs.sendMessage(y_tabID, objToSend, cb);
+//		});
+//	}
+//}
 
 
 
 function sendMessageToPageScript(tabID, action, data) {
 	tabID = parseInt(tabID);
-	data = data || {};
-	if(contentScriptTabs.length <= 0) return;
 	data = data || {};
 	var objToSend = {
 		target: 'content',
@@ -136,14 +148,7 @@ function sendMessageToPageScript(tabID, action, data) {
 		pageAction: action,
 		data: data
 	};
-	if(tabID && contentScriptTabs.indexOf(tabID) !== -1){
-		console.log('sendMessageToPageScript', tabID, data);
-		chrome.tabs.sendMessage(tabID, objToSend);
-	} else if (tabID === 'all') {
-		contentScriptTabs.forEach(function (y_tabID) {
-			chrome.tabs.sendMessage(y_tabID, objToSend);
-		});
-	}
+	chrome.tabs.sendMessage(tabID, objToSend);
 }
 
 
@@ -164,7 +169,7 @@ function popupWindowHandler() {
 	var tracksInfo = this.tracksInfo = {};
 	var trackStatusAli = {
 		"ready": 'Готов к загрузке',
-		"loading": 'Загружается...'
+		"loading": 'Загружается...',
 	};
 	
 	var htmlVars = {
@@ -206,7 +211,6 @@ function popupWindowHandler() {
 		if(!isTracksChanged(newTracksInfo)) return;
 		tracksInfo = newTracksInfo;
 		renderTracks();
-		console.log('processTracksInfo', newTracksInfo);
 	}
 	
 	
@@ -268,7 +272,22 @@ function popupWindowHandler() {
 		}
 		var nameRowEl = document.createElement('td');
 		var actionsRowEl = getActionsTemplate(trackInfo).cont;
-		if(trackInfo.name) nameRowEl.innerHTML = trackInfo.name;
+		if(trackInfo.coverUrl){
+			var coverLink = document.createElement('a');
+			coverLink.className = 'trackCoverLink';
+			coverLink.target = '_blank';
+			coverLink.href = trackInfo.coverUrl;
+//			coverLink.href = getGoogleSearchImageLink(trackInfo.coverUrl);
+			coverLink.style.backgroundImage = 'url('+trackInfo.coverUrl+')';
+			nameRowEl.appendChild(coverLink);
+		}
+		
+		if(trackInfo.name) {
+			var nameSpan = document.createElement('span');
+			nameSpan.className = 'trackName';
+			nameSpan.innerHTML = trackInfo.name;
+			nameRowEl.appendChild(nameSpan);
+		}
 //		if(trackInfo.status) statusRowEl.innerHTML = trackStatusAli[trackInfo.status];
 		cont.appendChild(nameRowEl);
 		cont.appendChild(actionsRowEl);
@@ -279,6 +298,14 @@ function popupWindowHandler() {
 		};
 		return obj;		
 	}
+	
+	
+	
+	function getGoogleSearchImageLink(imageUrl) {
+		var imageUrl = encodeURIComponent(imageUrl);
+		return 'https://www.google.ru/searchbyimage?image_url='+imageUrl;
+	}
+	
 	
 	
 	

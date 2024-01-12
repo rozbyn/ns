@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="73e775cc-961f-46c9-a11e-12b126eb72e5" name="x905346n.beget.tech" url="http://x905346n.beget.tech">
+        <fileTransfer host="x905346n.beget.tech" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="6695dc60-3493-441b-8bd5-d7f633a1d54a" name="rozbyn-dev.ru" url="https://rozbyn-dev.ru">
+        <fileTransfer host="77.222.40.238" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="ee9dcf33-060d-45d6-9e49-69aafd506726" name="ssh rozbyn-dev.ru" url="https://rozbyn-dev.ru">
+        <fileTransfer rootFolder="/home/e/ezcsyandex" accessType="SFTP" host="77.222.40.238" port="22" sshConfigId="a4b3732e-90a7-4efc-9334-0bcdf7e4e148" sshConfig="ezcsyandex@77.222.40.238:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

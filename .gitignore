@@ -1,0 +1,12 @@
+/.idea/
+/.vscode/
+
+node_modules/
+/gitignore.txt
+/d/
+/config/
+vendor/
+/nbproject/
+/archive/technologies/java/testAppli/nbproject/private/
+/archive/technologies/java/testAppli/build/
+/archive/technologies/java/testAppli/dist/

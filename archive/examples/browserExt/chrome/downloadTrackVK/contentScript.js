@@ -1,17 +1,20 @@
 
+
+
 /* global chrome */
 var extKey = chrome.runtime.id;
 var tabID;
 var actionsHandlers = {
 	"messageToPage": function (request, sender, sendResponse) {
 		sendMessageToPageScript(request.pageAction, request.data);
+		sendResponse(true);
 	}
 };
 
 sendMessageToBackgroundScript('saveTabID', {}, function (thisTabID) {
 	tabID = thisTabID;
-	injectScriptWithExtInfo();
 	injectMainScript();
+//	injectMp3TagScript();
 });
 
 
@@ -32,24 +35,31 @@ sendMessageToBackgroundScript('saveTabID', {}, function (thisTabID) {
 
 
 
-
 /*----------------------------------------------------------------------------*/
-function injectScriptWithExtInfo() {
-	var scriptEl2 = document.createElement('script');
-	scriptEl2.id = 'saveVkAudioScript2';
-	scriptEl2.innerHTML = "var saveVkAudioExtensionKey = '" + extKey + "';";
-	scriptEl2.innerHTML += "var saveVkAudioThisTabID = '" + tabID + "';";
-	document.head.appendChild(scriptEl2);
-}
 
 
 
 function injectMainScript() {
+	var scriptEl = addScript("pageScript.js");
+	scriptEl.id = 'saveVkAudioScript';
+	scriptEl.setAttribute('saveVkAudioExtensionKey', extKey);
+	scriptEl.setAttribute('saveVkAudioThisTabID', tabID);
+}
+
+
+
+function injectMp3TagScript() {
+	addScript("mp3tag.js");
+}
+
+
+
+function addScript(url) {
 	var scriptEl = document.createElement('script');
 	scriptEl.type = 'text/javascript';
-//	scriptEl.src = 'chrome-extension://'+chrome.runtime.id+'/pageScript.js';
-	scriptEl.src = chrome.runtime.getURL("pageScript.js");
+	scriptEl.src = chrome.runtime.getURL(url);
 	document.head.appendChild(scriptEl);
+	return scriptEl;
 }
 
 
@@ -68,7 +78,6 @@ function messagesHandler(request, sender, sendResponse) {
 
 function runActionHandler(request, sender, sendResponse) {
 	if(request.action in actionsHandlers){
-		console.log(request.action, request.data);
 		return actionsHandlers[request.action](request, sender, sendResponse);
 	} else {
 		sendResponse(10000);

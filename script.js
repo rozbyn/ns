@@ -10,43 +10,63 @@ speed2 = 1;
 
 html = document.querySelector('html');
 html.onmousemove = function (event) {
-    /*client_w = document.body.clientWidth;
-    client_h = document.body.clientHeight;
-
-    height=screen.height;
-    width=screen.width;
-
-    wwidth = window.innerWidth;
-    wheight = window.innerHeight;*/
 
 
-
-
-    centerY = window.innerHeight/2;
-    centerX = window.innerWidth/2;
+    let centerY = window.innerHeight/2;
+    let centerX = window.innerWidth/2;
     /*pageX = event.pageX;//положение курсора относительно размеров страницы
     pageY = event.pageY;//положение курсора относительно размеров страницы
     scrY = event.screenY;//положение курсора относительно экрана монитора
     scrX = event.screenX;//положение курсора относительно экрана монитора*/
-    scrY2 = event.clientY;//положение курсора относительно размеров окра браузера
-    scrX2 = event.clientX;//положение курсора относительно размеров окра браузера
-    distFromCenterY = centerY - scrY2;
-    distFromCenterX = centerX - scrX2;
+    let scrY2 = event.clientY;//положение курсора относительно размеров окра браузера
+    let scrX2 = event.clientX;//положение курсора относительно размеров окра браузера
+    let distFromCenterY = centerY - scrY2;
+    let distFromCenterX = centerX - scrX2;
     document.querySelector('html').style.backgroundPosition = (centerX - distFromCenterX*-speed) +'px '+ (centerY - distFromCenterY*-speed) + 'px';
 
     document.querySelector('.circle').style.top = (centerY - distFromCenterY*-speed2 - 100) +'px';
     document.querySelector('.circle').style.left = (centerX - distFromCenterX*-speed2 - 100) +'px';
-
-
-    /*document.querySelector('html').style.backgroundPosition = -1*(event.pageX*speed) +'px '+ -1*(event.pageY*speed) + 'px';
-
-
-
-    document.querySelector('h5').innerHTML = centerX +':'+ centerY;
-    document.querySelector('h6').innerHTML = window.innerWidth +':'+ window.innerHeight;
-    document.querySelector('h7').innerHTML = distFromCenterX +':'+ distFromCenterY;
-    document.querySelector('h8').innerHTML = event.screenX +':'+ event.screenY;
-    document.querySelector('h9').innerHTML = event.clientX +':'+ event.clientY;*/
 };
 
 
+function showDisplayParams(rewrite) {
+    let el = document.getElementById('displayParamsContainer');
+    let created = false;
+    if (!el) {
+        el = document.createElement('pre');
+        el.id = 'displayParamsContainer';
+        el.style.display = 'block'
+        el.style.position = 'absolute'
+        el.style.top = '15px';
+        el.style.left = '15px';
+        el.style.background = 'white';
+        el.style.padding = '15px';
+        el.style.fontFamily = 'monospace';
+        el.onclick = function () {
+            this.innerHTML = '';
+        }
+        created = true
+    }
+    let itemWrap = document.createElement('div');
+    itemWrap.classList.add('displayParamsItemWrap');
+    itemWrap.innerHTML += 'availHeight: ' + screen.availHeight + '<br>';
+    itemWrap.innerHTML += 'availWidth: ' + screen.availWidth + '<br>';
+    itemWrap.innerHTML += 'colorDepth: ' + screen.colorDepth + '<br>';
+    itemWrap.innerHTML += 'width: ' + screen.width + '<br>';
+    itemWrap.innerHTML += 'height: ' + screen.height + '<br>';
+    itemWrap.innerHTML += 'pixelDepth: ' + screen.pixelDepth + '<br>';
+    itemWrap.innerHTML += 'devicePixelRatio: ' + devicePixelRatio + '<br>';
+    if (rewrite) {
+        el.innerHTML = '';
+    }
+    el.appendChild(itemWrap);
+    if (created) {
+        document.body.appendChild(el);
+    }
+}
+window.addEventListener('load', function () {
+   showDisplayParams(1);
+});
+window.addEventListener('resize', function () {
+    showDisplayParams(1);
+});

@@ -22,7 +22,17 @@ function arrt($arr){
 header('Content-Type: text/html; charset=utf-8');
 
 echo '<div>';////////////
-$dbTestConnection = new mysqli('localhost', 'root', '', 'test');
+
+
+
+$dbConfigFilePath = $_SERVER['DOCUMENT_ROOT'] . '/Config/dbConfig.php';
+if(!is_file($dbConfigFilePath)){
+	exit('no db config');
+}
+$dbConfig = require_once $dbConfigFilePath;
+
+
+$dbTestConnection = new mysqli($dbConfig['host'], $dbConfig['user'], $dbConfig['password'], $dbConfig['name']);
 $dbTestConnection -> set_charset("utf8");
 if (mysqli_connect_errno()){
 	printf("Не удалось подключиться: %s\n", mysqli_connect_error());

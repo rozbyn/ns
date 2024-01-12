@@ -1,25 +1,23 @@
 {
-	"manifest_version": 2,
-	"name": "Сохранить трек VK - 2019",
-	"description": "Расширение позволяет сохранить проигрываемый трек на сайте vk.com",
-	"version": "0.0.2",
-	"short_name": "Скачать музыку VK",
+	"manifest_version": 3,
+	"name": "Скачать музыку VK - 2022",
+	"description": "Расширение позволяет сохранить проигрываемый на сайте vk.com трек",
+	"version": "1.5.1",
+	"short_name": "Скачать музыку VK - 2022",
 	
 	"icons" : {
 		"128": "icon128.png"
 	},
-	"browser_action": {
+	"action": {
 		"default_icon": "icon128-gray.png",
-		"default_title": "Сохранить трек VK",
+		"default_title": "Скачать музыку VK",
 		"default_popup": "defpopup.html"
 	},
 	
 	
 	"background": {
-		"scripts": ["background.js"],
-		"persistent": false
+		"service_worker": "background.js"
 	},
-	
 	"content_scripts" : [
 		{
 			"js": ["contentScript.js"], 
@@ -27,7 +25,12 @@
 			"run_at": "document_end"
 		}
 	],
-	"web_accessible_resources": ["pageScript.js", "info/findKeyInWindow.js"],
+	"web_accessible_resources": [
+		{
+			"resources" : ["pageScript.js"],
+			"matches" : ["*://*.vk.com/*"]
+		}
+	],
 	"externally_connectable": {
 		"matches": ["*://*.vk.com/*"]
 	}

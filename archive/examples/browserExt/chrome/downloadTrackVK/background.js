@@ -1,8 +1,6 @@
 
 /* global chrome */
 
-// chrome.browserAction.setBadgeText({text: ''})
-// chrome.browserAction.setBadgeBackgroundColor({color: '#00F'});
 var scriptReady = false;
 var a_tracksInfo = {};
 var contentScriptTabs = [];
@@ -18,20 +16,15 @@ var actionsHandlers = {
 		sendResponse(contentScriptTabs);
 	},
 	"tracksInfo" : function (request, sender, sendResponse) {
-//		console.log('tracksInfo', request, sender);
-		a_tracksInfo = request.data;
-		setBadge(a_tracksInfo);
-//		sendMessageToPopupScript('tracksInfo', request.data);
+		setBadge(request.data, sender.tab.id);
 		sendResponse(true);
 	},
 	"getTracksInfo": function (request, sender, sendResponse) {
-		console.log('getTracksInfo', request, sender);
 		if(!scriptReady) sendResponse(false);
 		sendResponse(a_tracksInfo);
 	},
 	"pageScriptReady": function (request, sender, sendResponse) {
 		scriptReady = true;
-		console.log(request, sender);
 		sendResponse(true);
 	}
 };
@@ -83,7 +76,6 @@ chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
 
 function runActionHandler(request, sender, sendResponse) {
 	if(request.action in actionsHandlers){
-//		console.log(request.action, request.data, sender);
 		return actionsHandlers[request.action](request, sender, sendResponse);
 	} else {
 		sendResponse(10000);
@@ -168,27 +160,24 @@ function removeValueFromArray (value, array) {
 
 
 
-function setBadge(tracksInfo) {
+function setBadge(tracksInfo, tabID) {
 	var readyCount = 0;
 	var count = 0;
-	var tabID = 0;
 	for (var i in tracksInfo) {
 		if(tracksInfo[i].status === 'ready'){
 			readyCount++;
 		}
-		tabID = tracksInfo[i].tabID;
 		count++;
 	}
-	tabID = parseInt(tabID);
 	if(count > 0){
-		chrome.browserAction.setIcon({path: 'icon128.png', tabId: tabID});
+		chrome.action.setIcon({path: 'icon128.png', tabId: tabID});
 	} else {
-		chrome.browserAction.setIcon({path: 'icon128-gray.png'});
+		chrome.action.setIcon({path: 'icon128-gray.png', tabId: tabID});
 	}
 	if(readyCount > 0){
-		chrome.browserAction.setBadgeText({text: ''+readyCount, tabId: tabID});
+		chrome.action.setBadgeText({text: ''+readyCount, tabId: tabID});
 	} else {
-		chrome.browserAction.setBadgeText({text: ''});
+		chrome.action.setBadgeText({text: '', tabId: tabID});
 	}
 	
 }

@@ -51,7 +51,7 @@ footer{
 }
 content{
 	display:block;
-	min-height: calc(100% - 129px);
+	min-height: calc(100% - 127px);
 	background: #fff8dc;
 }
 form{

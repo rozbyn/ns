@@ -13,7 +13,7 @@ body{
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	background: #FFF url("/pic/bg.png");
+	background: #FFF;
 	font-family: Tahoma, sans-serif;
 	font-weight: 400;
 	border: 3px double #808080;
@@ -99,6 +99,7 @@ table tfoot tr>td{
 }
 table td:nth-child(1){
 	width: 76%;
+	white-space: nowrap;
 }
 table td:nth-child(2){
 	text-align: center;
@@ -111,6 +112,29 @@ table tr.readyToDownload{
 }
 
 
+.trackCoverLink {
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	margin-right: 5px;
+	vertical-align: middle;
+	background-position: center;
+	background-size: cover;
+	border-radius: 3px;
+}
+
+
+.trackCoverLink:hover {
+	filter: brightness(0.8);
+}
+
+.trackName {
+	display: inline-block;
+	word-break: normal;
+	white-space: normal;
+	vertical-align: middle;
+	max-width: 250px;
+}
 
 
 

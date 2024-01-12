@@ -57,3 +57,17 @@ h1 {
         font-size: 40px;
     }
 }
+
+@media (min-resolution: 1dppx) {
+    .main {
+        margin: 15px auto;
+    }
+    h1 {
+        font-size: 70px;
+        margin: 20px 0;
+    }
+    .text {
+        margin: 20px auto;
+        max-width: 1100px;
+    }
+}

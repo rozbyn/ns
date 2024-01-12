@@ -1,0 +1,26 @@
+{
+	"appName": {
+		"message" : "Fast forward Bitrix24"
+	},
+	"appDesc": {
+		"message" : "Start fast-forwarding playback of call records in your Bitrix24."
+	},
+	"headText": {
+		"message" : "To use the application, log into your Bitrix24"
+	},
+	"listItem1Text": {
+		"message" : "Open a <span class=\"bold\">deal/lead/contact/company</span>, containing a call record"
+	},
+	"listItem2Text": {
+		"message" : "Press the <span class=\"playIcon\">▸</span>, “<span class=\"bold\">X1</span>” sign will appear on the right side of the call recording timeline"
+	},
+	"listItem3Text": {
+		"message" : "Click on the “<span class=\"bold\">X1</span>” sign, various values of playback speed will appear in a drop-down menu."
+	},
+	"listItem4Text": {
+		"message" : "Select required speed with a mouse click"
+	},
+	"footerText": {
+		"message" : "BITROID - your system integrator. <br> More interesting solutions for your Bitrix24 on our website."
+	}
+}

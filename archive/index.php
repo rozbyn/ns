@@ -3,9 +3,9 @@
 setlocale(LC_ALL, 'ru_RU', 'RU', 'rus');
 date_default_timezone_set('Europe/Moscow');
 /* ---- --- -- - */
-define('EXPLORE_DIR', 'technologies');
-define('NEED_GITHUB_LINK', true);
-define('GITHUB_LINK_PREFIX', 'https://github.com/rozbyn/ns/blob/master/archive/');
+const EXPLORE_DIR = 'technologies';
+const NEED_GITHUB_LINK = true;
+const GITHUB_LINK_PREFIX = 'https://github.com/rozbyn/ns/blob/master/archive/';
 define('REAL_EXPLORE_DIR_PATH', realpath(EXPLORE_DIR));
 define('REAL_EXPLORE_DIR_NAME', realName(EXPLORE_DIR));
 
@@ -13,7 +13,7 @@ if (isset($_POST['path'])) {
 	$path = $_POST['path'];
 	$realPath = realpath($path);
 	if (is_dir($realPath)) {
-		list($folders, $files) = getFiles_Folders($path);
+		[$folders, $files] = getFiles_Folders($path);
 		if ($path === EXPLORE_DIR) {
 			$params['parent_path'] = '';
 			$params['parent_name'] = '';
@@ -39,7 +39,7 @@ if (isset($_POST['path'])) {
 	}
 } else {
 	if (is_dir(REAL_EXPLORE_DIR_PATH)) {
-		list($folders, $files) = getFiles_Folders(EXPLORE_DIR);
+		[$folders, $files] = getFiles_Folders(EXPLORE_DIR);
 		$params['parent_path'] = '';
 		$params['parent_name'] = '';
 		$params['current_path'] = EXPLORE_DIR;
@@ -51,14 +51,19 @@ if (isset($_POST['path'])) {
 /* ________________________________________________________________________ */
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+		<?=include $_SERVER['DOCUMENT_ROOT'] . '/Config/yandexMetrika.php';?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <style>
 		body{
 			overflow-y: scroll;
 			font-family: sans-serif;
+			-webkit-user-select: none;  /* Chrome all / Safari all */
+			-moz-user-select: none;     /* Firefox all */
+			-ms-user-select: none;      /* IE 10+ */
+			user-select: none;
 		}
 		.main{
 			background: #fff;

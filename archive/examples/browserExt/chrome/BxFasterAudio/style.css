@@ -1,0 +1,134 @@
+
+
+@import "/fonts/Futura.css";
+
+html, body {
+	font-family: Futura;
+	font-weight: 300;
+	/*height: 596px;*/
+	width: 647px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	font-size: 12px;
+}
+
+
+.bold {
+	font-weight: 800;
+}
+
+
+.background_o{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: url(pic/back.png);
+	opacity: 0.00;
+	z-index: -10;
+}
+
+
+.main_container{
+	background: rgb(1,40,69);
+	background: linear-gradient(180deg, rgba(1,40,69,1) 0%, rgba(0,19,26,1) 100%);
+	padding-bottom: 22px;
+}
+
+
+
+.I_icon {
+	font-weight: 700;
+	font-size: 30px;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background: #fff;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	top: 14px;
+	right: 15px;
+	color: #001c1c;
+}
+
+.head_text {
+	font-size: 30px;
+	padding: 29px 54px 19px;
+	text-align: center;
+	letter-spacing: 1.46px;
+	color: #fff;
+}
+
+
+
+.center_container {
+	margin: 0px 17px;
+	background-color: #fff;
+	background-image: url(pic/backgroundLogo.png);
+	padding: 23px 0 3px;
+	background-repeat: no-repeat;
+	background-position: center calc(50% - 13px);
+}
+
+
+.actions_list {
+	margin: 0px;
+	color: #000322;
+	font-size: 24px;
+	padding: 0 20px 0 36px;
+	letter-spacing: 1.2px;
+	line-height: 30px;
+}
+
+.actions_list > li {
+	margin-bottom: 26px;
+}
+
+
+.playIcon {
+	font-size: 48px;
+	line-height: 19px;
+	display: inline-block;
+	height: 17px;
+	width: 17px;
+	overflow: hidden;
+	text-indent: -11px;
+	vertical-align: middle;
+	margin-left: 4px;
+}
+
+
+.footer_container {
+	margin: 21px 0 0 139px;
+	font-size: 0;
+}
+
+
+
+.bitroid_link{
+	display: block;
+}
+
+
+
+.bitroid_logo {
+	background-image: url(pic/logo.png);
+	display: inline-block;
+	height: 59px;
+	width: 59px;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+}
+
+
+.footer_text {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 16px;
+	margin-left: 15px;
+	letter-spacing: 0.8px;
+	line-height: 19px;
+	max-width: 305px;
+	color: #fff;
+}

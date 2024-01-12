@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/archive/technologies/php_mysql/my/php7v_podlinnike/listings/php7-master/composer/pager/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/archive/technologies/php_mysql/my/php7v_podlinnike/listings/php7-master/namespace" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/archive/technologies/php_mysql/my/php7v_podlinnike/listings/php7-master/ob" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/archive/technologies/php_mysql/my/php7v_podlinnike/listings/php7-master/phpdocs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/archive/technologies/php_mysql/my/php7v_podlinnike/listings/php7-master/phpdocs" isTestSource="false" packagePrefix="PHP7" />
+      <sourceFolder url="file://$MODULE_DIR$/archive/technologies/php_mysql/my/php7v_podlinnike/listings/php7-master/standarts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/archive/technologies/php_mysql/tasks/MVC" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/archive/technologies/php_mysql/tasks/MVC-blog" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lib" isTestSource="false" packagePrefix="RozbynDev" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="telegram-web-app" level="application" />
+  </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="321d1e68-752d-41a2-9e17-2e8d2b4f718b" />
+  </component>
+</module>

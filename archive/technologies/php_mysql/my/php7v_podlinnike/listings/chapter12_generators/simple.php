@@ -78,8 +78,8 @@ echo '<br>';
 
 function one1 () {
 	while (true) {
-		$a = yield 1;
-		$b = yield $a . '@@@';
+//		$a = yield 1;
+//		$b = yield $a . '@@@';
 		yield $b . '%%%';
 	}
 }
@@ -87,7 +87,7 @@ function one2 () {
 	$i = 0;
 	$o1 = '||';
 	while (true) {
-		$o1 = yield 'key'.$i => 'returned yield №'. $i. ', string: ' .$o1;
+//		$o1 = yield 'key'.$i => 'returned yield №'. $i. ', string: ' .$o1;
 		echo 'received yield №'. $i .', string: '.$o1.'<br>';
 		$i++;
 	}

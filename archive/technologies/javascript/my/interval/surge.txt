@@ -1,0 +1,15 @@
+ezcs@yandex.ru
+olopolo
+
+          email: ezcs@yandex.ru
+       password:
+
+   Running as ezcs@yandex.ru (Student)
+
+        project: G:\site\ns\archive\technologies\javascript\my\interval\
+     encryption: *.surge.sh, surge.sh (142 days)
+             IP: 138.197.235.123
+
+   Success! - Published to fumbling-board.surge.sh
+
+surge --domain fumbling-board.surge.sh
