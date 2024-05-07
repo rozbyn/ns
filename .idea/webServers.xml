@@ -16,8 +16,8 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
-      <webServer id="ee9dcf33-060d-45d6-9e49-69aafd506726" name="ssh rozbyn-dev.ru" url="https://rozbyn-dev.ru">
-        <fileTransfer rootFolder="/home/e/ezcsyandex" accessType="SFTP" host="77.222.40.238" port="22" sshConfigId="a4b3732e-90a7-4efc-9334-0bcdf7e4e148" sshConfig="ezcsyandex@77.222.40.238:22 password">
+      <webServer id="ee9dcf33-060d-45d6-9e49-69aafd506726" name="ssh rozbyn-dev.ru" url="http://ezcsyandex.temp.swtest.ru/">
+        <fileTransfer host="77.222.40.238" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

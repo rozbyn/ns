@@ -17,22 +17,16 @@ html{
 .main{
     max-width: 1200px;
     background: rgba(255, 255, 255, 0.7);
-    margin: 60px auto;
-    padding-top: 1px;
-    padding-bottom: 40px;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
 }
 .text{
-    margin: 40px auto;
-    max-width: 980px;
+    margin: 10px 10px;
     font-family: Constantia;
 }
 .text>p{
-    font-size: 24px;
-    margin-top: 13px;
-    text-indent: 15px;
-    padding-right: 10px;
-    padding-left: 10px;
-
+    font-size: 12px;
 }
 .text>p a{
     text-decoration: none;
@@ -59,15 +53,8 @@ h1 {
 }
 
 @media (min-resolution: 1dppx) {
-    .main {
-        margin: 15px auto;
-    }
     h1 {
         font-size: 70px;
         margin: 20px 0;
-    }
-    .text {
-        margin: 20px auto;
-        max-width: 1100px;
     }
 }

@@ -12,7 +12,7 @@ sendMessageToBackgroundScript('saveTabID', {}, function (thisTabID) {
 	tabID = thisTabID;
 	injectScriptWithExtInfo();
 	injectMainScript();
-	injectSykaScript();
+	injectSomeScript();
 });
 
 
@@ -54,7 +54,7 @@ function injectMainScript() {
 }
 
 
-function injectSykaScript() {
+function injectSomeScript() {
 	var scriptEl = document.createElement('script');
 	scriptEl.type = 'text/javascript';
 //	scriptEl.src = 'chrome-extension://'+chrome.runtime.id+'/pageScript.js';

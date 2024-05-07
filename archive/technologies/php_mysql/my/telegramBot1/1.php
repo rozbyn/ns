@@ -17,7 +17,10 @@ echo '</pre>';
 //d(\RozbynDev\Api\Telegram::call('setMyDescription', ['description' => 'описание description']));
 //d(\RozbynDev\Api\Telegram::call('setMyShortDescription', ['short_description' => 'короткое описание short_description']));
 //d(\RozbynDev\Api\Telegram::call('setMyName', ['name' => 'имя name']));
-d(\RozbynDev\Api\Telegram::call('getMyCommands'));
+//d(\RozbynDev\Api\Telegram::call('getMyCommands'));
+d(\RozbynDev\Api\Telegram::call('setWebhook', [
+    'url' => 'https://ezcsyandex.temp.swtest.ru/archive/technologies/php_mysql/my/telegramBot1/webhookTarget.php'
+]));
 //d(
 //    \RozbynDev\Api\Telegram::call('setChatMenuButton', [
 //        'menu_button' => [
@@ -44,26 +47,26 @@ d((new DateTime())->format(DATE_RFC2822));
 //    )
 //);
 
-d(
-    \RozbynDev\Api\Telegram::call('setMyCommands', [
-        'commands' => [
-            [
-                'command' => '/start',
-                'description' => 'Start the bot',
-            ],
-            [
-                'command' => '/forgetme',
-                'description' => 'Delete all information about you from our database',
-            ],
-            [
-                'command' => '/help',
-                'description' => 'Bot\'s why and how to use',
-            ],
-            [
-                'command' => '/settings',
-                'description' => 'Bot settings',
-            ],
-        ],
-    ])
-);
+//d(
+//    \RozbynDev\Api\Telegram::call('setMyCommands', [
+//        'commands' => [
+//            [
+//                'command' => '/start',
+//                'description' => 'Start the bot',
+//            ],
+//            [
+//                'command' => '/forgetme',
+//                'description' => 'Delete all information about you from our database',
+//            ],
+//            [
+//                'command' => '/help',
+//                'description' => 'Bot\'s why and how to use',
+//            ],
+//            [
+//                'command' => '/settings',
+//                'description' => 'Bot settings',
+//            ],
+//        ],
+//    ])
+//);
 
