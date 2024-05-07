@@ -19,7 +19,7 @@ echo '</pre>';
 //d(\RozbynDev\Api\Telegram::call('setMyName', ['name' => 'имя name']));
 //d(\RozbynDev\Api\Telegram::call('getMyCommands'));
 d(\RozbynDev\Api\Telegram::call('setWebhook', [
-    'url' => 'https://ezcsyandex.temp.swtest.ru/archive/technologies/php_mysql/my/telegramBot1/webhookTarget.php'
+    'url' => 'https://rzebrov.ru/archive/technologies/php_mysql/my/telegramBot1/webhookTarget.php'
 ]));
 //d(
 //    \RozbynDev\Api\Telegram::call('setChatMenuButton', [

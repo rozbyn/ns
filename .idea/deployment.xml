@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="ssh rozbyn-dev.ru" confirmBeforeUploading="false" autoUploadExternalChanges="true">
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="ssh rzebrov.ru" confirmBeforeUploading="false" autoUploadExternalChanges="true">
     <option name="confirmBeforeUploading" value="false" />
     <serverData>
+      <paths name="laravel.local">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="laravel.local (1)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="rozbyn-dev.ru">
         <serverdata>
           <mappings>
@@ -10,7 +24,7 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="ssh rozbyn-dev.ru">
+      <paths name="ssh rzebrov.ru">
         <serverdata>
           <mappings>
             <mapping deploy="/public_html" local="$PROJECT_DIR$" web="/" />

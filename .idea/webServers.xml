@@ -16,7 +16,7 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
-      <webServer id="ee9dcf33-060d-45d6-9e49-69aafd506726" name="ssh rozbyn-dev.ru" url="http://ezcsyandex.temp.swtest.ru/">
+      <webServer id="ee9dcf33-060d-45d6-9e49-69aafd506726" name="ssh rzebrov.ru" url="https://rzebrov.ru/">
         <fileTransfer host="77.222.40.238" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
