@@ -1,0 +1,339 @@
+body{
+	font-family: arial;
+	overflow-y: scroll;
+	background: #B38F68
+	
+}
+
+h2{
+	text-align: center;
+	font-size: 25px;
+	margin-bottom: 10px;
+	font-weight: bold;
+	color: white;
+}
+.header{
+	background: #ffb400;
+	text-align: center;
+	position: relative;
+	padding: 4px;
+}
+h1{
+	font-size: 23px;
+	background: #fff;
+	display: inline-block;
+	font-weight: bolder;
+	border-radius: 20px;
+	transition: box-shadow .2s linear;
+}
+h1 a{
+	text-decoration: none;
+	color: #ffb400;
+	display: block;
+	transition: box-shadow .2s linear;
+	padding: 3px 18px;
+}
+td A IMG {
+	border: none; 
+	width:25px;
+	height:25px;
+}
+td A{
+	display: block;
+	width: 25px;
+}
+h1:hover{
+	box-shadow: -107px 0 0 0 rgb(0, 0, 0) inset , 300px 0 0 0 rgb(63, 64, 159) inset;
+}
+h1 a:hover{
+	color: #fff;
+}
+
+.wrapper{
+	max-width: 1200px;
+	margin: 0 auto;
+	background: #78634c;
+}
+.content{
+	min-height: 800px;
+	margin-left: 180px;
+}
+.footer{
+	height: 66px;
+	background: black;
+}
+.tableDiv{
+	padding-top: 15px;
+	padding-bottom: 30px;
+}
+.tableDiv table{
+	margin: 0 auto;
+	width: 95%;
+}
+.tableDiv td {
+	border: 1px solid #78634c;
+	padding-left: 5px;
+	padding-right: 3px;
+	vertical-align: middle;
+	text-align: center;
+}
+.tableDiv thead td{
+	
+}
+.tableDiv tbody{
+	
+}
+.tableDiv tbody>tr>td:nth-child(1){
+	white-space: nowrap;
+}
+.tableDiv tbody>tr>td:nth-child(2){
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+
+.tblImg{
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 110px;
+	width: 110px;
+	background-position: center;
+	display: inline-block;
+}
+.aside{
+	width: 180px;
+	float: left;
+	padding-top: 59px;
+}
+.aside>ul{
+
+}
+
+.category>ul:not([class="showSubCat"]){
+	position: absolute;
+	top: 0px;
+	left: 100%;
+	display: none;
+}
+.category>ul:not([class="showSubCat"])>li:nth-child(odd){
+	background: #DEDEDE;
+}
+.category>ul:not([class="showSubCat"])>li:nth-child(even){
+	background: #CFCFCF;
+}
+.showSubCat>ul {
+	position: relative;
+	display: block;
+	left: 20px;
+	width: 140px;
+	padding-bottom: 20px;
+}
+.showSubCat .sub:nth-child(odd) {
+	background: #FFEEC4;
+}
+.showSubCat .sub:nth-child(even) {
+	background: #FFE3A1;
+}
+
+.showSubCat{
+	background: #ffd266;
+}
+
+.showSubCat>a:hover{
+	background: #FFC948;
+}
+
+.category{
+	position: relative;
+	border-bottom: 0px;
+}
+.category:nth-child(odd){
+	background: #E0E0E0;
+}
+.category:nth-child(even){
+	background: #CFCFCF;
+}
+
+.category:hover{
+	background: #FFC948;
+}
+.sub:hover{
+	background: #FFC948 !important;
+}
+
+
+.category:hover>ul{
+	display: block;
+	z-index:10;
+}
+.category a, .showSubCat a{
+	display: block;
+	text-decoration: none;
+	color: black;
+	padding: 5px;
+}
+.sub{
+
+	width: 160px;
+
+}
+
+.sub:last-child{
+
+}
+
+
+
+.showSubCat .sub:last-child {
+	border-bottom: 0px;
+}
+.showSubCat .sub {
+	width: unset;
+}
+
+form{
+	float: left;
+	background: burlywood;
+	padding: 5px;
+}
+.tableDiv form{
+	float: unset;
+	background: unset;
+	padding: unset;
+}
+input[type="file"]{
+	width: 69px;
+}
+input[type="text"]{
+	width: 150px;
+}
+.tableDiv button[name="subm"]{
+	padding: 0px;
+	background: white;
+	border: 2px solid #82dc47;
+}
+.tableDiv button[name="subm"] img{
+	width: 30px;
+	height: 30px;
+}
+
+.tableDiv input[name="category"]{
+	width:50px;
+}
+.tableDiv input[type="text"]{
+	
+}
+.tableDiv input[name="pack"], .tableDiv input[name="price[]"]{
+	width: 60px;
+}
+.tableDiv tr:nth-child(odd){
+	background: #ECECEC;
+}
+.tableDiv tr:nth-child(even){
+	background: #FFF;
+}
+.account{
+	position: absolute;
+	top: 1%;
+	right: 1%;
+}
+
+
+@media (max-width: 850px){
+    .aside{
+		width: unset;
+		float: none;
+		min-height: unset;
+		padding-top: unset;
+    }
+	.sub{
+		display: none;
+	}
+	.showSubCat{
+		left: unset;
+	}
+	.showSubCat .sub{
+		display: block;
+	}
+	.category,  .showSubCat{
+		width: unset;
+		left: unset;
+		padding: 0px;
+		text-align: center;
+		
+	}
+	.showSubCat > ul{
+		width: unset;
+		left: unset;
+		padding: 0 20px 20px 20px;
+	}
+	.content{
+		margin-left: unset;
+	}
+	.clear{
+		clear: both;
+	}
+	.header{
+		height: unset;
+	}
+	.tableDiv table {
+		margin: 0 auto;
+		width: 100%;
+	}
+}
+@media (max-width: 540px){
+	.tableDiv td{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.tableDiv{
+		font-size: 12px;
+	}
+	.tblImg{
+		height: 90px;
+		width: 90px;
+	}
+	.tableDiv table {
+		width: 100%;
+		word-break: break-all;
+	}
+	
+}
+@media (max-width: 400px){
+	.tblImg{
+		height: 40px;
+		width: 40px;
+	}
+	.tableDiv tbody > tr > td:nth-child(1){
+		white-space: normal;
+	}
+}
+.cat_edit input:nth-child(1){
+	width: 50px;
+}
+.cat_edit input:nth-child(2){
+	width: 65px;
+}
+.cat_edit input:nth-child(3){
+	width: 215px;
+}
+.cat_edit input:nth-child(4){
+	width: 350px;
+}
+.cat_edit input:nth-child(5){
+	width: 50px;
+}
+.cat_edit form{
+	float:none;
+	display: inline-block;
+}
+
+
+html {
+	height: unset;
+	overflow: initial;
+}
+
+#preloader {
+	display: none;
+}

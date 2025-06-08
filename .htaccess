@@ -1,4 +1,4 @@
-Options -Indexes
+#Options -Indexes
 AddDefaultCharset UTF-8
 
 
@@ -22,7 +22,7 @@ php_value error_reporting 999999999
 
 
 #php_value error_reporting -1
-php_value log_errors_max_len 0
+#php_value log_errors_max_len 0
 
 
 #RewriteCond %{REQUEST_FILENAME} !-f
